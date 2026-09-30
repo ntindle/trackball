@@ -806,18 +806,8 @@
           (effects (font (size 1.27 1.27)))
         )
       )
-      (pin bidirectional line
-        (at -11.43 8.89 0)
-        (length 2.54)
-        (name "CTS"
-          (effects (font (size 1.27 1.27)))
-        )
-        (number "2"
-          (effects (font (size 1.27 1.27)))
-        )
-      )
       (pin passive line
-        (at -11.43 6.35 0)
+        (at -11.43 8.89 0)
         (length 2.54)
         (name "IS-"
           (effects (font (size 1.27 1.27)))
@@ -827,7 +817,7 @@
         )
       )
       (pin passive line
-        (at -11.43 3.81 0)
+        (at -11.43 6.35 0)
         (length 2.54)
         (name "IS+"
           (effects (font (size 1.27 1.27)))
@@ -836,28 +826,8 @@
           (effects (font (size 1.27 1.27)))
         )
       )
-      (pin output line
-        (at -11.43 1.27 0)
-        (length 2.54)
-        (name "IMON"
-          (effects (font (size 1.27 1.27)))
-        )
-        (number "5"
-          (effects (font (size 1.27 1.27)))
-        )
-      )
       (pin passive line
-        (at -11.43 -1.27 0)
-        (length 2.54)
-        (name "NTC"
-          (effects (font (size 1.27 1.27)))
-        )
-        (number "6"
-          (effects (font (size 1.27 1.27)))
-        )
-      )
-      (pin input line
-        (at -11.43 -3.81 0)
+        (at -11.43 3.81 0)
         (length 2.54)
         (name "DTH"
           (effects (font (size 1.27 1.27)))
@@ -866,18 +836,8 @@
           (effects (font (size 1.27 1.27)))
         )
       )
-      (pin open_collector line
-        (at -11.43 -6.35 0)
-        (length 2.54)
-        (name "STAT"
-          (effects (font (size 1.27 1.27)))
-        )
-        (number "8"
-          (effects (font (size 1.27 1.27)))
-        )
-      )
       (pin passive line
-        (at -11.43 -8.89 0)
+        (at -11.43 1.27 0)
         (length 2.54)
         (name "FTH"
           (effects (font (size 1.27 1.27)))
@@ -887,27 +847,7 @@
         )
       )
       (pin passive line
-        (at -11.43 -11.43 0)
-        (length 2.54)
-        (name "PTH2"
-          (effects (font (size 1.27 1.27)))
-        )
-        (number "10"
-          (effects (font (size 1.27 1.27)))
-        )
-      )
-      (pin passive line
-        (at 11.43 11.43 180)
-        (length 2.54)
-        (name "PTH1"
-          (effects (font (size 1.27 1.27)))
-        )
-        (number "11"
-          (effects (font (size 1.27 1.27)))
-        )
-      )
-      (pin input line
-        (at 11.43 8.89 180)
+        (at -11.43 -1.27 0)
         (length 2.54)
         (name "PTHM"
           (effects (font (size 1.27 1.27)))
@@ -917,27 +857,27 @@
         )
       )
       (pin passive line
-        (at 11.43 6.35 180)
+        (at -11.43 -3.81 0)
         (length 2.54)
-        (name "FB"
+        (name "PTH1"
           (effects (font (size 1.27 1.27)))
         )
-        (number "13"
+        (number "11"
           (effects (font (size 1.27 1.27)))
         )
       )
-      (pin bidirectional line
-        (at 11.43 3.81 180)
+      (pin passive line
+        (at -11.43 -6.35 0)
         (length 2.54)
-        (name "CTD"
+        (name "PTH2"
           (effects (font (size 1.27 1.27)))
         )
-        (number "14"
+        (number "10"
           (effects (font (size 1.27 1.27)))
         )
       )
       (pin input line
-        (at 11.43 1.27 180)
+        (at -11.43 -8.89 0)
         (length 2.54)
         (name "EN"
           (effects (font (size 1.27 1.27)))
@@ -946,18 +886,28 @@
           (effects (font (size 1.27 1.27)))
         )
       )
-      (pin power_in line
-        (at 11.43 -1.27 180)
+      (pin output line
+        (at -11.43 -11.43 0)
         (length 2.54)
-        (name "GND"
+        (name "IMON"
           (effects (font (size 1.27 1.27)))
         )
-        (number "16"
+        (number "5"
           (effects (font (size 1.27 1.27)))
         )
       )
       (pin power_in line
-        (at 11.43 -3.81 180)
+        (at 11.43 11.43 180)
+        (length 2.54)
+        (name "IN1"
+          (effects (font (size 1.27 1.27)))
+        )
+        (number "20"
+          (effects (font (size 1.27 1.27)))
+        )
+      )
+      (pin power_in line
+        (at 11.43 8.89 180)
         (length 2.54)
         (name "IN2"
           (effects (font (size 1.27 1.27)))
@@ -966,18 +916,18 @@
           (effects (font (size 1.27 1.27)))
         )
       )
-      (pin output line
-        (at 11.43 -6.35 180)
+      (pin passive line
+        (at 11.43 6.35 180)
         (length 2.54)
-        (name "SW2"
+        (name "NTC"
           (effects (font (size 1.27 1.27)))
         )
-        (number "18"
+        (number "6"
           (effects (font (size 1.27 1.27)))
         )
       )
       (pin output line
-        (at 11.43 -8.89 180)
+        (at 11.43 3.81 180)
         (length 2.54)
         (name "SW1"
           (effects (font (size 1.27 1.27)))
@@ -986,13 +936,63 @@
           (effects (font (size 1.27 1.27)))
         )
       )
+      (pin output line
+        (at 11.43 1.27 180)
+        (length 2.54)
+        (name "SW2"
+          (effects (font (size 1.27 1.27)))
+        )
+        (number "18"
+          (effects (font (size 1.27 1.27)))
+        )
+      )
+      (pin passive line
+        (at 11.43 -1.27 180)
+        (length 2.54)
+        (name "FB"
+          (effects (font (size 1.27 1.27)))
+        )
+        (number "13"
+          (effects (font (size 1.27 1.27)))
+        )
+      )
+      (pin open_collector line
+        (at 11.43 -3.81 180)
+        (length 2.54)
+        (name "STAT"
+          (effects (font (size 1.27 1.27)))
+        )
+        (number "8"
+          (effects (font (size 1.27 1.27)))
+        )
+      )
+      (pin bidirectional line
+        (at 11.43 -6.35 180)
+        (length 2.54)
+        (name "CTD"
+          (effects (font (size 1.27 1.27)))
+        )
+        (number "14"
+          (effects (font (size 1.27 1.27)))
+        )
+      )
+      (pin bidirectional line
+        (at 11.43 -8.89 180)
+        (length 2.54)
+        (name "CTS"
+          (effects (font (size 1.27 1.27)))
+        )
+        (number "2"
+          (effects (font (size 1.27 1.27)))
+        )
+      )
       (pin power_in line
         (at 11.43 -11.43 180)
         (length 2.54)
-        (name "IN1"
+        (name "GND"
           (effects (font (size 1.27 1.27)))
         )
-        (number "20"
+        (number "16"
           (effects (font (size 1.27 1.27)))
         )
       )
