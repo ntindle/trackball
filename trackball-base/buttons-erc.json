@@ -1,0 +1,83 @@
+{
+    "$schema": "https://schemas.kicad.org/erc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-09-30T03:15:02",
+    "ignored_checks": [
+        {
+            "description": "Global label only appears once in the schematic",
+            "key": "single_global_label"
+        },
+        {
+            "description": "Four connection points are joined together",
+            "key": "four_way_junction"
+        },
+        {
+            "description": "SPICE model issue",
+            "key": "simulation_model_issue"
+        },
+        {
+            "description": "Assigned footprint doesn't match footprint filters",
+            "key": "footprint_filter"
+        }
+    ],
+    "included_severities": [
+        "error",
+        "warning",
+        "exclusion"
+    ],
+    "kicad_version": "10.0.6",
+    "sheets": [
+        {
+            "path": "/",
+            "uuid_path": "/91ea3267-b516-427f-8b07-5e1f24f43940",
+            "violations": [
+                {
+                    "description": "The current configuration does not include the symbol library 'trackball'",
+                    "items": [
+                        {
+                            "description": "Symbol SW401 [D2FC]",
+                            "pos": {
+                                "x": 1.27,
+                                "y": 1.27
+                            },
+                            "uuid": "30414b61-c5de-4325-a211-928488c639c2"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The current configuration does not include the symbol library 'trackball'",
+                    "items": [
+                        {
+                            "description": "Symbol SW402 [D2FC]",
+                            "pos": {
+                                "x": 1.27,
+                                "y": 1.651
+                            },
+                            "uuid": "7d59285b-b782-44f6-870a-a5420cd79009"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The current configuration does not include the symbol library 'trackball'",
+                    "items": [
+                        {
+                            "description": "Symbol SW403 [D2FC]",
+                            "pos": {
+                                "x": 1.27,
+                                "y": 2.032
+                            },
+                            "uuid": "06cb7116-4075-4eec-bd6b-75b8eb21cfe8"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                }
+            ]
+        }
+    ],
+    "source": "buttons.kicad_sch"
+}
