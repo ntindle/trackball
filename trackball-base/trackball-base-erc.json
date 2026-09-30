@@ -1,0 +1,86 @@
+{
+    "$schema": "https://schemas.kicad.org/erc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-09-30T04:53:08",
+    "ignored_checks": [
+        {
+            "description": "Global label only appears once in the schematic",
+            "key": "single_global_label"
+        },
+        {
+            "description": "Four connection points are joined together",
+            "key": "four_way_junction"
+        },
+        {
+            "description": "SPICE model issue",
+            "key": "simulation_model_issue"
+        },
+        {
+            "description": "Assigned footprint doesn't match footprint filters",
+            "key": "footprint_filter"
+        }
+    ],
+    "included_severities": [
+        "error",
+        "warning",
+        "exclusion"
+    ],
+    "kicad_version": "10.0.6",
+    "sheets": [
+        {
+            "path": "/",
+            "uuid_path": "/4e7094a8-6bd5-4840-879d-c0dfa5b5d053",
+            "violations": []
+        },
+        {
+            "path": "/power/",
+            "uuid_path": "/4e7094a8-6bd5-4840-879d-c0dfa5b5d053/7c9f1007-ad6b-4a8a-b952-8b9a37bc7ed7",
+            "violations": []
+        },
+        {
+            "path": "/mcu/",
+            "uuid_path": "/4e7094a8-6bd5-4840-879d-c0dfa5b5d053/b0666b6f-9ce3-421e-86ce-7e47727e2dbb",
+            "violations": [
+                {
+                    "description": "Pins of type Bidirectional and Power output are connected",
+                    "items": [
+                        {
+                            "description": "Symbol U201 Pin 7 [P0.02/AIN0, Bidirectional, Line]",
+                            "pos": {
+                                "x": 1.7399,
+                                "y": 1.7907
+                            },
+                            "uuid": "4bc3a067-ad26-4ab6-8586-845fcf899a97"
+                        },
+                        {
+                            "description": "Symbol U104 Pin 6 [VOUT, Power output, Line]",
+                            "pos": {
+                                "x": 2.1717,
+                                "y": 1.1938
+                            },
+                            "uuid": "5444bd11-2208-4213-9380-fc31eda18c7c"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "pin_to_pin"
+                }
+            ]
+        },
+        {
+            "path": "/buttons/",
+            "uuid_path": "/4e7094a8-6bd5-4840-879d-c0dfa5b5d053/de552e1e-c508-44e6-a165-f8a231a166da",
+            "violations": []
+        },
+        {
+            "path": "/sensors/",
+            "uuid_path": "/4e7094a8-6bd5-4840-879d-c0dfa5b5d053/68c23174-19e4-4b52-996e-ef558a61cffd",
+            "violations": []
+        },
+        {
+            "path": "/tx/",
+            "uuid_path": "/4e7094a8-6bd5-4840-879d-c0dfa5b5d053/f4cfd70c-c27b-4b05-967e-9c92622a3371",
+            "violations": []
+        }
+    ],
+    "source": "trackball-base.kicad_sch"
+}

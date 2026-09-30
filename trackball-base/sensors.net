@@ -2,7 +2,7 @@
 	(version "E")
 	(design
 		(source "/home/ntindle/muse-jobs/trackball-base-schematic/work/trackball-base/sensors.kicad_sch")
-		(date "2026-09-30T03:02:01")
+		(date "2026-09-30T04:28:15")
 		(tool "Eeschema 10.0.6-10.0.6~ubuntu24.04.1")
 		(sheet
 			(number "1")
@@ -79,7 +79,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "sensors.kicad_sch")
+				(value "../../home/ntindle/muse-jobs/trackball-base-schematic/work/trackball-base/sensors.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -93,7 +93,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "dfeb8da8-77e4-484f-99a1-d52e7e5d1c85")
+			(tstamps "787c9c82-465d-4c1e-984b-ed24bbea2beb")
 			(units
 				(unit
 					(name "A")
@@ -133,7 +133,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "sensors.kicad_sch")
+				(value "../../home/ntindle/muse-jobs/trackball-base-schematic/work/trackball-base/sensors.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -147,7 +147,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "4212931a-a9fd-4496-a032-8e978905cab2")
+			(tstamps "95eaecd9-9e2e-4879-a4ec-69463b0c5162")
 			(units
 				(unit
 					(name "A")
@@ -187,7 +187,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "sensors.kicad_sch")
+				(value "../../home/ntindle/muse-jobs/trackball-base-schematic/work/trackball-base/sensors.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -201,7 +201,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "1a85d270-1a30-43e1-8c1d-e3221d811929")
+			(tstamps "f21742d1-626d-4dd6-84e6-c191e1ccc88e")
 			(units
 				(unit
 					(name "A")
@@ -241,7 +241,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "sensors.kicad_sch")
+				(value "../../home/ntindle/muse-jobs/trackball-base-schematic/work/trackball-base/sensors.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -255,7 +255,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "75814c3b-49ea-4768-83ed-633125fc1631")
+			(tstamps "a8317000-85ba-4140-8c81-e44fdc976359")
 			(units
 				(unit
 					(name "A")
@@ -295,7 +295,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "sensors.kicad_sch")
+				(value "../../home/ntindle/muse-jobs/trackball-base-schematic/work/trackball-base/sensors.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -309,7 +309,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "7428f309-ca48-4112-93a0-8bd562bc7966")
+			(tstamps "62d7a0c8-f929-4132-aff4-7022b8f2b0f9")
 			(units
 				(unit
 					(name "A")
@@ -349,7 +349,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "sensors.kicad_sch")
+				(value "../../home/ntindle/muse-jobs/trackball-base-schematic/work/trackball-base/sensors.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -363,7 +363,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "9b023cb6-9549-41ef-9c0f-d3ed2d776969")
+			(tstamps "becc15ed-fef9-4317-a8bc-c0544a881fdf")
 			(units
 				(unit
 					(name "A")
@@ -403,7 +403,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "sensors.kicad_sch")
+				(value "../../home/ntindle/muse-jobs/trackball-base-schematic/work/trackball-base/sensors.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -417,7 +417,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "2f36cfb8-1af0-4940-994c-ccf4ee7d5cb9")
+			(tstamps "939ce325-82ef-4774-bfd0-2f4416c444e0")
 			(units
 				(unit
 					(name "A")
@@ -457,7 +457,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "sensors.kicad_sch")
+				(value "../../home/ntindle/muse-jobs/trackball-base-schematic/work/trackball-base/sensors.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -471,7 +471,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "cb754265-59af-4064-bff1-b5e5f619b473")
+			(tstamps "728d6cbc-01de-4695-ac9b-5be19a78ba0a")
 			(units
 				(unit
 					(name "A")
@@ -511,7 +511,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "sensors.kicad_sch")
+				(value "../../home/ntindle/muse-jobs/trackball-base-schematic/work/trackball-base/sensors.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -525,7 +525,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "c53f172b-2879-41c7-9ea7-cd91fb6e77cc")
+			(tstamps "deeae194-7d63-4a74-bf49-e5c490cd79a9")
 			(units
 				(unit
 					(name "A")
@@ -565,7 +565,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "sensors.kicad_sch")
+				(value "../../home/ntindle/muse-jobs/trackball-base-schematic/work/trackball-base/sensors.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -579,7 +579,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "8cc70437-e924-4a9c-bcba-2c755d5d1256")
+			(tstamps "a8056012-f96f-4e4b-a514-4ece1bdd0670")
 			(units
 				(unit
 					(name "A")
@@ -619,7 +619,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "sensors.kicad_sch")
+				(value "../../home/ntindle/muse-jobs/trackball-base-schematic/work/trackball-base/sensors.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -633,7 +633,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "740faa4e-86b1-4b55-874b-f4790191d20c")
+			(tstamps "b07f5c98-afa3-44b5-9565-9a5f2348cae2")
 			(units
 				(unit
 					(name "A")
@@ -673,7 +673,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "sensors.kicad_sch")
+				(value "../../home/ntindle/muse-jobs/trackball-base-schematic/work/trackball-base/sensors.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -687,7 +687,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "6e063973-e08b-4eca-9721-fd8c9b8bc11c")
+			(tstamps "bf7ef191-851e-4523-9132-d06037e81094")
 			(units
 				(unit
 					(name "A")
@@ -727,7 +727,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "sensors.kicad_sch")
+				(value "../../home/ntindle/muse-jobs/trackball-base-schematic/work/trackball-base/sensors.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -741,7 +741,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "712c4b92-c6cf-4700-bc83-63521d3c5584")
+			(tstamps "2b0ca30a-a7b1-4322-92f7-1e9b9aafca05")
 			(units
 				(unit
 					(name "A")
@@ -781,7 +781,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "sensors.kicad_sch")
+				(value "../../home/ntindle/muse-jobs/trackball-base-schematic/work/trackball-base/sensors.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -795,7 +795,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "8edb0ec2-b98c-4146-8a78-99df07f8c33c")
+			(tstamps "353963ee-37bb-46a4-80f7-9799d4ee6609")
 			(units
 				(unit
 					(name "A")
@@ -835,7 +835,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "sensors.kicad_sch")
+				(value "../../home/ntindle/muse-jobs/trackball-base-schematic/work/trackball-base/sensors.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -849,7 +849,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "90e4847b-5714-4a77-a26b-0ebda274cf46")
+			(tstamps "adcde027-7b6f-4143-bb01-5727d3b9d776")
 			(units
 				(unit
 					(name "A")
@@ -889,7 +889,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "sensors.kicad_sch")
+				(value "../../home/ntindle/muse-jobs/trackball-base-schematic/work/trackball-base/sensors.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -903,7 +903,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "f446c665-4d15-4343-afcf-f85681ed048b")
+			(tstamps "ea3a0081-e90d-4c6b-ac27-dfac61b649bc")
 			(units
 				(unit
 					(name "A")
@@ -943,7 +943,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "sensors.kicad_sch")
+				(value "../../home/ntindle/muse-jobs/trackball-base-schematic/work/trackball-base/sensors.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -957,7 +957,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "d0d73eef-9e23-4477-a9c5-140b493aad46")
+			(tstamps "59f13ebc-f544-421f-9558-ba6e790962ae")
 			(units
 				(unit
 					(name "A")
@@ -997,7 +997,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "sensors.kicad_sch")
+				(value "../../home/ntindle/muse-jobs/trackball-base-schematic/work/trackball-base/sensors.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -1011,7 +1011,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "d88165bb-3df1-48d1-882d-bb2765d42817")
+			(tstamps "3f2d7136-dcb7-4a09-b318-e0fbdb7a8cee")
 			(units
 				(unit
 					(name "A")
@@ -1051,13 +1051,13 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "sensors.kicad_sch")
+				(value "../../home/ntindle/muse-jobs/trackball-base-schematic/work/trackball-base/sensors.kicad_sch")
 			)
 			(sheetpath
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "ad40c123-a008-4f83-9035-7154e800be70")
+			(tstamps "e7b0aa2e-f08c-4d0c-8e8e-9b8b69920bd0")
 			(units
 				(unit
 					(name "A")
@@ -1124,13 +1124,13 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "sensors.kicad_sch")
+				(value "../../home/ntindle/muse-jobs/trackball-base-schematic/work/trackball-base/sensors.kicad_sch")
 			)
 			(sheetpath
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "a623fcf8-9db0-46fc-96fa-befcdff6ef84")
+			(tstamps "f2917b9f-8fa2-4958-b946-ecf96089e4f6")
 			(units
 				(unit
 					(name "A")

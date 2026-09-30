@@ -2,7 +2,7 @@
 	(version "E")
 	(design
 		(source "/home/ntindle/muse-jobs/trackball-base-schematic/work/trackball-base/buttons.kicad_sch")
-		(date "2026-09-30T03:15:03")
+		(date "2026-09-30T04:28:13")
 		(tool "Eeschema 10.0.6-10.0.6~ubuntu24.04.1")
 		(sheet
 			(number "1")
@@ -79,7 +79,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "buttons.kicad_sch")
+				(value "../../home/ntindle/muse-jobs/trackball-base-schematic/work/trackball-base/buttons.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -93,7 +93,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "79f72e41-917e-4fa8-a22b-a2f41420b9a7")
+			(tstamps "f38de953-8cf1-4d8c-a41a-16c7f2ec791f")
 			(units
 				(unit
 					(name "A")
@@ -133,7 +133,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "buttons.kicad_sch")
+				(value "../../home/ntindle/muse-jobs/trackball-base-schematic/work/trackball-base/buttons.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -147,7 +147,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "e6d9ab1e-4d89-4d15-b9fe-e23444eb4c6c")
+			(tstamps "175f971a-8fef-44aa-957f-3206ff83d49f")
 			(units
 				(unit
 					(name "A")
@@ -187,7 +187,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "buttons.kicad_sch")
+				(value "../../home/ntindle/muse-jobs/trackball-base-schematic/work/trackball-base/buttons.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -201,7 +201,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "8652d348-157e-43b6-8adf-8c20136ddf12")
+			(tstamps "e28c31e4-b488-4ab6-bd62-ef27f44c35e1")
 			(units
 				(unit
 					(name "A")
@@ -241,7 +241,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "buttons.kicad_sch")
+				(value "../../home/ntindle/muse-jobs/trackball-base-schematic/work/trackball-base/buttons.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -255,7 +255,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "850f31ef-cdd9-439f-96ae-bd4fedc1cc79")
+			(tstamps "5122b0bb-3ce0-44f6-b5e3-a99f8ce1faad")
 			(units
 				(unit
 					(name "A")
@@ -295,7 +295,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "buttons.kicad_sch")
+				(value "../../home/ntindle/muse-jobs/trackball-base-schematic/work/trackball-base/buttons.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -309,7 +309,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "47912886-f86a-4c09-a413-cc3da603ab5f")
+			(tstamps "45797e80-57b0-4c65-ae47-c794b2b118c2")
 			(units
 				(unit
 					(name "A")
@@ -349,7 +349,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "buttons.kicad_sch")
+				(value "../../home/ntindle/muse-jobs/trackball-base-schematic/work/trackball-base/buttons.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -363,7 +363,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "b61532cb-5052-4882-8ebc-b60e538f06a1")
+			(tstamps "00df81b5-b168-4d4a-b6a2-75e41e3602d9")
 			(units
 				(unit
 					(name "A")
@@ -403,7 +403,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "buttons.kicad_sch")
+				(value "../../home/ntindle/muse-jobs/trackball-base-schematic/work/trackball-base/buttons.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -417,7 +417,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "e1076bd8-7f8e-4f76-bd18-09a060beecdc")
+			(tstamps "25ba0ebf-03f6-4ed4-b3ae-6f0e0a6469d1")
 			(units
 				(unit
 					(name "A")
@@ -457,7 +457,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "buttons.kicad_sch")
+				(value "../../home/ntindle/muse-jobs/trackball-base-schematic/work/trackball-base/buttons.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -471,7 +471,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "b899aaed-0fc3-46f8-8140-15a76e18ddca")
+			(tstamps "efb13376-6eef-4c21-b7e7-571618628b9b")
 			(units
 				(unit
 					(name "A")
@@ -511,7 +511,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "buttons.kicad_sch")
+				(value "../../home/ntindle/muse-jobs/trackball-base-schematic/work/trackball-base/buttons.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -525,7 +525,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "598a9bad-bc17-4a06-8611-367670b3a1b1")
+			(tstamps "fa5d5b78-5528-4737-a5d8-c51883432b52")
 			(units
 				(unit
 					(name "A")
@@ -565,13 +565,13 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "buttons.kicad_sch")
+				(value "../../home/ntindle/muse-jobs/trackball-base-schematic/work/trackball-base/buttons.kicad_sch")
 			)
 			(sheetpath
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "30414b61-c5de-4325-a211-928488c639c2")
+			(tstamps "b52336d6-578d-4016-8c6c-09a1465c9a23")
 			(units
 				(unit
 					(name "A")
@@ -611,13 +611,13 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "buttons.kicad_sch")
+				(value "../../home/ntindle/muse-jobs/trackball-base-schematic/work/trackball-base/buttons.kicad_sch")
 			)
 			(sheetpath
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "7d59285b-b782-44f6-870a-a5420cd79009")
+			(tstamps "94005ac0-3eea-4c1f-bab0-722254108ed7")
 			(units
 				(unit
 					(name "A")
@@ -657,13 +657,13 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "buttons.kicad_sch")
+				(value "../../home/ntindle/muse-jobs/trackball-base-schematic/work/trackball-base/buttons.kicad_sch")
 			)
 			(sheetpath
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "06cb7116-4075-4eec-bd6b-75b8eb21cfe8")
+			(tstamps "4f0e7e8d-a01f-4970-9763-c59f81d8e858")
 			(units
 				(unit
 					(name "A")

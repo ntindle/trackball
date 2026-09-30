@@ -2,7 +2,7 @@
 	(version "E")
 	(design
 		(source "/home/ntindle/muse-jobs/trackball-base-schematic/work/trackball-base/mcu.kicad_sch")
-		(date "2026-09-30T02:42:33")
+		(date "2026-09-30T04:28:11")
 		(tool "Eeschema 10.0.6-10.0.6~ubuntu24.04.1")
 		(sheet
 			(number "1")
@@ -79,7 +79,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "mcu.kicad_sch")
+				(value "../../home/ntindle/muse-jobs/trackball-base-schematic/work/trackball-base/mcu.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -93,7 +93,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "ac161133-0ea9-4117-b040-25053dcc61e3")
+			(tstamps "bf26e9b3-44e1-481e-93f9-271aa5ba59e2")
 			(units
 				(unit
 					(name "A")
@@ -133,7 +133,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "mcu.kicad_sch")
+				(value "../../home/ntindle/muse-jobs/trackball-base-schematic/work/trackball-base/mcu.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -147,7 +147,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "552ac560-4e94-4977-93fd-9313f7233ac6")
+			(tstamps "a4d89e71-70ae-4854-b323-7c7856ff37c9")
 			(units
 				(unit
 					(name "A")
@@ -187,7 +187,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "mcu.kicad_sch")
+				(value "../../home/ntindle/muse-jobs/trackball-base-schematic/work/trackball-base/mcu.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -201,7 +201,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "3cfe8bc7-9eaf-41d7-a87a-ce65ef60e2f5")
+			(tstamps "2a959c7b-ae04-48f9-8335-745b39fd2905")
 			(units
 				(unit
 					(name "A")
@@ -241,7 +241,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "mcu.kicad_sch")
+				(value "../../home/ntindle/muse-jobs/trackball-base-schematic/work/trackball-base/mcu.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -255,7 +255,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "48968004-9cdd-4b65-b69a-53cf246def9e")
+			(tstamps "ebd46e43-393b-436f-aa54-ea67452b47d5")
 			(units
 				(unit
 					(name "A")
@@ -295,7 +295,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "mcu.kicad_sch")
+				(value "../../home/ntindle/muse-jobs/trackball-base-schematic/work/trackball-base/mcu.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -309,7 +309,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "46821950-8b63-4de2-a32d-887276641617")
+			(tstamps "ee668b74-c533-424d-aff1-2dc3ec56498e")
 			(units
 				(unit
 					(name "A")
@@ -349,7 +349,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "mcu.kicad_sch")
+				(value "../../home/ntindle/muse-jobs/trackball-base-schematic/work/trackball-base/mcu.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -363,7 +363,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "73fec0c2-d03d-4e1f-9625-309be81fef85")
+			(tstamps "94dfcfb5-e579-4308-bcba-c53ea14ae75b")
 			(units
 				(unit
 					(name "A")
@@ -403,13 +403,13 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "mcu.kicad_sch")
+				(value "../../home/ntindle/muse-jobs/trackball-base-schematic/work/trackball-base/mcu.kicad_sch")
 			)
 			(sheetpath
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "e9be5b0d-8c4b-4a24-92ef-e93f21eaca3c")
+			(tstamps "f78d7e6e-6572-49c2-99eb-7f99bc547db5")
 			(units
 				(unit
 					(name "A")
@@ -494,7 +494,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "mcu.kicad_sch")
+				(value "../../home/ntindle/muse-jobs/trackball-base-schematic/work/trackball-base/mcu.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -508,7 +508,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "2a89193d-e700-4cc6-8f56-94b005c3020a")
+			(tstamps "271970c5-3c78-4fdd-9aff-3da4169c602b")
 			(units
 				(unit
 					(name "A")
@@ -572,7 +572,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "mcu.kicad_sch")
+				(value "../../home/ntindle/muse-jobs/trackball-base-schematic/work/trackball-base/mcu.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -586,7 +586,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "c6b2d781-c4ca-4872-9a3f-f1ae90467df8")
+			(tstamps "d154af2e-6abc-4d52-8fff-1c71062f8d6c")
 			(units
 				(unit
 					(name "A")
@@ -626,7 +626,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "mcu.kicad_sch")
+				(value "../../home/ntindle/muse-jobs/trackball-base-schematic/work/trackball-base/mcu.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -640,7 +640,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "d956e57e-eb58-4be1-ab3d-804c974cb90e")
+			(tstamps "4bf574b6-a68f-48a5-98f0-f0001761da7b")
 			(units
 				(unit
 					(name "A")
@@ -680,7 +680,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "mcu.kicad_sch")
+				(value "../../home/ntindle/muse-jobs/trackball-base-schematic/work/trackball-base/mcu.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -694,7 +694,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "5590177d-acc6-464f-a98f-d4538cea6ad5")
+			(tstamps "3e8fb94d-106e-4d68-9e71-b9274fa91de0")
 			(units
 				(unit
 					(name "A")
@@ -734,7 +734,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "mcu.kicad_sch")
+				(value "../../home/ntindle/muse-jobs/trackball-base-schematic/work/trackball-base/mcu.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -748,7 +748,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "396cff02-608b-444e-90e4-954390cafbe7")
+			(tstamps "1264827d-6845-4ced-b1f7-bf3e0bb199cf")
 			(units
 				(unit
 					(name "A")
@@ -788,7 +788,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "mcu.kicad_sch")
+				(value "../../home/ntindle/muse-jobs/trackball-base-schematic/work/trackball-base/mcu.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -798,7 +798,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "3c0919fe-bdbf-4b3a-9904-aee5fe585674")
+			(tstamps "2a28626d-7c42-4cfe-a558-71e4ecadb4d8")
 			(units
 				(unit
 					(name "A")
@@ -838,7 +838,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "mcu.kicad_sch")
+				(value "../../home/ntindle/muse-jobs/trackball-base-schematic/work/trackball-base/mcu.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -848,7 +848,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "38d20cba-36d1-4828-b264-2001cc621bbb")
+			(tstamps "793afead-96b0-4805-b905-b5567d551f8c")
 			(units
 				(unit
 					(name "A")
@@ -888,7 +888,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "mcu.kicad_sch")
+				(value "../../home/ntindle/muse-jobs/trackball-base-schematic/work/trackball-base/mcu.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -902,7 +902,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "5fc6aa2c-b368-4be8-80af-00d3b276c4d1")
+			(tstamps "84c15cb9-cd12-4d56-9e84-7b6ce87b612d")
 			(units
 				(unit
 					(name "A")
@@ -939,7 +939,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "mcu.kicad_sch")
+				(value "../../home/ntindle/muse-jobs/trackball-base-schematic/work/trackball-base/mcu.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -953,7 +953,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "76fe6978-d8b9-4c4f-8ef6-6abe4d908551")
+			(tstamps "64339635-934a-474e-89bb-4e474183f67d")
 			(units
 				(unit
 					(name "A")
@@ -990,13 +990,13 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "mcu.kicad_sch")
+				(value "../../home/ntindle/muse-jobs/trackball-base-schematic/work/trackball-base/mcu.kicad_sch")
 			)
 			(sheetpath
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "8f2f00c9-89ca-405d-a586-a96c10da1948")
+			(tstamps "927805ea-1eb8-4068-837f-df3ebe2a0f5c")
 			(units
 				(unit
 					(name "A")
@@ -1159,13 +1159,13 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "mcu.kicad_sch")
+				(value "../../home/ntindle/muse-jobs/trackball-base-schematic/work/trackball-base/mcu.kicad_sch")
 			)
 			(sheetpath
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "bf210098-26f8-4eb7-8b75-008fc102e7e0")
+			(tstamps "4dde6ae9-8bc8-4f09-aee3-0c7b8293813f")
 			(units
 				(unit
 					(name "A")
@@ -1217,7 +1217,7 @@
 			)
 			(property
 				(name "Sheetfile")
-				(value "mcu.kicad_sch")
+				(value "../../home/ntindle/muse-jobs/trackball-base-schematic/work/trackball-base/mcu.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -1231,7 +1231,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "78924edc-dc26-4c22-a001-5c52bb5a2617")
+			(tstamps "0c24d6de-04ea-4204-bfb0-93428d874e78")
 			(units
 				(unit
 					(name "A")
