@@ -1,0 +1,188 @@
+{
+    "$schema": "https://schemas.kicad.org/erc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-09-20T20:36:52",
+    "ignored_checks": [
+        {
+            "description": "Global label only appears once in the schematic",
+            "key": "single_global_label"
+        },
+        {
+            "description": "Four connection points are joined together",
+            "key": "four_way_junction"
+        },
+        {
+            "description": "SPICE model issue",
+            "key": "simulation_model_issue"
+        },
+        {
+            "description": "Assigned footprint doesn't match footprint filters",
+            "key": "footprint_filter"
+        }
+    ],
+    "included_severities": [
+        "error",
+        "warning",
+        "exclusion"
+    ],
+    "kicad_version": "10.0.6",
+    "sheets": [
+        {
+            "path": "/",
+            "uuid_path": "/94cb3bab-4e04-473e-ad7c-3a67850a1197",
+            "violations": [
+                {
+                    "description": "The current configuration does not include the symbol library 'trackball'",
+                    "items": [
+                        {
+                            "description": "Symbol U101 [AP2112K33]",
+                            "pos": {
+                                "x": 0.508,
+                                "y": 0.7366
+                            },
+                            "uuid": "82be12be-d4cc-4343-8df5-a155f0c95e27"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The current configuration does not include the symbol library 'trackball'",
+                    "items": [
+                        {
+                            "description": "Symbol U102 [APX809_29]",
+                            "pos": {
+                                "x": 0.9652,
+                                "y": 0.7366
+                            },
+                            "uuid": "d9feeb19-a8e8-4c2b-9a38-7a607edc682b"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "Label connected to only one pin",
+                    "items": [
+                        {
+                            "description": "Global Label 'MCU_RST'",
+                            "pos": {
+                                "x": 1.1684,
+                                "y": 0.7366
+                            },
+                            "uuid": "424dd97c-5d89-4ef8-a21e-cc1b1e67eafa"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "isolated_pin_label"
+                },
+                {
+                    "description": "The current configuration does not include the symbol library 'trackball'",
+                    "items": [
+                        {
+                            "description": "Symbol U103 [XC6206P192]",
+                            "pos": {
+                                "x": 2.032,
+                                "y": 0.7112
+                            },
+                            "uuid": "db208bb5-7e68-40d6-9bcc-442cb78a5941"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The current configuration does not include the symbol library 'trackball'",
+                    "items": [
+                        {
+                            "description": "Symbol U104 [TPS22918]",
+                            "pos": {
+                                "x": 2.032,
+                                "y": 1.2192
+                            },
+                            "uuid": "a2bedfc9-3dd6-4580-9ad2-13b8e1ce0560"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The current configuration does not include the symbol library 'trackball'",
+                    "items": [
+                        {
+                            "description": "Symbol U105 [TPS22918]",
+                            "pos": {
+                                "x": 3.048,
+                                "y": 0.7112
+                            },
+                            "uuid": "b0e5d242-2a09-4367-80b5-1fec1275fca1"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The current configuration does not include the symbol library 'trackball'",
+                    "items": [
+                        {
+                            "description": "Symbol U106 [TLV3011]",
+                            "pos": {
+                                "x": 3.048,
+                                "y": 1.397
+                            },
+                            "uuid": "d363686a-9265-4fd1-a7d1-04a7a0957b50"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The current configuration does not include the symbol library 'trackball'",
+                    "items": [
+                        {
+                            "description": "Symbol U107 [TLV3011]",
+                            "pos": {
+                                "x": 3.048,
+                                "y": 1.778
+                            },
+                            "uuid": "338314b3-6df2-467c-a468-106c592242a7"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The current configuration does not include the symbol library 'trackball'",
+                    "items": [
+                        {
+                            "description": "Symbol Q101 [NFET]",
+                            "pos": {
+                                "x": 3.429,
+                                "y": 1.7653
+                            },
+                            "uuid": "a0879b18-e618-4a8e-8877-3df03da5e037"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "Label connected to only one pin",
+                    "items": [
+                        {
+                            "description": "Global Label 'MCU_TX_EN'",
+                            "pos": {
+                                "x": 3.683,
+                                "y": 1.3843
+                            },
+                            "uuid": "fae6599e-8810-48c9-af2e-27c579c17c5f"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "isolated_pin_label"
+                }
+            ]
+        }
+    ],
+    "source": "power.kicad_sch"
+}
