@@ -1,0 +1,155 @@
+(footprint "D2FC-F-7N"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(descr "Omron D2FC-F-7N SPDT microswitch THT, 3 pins @5.08 (COM,NO,NC)")
+	(tags "omron d2fc switch microswitch mouse")
+	(property "Reference" "REF**"
+		(at 0 -4.6 0)
+		(layer "F.SilkS")
+		(uuid "00e4f161-5392-4311-8a63-16b649cae023")
+		(effects
+			(font
+				(size 1.0 1.0)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "D2FC-F-7N"
+		(at 0 4.6 0)
+		(layer "F.Fab")
+		(uuid "0f8e3ff6-b913-4b1a-b89c-66149b4a75fc")
+		(effects
+			(font
+				(size 1.0 1.0)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" "Omron D2F/D2FC series"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(uuid "09c02955-13e2-40cb-8f91-87f7182f2272")
+		(hide yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" "Omron D2FC-F-7N microswitch"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(uuid "e9640ed8-8607-4427-8077-2f932412f76b")
+		(hide yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(fp_rect
+		(start -6.4 -2.9)
+		(end 6.4 2.9)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "3c7c8c3e-b606-4e82-a9d8-b51ba5653753")
+	)
+	(fp_circle
+		(center -5.2 0)
+		(end -4.6 0)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "4fda3c39-be44-46c6-9fd7-967a2f984f27")
+	)
+	(fp_rect
+		(start -6.9 -3.4)
+		(end 6.9 3.4)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.CrtYd")
+		(uuid "d2be6e1d-5010-4caf-b7f1-a20cbb4ba570")
+	)
+	(fp_rect
+		(start -6.9 -3.4)
+		(end 6.9 3.4)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(fill no)
+		(layer "B.CrtYd")
+		(uuid "94126c37-f5f9-4b6f-b3a2-53dc1a1c1a2b")
+	)
+	(fp_rect
+		(start -6.55 -3.05)
+		(end 6.55 3.05)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.SilkS")
+		(uuid "681d0e25-4cad-4e6c-b716-62a00e676e49")
+	)
+	(fp_text user "C"
+		(at -5.08 -4.1 0)
+		(layer "F.SilkS")
+		(uuid "adf8b40f-d77d-4280-a7a3-25f4f0987b41")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.15)
+			)
+		)
+	)
+	(pad "1" thru_hole rect
+		(at -5.08 0)
+		(size 2.0 2.0)
+		(drill 1.2)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "71569fb5-ef20-41c1-92b8-51093da5416b")
+	)
+	(pad "2" thru_hole circle
+		(at 0 0)
+		(size 2.0 2.0)
+		(drill 1.2)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "2e2a4eef-0f9e-47ba-a467-3eb98b5b9540")
+	)
+	(pad "3" thru_hole circle
+		(at 5.08 0)
+		(size 2.0 2.0)
+		(drill 1.2)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "05348b7c-b8fc-489a-be96-47954fb8c92c")
+	)
+	(model "${KIPRJMOD}/trackball.pretty/D2FC-F-7N.wrl"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
+)

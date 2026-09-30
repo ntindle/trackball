@@ -1202,7 +1202,7 @@
 	    (at 0.00 0.00 0)
 	    (effects (font (size 1.27 1.27)) hide)
 	  )
-	  (property "Datasheet" ""
+	  (property "Datasheet" "PMW3360 datasheet v1.50"
 	    (at 0.00 0.00 0)
 	    (effects (font (size 1.27 1.27)) hide)
 	  )
@@ -1405,11 +1405,16 @@
           (size 1.27 1.27)
         ))
     )
-    (property "Footprint" ""
+    (property "Description" "PixArt PMW3360DM-T2QU gaming sensor"
+    	(id 4)
+    	(at 0 0 0)
+    	(effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Footprint" "trackball:PMW3360DM-T2QU"
       (at 128.27 152.40 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" ""
+    (property "Datasheet" "PMW3360 datasheet v1.50"
       (at 128.27 152.40 0)
       (effects (font (size 1.27 1.27)) hide)
     )
@@ -2542,11 +2547,16 @@
           (size 1.27 1.27)
         ))
     )
-    (property "Footprint" ""
+    (property "Description" "PixArt PMW3360DM-T2QU gaming sensor"
+    	(id 4)
+    	(at 0 0 0)
+    	(effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Footprint" "trackball:PMW3360DM-T2QU"
       (at 280.67 152.40 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" ""
+    (property "Datasheet" "PMW3360 datasheet v1.50"
       (at 280.67 152.40 0)
       (effects (font (size 1.27 1.27)) hide)
     )

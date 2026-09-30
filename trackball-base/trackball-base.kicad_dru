@@ -1,0 +1,190 @@
+# trackball-base custom design rules — KiCad 10 constraint language, (version 1).
+#
+# KICAD-026 audit (custom rules carry ONLY constraints requiring item,
+# reference, or A/B-netclass selectors; everything else lives in Board Setup /
+# netclasses / tuning profiles):
+#
+#   rule                              selector forcing custom      rule ID
+#   elec027_coil_tx_creepage          A/B netclass pair + intra-   KICAD-036 /
+#                                     class exclusion              ELEC-027
+#   elec030_spi_coil_tx_keepaway      A/B netclass pair            KICAD-037 /
+#                                                                  ELEC-029
+#   pwr_coiltx_board_edge             netclass + edge_clearance    KICAD-038
+#   rf_ball_ant_to_rx_coil            A/B netclass pair (ball-     KICAD-039 /
+#                                     side; empty on base)         RF-022
+#   rf_base_ant_to_tx_coil            reference + netclass         RF-002
+#   rf_base_ant_to_usb_shell          reference pair               RF-002
+#   chg_rx_coil_to_touch_keepout      A/B netclass pair (ball-     ELEC-003
+#                                     side; empty on base)
+#   mech_usbc_shield_annular          per-reference annular floor  KICAD-011 /
+#                                     (as-built lock; deviation    MECH-006
+#                                     documented in LAYOUT_REVIEW)
+#   spi_max_length                    netclass + length            KICAD-028 /
+#                                                                  ELEC-012
+#   usb90_intra_pair_skew             netclass + skew              KICAD-021 /
+#                                                                  MECH-006
+#   spi_intra_bus_spacing             netclass pair + item type    ELEC-029
+#                                     (tracks only; pads exempt)
+#   coil_tx_min_width                 netclass + track_width min   KICAD-007
+#   vbus_min_width                    netclass + track_width min   KICAD-032
+#   coil_rx_min_width                 netclass + track_width min   KICAD-031
+#                                     (empty on base; ball-side)
+#   usb90_track_width                 netclass + track_width range KICAD-020
+#   usb90_dp_gap                      netclass + diff_pair_gap     KICAD-019
+#                                     range
+#
+# Binary (A/B) conditions are written symmetric AND parenthesized: KiCad's
+# expression evaluator mis-parses unparenthesized `a && b || c && d`
+# (silently wrong semantics, no error -- verified empirically 2026-09-30),
+# so every disjunct is explicitly grouped. Unary constraints (length, skew,
+# edge_clearance, annular_width, track_width, diff_pair_gap) reference A
+# only -- the parser rejects B there.
+#
+# WHY the *_min_width customs exist: KiCad netclass track_width is Opt-only
+# (router default; DRC minimum stays the board global -- verified in
+# drc_engine.cpp makeNetclassRules and empirically: a 0.2 mm track on a
+# 1.0 mm netclass does NOT raise [track_width]). RULES.md KICAD-007/031/032
+# assume built-in netclass-width enforcement (R214); that premise is wrong
+# per source, so the minima ride .dru track_width constraints with netclass
+# selectors, which KICAD-026 explicitly allows. The netclass values are kept
+# (they satisfy the .kicad_pro audits and drive the router) while the customs
+# provide the enforcement. No netclass clearance is raised instead, because a
+# raised netclass clearance would also hit intra-class copper (e.g. U501 QFN
+# pins 18/19 at 0.5 mm pitch).
+#
+# Migrated AWAY from custom per RULES.md (kept as built-ins, NOT repeated
+# here): pwr_tx_coil_track_width -> COIL_TX netclass value + coil_tx_min_width
+# custom (KICAD-007; see note above), hid_usb_diffpair_skew ->
+# usb90_intra_pair_skew + USB90 tuning profile (KICAD-021).
+#
+# NOTE on skew/length: KiCad 10.0.6 tuning profiles carry width/gap/delay
+# only (no skew/length fields), so the KICAD-021/KICAD-028 limits ride .dru
+# constraints with netclass selectors. The USB90 tuning profile additionally
+# constrains width/gap exactly (min=opt=max); the usb90_* customs carry the
+# wider audit ranges as a backstop. See notes/LAYOUT_REVIEW.md section 2
+# (schema notes).
+
+(version 1)
+
+# KICAD-036 / ELEC-027 (PROVISIONAL, tank Vpk): TX tank copper vs every other
+# net >= 0.8 mm. Intra-COIL_TX excluded: U501 QFN pins 18/19 (SW2/SW1 nets)
+# sit at 0.5 mm pitch and cannot clear 0.8 mm to each other by construction.
+# Implemented as clearance (conservative proxy: clearance >= 0.8 implies
+# creepage >= 0.8), not the creepage constraint.
+(rule elec027_coil_tx_creepage
+  (constraint clearance (min 0.8mm))
+  (condition "(((A.Type == 'Track') || (A.Type == 'Via')) && (A.NetClass == 'COIL_TX') && (B.NetClass != 'COIL_TX')) || (((B.Type == 'Track') || (B.Type == 'Via')) && (B.NetClass == 'COIL_TX') && (A.NetClass != 'COIL_TX'))"))
+
+# KICAD-037 / ELEC-029 (PROVISIONAL, coil current): SPI netclass vs COIL_TX
+# >= 5 mm inductive-crosstalk keepaway.
+(rule elec030_spi_coil_tx_keepaway
+  (constraint clearance (min 5mm))
+  (condition "(A.NetClass == 'SPI' && B.NetClass == 'COIL_TX') || (A.NetClass == 'COIL_TX' && B.NetClass == 'SPI')"))
+
+# KICAD-038 (PROVISIONAL, needs layout): COIL_TX kept >= 3 mm from board edge.
+# edge_clearance is a native KiCad 10 constraint (verified in
+# drc_rule_parser.cpp and empirically), so the checklist fallback is not
+# needed.
+(rule pwr_coiltx_board_edge
+  (constraint edge_clearance (min 3mm))
+  (condition "A.NetClass == 'COIL_TX'"))
+
+# KICAD-039 / RF-022: ball antenna vs RX coil >= 8 mm planar proxy. Ball-side
+# rule; ANT and COIL_RX have no base members (module-integrated antenna, coil
+# in ball), so this is vacuously clean on the base. Real enforcement is the
+# Blender volumetric check (check_antenna_keepout.py) + VNA.
+(rule rf_ball_ant_to_rx_coil
+  (constraint clearance (min 8mm))
+  (condition "(A.NetClass == 'ANT' && B.NetClass == 'COIL_RX') || (A.NetClass == 'COIL_RX' && B.NetClass == 'ANT')"))
+
+# RF-002: base antenna >= 20 mm from TX coil outer edge. Planar proxy: E73
+# module body (U201, antenna end at rear edge) vs COIL_TX copper. The 3D
+# antenna-vs-coil distance is enforced volumetrically (check_antenna_keepout).
+(rule rf_base_ant_to_tx_coil
+  (constraint clearance (min 20mm))
+  (condition "(A.Reference == 'U201' && B.NetClass == 'COIL_TX') || (A.NetClass == 'COIL_TX' && B.Reference == 'U201')"))
+
+# RF-002: base antenna >= 15 mm from USB-C shell metal. U201 at rear edge,
+# J201 at front edge; placement keeps them ~80+ mm apart.
+(rule rf_base_ant_to_usb_shell
+  (constraint clearance (min 15mm))
+  (condition "(A.Reference == 'U201' && B.Reference == 'J201') || (A.Reference == 'J201' && B.Reference == 'U201')"))
+
+# ELEC-003: RX coil vs touch electrodes >= 5 mm. Ball-side rule; COIL_RX and
+# TOUCH have no base members, so vacuously clean on the base. Bench delta-f
+# closes the loop per ELEC-003 validation.
+(rule chg_rx_coil_to_touch_keepout
+  (constraint clearance (min 5mm))
+  (condition "(A.NetClass == 'COIL_RX' && B.NetClass == 'TOUCH') || (A.NetClass == 'TOUCH' && B.NetClass == 'COIL_RX')"))
+
+# KICAD-011 / MECH-006: USB-C shield-leg annular floor. RULES.md specifies
+# >= 0.50 mm; the stock HRO TYPE-C-31-M-12 land builds 0.20 mm annular (oval
+# pads 1.0x2.1/1.0x1.6 on oval drills 0.6x1.7/0.6x1.2) and 0.50 mm was proven
+# geometrically unsatisfiable on that land (see LAYOUT_REVIEW deviation
+# KICAD-011). This rule LOCKS the as-built 0.20 mm against footprint swaps;
+# the 0.50 mm value is carried as the documented deviation, not as a
+# never-passing rule. Built-in [annular_width] (0.15 global) still applies.
+(rule mech_usbc_shield_annular
+  (constraint annular_width (min 0.2mm))
+  (condition "A.Reference == 'J201'"))
+
+# KICAD-028 / ELEC-012 (PROVISIONAL): SPI net length <= 150 mm.
+(rule spi_max_length
+  (constraint length (max 150mm))
+  (condition "A.NetClass == 'SPI'"))
+
+# KICAD-021 / MECH-006: USB90 intra-pair skew <= 0.50 mm (audit value; routed
+# to <= 0.3 mm for margin). Pairing is by coupled routing; the two USB90
+# segments (U201-U202, U202-J201) are checked as their own pairs.
+(rule usb90_intra_pair_skew
+  (constraint skew (max 0.5mm))
+  (condition "A.NetClass == 'USB90'"))
+
+# ELEC-029: intra-SPI-bus spacing >= 3W (W = 0.20 mm track -> 0.6 mm).
+# Tracks only: E73 pads at 1.27 mm pitch (0.47 mm gaps) and PMW3360 DIP pads
+# at 1.78 mm pitch (0.28 mm gaps) cannot clear 0.6 mm pad-to-pad by
+# construction, so pads are exempt and fanout is kept short by construction.
+(rule spi_intra_bus_spacing
+  (constraint clearance (min 0.6mm))
+  (condition "A.NetClass == 'SPI' && B.NetClass == 'SPI' && A.Type == 'Track' && B.Type == 'Track'"))
+
+# KICAD-007: COIL_TX track width >= 1.0 mm (TX current). Custom because the
+# netclass width is Opt-only (see header note); the COIL_TX netclass value
+# stays 1.0 for the audit and the router.
+(rule coil_tx_min_width
+  (constraint track_width (min 1.0mm))
+  (condition "A.NetClass == 'COIL_TX'"))
+
+# KICAD-032: VBUS track width >= 0.5 mm (inrush). Custom for the same
+# Opt-only reason; the VBUS netclass value stays 0.5.
+(rule vbus_min_width
+  (constraint track_width (min 0.5mm))
+  (condition "A.NetClass == 'VBUS'"))
+
+# KICAD-031 (PROVISIONAL, coil current): COIL_RX track width >= 0.5 mm.
+# Empty on the base (ball-side copper); the rule enforces the floor for any
+# COIL_RX copper in this project family.
+(rule coil_rx_min_width
+  (constraint track_width (min 0.5mm))
+  (condition "A.NetClass == 'COIL_RX'"))
+
+# KICAD-020 (PROVISIONAL, needs stackup): USB90 pair width in [0.20, 0.30].
+# Backstop for the USB90 tuning profile (which constrains exactly 0.25);
+# routed at exactly 0.25.
+(rule usb90_track_width
+  (constraint track_width (min 0.2mm) (max 0.3mm))
+  (condition "A.NetClass == 'USB90'"))
+
+# KICAD-019 (PROVISIONAL, needs stackup): USB90 pair gap in [0.15, 0.25].
+# Backstop for the USB90 tuning profile (which constrains exactly 0.20);
+# routed at exactly 0.20.
+(rule usb90_dp_gap
+  (constraint diff_pair_gap (min 0.15mm) (max 0.25mm))
+  (condition "A.NetClass == 'USB90'"))
+
+# DEVIATION (KICAD-006, documented in LAYOUT_REVIEW.md): stock SOT-563
+# (TPD2E1B06) as-built intra-footprint pad gap 0.15 mm < 0.2 mm minimum.
+# JLCPCB-capable (0.13 mm), TVS function unaffected.
+(rule u202_intra_footprint
+  (constraint clearance (min 0.15mm))
+  (condition "A.Reference == 'U202' && B.Reference == 'U202'"))

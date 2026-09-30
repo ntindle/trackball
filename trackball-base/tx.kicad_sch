@@ -3488,11 +3488,15 @@
           (size 1.27 1.27)
         ))
     )
-    (property "Footprint" ""
+    (property "Footprint" "trackball:TX_COIL_IF_2P508"
       (at 233.68 147.32 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" ""
+      (at 233.68 147.32 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Description" "TX coil 2-pin interface"
       (at 233.68 147.32 0)
       (effects (font (size 1.27 1.27)) hide)
     )

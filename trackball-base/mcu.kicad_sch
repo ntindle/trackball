@@ -1458,7 +1458,7 @@
 	    (at 0.00 0.00 0)
 	    (effects (font (size 1.27 1.27)) hide)
 	  )
-	  (property "Datasheet" ""
+	  (property "Datasheet" "https://www.cdebyte.com/products/E73-2G4M08S1C"
 	    (at 0.00 0.00 0)
 	    (effects (font (size 1.27 1.27)) hide)
 	  )
@@ -2208,8 +2208,174 @@
 	      )
 	    )
 	  )
+
 	)
-  )
+  (symbol "Device:D_Schottky"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "D"
+				(at 0 2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "D_Schottky"
+				(at 0 -2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Schottky diode"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "diode Schottky"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "TO-???* *_Diode_* *SingleDiode* D_*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "D_Schottky_0_1"
+				(polyline
+					(pts
+						(xy -1.905 0.635) (xy -1.905 1.27) (xy -1.27 1.27) (xy -1.27 -1.27) (xy -0.635 -1.27) (xy -0.635 -0.635)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 1.27) (xy 1.27 -1.27) (xy -1.27 0) (xy 1.27 1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 0) (xy -1.27 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "D_Schottky_1_1"
+				(pin passive line
+					(at -3.81 0 0)
+					(length 2.54)
+					(name "K"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 3.81 0 180)
+					(length 2.54)
+					(name "A"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		))
   (text "MCU"
     (at 12.70 10.16 0)
     (effects
@@ -2267,11 +2433,16 @@
           (size 1.27 1.27)
         ))
     )
-    (property "Footprint" ""
+    (property "Description" "EBYTE E73-2G4M08S1C nRF52840 BLE module"
+    	(id 4)
+    	(at 0 0 0)
+    	(effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Footprint" "trackball:E73-2G4M08S1C"
       (at 190.50 190.50 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" ""
+    (property "Datasheet" "https://www.cdebyte.com/products/E73-2G4M08S1C"
       (at 190.50 190.50 0)
       (effects (font (size 1.27 1.27)) hide)
     )
@@ -4491,7 +4662,7 @@
           (size 1.27 1.27)
         ))
     )
-    (property "Footprint" "TestPoint:TestPoint_Pad_D1.5mm"
+    (property "Footprint" "TestPoint:TestPoint_Pad_D2.0mm"
       (at 350.52 214.63 0)
       (effects (font (size 1.27 1.27)) hide)
     )
@@ -4815,7 +4986,7 @@
           (size 1.27 1.27)
         ))
     )
-    (property "Footprint" "TestPoint:TestPoint_Pad_D1.5mm"
+    (property "Footprint" "TestPoint:TestPoint_Pad_D2.0mm"
       (at 248.92 210.82 0)
       (effects (font (size 1.27 1.27)) hide)
     )
@@ -4875,7 +5046,7 @@
           (size 1.27 1.27)
         ))
     )
-    (property "Footprint" "TestPoint:TestPoint_Pad_D1.5mm"
+    (property "Footprint" "TestPoint:TestPoint_Pad_D2.0mm"
       (at 251.46 215.90 0)
       (effects (font (size 1.27 1.27)) hide)
     )
@@ -4970,7 +5141,7 @@
           (size 1.27 1.27)
         ))
     )
-    (property "Footprint" "TestPoint:TestPoint_Pad_D1.5mm"
+    (property "Footprint" "TestPoint:TestPoint_Pad_D2.0mm"
       (at 299.72 212.09 0)
       (effects (font (size 1.27 1.27)) hide)
     )
@@ -5265,5 +5436,90 @@
     (diameter 0)
     (color 0 0 0 0)
     (uuid "4befac5c-591b-42f5-a712-97ab4bbe8193")
+  )
+  (symbol
+    (lib_id "Device:D_Schottky")
+    (at 320.04 172.72 90)
+    (unit 1)
+    (exclude_from_sim no)
+    (in_bom yes)
+    (on_board yes)
+    (fields_autoplaced yes)
+    (uuid "74d645d2-ecee-44f4-a73b-cc7ac718cd3c")
+    (property "Reference" "D203"
+      (at 326.39 168.91 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        ))
+    )
+    (property "Value" "ESD5Z5.0T1G"
+      (at 327.66 172.72 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        ))
+    )
+    (property "Footprint" "Diode_SMD:D_SOD-523"
+      (at 320.04 172.72 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "https://www.onsemi.com/pdf/datasheet/esd5z2v5t1-d.pdf"
+      (at 320.04 172.72 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid "ad0cdea9-818b-4c83-b324-2d40e3019963"))
+    (pin "2" (uuid "2d3fb1c0-87ff-4783-a8a0-a7858aa93ab9"))
+  )
+  (wire
+    (pts (xy 320.04 167.64) (xy 320.04 168.91))
+    (stroke (width 0) (type default))
+    (uuid "63d80bb7-847b-49b4-8556-9380ad40cdd0")
+  )
+  (wire
+    (pts (xy 320.04 176.53) (xy 322.58 176.53))
+    (stroke (width 0) (type default))
+    (uuid "9d51bc3b-cfc4-4206-abf1-17728fde9a07")
+  )
+  (global_label "VBUS"
+    (shape bidirectional)
+    (at 322.58 176.53 180)
+    (fields_autoplaced yes)
+    (effects
+        (font
+          (size 1.27 1.27)
+        ))
+    (uuid "b44bf882-68ea-4147-9eca-ee9c1647ef77")
+    (property "Intersheetrefs" "${INTERSHEET_REFS}"
+      (at 322.58 176.53 180)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+  )
+  (symbol
+    (lib_id "power:GND")
+    (at 320.04 167.64 0)
+    (unit 1)
+    (exclude_from_sim no)
+    (in_bom yes)
+    (on_board yes)
+    (fields_autoplaced yes)
+    (uuid "1b53708f-6d0a-4835-af2a-300deeec90fb")
+    (property "Reference" "#PWR509"
+      (at 320.04 167.64 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Value" "GND"
+      (at 320.04 167.64 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Footprint" ""
+      (at 320.04 167.64 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" ""
+      (at 320.04 167.64 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid "217ad64a-8855-45bf-a5d9-6e7aa53a00fd"))
   )
 )

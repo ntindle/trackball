@@ -11,7 +11,340 @@
     (company "ultimate-mouse")
   )
   (lib_symbols
-
+	(symbol "Mechanical:MountingHole_Pad"
+		(pin_numbers
+			(hide yes)
+		)
+		(pin_names
+			(offset 1.016)
+			(hide yes)
+		)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "H"
+			(at 0 6.35 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "MountingHole_Pad"
+			(at 0 4.445 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Mounting Hole with connection"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_keywords" "mounting hole"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_fp_filters" "MountingHole*Pad*"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(symbol "MountingHole_Pad_0_1"
+			(circle
+				(center 0 1.27)
+				(radius 1.27)
+				(stroke
+					(width 1.27)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+		)
+		(symbol "MountingHole_Pad_1_1"
+			(pin input line
+				(at 0 -2.54 90)
+				(length 2.54)
+				(name "1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+		)
+		(embedded_fonts no)
+	)
+	(symbol "power:GND"
+		(power global)
+		(pin_numbers
+			(hide yes)
+		)
+		(pin_names
+			(offset 0)
+			(hide yes)
+		)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "#PWR"
+			(at 0 -6.35 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 0 -3.81 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_keywords" "global power"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(symbol "GND_0_1"
+			(polyline
+				(pts
+					(xy 0 0) (xy 0 -1.27) (xy 1.27 -1.27) (xy 0 -2.54) (xy -1.27 -1.27) (xy 0 -1.27)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+		)
+		(symbol "GND_1_1"
+			(pin power_in line
+				(at 0 0 270)
+				(length 0)
+				(name ""
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+		)
+		(embedded_fonts no)
+	)
+	(symbol "Mechanical:Fiducial"
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files yes)
+		(duplicate_pin_numbers_are_jumpers no)
+		(property "Reference" "FID"
+			(at 0 5.08 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Fiducial"
+			(at 0 3.175 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Fiducial Marker"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_keywords" "fiducial marker"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "ki_fp_filters" "Fiducial*"
+			(at 0 0 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(symbol "Fiducial_0_1"
+			(circle
+				(center 0 0)
+				(radius 1.27)
+				(stroke
+					(width 0.508)
+					(type default)
+				)
+				(fill
+					(type background)
+				)
+			)
+		)
+		(embedded_fonts no)
+	)
   )
   (text "trackball-base"
     (at 12.70 10.16 0)
@@ -203,5 +536,455 @@
         )
         (justify left top))
     (uuid "234dbff7-1e7b-4ce3-a477-e50963f1530b")
+  )
+  (symbol
+    (lib_id "Mechanical:MountingHole_Pad")
+    (at 30.48 200.66 0)
+    (unit 1)
+    (exclude_from_sim no)
+    (in_bom no)
+    (on_board yes)
+    (fields_autoplaced yes)
+    (uuid "b7a81626-26c9-4d9f-835c-2d4c12c769bb")
+    (property "Reference" "H1"
+      (at 30.48 194.66 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "M3"
+      (at 30.48 206.66 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "MountingHole:MountingHole_3.2mm_M3_Pad"
+      (at 30.48 200.66 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" ""
+      (at 30.48 200.66 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid "60237280-2e84-4149-9e58-a2598727e9ee"))
+  )
+  (symbol
+    (lib_id "power:GND")
+    (at 30.48 205.74 0)
+    (unit 1)
+    (exclude_from_sim no)
+    (in_bom no)
+    (on_board yes)
+    (fields_autoplaced yes)
+    (uuid "a53d95fe-af22-43ba-b2d2-6421d437179c")
+    (property "Reference" "#PWR501"
+      (at 30.48 205.74 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Value" "GND"
+      (at 30.48 205.74 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Footprint" ""
+      (at 30.48 205.74 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" ""
+      (at 30.48 205.74 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid "364c0367-999e-49dc-8d9c-db25141a0a31"))
+  )
+  (wire
+    (pts (xy 30.48 203.20) (xy 30.48 205.74))
+    (stroke (width 0) (type default))
+    (uuid "5e561a53-8d6a-43c9-bb38-cb59b59c82b3")
+  )
+  (symbol
+    (lib_id "Mechanical:MountingHole_Pad")
+    (at 55.88 200.66 0)
+    (unit 1)
+    (exclude_from_sim no)
+    (in_bom no)
+    (on_board yes)
+    (fields_autoplaced yes)
+    (uuid "c14cc205-fcdb-455f-be20-c0042f8d26a2")
+    (property "Reference" "H2"
+      (at 55.88 194.66 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "M3"
+      (at 55.88 206.66 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "MountingHole:MountingHole_3.2mm_M3_Pad"
+      (at 55.88 200.66 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" ""
+      (at 55.88 200.66 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid "469be61b-f82b-49eb-a7b6-ed55faf166ee"))
+  )
+  (symbol
+    (lib_id "power:GND")
+    (at 55.88 205.74 0)
+    (unit 1)
+    (exclude_from_sim no)
+    (in_bom no)
+    (on_board yes)
+    (fields_autoplaced yes)
+    (uuid "aa4131dd-2c91-40e6-a6eb-0f8bbe0cdc81")
+    (property "Reference" "#PWR502"
+      (at 55.88 205.74 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Value" "GND"
+      (at 55.88 205.74 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Footprint" ""
+      (at 55.88 205.74 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" ""
+      (at 55.88 205.74 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid "9242e692-4eb9-4d30-812f-2ff37af23d39"))
+  )
+  (wire
+    (pts (xy 55.88 203.20) (xy 55.88 205.74))
+    (stroke (width 0) (type default))
+    (uuid "6ee98009-dbe8-4302-8183-fb2c0c5d4b45")
+  )
+  (symbol
+    (lib_id "Mechanical:MountingHole_Pad")
+    (at 81.28 200.66 0)
+    (unit 1)
+    (exclude_from_sim no)
+    (in_bom no)
+    (on_board yes)
+    (fields_autoplaced yes)
+    (uuid "003df579-9019-489c-86a6-5efc025a09e5")
+    (property "Reference" "H3"
+      (at 81.28 194.66 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "M3"
+      (at 81.28 206.66 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "MountingHole:MountingHole_3.2mm_M3_Pad"
+      (at 81.28 200.66 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" ""
+      (at 81.28 200.66 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid "d6263044-cac1-45b3-bf0d-c7224d38f8d0"))
+  )
+  (symbol
+    (lib_id "power:GND")
+    (at 81.28 205.74 0)
+    (unit 1)
+    (exclude_from_sim no)
+    (in_bom no)
+    (on_board yes)
+    (fields_autoplaced yes)
+    (uuid "b0d224bf-3e45-44db-a7d7-de7d47781c68")
+    (property "Reference" "#PWR503"
+      (at 81.28 205.74 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Value" "GND"
+      (at 81.28 205.74 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Footprint" ""
+      (at 81.28 205.74 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" ""
+      (at 81.28 205.74 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid "f33eb60f-b404-4df4-8e69-836fb0d6a6aa"))
+  )
+  (wire
+    (pts (xy 81.28 203.20) (xy 81.28 205.74))
+    (stroke (width 0) (type default))
+    (uuid "14f92455-bec2-44a3-8513-6b275354cb94")
+  )
+  (symbol
+    (lib_id "Mechanical:MountingHole_Pad")
+    (at 106.68 200.66 0)
+    (unit 1)
+    (exclude_from_sim no)
+    (in_bom no)
+    (on_board yes)
+    (fields_autoplaced yes)
+    (uuid "6250253c-75be-454a-841b-79054b6dc058")
+    (property "Reference" "H4"
+      (at 106.68 194.66 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "M3"
+      (at 106.68 206.66 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "MountingHole:MountingHole_3.2mm_M3_Pad"
+      (at 106.68 200.66 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" ""
+      (at 106.68 200.66 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid "6348ccd7-4c1a-4aa0-ba95-518b80dc88fb"))
+  )
+  (symbol
+    (lib_id "power:GND")
+    (at 106.68 205.74 0)
+    (unit 1)
+    (exclude_from_sim no)
+    (in_bom no)
+    (on_board yes)
+    (fields_autoplaced yes)
+    (uuid "567c7763-7929-490b-964d-5618b32c8e14")
+    (property "Reference" "#PWR504"
+      (at 106.68 205.74 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Value" "GND"
+      (at 106.68 205.74 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Footprint" ""
+      (at 106.68 205.74 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" ""
+      (at 106.68 205.74 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid "eea2e604-ffe8-4151-9014-21298d3bcf7a"))
+  )
+  (wire
+    (pts (xy 106.68 203.20) (xy 106.68 205.74))
+    (stroke (width 0) (type default))
+    (uuid "12055962-75bc-4361-8ca9-3e8dd7902fbf")
+  )
+  (symbol
+    (lib_id "Mechanical:MountingHole_Pad")
+    (at 132.08 200.66 0)
+    (unit 1)
+    (exclude_from_sim no)
+    (in_bom no)
+    (on_board yes)
+    (fields_autoplaced yes)
+    (uuid "8424b797-e9fb-4201-b9d8-0d93ad18e5e7")
+    (property "Reference" "H5"
+      (at 132.08 194.66 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "M3"
+      (at 132.08 206.66 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "MountingHole:MountingHole_3.2mm_M3_Pad"
+      (at 132.08 200.66 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" ""
+      (at 132.08 200.66 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid "6fd5babe-6357-41c6-b91f-43f3983e2e08"))
+  )
+  (symbol
+    (lib_id "power:GND")
+    (at 132.08 205.74 0)
+    (unit 1)
+    (exclude_from_sim no)
+    (in_bom no)
+    (on_board yes)
+    (fields_autoplaced yes)
+    (uuid "717c3ac6-94ee-43b7-a836-d2f30ad07a8a")
+    (property "Reference" "#PWR505"
+      (at 132.08 205.74 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Value" "GND"
+      (at 132.08 205.74 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Footprint" ""
+      (at 132.08 205.74 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" ""
+      (at 132.08 205.74 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid "0929df0d-10f2-4bd6-8b66-93c0f4381291"))
+  )
+  (wire
+    (pts (xy 132.08 203.20) (xy 132.08 205.74))
+    (stroke (width 0) (type default))
+    (uuid "3dd6ce43-01b0-485d-b3af-87d9d9c39f0c")
+  )
+  (symbol
+    (lib_id "Mechanical:MountingHole_Pad")
+    (at 157.48 200.66 0)
+    (unit 1)
+    (exclude_from_sim no)
+    (in_bom no)
+    (on_board yes)
+    (fields_autoplaced yes)
+    (uuid "3e9ded57-6881-4279-a3df-5378f8dbc161")
+    (property "Reference" "H6"
+      (at 157.48 194.66 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "M3"
+      (at 157.48 206.66 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "MountingHole:MountingHole_3.2mm_M3_Pad"
+      (at 157.48 200.66 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" ""
+      (at 157.48 200.66 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid "f3d6f460-02a9-40bf-a28e-f60c2637a6e4"))
+  )
+  (symbol
+    (lib_id "power:GND")
+    (at 157.48 205.74 0)
+    (unit 1)
+    (exclude_from_sim no)
+    (in_bom no)
+    (on_board yes)
+    (fields_autoplaced yes)
+    (uuid "19b60799-7474-408e-ade3-3d002e70ad86")
+    (property "Reference" "#PWR506"
+      (at 157.48 205.74 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Value" "GND"
+      (at 157.48 205.74 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Footprint" ""
+      (at 157.48 205.74 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" ""
+      (at 157.48 205.74 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid "259326c1-36bb-44a6-8524-39a5ceb5c926"))
+  )
+  (wire
+    (pts (xy 157.48 203.20) (xy 157.48 205.74))
+    (stroke (width 0) (type default))
+    (uuid "1b1d1d94-20c7-497f-983c-9e6762da5355")
+  )
+  (symbol
+    (lib_id "Mechanical:Fiducial")
+    (at 182.88 200.66 0)
+    (unit 1)
+    (exclude_from_sim no)
+    (in_bom no)
+    (on_board yes)
+    (fields_autoplaced yes)
+    (uuid "f91bf013-b4cd-4b6d-b358-862610c9b111")
+    (property "Reference" "FID1"
+      (at 182.88 205.74 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        ))
+    )
+    (property "Value" "FIDUCIAL"
+      (at 182.88 207.64 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        ))
+    )
+    (property "Footprint" "Fiducial:Fiducial_1mm_Mask2mm"
+      (at 182.88 200.66 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" ""
+      (at 182.88 200.66 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+  )
+  (symbol
+    (lib_id "Mechanical:Fiducial")
+    (at 208.28 200.66 0)
+    (unit 1)
+    (exclude_from_sim no)
+    (in_bom no)
+    (on_board yes)
+    (fields_autoplaced yes)
+    (uuid "a580664a-9733-474d-a594-707462cb26aa")
+    (property "Reference" "FID2"
+      (at 208.28 205.74 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        ))
+    )
+    (property "Value" "FIDUCIAL"
+      (at 208.28 207.64 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        ))
+    )
+    (property "Footprint" "Fiducial:Fiducial_1mm_Mask2mm"
+      (at 208.28 200.66 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" ""
+      (at 208.28 200.66 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+  )
+  (symbol
+    (lib_id "Mechanical:Fiducial")
+    (at 233.68 200.66 0)
+    (unit 1)
+    (exclude_from_sim no)
+    (in_bom no)
+    (on_board yes)
+    (fields_autoplaced yes)
+    (uuid "e9d730d6-f9ed-4e63-86ba-7b3f697f5899")
+    (property "Reference" "FID3"
+      (at 233.68 205.74 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        ))
+    )
+    (property "Value" "FIDUCIAL"
+      (at 233.68 207.64 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        ))
+    )
+    (property "Footprint" "Fiducial:Fiducial_1mm_Mask2mm"
+      (at 233.68 200.66 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" ""
+      (at 233.68 200.66 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
   )
 )

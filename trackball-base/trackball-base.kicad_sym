@@ -246,7 +246,7 @@
       (at 0.00 0.00 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" ""
+    (property "Datasheet" "Omron D2F/D2FC series"
       (at 0.00 0.00 0)
       (effects (font (size 1.27 1.27)) hide)
     )
@@ -313,7 +313,7 @@
       (at 0.00 0.00 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" ""
+    (property "Datasheet" "https://www.cdebyte.com/products/E73-2G4M08S1C"
       (at 0.00 0.00 0)
       (effects (font (size 1.27 1.27)) hide)
     )
@@ -1072,7 +1072,7 @@
         (name "G"
           (effects (font (size 1.27 1.27)))
         )
-        (number "2"
+        (number "1"
           (effects (font (size 1.27 1.27)))
         )
       )
@@ -1092,7 +1092,7 @@
         (name "S"
           (effects (font (size 1.27 1.27)))
         )
-        (number "1"
+        (number "2"
           (effects (font (size 1.27 1.27)))
         )
       )
@@ -1115,7 +1115,7 @@
       (at 0.00 0.00 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" ""
+    (property "Datasheet" "PMW3360 datasheet v1.50"
       (at 0.00 0.00 0)
       (effects (font (size 1.27 1.27)) hide)
     )

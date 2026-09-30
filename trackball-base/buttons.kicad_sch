@@ -592,7 +592,7 @@
 	    (at 0.00 0.00 0)
 	    (effects (font (size 1.27 1.27)) hide)
 	  )
-	  (property "Datasheet" ""
+	  (property "Datasheet" "Omron D2F/D2FC series"
 	    (at 0.00 0.00 0)
 	    (effects (font (size 1.27 1.27)) hide)
 	  )
@@ -700,11 +700,16 @@
           (size 1.27 1.27)
         ))
     )
-    (property "Footprint" ""
+    (property "Description" "Omron D2FC-F-7N microswitch"
+    	(id 4)
+    	(at 0 0 0)
+    	(effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Footprint" "trackball:D2FC-F-7N"
       (at 127.00 127.00 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" ""
+    (property "Datasheet" "Omron D2F/D2FC series"
       (at 127.00 127.00 0)
       (effects (font (size 1.27 1.27)) hide)
     )
@@ -994,11 +999,16 @@
           (size 1.27 1.27)
         ))
     )
-    (property "Footprint" ""
+    (property "Description" "Omron D2FC-F-7N microswitch"
+    	(id 4)
+    	(at 0 0 0)
+    	(effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Footprint" "trackball:D2FC-F-7N"
       (at 127.00 165.10 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" ""
+    (property "Datasheet" "Omron D2F/D2FC series"
       (at 127.00 165.10 0)
       (effects (font (size 1.27 1.27)) hide)
     )
@@ -1288,11 +1298,16 @@
           (size 1.27 1.27)
         ))
     )
-    (property "Footprint" ""
+    (property "Description" "Omron D2FC-F-7N microswitch"
+    	(id 4)
+    	(at 0 0 0)
+    	(effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Footprint" "trackball:D2FC-F-7N"
       (at 127.00 203.20 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" ""
+    (property "Datasheet" "Omron D2F/D2FC series"
       (at 127.00 203.20 0)
       (effects (font (size 1.27 1.27)) hide)
     )

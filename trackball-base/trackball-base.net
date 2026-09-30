@@ -1,8 +1,8 @@
 (export
 	(version "E")
 	(design
-		(source "/home/ntindle/muse-jobs/trackball-base-schematic/work/trackball-base/trackball-base.kicad_sch")
-		(date "2026-09-30T04:53:08")
+		(source "/home/ntindle/muse-jobs/trackball-base-layout/work/trackball-base/trackball-base.kicad_sch")
+		(date "2026-09-30T14:56:37")
 		(tool "Eeschema 10.0.6-10.0.6~ubuntu24.04.1")
 		(sheet
 			(number "1")
@@ -294,6 +294,480 @@
 		)
 	)
 	(components
+		(comp
+			(ref "FID1")
+			(value "Fiducial")
+			(footprint "Fiducial:Fiducial_1mm_Mask2mm")
+			(fields
+				(field
+					(name "Footprint") "Fiducial:Fiducial_1mm_Mask2mm")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Mechanical")
+				(part "Fiducial")
+				(description "Fiducial Marker")
+			)
+			(property
+				(name "Sheetname")
+				(value "trackball-base")
+			)
+			(property
+				(name "Sheetfile")
+				(value "trackball-base.kicad_sch")
+			)
+			(property
+				(name "exclude_from_bom")
+			)
+			(property
+				(name "ki_keywords")
+				(value "fiducial marker")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "Fiducial*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "f91bf013-b4cd-4b6d-b358-862610c9b111" "453a12ac-42e8-48b1-808e-e037a9822ab9")
+			(units
+				(unit
+					(name "A")
+					(pins)
+				)
+			)
+		)
+		(comp
+			(ref "FID2")
+			(value "Fiducial")
+			(footprint "Fiducial:Fiducial_1mm_Mask2mm")
+			(fields
+				(field
+					(name "Footprint") "Fiducial:Fiducial_1mm_Mask2mm")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Mechanical")
+				(part "Fiducial")
+				(description "Fiducial Marker")
+			)
+			(property
+				(name "Sheetname")
+				(value "trackball-base")
+			)
+			(property
+				(name "Sheetfile")
+				(value "trackball-base.kicad_sch")
+			)
+			(property
+				(name "exclude_from_bom")
+			)
+			(property
+				(name "ki_keywords")
+				(value "fiducial marker")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "Fiducial*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "f8ad9d7a-6fbc-4ba4-87a9-21c05f7b6030" "a580664a-9733-474d-a594-707462cb26aa")
+			(units
+				(unit
+					(name "A")
+					(pins)
+				)
+			)
+		)
+		(comp
+			(ref "FID3")
+			(value "Fiducial")
+			(footprint "Fiducial:Fiducial_1mm_Mask2mm")
+			(fields
+				(field
+					(name "Footprint") "Fiducial:Fiducial_1mm_Mask2mm")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Mechanical")
+				(part "Fiducial")
+				(description "Fiducial Marker")
+			)
+			(property
+				(name "Sheetname")
+				(value "trackball-base")
+			)
+			(property
+				(name "Sheetfile")
+				(value "trackball-base.kicad_sch")
+			)
+			(property
+				(name "exclude_from_bom")
+			)
+			(property
+				(name "ki_keywords")
+				(value "fiducial marker")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "Fiducial*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "e9d730d6-f9ed-4e63-86ba-7b3f697f5899" "9b737420-62eb-4725-a40e-1d24122fe1c7")
+			(units
+				(unit
+					(name "A")
+					(pins)
+				)
+			)
+		)
+		(comp
+			(ref "H1")
+			(value "M3")
+			(footprint "MountingHole:MountingHole_3.2mm_M3_Pad")
+			(fields
+				(field
+					(name "Footprint") "MountingHole:MountingHole_3.2mm_M3_Pad")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Mechanical")
+				(part "MountingHole_Pad")
+				(description "Mounting Hole with connection")
+			)
+			(property
+				(name "Sheetname")
+				(value "trackball-base")
+			)
+			(property
+				(name "Sheetfile")
+				(value "trackball-base.kicad_sch")
+			)
+			(property
+				(name "exclude_from_bom")
+			)
+			(property
+				(name "ki_keywords")
+				(value "mounting hole")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "MountingHole*Pad*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "b7a81626-26c9-4d9f-835c-2d4c12c769bb")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "H2")
+			(value "M3")
+			(footprint "MountingHole:MountingHole_3.2mm_M3_Pad")
+			(fields
+				(field
+					(name "Footprint") "MountingHole:MountingHole_3.2mm_M3_Pad")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Mechanical")
+				(part "MountingHole_Pad")
+				(description "Mounting Hole with connection")
+			)
+			(property
+				(name "Sheetname")
+				(value "trackball-base")
+			)
+			(property
+				(name "Sheetfile")
+				(value "trackball-base.kicad_sch")
+			)
+			(property
+				(name "exclude_from_bom")
+			)
+			(property
+				(name "ki_keywords")
+				(value "mounting hole")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "MountingHole*Pad*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "c14cc205-fcdb-455f-be20-c0042f8d26a2")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "H3")
+			(value "M3")
+			(footprint "MountingHole:MountingHole_3.2mm_M3_Pad")
+			(fields
+				(field
+					(name "Footprint") "MountingHole:MountingHole_3.2mm_M3_Pad")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Mechanical")
+				(part "MountingHole_Pad")
+				(description "Mounting Hole with connection")
+			)
+			(property
+				(name "Sheetname")
+				(value "trackball-base")
+			)
+			(property
+				(name "Sheetfile")
+				(value "trackball-base.kicad_sch")
+			)
+			(property
+				(name "exclude_from_bom")
+			)
+			(property
+				(name "ki_keywords")
+				(value "mounting hole")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "MountingHole*Pad*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "003df579-9019-489c-86a6-5efc025a09e5")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "H4")
+			(value "M3")
+			(footprint "MountingHole:MountingHole_3.2mm_M3_Pad")
+			(fields
+				(field
+					(name "Footprint") "MountingHole:MountingHole_3.2mm_M3_Pad")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Mechanical")
+				(part "MountingHole_Pad")
+				(description "Mounting Hole with connection")
+			)
+			(property
+				(name "Sheetname")
+				(value "trackball-base")
+			)
+			(property
+				(name "Sheetfile")
+				(value "trackball-base.kicad_sch")
+			)
+			(property
+				(name "exclude_from_bom")
+			)
+			(property
+				(name "ki_keywords")
+				(value "mounting hole")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "MountingHole*Pad*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "6250253c-75be-454a-841b-79054b6dc058")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "H5")
+			(value "M3")
+			(footprint "MountingHole:MountingHole_3.2mm_M3_Pad")
+			(fields
+				(field
+					(name "Footprint") "MountingHole:MountingHole_3.2mm_M3_Pad")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Mechanical")
+				(part "MountingHole_Pad")
+				(description "Mounting Hole with connection")
+			)
+			(property
+				(name "Sheetname")
+				(value "trackball-base")
+			)
+			(property
+				(name "Sheetfile")
+				(value "trackball-base.kicad_sch")
+			)
+			(property
+				(name "exclude_from_bom")
+			)
+			(property
+				(name "ki_keywords")
+				(value "mounting hole")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "MountingHole*Pad*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "8424b797-e9fb-4201-b9d8-0d93ad18e5e7")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "H6")
+			(value "M3")
+			(footprint "MountingHole:MountingHole_3.2mm_M3_Pad")
+			(fields
+				(field
+					(name "Footprint") "MountingHole:MountingHole_3.2mm_M3_Pad")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Mechanical")
+				(part "MountingHole_Pad")
+				(description "Mounting Hole with connection")
+			)
+			(property
+				(name "Sheetname")
+				(value "trackball-base")
+			)
+			(property
+				(name "Sheetfile")
+				(value "trackball-base.kicad_sch")
+			)
+			(property
+				(name "exclude_from_bom")
+			)
+			(property
+				(name "ki_keywords")
+				(value "mounting hole")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "MountingHole*Pad*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "3e9ded57-6881-4279-a3df-5378f8dbc161")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+					)
+				)
+			)
+		)
 		(comp
 			(ref "C101")
 			(value "10uF/16V")
@@ -1357,13 +1831,13 @@
 					(name "A")
 					(pins
 						(pin
-							(num "2")
+							(num "1")
 						)
 						(pin
 							(num "3")
 						)
 						(pin
-							(num "1")
+							(num "2")
 						)
 					)
 				)
@@ -3087,6 +3561,60 @@
 			)
 		)
 		(comp
+			(ref "D203")
+			(value "ESD5Z5.0T1G")
+			(footprint "Diode_SMD:D_SOD-523")
+			(datasheet "https://www.onsemi.com/pdf/datasheet/esd5z2v5t1-d.pdf")
+			(fields
+				(field
+					(name "Footprint") "Diode_SMD:D_SOD-523")
+				(field
+					(name "Datasheet") "https://www.onsemi.com/pdf/datasheet/esd5z2v5t1-d.pdf")
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Device")
+				(part "D_Schottky")
+				(description "Schottky diode")
+			)
+			(property
+				(name "Sheetname")
+				(value "mcu")
+			)
+			(property
+				(name "Sheetfile")
+				(value "mcu.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "diode Schottky")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "TO-???* *_Diode_* *SingleDiode* D_*")
+			)
+			(sheetpath
+				(names "/mcu/")
+				(tstamps "/b0666b6f-9ce3-421e-86ce-7e47727e2dbb/")
+			)
+			(tstamps "74d645d2-ecee-44f4-a73b-cc7ac718cd3c")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
 			(ref "J201")
 			(value "TYPE-C-31-M-12")
 			(footprint "Connector_USB:USB_C_Receptacle_HRO_TYPE-C-31-M-12")
@@ -3838,10 +4366,10 @@
 		(comp
 			(ref "TP203")
 			(value "TP203")
-			(footprint "TestPoint:TestPoint_Pad_D1.5mm")
+			(footprint "TestPoint:TestPoint_Pad_D2.0mm")
 			(fields
 				(field
-					(name "Footprint") "TestPoint:TestPoint_Pad_D1.5mm")
+					(name "Footprint") "TestPoint:TestPoint_Pad_D2.0mm")
 				(field
 					(name "Datasheet")
 				)
@@ -3889,10 +4417,10 @@
 		(comp
 			(ref "TP204")
 			(value "TP204")
-			(footprint "TestPoint:TestPoint_Pad_D1.5mm")
+			(footprint "TestPoint:TestPoint_Pad_D2.0mm")
 			(fields
 				(field
-					(name "Footprint") "TestPoint:TestPoint_Pad_D1.5mm")
+					(name "Footprint") "TestPoint:TestPoint_Pad_D2.0mm")
 				(field
 					(name "Datasheet")
 				)
@@ -3940,10 +4468,10 @@
 		(comp
 			(ref "TP205")
 			(value "TP205")
-			(footprint "TestPoint:TestPoint_Pad_D1.5mm")
+			(footprint "TestPoint:TestPoint_Pad_D2.0mm")
 			(fields
 				(field
-					(name "Footprint") "TestPoint:TestPoint_Pad_D1.5mm")
+					(name "Footprint") "TestPoint:TestPoint_Pad_D2.0mm")
 				(field
 					(name "Datasheet")
 				)
@@ -3991,10 +4519,10 @@
 		(comp
 			(ref "TP206")
 			(value "TP206")
-			(footprint "TestPoint:TestPoint_Pad_D1.5mm")
+			(footprint "TestPoint:TestPoint_Pad_D2.0mm")
 			(fields
 				(field
-					(name "Footprint") "TestPoint:TestPoint_Pad_D1.5mm")
+					(name "Footprint") "TestPoint:TestPoint_Pad_D2.0mm")
 				(field
 					(name "Datasheet")
 				)
@@ -4042,10 +4570,10 @@
 		(comp
 			(ref "U201")
 			(value "E73-2G4M08S1C")
+			(footprint "trackball:E73-2G4M08S1C")
 			(fields
 				(field
-					(name "Footprint")
-				)
+					(name "Footprint") "trackball:E73-2G4M08S1C")
 				(field
 					(name "Datasheet")
 				)
@@ -4809,10 +5337,10 @@
 		(comp
 			(ref "SW401")
 			(value "D2FC-F-7N")
+			(footprint "trackball:D2FC-F-7N")
 			(fields
 				(field
-					(name "Footprint")
-				)
+					(name "Footprint") "trackball:D2FC-F-7N")
 				(field
 					(name "Datasheet")
 				)
@@ -4855,10 +5383,10 @@
 		(comp
 			(ref "SW402")
 			(value "D2FC-F-7N")
+			(footprint "trackball:D2FC-F-7N")
 			(fields
 				(field
-					(name "Footprint")
-				)
+					(name "Footprint") "trackball:D2FC-F-7N")
 				(field
 					(name "Datasheet")
 				)
@@ -4901,10 +5429,10 @@
 		(comp
 			(ref "SW403")
 			(value "D2FC-F-7N")
+			(footprint "trackball:D2FC-F-7N")
 			(fields
 				(field
-					(name "Footprint")
-				)
+					(name "Footprint") "trackball:D2FC-F-7N")
 				(field
 					(name "Datasheet")
 				)
@@ -6435,10 +6963,10 @@
 		(comp
 			(ref "U301")
 			(value "PMW3360DM-T2QU")
+			(footprint "trackball:PMW3360DM-T2QU")
 			(fields
 				(field
-					(name "Footprint")
-				)
+					(name "Footprint") "trackball:PMW3360DM-T2QU")
 				(field
 					(name "Datasheet")
 				)
@@ -6508,10 +7036,10 @@
 		(comp
 			(ref "U302")
 			(value "PMW3360DM-T2QU")
+			(footprint "trackball:PMW3360DM-T2QU")
 			(fields
 				(field
-					(name "Footprint")
-				)
+					(name "Footprint") "trackball:PMW3360DM-T2QU")
 				(field
 					(name "Datasheet")
 				)
@@ -7283,10 +7811,10 @@
 		(comp
 			(ref "L501")
 			(value "24uH")
+			(footprint "trackball:TX_COIL_IF_2P508")
 			(fields
 				(field
-					(name "Footprint")
-				)
+					(name "Footprint") "trackball:TX_COIL_IF_2P508")
 				(field
 					(name "Datasheet")
 				)
@@ -8689,6 +9217,57 @@
 			)
 		)
 		(libpart
+			(lib "Mechanical")
+			(part "Fiducial")
+			(description "Fiducial Marker")
+			(footprints
+				(fp "Fiducial*")
+			)
+			(fields
+				(field
+					(name "Reference") "FID")
+				(field
+					(name "Value") "Fiducial")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Fiducial Marker")
+			)
+		)
+		(libpart
+			(lib "Mechanical")
+			(part "MountingHole_Pad")
+			(description "Mounting Hole with connection")
+			(footprints
+				(fp "MountingHole*Pad*")
+			)
+			(fields
+				(field
+					(name "Reference") "H")
+				(field
+					(name "Value") "MountingHole_Pad")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Mounting Hole with connection")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "1")
+					(type "input")
+				)
+			)
+		)
+		(libpart
 			(lib "Switch")
 			(part "SW_Push")
 			(description "Push button switch, generic, two pins")
@@ -8800,6 +9379,7 @@
 			(lib "trackball")
 			(part "D2FC")
 			(description "Omron D2FC-F-7N(20M) microswitch")
+			(docs "Omron D2F/D2FC series")
 			(fields
 				(field
 					(name "Reference") "SW")
@@ -8809,8 +9389,7 @@
 					(name "Footprint")
 				)
 				(field
-					(name "Datasheet")
-				)
+					(name "Datasheet") "Omron D2F/D2FC series")
 				(field
 					(name "Description") "Omron D2FC-F-7N(20M) microswitch")
 			)
@@ -8831,6 +9410,7 @@
 			(lib "trackball")
 			(part "E73")
 			(description "EBYTE E73-2G4M08S1C nRF52840 module")
+			(docs "https://www.cdebyte.com/products/E73-2G4M08S1C")
 			(fields
 				(field
 					(name "Reference") "U")
@@ -8840,8 +9420,7 @@
 					(name "Footprint")
 				)
 				(field
-					(name "Datasheet")
-				)
+					(name "Datasheet") "https://www.cdebyte.com/products/E73-2G4M08S1C")
 				(field
 					(name "Description") "EBYTE E73-2G4M08S1C nRF52840 module")
 			)
@@ -9210,13 +9789,13 @@
 			(pins
 				(pin
 					(num "1")
-					(name "S")
-					(type "passive")
+					(name "G")
+					(type "input")
 				)
 				(pin
 					(num "2")
-					(name "G")
-					(type "input")
+					(name "S")
+					(type "passive")
 				)
 				(pin
 					(num "3")
@@ -9229,6 +9808,7 @@
 			(lib "trackball")
 			(part "PMW3360")
 			(description "PixArt PMW3360DM-T2QU optical sensor (NC pads omitted)")
+			(docs "PMW3360 datasheet v1.50")
 			(fields
 				(field
 					(name "Reference") "U")
@@ -9238,8 +9818,7 @@
 					(name "Footprint")
 				)
 				(field
-					(name "Datasheet")
-				)
+					(name "Datasheet") "PMW3360 datasheet v1.50")
 				(field
 					(name "Description") "PixArt PMW3360DM-T2QU optical sensor (NC pads omitted)")
 			)
@@ -9609,6 +10188,10 @@
 		(library
 			(logical "Device")
 			(uri "/usr/share/kicad/symbols/Device.kicad_sym")
+		)
+		(library
+			(logical "Mechanical")
+			(uri "/usr/share/kicad/symbols/Mechanical.kicad_sym")
 		)
 		(library
 			(logical "Switch")
@@ -10314,6 +10897,48 @@
 				(pintype "passive")
 			)
 			(node
+				(ref "D203")
+				(pin "2")
+				(pinfunction "A_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "H1")
+				(pin "1")
+				(pinfunction "1_1")
+				(pintype "input")
+			)
+			(node
+				(ref "H2")
+				(pin "1")
+				(pinfunction "1_1")
+				(pintype "input")
+			)
+			(node
+				(ref "H3")
+				(pin "1")
+				(pinfunction "1_1")
+				(pintype "input")
+			)
+			(node
+				(ref "H4")
+				(pin "1")
+				(pinfunction "1_1")
+				(pintype "input")
+			)
+			(node
+				(ref "H5")
+				(pin "1")
+				(pinfunction "1_1")
+				(pintype "input")
+			)
+			(node
+				(ref "H6")
+				(pin "1")
+				(pinfunction "1_1")
+				(pintype "input")
+			)
+			(node
 				(ref "J201")
 				(pin "A1")
 				(pinfunction "GND_A1")
@@ -10357,8 +10982,8 @@
 			)
 			(node
 				(ref "Q101")
-				(pin "1")
-				(pinfunction "S_1")
+				(pin "2")
+				(pinfunction "S_2")
 				(pintype "passive")
 			)
 			(node
@@ -10748,8 +11373,8 @@
 			(class "Default")
 			(node
 				(ref "Q101")
-				(pin "2")
-				(pinfunction "G_2")
+				(pin "1")
+				(pinfunction "G_1")
 				(pintype "input")
 			)
 			(node
@@ -11766,6 +12391,12 @@
 			(node
 				(ref "C205")
 				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "D203")
+				(pin "1")
+				(pinfunction "K_1")
 				(pintype "passive")
 			)
 			(node

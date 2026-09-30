@@ -1,0 +1,35 @@
+#VRML V2.0 utf8
+# crude massing model generated for trackball-base
+Transform {
+	translation -0.57 0 1.2
+	children [
+		Shape {
+			appearance Appearance {
+				material Material { diffuseColor 0.12 0.12 0.14 }
+			}
+			geometry Box { size 16.2 10.1 2.4 }
+		}
+	]
+}
+Transform {
+	translation 0 0 5.75
+	children [
+		Shape {
+			appearance Appearance {
+				material Material { diffuseColor 0.2 0.2 0.22 }
+			}
+			geometry Cylinder { radius 5 height 6.7 }
+		}
+	]
+}
+Transform {
+	translation -0.295 0 8.9
+	children [
+		Shape {
+			appearance Appearance {
+				material Material { diffuseColor 0.25 0.25 0.28 }
+			}
+			geometry Box { size 21.15 18.85 1.0 }
+		}
+	]
+}

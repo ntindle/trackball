@@ -1,0 +1,136 @@
+(footprint "TX_COIL_IF_2P508"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(descr "Inductor, small symbol")
+	(tags "coil tx wireless charging terminal")
+	(property "Reference" "REF**"
+		(at 0 -6.5 0)
+		(layer "F.SilkS")
+		(uuid "0288f17a-aa1d-4c80-a252-039ff3dd0643")
+		(effects
+			(font
+				(size 1.0 1.0)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "TX_COIL_IF_2P508"
+		(at 0 6.5 0)
+		(layer "F.Fab")
+		(uuid "57857569-cb1e-4185-b3d6-4376e795b75e")
+		(effects
+			(font
+				(size 1.0 1.0)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(uuid "ff53895b-c7f7-4b14-a400-09dba5f6a2bf")
+		(hide yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" "TX coil 2-pin interface"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(uuid "1ddba79a-02ea-411a-9fdd-f746a5661f72")
+		(hide yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(fp_rect
+		(start -3.5 -3.0)
+		(end 3.5 3.0)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.CrtYd")
+		(uuid "3f448fc3-2017-45a9-8125-6a298ff2815e")
+	)
+	(fp_rect
+		(start -3.5 -3.0)
+		(end 3.5 3.0)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(fill no)
+		(layer "B.CrtYd")
+		(uuid "258d17d1-f7ef-4641-aa1c-ac0f8b91dd67")
+	)
+	(fp_circle
+		(center -2.54 -2.6)
+		(end -2.04 -2.6)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.SilkS")
+		(uuid "876609ff-be38-46d2-8bcb-2961afd1c4ab")
+	)
+	(fp_text user "COIL_A"
+		(at -2.54 3.2 0)
+		(layer "F.SilkS")
+		(uuid "d3bd590c-64fd-4e99-9e7c-8b6999d2bf97")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.15)
+			)
+		)
+	)
+	(fp_text user "COIL_B"
+		(at 2.54 3.2 0)
+		(layer "F.SilkS")
+		(uuid "a266e569-5aaa-46e3-b9d0-ca3ab81b3afc")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.15)
+			)
+		)
+	)
+	(fp_text user "COIL"
+		(at 0 -3.4 0)
+		(layer "F.Fab")
+		(uuid "be6180be-4153-42dc-9da0-be8307ba8c4e")
+		(effects
+			(font
+				(size 1.0 1.0)
+				(thickness 0.15)
+			)
+		)
+	)
+	(pad "1" thru_hole rect
+		(at -2.54 0)
+		(size 3.0 3.0)
+		(drill 1.6)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "fb9fb87f-3360-4827-a4ef-b1e40a5fc371")
+	)
+	(pad "2" thru_hole circle
+		(at 2.54 0)
+		(size 3.0 3.0)
+		(drill 1.6)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "fe9673b7-feef-4cd7-80bc-fa78cb18b58c")
+	)
+)

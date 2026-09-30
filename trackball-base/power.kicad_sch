@@ -1171,7 +1171,7 @@
 	      (name "G"
 	        (effects (font (size 1.27 1.27)))
 	      )
-	      (number "2"
+	      (number "1"
 	        (effects (font (size 1.27 1.27)))
 	      )
 	    )
@@ -1191,7 +1191,7 @@
 	      (name "S"
 	        (effects (font (size 1.27 1.27)))
 	      )
-	      (number "1"
+	      (number "2"
 	        (effects (font (size 1.27 1.27)))
 	      )
 	    )
@@ -5104,9 +5104,9 @@
       (at 342.90 176.53 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "2" (uuid "fb7183da-ba76-4254-a8b6-3d1dd8236978"))
+    (pin "1" (uuid "fb7183da-ba76-4254-a8b6-3d1dd8236978"))
     (pin "3" (uuid "6cbcfa5c-6e02-4bd4-8e43-733070c146b2"))
-    (pin "1" (uuid "11fadc37-32cc-4240-bac2-efe36fdb7cf4"))
+    (pin "2" (uuid "11fadc37-32cc-4240-bac2-efe36fdb7cf4"))
   )
   (wire
     (pts (xy 316.23 176.53) (xy 326.39 176.53))
