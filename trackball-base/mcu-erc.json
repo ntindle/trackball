@@ -1,0 +1,383 @@
+{
+    "$schema": "https://schemas.kicad.org/erc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-09-30T02:47:31",
+    "ignored_checks": [
+        {
+            "description": "Global label only appears once in the schematic",
+            "key": "single_global_label"
+        },
+        {
+            "description": "Four connection points are joined together",
+            "key": "four_way_junction"
+        },
+        {
+            "description": "SPICE model issue",
+            "key": "simulation_model_issue"
+        },
+        {
+            "description": "Assigned footprint doesn't match footprint filters",
+            "key": "footprint_filter"
+        }
+    ],
+    "included_severities": [
+        "error",
+        "warning",
+        "exclusion"
+    ],
+    "kicad_version": "10.0.6",
+    "sheets": [
+        {
+            "path": "/",
+            "uuid_path": "/a70c0f45-74c9-442b-8cb0-57c5c23d26f9",
+            "violations": [
+                {
+                    "description": "Label connected to only one pin",
+                    "items": [
+                        {
+                            "description": "Global Label 'VBUS_SENSE'",
+                            "pos": {
+                                "x": 1.6002,
+                                "y": 1.6891
+                            },
+                            "uuid": "1077ba18-9c55-4cf1-abf3-bb77974f90d8"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "isolated_pin_label"
+                },
+                {
+                    "description": "Label connected to only one pin",
+                    "items": [
+                        {
+                            "description": "Global Label 'BTN3'",
+                            "pos": {
+                                "x": 1.6002,
+                                "y": 1.7653
+                            },
+                            "uuid": "4d9c173e-249a-4069-9bab-bd2316a41645"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "isolated_pin_label"
+                },
+                {
+                    "description": "Label connected to only one pin",
+                    "items": [
+                        {
+                            "description": "Global Label 'VSEN_1V9'",
+                            "pos": {
+                                "x": 1.6002,
+                                "y": 1.7907
+                            },
+                            "uuid": "2b22fee1-2d32-425b-ad24-e7d5239340b4"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "isolated_pin_label"
+                },
+                {
+                    "description": "Label connected to only one pin",
+                    "items": [
+                        {
+                            "description": "Global Label 'BTN2'",
+                            "pos": {
+                                "x": 1.6002,
+                                "y": 1.8669
+                            },
+                            "uuid": "b4249cb8-de89-4ba3-8a26-ad5d4b66c90c"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "isolated_pin_label"
+                },
+                {
+                    "description": "Label connected to only one pin",
+                    "items": [
+                        {
+                            "description": "Global Label 'TX_IMON'",
+                            "pos": {
+                                "x": 1.6002,
+                                "y": 1.9939
+                            },
+                            "uuid": "f578a23e-9371-42c9-b39c-52f26c075d5f"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "isolated_pin_label"
+                },
+                {
+                    "description": "Label connected to only one pin",
+                    "items": [
+                        {
+                            "description": "Global Label 'S2_MISO'",
+                            "pos": {
+                                "x": 1.6002,
+                                "y": 2.0447
+                            },
+                            "uuid": "9b976bc7-6db2-4b1c-9574-20dd35405426"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "isolated_pin_label"
+                },
+                {
+                    "description": "Label connected to only one pin",
+                    "items": [
+                        {
+                            "description": "Global Label 'S2_NCS'",
+                            "pos": {
+                                "x": 1.6002,
+                                "y": 2.0701
+                            },
+                            "uuid": "12edb00e-ebba-47fe-80fd-f2dcfda45c88"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "isolated_pin_label"
+                },
+                {
+                    "description": "Label connected to only one pin",
+                    "items": [
+                        {
+                            "description": "Global Label 'S2_SCK'",
+                            "pos": {
+                                "x": 1.6002,
+                                "y": 2.1209
+                            },
+                            "uuid": "b11686f0-748a-4f4e-aec0-b524751bfe5c"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "isolated_pin_label"
+                },
+                {
+                    "description": "Label connected to only one pin",
+                    "items": [
+                        {
+                            "description": "Global Label 'S2_MOSI'",
+                            "pos": {
+                                "x": 1.6002,
+                                "y": 2.1717
+                            },
+                            "uuid": "d026a419-8412-4e04-a194-f48911b01d28"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "isolated_pin_label"
+                },
+                {
+                    "description": "Label connected to only one pin",
+                    "items": [
+                        {
+                            "description": "Global Label 'BTN1'",
+                            "pos": {
+                                "x": 1.6256,
+                                "y": 1.8415
+                            },
+                            "uuid": "526a6e7b-1de3-4e0a-8ad3-de40e69bdfcb"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "isolated_pin_label"
+                },
+                {
+                    "description": "The current configuration does not include the symbol library 'trackball'",
+                    "items": [
+                        {
+                            "description": "Symbol U201 [E73]",
+                            "pos": {
+                                "x": 1.905,
+                                "y": 1.905
+                            },
+                            "uuid": "ee269515-a5e2-4735-831a-3192f8e16a2c"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "Label connected to only one pin",
+                    "items": [
+                        {
+                            "description": "Global Label 'MCU_TX_EN'",
+                            "pos": {
+                                "x": 2.2352,
+                                "y": 1.778
+                            },
+                            "uuid": "45a57d29-4f65-4134-af3d-9adda3964e55"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "isolated_pin_label"
+                },
+                {
+                    "description": "Label connected to only one pin",
+                    "items": [
+                        {
+                            "description": "Global Label 'TX_EN'",
+                            "pos": {
+                                "x": 2.2352,
+                                "y": 1.8288
+                            },
+                            "uuid": "980d5fd3-58f2-4a7d-973b-96c2ade99abe"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "isolated_pin_label"
+                },
+                {
+                    "description": "Label connected to only one pin",
+                    "items": [
+                        {
+                            "description": "Global Label 'S1_NCS'",
+                            "pos": {
+                                "x": 2.2352,
+                                "y": 1.8796
+                            },
+                            "uuid": "6cdd04e6-91b8-4a67-8a9d-e2d45510da15"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "isolated_pin_label"
+                },
+                {
+                    "description": "Label connected to only one pin",
+                    "items": [
+                        {
+                            "description": "Global Label 'S1_SCK'",
+                            "pos": {
+                                "x": 2.3114,
+                                "y": 1.905
+                            },
+                            "uuid": "45acc0d1-d550-43cd-8c91-b2656add2342"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "isolated_pin_label"
+                },
+                {
+                    "description": "Label connected to only one pin",
+                    "items": [
+                        {
+                            "description": "Global Label 'S1_MOSI'",
+                            "pos": {
+                                "x": 2.3114,
+                                "y": 1.9304
+                            },
+                            "uuid": "fe050228-9109-453f-a184-0dc39e35dcd6"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "isolated_pin_label"
+                },
+                {
+                    "description": "Label connected to only one pin",
+                    "items": [
+                        {
+                            "description": "Global Label 'S1_MISO'",
+                            "pos": {
+                                "x": 2.3114,
+                                "y": 1.9558
+                            },
+                            "uuid": "5000bb51-d76c-4be1-96a0-73e93df2e269"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "isolated_pin_label"
+                },
+                {
+                    "description": "Label connected to only one pin",
+                    "items": [
+                        {
+                            "description": "Global Label 'S1_MOT'",
+                            "pos": {
+                                "x": 2.3114,
+                                "y": 1.9812
+                            },
+                            "uuid": "240aa39b-8745-4cea-aa78-036097957fe8"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "isolated_pin_label"
+                },
+                {
+                    "description": "Label connected to only one pin",
+                    "items": [
+                        {
+                            "description": "Global Label 'S2_MOT'",
+                            "pos": {
+                                "x": 2.3114,
+                                "y": 2.032
+                            },
+                            "uuid": "05cddaa3-ba6d-4f69-a0cb-355768a5145e"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "isolated_pin_label"
+                },
+                {
+                    "description": "Label connected to only one pin",
+                    "items": [
+                        {
+                            "description": "Global Label 'TX_STAT'",
+                            "pos": {
+                                "x": 2.3114,
+                                "y": 2.0828
+                            },
+                            "uuid": "e0527683-71a0-4fbc-82c3-0840cce2c879"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "isolated_pin_label"
+                },
+                {
+                    "description": "Label connected to only one pin",
+                    "items": [
+                        {
+                            "description": "Global Label 'SENSOR_EN'",
+                            "pos": {
+                                "x": 2.3114,
+                                "y": 2.1336
+                            },
+                            "uuid": "50f8c55a-891a-4b01-83c5-4ee7b8acaff5"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "isolated_pin_label"
+                },
+                {
+                    "description": "The current configuration does not include the symbol library 'trackball'",
+                    "items": [
+                        {
+                            "description": "Symbol U202 [TPD2E1B06]",
+                            "pos": {
+                                "x": 2.54,
+                                "y": 1.8288
+                            },
+                            "uuid": "2faf1778-11bf-450a-a0b4-2684104e3a5d"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "The current configuration does not include the symbol library 'trackball'",
+                    "items": [
+                        {
+                            "description": "Symbol J201 [USB_C_HRO]",
+                            "pos": {
+                                "x": 3.175,
+                                "y": 1.27
+                            },
+                            "uuid": "160bb06d-3118-4f61-a059-b0d665256c3f"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                }
+            ]
+        }
+    ],
+    "source": "mcu.kicad_sch"
+}

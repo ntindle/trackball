@@ -1361,7 +1361,7 @@
       (at 0.00 0.00 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Description" "TI TPD2E1B06DRLR 2ch ESD (NC omitted)"
+    (property "Description" "TI TPD2E1B06DRLR 2ch ESD"
       (at 0.00 0.00 0)
       (effects (font (size 1.27 1.27)) hide)
     )
@@ -1411,6 +1411,26 @@
           (effects (font (size 1.27 1.27)))
         )
         (number "4"
+          (effects (font (size 1.27 1.27)))
+        )
+      )
+      (pin passive line
+        (at -1.27 -6.35 90)
+        (length 2.54)
+        (name "NC"
+          (effects (font (size 1.27 1.27)))
+        )
+        (number "3"
+          (effects (font (size 1.27 1.27)))
+        )
+      )
+      (pin passive line
+        (at 1.27 -6.35 90)
+        (length 2.54)
+        (name "NC"
+          (effects (font (size 1.27 1.27)))
+        )
+        (number "6"
           (effects (font (size 1.27 1.27)))
         )
       )
