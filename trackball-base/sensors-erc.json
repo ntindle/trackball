@@ -1,0 +1,263 @@
+{
+    "$schema": "https://schemas.kicad.org/erc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-09-30T03:09:56",
+    "ignored_checks": [
+        {
+            "description": "Global label only appears once in the schematic",
+            "key": "single_global_label"
+        },
+        {
+            "description": "Four connection points are joined together",
+            "key": "four_way_junction"
+        },
+        {
+            "description": "SPICE model issue",
+            "key": "simulation_model_issue"
+        },
+        {
+            "description": "Assigned footprint doesn't match footprint filters",
+            "key": "footprint_filter"
+        }
+    ],
+    "included_severities": [
+        "error",
+        "warning",
+        "exclusion"
+    ],
+    "kicad_version": "10.0.6",
+    "sheets": [
+        {
+            "path": "/",
+            "uuid_path": "/b880c2df-c392-4d5e-b0a2-9e2846b060a6",
+            "violations": [
+                {
+                    "description": "Input pin not driven by any Output pins",
+                    "items": [
+                        {
+                            "description": "Symbol U301 Pin 7 [NRESET, Input, Line]",
+                            "pos": {
+                                "x": 1.1684,
+                                "y": 1.5494
+                            },
+                            "uuid": "7fade7c0-57b7-4d81-8210-3b186c1c7086"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_driven"
+                },
+                {
+                    "description": "Input pin not driven by any Output pins",
+                    "items": [
+                        {
+                            "description": "Symbol U301 Pin 10 [SCLK, Input, Line]",
+                            "pos": {
+                                "x": 1.397,
+                                "y": 1.4859
+                            },
+                            "uuid": "32dc1aa2-4b34-4df9-9bf1-e07fa81e2c87"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_driven"
+                },
+                {
+                    "description": "Input pin not driven by any Output pins",
+                    "items": [
+                        {
+                            "description": "Symbol U301 Pin 11 [MOSI, Input, Line]",
+                            "pos": {
+                                "x": 1.397,
+                                "y": 1.5113
+                            },
+                            "uuid": "eb3612d2-9653-4be7-bcb9-6c89beed6ef8"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_driven"
+                },
+                {
+                    "description": "Input pin not driven by any Output pins",
+                    "items": [
+                        {
+                            "description": "Symbol U302 Pin 10 [SCLK, Input, Line]",
+                            "pos": {
+                                "x": 2.921,
+                                "y": 1.4859
+                            },
+                            "uuid": "e8d23344-da81-485e-afc3-9a691572fa8a"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_driven"
+                },
+                {
+                    "description": "Input pin not driven by any Output pins",
+                    "items": [
+                        {
+                            "description": "Symbol U302 Pin 11 [MOSI, Input, Line]",
+                            "pos": {
+                                "x": 2.921,
+                                "y": 1.5113
+                            },
+                            "uuid": "3213b19e-2b6b-404b-870a-d36997a8f93f"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_driven"
+                },
+                {
+                    "description": "The current configuration does not include the symbol library 'trackball'",
+                    "items": [
+                        {
+                            "description": "Symbol U301 [PMW3360]",
+                            "pos": {
+                                "x": 1.2827,
+                                "y": 1.524
+                            },
+                            "uuid": "7e6adfb1-bff4-4ef2-8a47-55bd49dbca30"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "Label connected to only one pin",
+                    "items": [
+                        {
+                            "description": "Global Label 'S1_MOT'",
+                            "pos": {
+                                "x": 1.5494,
+                                "y": 1.4605
+                            },
+                            "uuid": "bb7b9e7e-224c-4fae-8507-b2435f63dcce"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "isolated_pin_label"
+                },
+                {
+                    "description": "Label connected to only one pin",
+                    "items": [
+                        {
+                            "description": "Global Label 'S1_SCK'",
+                            "pos": {
+                                "x": 1.5494,
+                                "y": 1.4859
+                            },
+                            "uuid": "74bd2b62-f3c5-490b-b52f-45ed16d8dd17"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "isolated_pin_label"
+                },
+                {
+                    "description": "Label connected to only one pin",
+                    "items": [
+                        {
+                            "description": "Global Label 'S1_MOSI'",
+                            "pos": {
+                                "x": 1.5494,
+                                "y": 1.5113
+                            },
+                            "uuid": "e4be5e4b-60f4-440a-888d-74a40c621835"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "isolated_pin_label"
+                },
+                {
+                    "description": "Label connected to only one pin",
+                    "items": [
+                        {
+                            "description": "Global Label 'S1_MISO'",
+                            "pos": {
+                                "x": 1.5494,
+                                "y": 1.5367
+                            },
+                            "uuid": "008821cd-38df-4dbc-9f23-d939deb38b97"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "isolated_pin_label"
+                },
+                {
+                    "description": "The current configuration does not include the symbol library 'trackball'",
+                    "items": [
+                        {
+                            "description": "Symbol U302 [PMW3360]",
+                            "pos": {
+                                "x": 2.8067,
+                                "y": 1.524
+                            },
+                            "uuid": "984f76cd-406b-451f-89f9-908ceb8ba7f2"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_issues"
+                },
+                {
+                    "description": "Label connected to only one pin",
+                    "items": [
+                        {
+                            "description": "Global Label 'S2_MOT'",
+                            "pos": {
+                                "x": 3.0734,
+                                "y": 1.4605
+                            },
+                            "uuid": "0e4cfd40-ad48-4527-bf35-178d2830b7f7"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "isolated_pin_label"
+                },
+                {
+                    "description": "Label connected to only one pin",
+                    "items": [
+                        {
+                            "description": "Global Label 'S2_SCK'",
+                            "pos": {
+                                "x": 3.0734,
+                                "y": 1.4859
+                            },
+                            "uuid": "f4a661a7-9b5f-4f52-a945-13a0c075677c"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "isolated_pin_label"
+                },
+                {
+                    "description": "Label connected to only one pin",
+                    "items": [
+                        {
+                            "description": "Global Label 'S2_MOSI'",
+                            "pos": {
+                                "x": 3.0734,
+                                "y": 1.5113
+                            },
+                            "uuid": "e41dd6bc-fcad-4a7c-bae7-9350c39d5172"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "isolated_pin_label"
+                },
+                {
+                    "description": "Label connected to only one pin",
+                    "items": [
+                        {
+                            "description": "Global Label 'S2_MISO'",
+                            "pos": {
+                                "x": 3.0734,
+                                "y": 1.5367
+                            },
+                            "uuid": "39bfef0b-09b1-4862-a550-f2d52814d484"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "isolated_pin_label"
+                }
+            ]
+        }
+    ],
+    "source": "sensors.kicad_sch"
+}

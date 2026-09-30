@@ -1,0 +1,1734 @@
+(export
+	(version "E")
+	(design
+		(source "/home/ntindle/muse-jobs/trackball-base-schematic/work/trackball-base/sensors.kicad_sch")
+		(date "2026-09-30T03:02:01")
+		(tool "Eeschema 10.0.6-10.0.6~ubuntu24.04.1")
+		(sheet
+			(number "1")
+			(name "/")
+			(tstamps "/")
+			(title_block
+				(title "trackball-base/sensors")
+				(company "ultimate-mouse")
+				(rev "0.1")
+				(date "2026-09-21")
+				(source "sensors.kicad_sch")
+				(comment
+					(number "1")
+					(value "")
+				)
+				(comment
+					(number "2")
+					(value "")
+				)
+				(comment
+					(number "3")
+					(value "")
+				)
+				(comment
+					(number "4")
+					(value "")
+				)
+				(comment
+					(number "5")
+					(value "")
+				)
+				(comment
+					(number "6")
+					(value "")
+				)
+				(comment
+					(number "7")
+					(value "")
+				)
+				(comment
+					(number "8")
+					(value "")
+				)
+				(comment
+					(number "9")
+					(value "")
+				)
+			)
+		)
+	)
+	(components
+		(comp
+			(ref "C301")
+			(value "1uF")
+			(footprint "Capacitor_SMD:C_0603_1608Metric")
+			(fields
+				(field
+					(name "Footprint") "Capacitor_SMD:C_0603_1608Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Device")
+				(part "C_Small")
+				(description "Unpolarized capacitor, small symbol")
+			)
+			(property
+				(name "Sheetname")
+				(value "Root")
+			)
+			(property
+				(name "Sheetfile")
+				(value "sensors.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "capacitor cap")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "C_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "dfeb8da8-77e4-484f-99a1-d52e7e5d1c85")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "C302")
+			(value "100nF")
+			(footprint "Capacitor_SMD:C_0603_1608Metric")
+			(fields
+				(field
+					(name "Footprint") "Capacitor_SMD:C_0603_1608Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Device")
+				(part "C_Small")
+				(description "Unpolarized capacitor, small symbol")
+			)
+			(property
+				(name "Sheetname")
+				(value "Root")
+			)
+			(property
+				(name "Sheetfile")
+				(value "sensors.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "capacitor cap")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "C_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "4212931a-a9fd-4496-a032-8e978905cab2")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "C303")
+			(value "4.7uF")
+			(footprint "Capacitor_SMD:C_0603_1608Metric")
+			(fields
+				(field
+					(name "Footprint") "Capacitor_SMD:C_0603_1608Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Device")
+				(part "C_Small")
+				(description "Unpolarized capacitor, small symbol")
+			)
+			(property
+				(name "Sheetname")
+				(value "Root")
+			)
+			(property
+				(name "Sheetfile")
+				(value "sensors.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "capacitor cap")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "C_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "1a85d270-1a30-43e1-8c1d-e3221d811929")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "C304")
+			(value "1uF")
+			(footprint "Capacitor_SMD:C_0603_1608Metric")
+			(fields
+				(field
+					(name "Footprint") "Capacitor_SMD:C_0603_1608Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Device")
+				(part "C_Small")
+				(description "Unpolarized capacitor, small symbol")
+			)
+			(property
+				(name "Sheetname")
+				(value "Root")
+			)
+			(property
+				(name "Sheetfile")
+				(value "sensors.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "capacitor cap")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "C_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "75814c3b-49ea-4768-83ed-633125fc1631")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "C305")
+			(value "100nF")
+			(footprint "Capacitor_SMD:C_0603_1608Metric")
+			(fields
+				(field
+					(name "Footprint") "Capacitor_SMD:C_0603_1608Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Device")
+				(part "C_Small")
+				(description "Unpolarized capacitor, small symbol")
+			)
+			(property
+				(name "Sheetname")
+				(value "Root")
+			)
+			(property
+				(name "Sheetfile")
+				(value "sensors.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "capacitor cap")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "C_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "7428f309-ca48-4112-93a0-8bd562bc7966")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "C306")
+			(value "1uF")
+			(footprint "Capacitor_SMD:C_0603_1608Metric")
+			(fields
+				(field
+					(name "Footprint") "Capacitor_SMD:C_0603_1608Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Device")
+				(part "C_Small")
+				(description "Unpolarized capacitor, small symbol")
+			)
+			(property
+				(name "Sheetname")
+				(value "Root")
+			)
+			(property
+				(name "Sheetfile")
+				(value "sensors.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "capacitor cap")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "C_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "9b023cb6-9549-41ef-9c0f-d3ed2d776969")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "C307")
+			(value "100nF")
+			(footprint "Capacitor_SMD:C_0603_1608Metric")
+			(fields
+				(field
+					(name "Footprint") "Capacitor_SMD:C_0603_1608Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Device")
+				(part "C_Small")
+				(description "Unpolarized capacitor, small symbol")
+			)
+			(property
+				(name "Sheetname")
+				(value "Root")
+			)
+			(property
+				(name "Sheetfile")
+				(value "sensors.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "capacitor cap")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "C_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "2f36cfb8-1af0-4940-994c-ccf4ee7d5cb9")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "C308")
+			(value "1uF")
+			(footprint "Capacitor_SMD:C_0603_1608Metric")
+			(fields
+				(field
+					(name "Footprint") "Capacitor_SMD:C_0603_1608Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Device")
+				(part "C_Small")
+				(description "Unpolarized capacitor, small symbol")
+			)
+			(property
+				(name "Sheetname")
+				(value "Root")
+			)
+			(property
+				(name "Sheetfile")
+				(value "sensors.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "capacitor cap")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "C_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "cb754265-59af-4064-bff1-b5e5f619b473")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "C309")
+			(value "100nF")
+			(footprint "Capacitor_SMD:C_0603_1608Metric")
+			(fields
+				(field
+					(name "Footprint") "Capacitor_SMD:C_0603_1608Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Device")
+				(part "C_Small")
+				(description "Unpolarized capacitor, small symbol")
+			)
+			(property
+				(name "Sheetname")
+				(value "Root")
+			)
+			(property
+				(name "Sheetfile")
+				(value "sensors.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "capacitor cap")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "C_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "c53f172b-2879-41c7-9ea7-cd91fb6e77cc")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "C310")
+			(value "4.7uF")
+			(footprint "Capacitor_SMD:C_0603_1608Metric")
+			(fields
+				(field
+					(name "Footprint") "Capacitor_SMD:C_0603_1608Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Device")
+				(part "C_Small")
+				(description "Unpolarized capacitor, small symbol")
+			)
+			(property
+				(name "Sheetname")
+				(value "Root")
+			)
+			(property
+				(name "Sheetfile")
+				(value "sensors.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "capacitor cap")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "C_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "8cc70437-e924-4a9c-bcba-2c755d5d1256")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "C311")
+			(value "1uF")
+			(footprint "Capacitor_SMD:C_0603_1608Metric")
+			(fields
+				(field
+					(name "Footprint") "Capacitor_SMD:C_0603_1608Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Device")
+				(part "C_Small")
+				(description "Unpolarized capacitor, small symbol")
+			)
+			(property
+				(name "Sheetname")
+				(value "Root")
+			)
+			(property
+				(name "Sheetfile")
+				(value "sensors.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "capacitor cap")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "C_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "740faa4e-86b1-4b55-874b-f4790191d20c")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "C312")
+			(value "100nF")
+			(footprint "Capacitor_SMD:C_0603_1608Metric")
+			(fields
+				(field
+					(name "Footprint") "Capacitor_SMD:C_0603_1608Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Device")
+				(part "C_Small")
+				(description "Unpolarized capacitor, small symbol")
+			)
+			(property
+				(name "Sheetname")
+				(value "Root")
+			)
+			(property
+				(name "Sheetfile")
+				(value "sensors.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "capacitor cap")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "C_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "6e063973-e08b-4eca-9721-fd8c9b8bc11c")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "C313")
+			(value "1uF")
+			(footprint "Capacitor_SMD:C_0603_1608Metric")
+			(fields
+				(field
+					(name "Footprint") "Capacitor_SMD:C_0603_1608Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Device")
+				(part "C_Small")
+				(description "Unpolarized capacitor, small symbol")
+			)
+			(property
+				(name "Sheetname")
+				(value "Root")
+			)
+			(property
+				(name "Sheetfile")
+				(value "sensors.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "capacitor cap")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "C_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "712c4b92-c6cf-4700-bc83-63521d3c5584")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "C314")
+			(value "100nF")
+			(footprint "Capacitor_SMD:C_0603_1608Metric")
+			(fields
+				(field
+					(name "Footprint") "Capacitor_SMD:C_0603_1608Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Device")
+				(part "C_Small")
+				(description "Unpolarized capacitor, small symbol")
+			)
+			(property
+				(name "Sheetname")
+				(value "Root")
+			)
+			(property
+				(name "Sheetfile")
+				(value "sensors.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "capacitor cap")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "C_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "8edb0ec2-b98c-4146-8a78-99df07f8c33c")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R301")
+			(value "10k")
+			(footprint "Resistor_SMD:R_0603_1608Metric")
+			(fields
+				(field
+					(name "Footprint") "Resistor_SMD:R_0603_1608Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Device")
+				(part "R_Small_US")
+				(description "Resistor, small US symbol")
+			)
+			(property
+				(name "Sheetname")
+				(value "Root")
+			)
+			(property
+				(name "Sheetfile")
+				(value "sensors.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "r resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "90e4847b-5714-4a77-a26b-0ebda274cf46")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R302")
+			(value "39")
+			(footprint "Resistor_SMD:R_0603_1608Metric")
+			(fields
+				(field
+					(name "Footprint") "Resistor_SMD:R_0603_1608Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Device")
+				(part "R_Small_US")
+				(description "Resistor, small US symbol")
+			)
+			(property
+				(name "Sheetname")
+				(value "Root")
+			)
+			(property
+				(name "Sheetfile")
+				(value "sensors.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "r resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "f446c665-4d15-4343-afcf-f85681ed048b")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R303")
+			(value "10k")
+			(footprint "Resistor_SMD:R_0603_1608Metric")
+			(fields
+				(field
+					(name "Footprint") "Resistor_SMD:R_0603_1608Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Device")
+				(part "R_Small_US")
+				(description "Resistor, small US symbol")
+			)
+			(property
+				(name "Sheetname")
+				(value "Root")
+			)
+			(property
+				(name "Sheetfile")
+				(value "sensors.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "r resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "d0d73eef-9e23-4477-a9c5-140b493aad46")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R304")
+			(value "39")
+			(footprint "Resistor_SMD:R_0603_1608Metric")
+			(fields
+				(field
+					(name "Footprint") "Resistor_SMD:R_0603_1608Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Device")
+				(part "R_Small_US")
+				(description "Resistor, small US symbol")
+			)
+			(property
+				(name "Sheetname")
+				(value "Root")
+			)
+			(property
+				(name "Sheetfile")
+				(value "sensors.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "r resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "d88165bb-3df1-48d1-882d-bb2765d42817")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "U301")
+			(value "PMW3360DM-T2QU")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "trackball")
+				(part "PMW3360")
+				(description "PixArt PMW3360DM-T2QU optical sensor (NC pads omitted)")
+			)
+			(property
+				(name "Sheetname")
+				(value "Root")
+			)
+			(property
+				(name "Sheetfile")
+				(value "sensors.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "ad40c123-a008-4f83-9035-7154e800be70")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "4")
+						)
+						(pin
+							(num "5")
+						)
+						(pin
+							(num "7")
+						)
+						(pin
+							(num "8")
+						)
+						(pin
+							(num "9")
+						)
+						(pin
+							(num "10")
+						)
+						(pin
+							(num "11")
+						)
+						(pin
+							(num "12")
+						)
+						(pin
+							(num "13")
+						)
+						(pin
+							(num "15")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "U302")
+			(value "PMW3360DM-T2QU")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "trackball")
+				(part "PMW3360")
+				(description "PixArt PMW3360DM-T2QU optical sensor (NC pads omitted)")
+			)
+			(property
+				(name "Sheetname")
+				(value "Root")
+			)
+			(property
+				(name "Sheetfile")
+				(value "sensors.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "a623fcf8-9db0-46fc-96fa-befcdff6ef84")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "4")
+						)
+						(pin
+							(num "5")
+						)
+						(pin
+							(num "7")
+						)
+						(pin
+							(num "8")
+						)
+						(pin
+							(num "9")
+						)
+						(pin
+							(num "10")
+						)
+						(pin
+							(num "11")
+						)
+						(pin
+							(num "12")
+						)
+						(pin
+							(num "13")
+						)
+						(pin
+							(num "15")
+						)
+					)
+				)
+			)
+		)
+	)
+	(groups)
+	(variants)
+	(libparts
+		(libpart
+			(lib "Device")
+			(part "C_Small")
+			(description "Unpolarized capacitor, small symbol")
+			(footprints
+				(fp "C_*")
+			)
+			(fields
+				(field
+					(name "Reference") "C")
+				(field
+					(name "Value") "C_Small")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Unpolarized capacitor, small symbol")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "Device")
+			(part "R_Small_US")
+			(description "Resistor, small US symbol")
+			(footprints
+				(fp "R_*")
+			)
+			(fields
+				(field
+					(name "Reference") "R")
+				(field
+					(name "Value") "R_Small_US")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Resistor, small US symbol")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "trackball")
+			(part "PMW3360")
+			(description "PixArt PMW3360DM-T2QU optical sensor (NC pads omitted)")
+			(fields
+				(field
+					(name "Reference") "U")
+				(field
+					(name "Value") "PMW3360DM-T2QU")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "PixArt PMW3360DM-T2QU optical sensor (NC pads omitted)")
+			)
+			(pins
+				(pin
+					(num "3")
+					(name "VDDPIX")
+					(type "power_out")
+				)
+				(pin
+					(num "4")
+					(name "VDD")
+					(type "power_in")
+				)
+				(pin
+					(num "5")
+					(name "VDDIO")
+					(type "power_in")
+				)
+				(pin
+					(num "7")
+					(name "NRESET")
+					(type "input")
+				)
+				(pin
+					(num "8")
+					(name "GND")
+					(type "power_in")
+				)
+				(pin
+					(num "9")
+					(name "MOTION")
+					(type "output")
+				)
+				(pin
+					(num "10")
+					(name "SCLK")
+					(type "input")
+				)
+				(pin
+					(num "11")
+					(name "MOSI")
+					(type "input")
+				)
+				(pin
+					(num "12")
+					(name "MISO")
+					(type "output")
+				)
+				(pin
+					(num "13")
+					(name "NCS")
+					(type "input")
+				)
+				(pin
+					(num "15")
+					(name "LED_P")
+					(type "passive")
+				)
+			)
+		)
+	)
+	(libraries
+		(library
+			(logical "Device")
+			(uri "/usr/share/kicad/symbols/Device.kicad_sym")
+		)
+	)
+	(nets
+		(net
+			(code "1")
+			(name "+3V3")
+			(class "Default")
+			(node
+				(ref "C306")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "C307")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "C313")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "C314")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R301")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "R303")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U301")
+				(pin "5")
+				(pinfunction "VDDIO_5")
+				(pintype "power_in")
+			)
+			(node
+				(ref "U302")
+				(pin "5")
+				(pinfunction "VDDIO_5")
+				(pintype "power_in")
+			)
+		)
+		(net
+			(code "2")
+			(name "GND")
+			(class "Default")
+			(node
+				(ref "C301")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "C302")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "C303")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "C304")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "C305")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "C306")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "C307")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "C308")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "C309")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "C310")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "C311")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "C312")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "C313")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "C314")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U301")
+				(pin "8")
+				(pinfunction "GND_8")
+				(pintype "power_in")
+			)
+			(node
+				(ref "U302")
+				(pin "8")
+				(pinfunction "GND_8")
+				(pintype "power_in")
+			)
+		)
+		(net
+			(code "3")
+			(name "MCU_RST")
+			(class "Default")
+			(node
+				(ref "U301")
+				(pin "7")
+				(pinfunction "NRESET_7")
+				(pintype "input")
+			)
+			(node
+				(ref "U302")
+				(pin "7")
+				(pinfunction "NRESET_7")
+				(pintype "input")
+			)
+		)
+		(net
+			(code "4")
+			(name "Net-(U301-LED_P)")
+			(class "Default")
+			(node
+				(ref "R302")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U301")
+				(pin "15")
+				(pinfunction "LED_P_15")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "5")
+			(name "Net-(U301-VDDPIX)")
+			(class "Default")
+			(node
+				(ref "C301")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "C302")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "U301")
+				(pin "3")
+				(pinfunction "VDDPIX_3")
+				(pintype "power_out")
+			)
+		)
+		(net
+			(code "6")
+			(name "Net-(U302-LED_P)")
+			(class "Default")
+			(node
+				(ref "R304")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U302")
+				(pin "15")
+				(pinfunction "LED_P_15")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "7")
+			(name "Net-(U302-VDDPIX)")
+			(class "Default")
+			(node
+				(ref "C308")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "C309")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "U302")
+				(pin "3")
+				(pinfunction "VDDPIX_3")
+				(pintype "power_out")
+			)
+		)
+		(net
+			(code "8")
+			(name "S1_MISO")
+			(class "Default")
+			(node
+				(ref "U301")
+				(pin "12")
+				(pinfunction "MISO_12")
+				(pintype "output")
+			)
+		)
+		(net
+			(code "9")
+			(name "S1_MOSI")
+			(class "Default")
+			(node
+				(ref "U301")
+				(pin "11")
+				(pinfunction "MOSI_11")
+				(pintype "input")
+			)
+		)
+		(net
+			(code "10")
+			(name "S1_MOT")
+			(class "Default")
+			(node
+				(ref "U301")
+				(pin "9")
+				(pinfunction "MOTION_9")
+				(pintype "output")
+			)
+		)
+		(net
+			(code "11")
+			(name "S1_NCS")
+			(class "Default")
+			(node
+				(ref "R301")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "U301")
+				(pin "13")
+				(pinfunction "NCS_13")
+				(pintype "input")
+			)
+		)
+		(net
+			(code "12")
+			(name "S1_SCK")
+			(class "Default")
+			(node
+				(ref "U301")
+				(pin "10")
+				(pinfunction "SCLK_10")
+				(pintype "input")
+			)
+		)
+		(net
+			(code "13")
+			(name "S2_MISO")
+			(class "Default")
+			(node
+				(ref "U302")
+				(pin "12")
+				(pinfunction "MISO_12")
+				(pintype "output")
+			)
+		)
+		(net
+			(code "14")
+			(name "S2_MOSI")
+			(class "Default")
+			(node
+				(ref "U302")
+				(pin "11")
+				(pinfunction "MOSI_11")
+				(pintype "input")
+			)
+		)
+		(net
+			(code "15")
+			(name "S2_MOT")
+			(class "Default")
+			(node
+				(ref "U302")
+				(pin "9")
+				(pinfunction "MOTION_9")
+				(pintype "output")
+			)
+		)
+		(net
+			(code "16")
+			(name "S2_NCS")
+			(class "Default")
+			(node
+				(ref "R303")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "U302")
+				(pin "13")
+				(pinfunction "NCS_13")
+				(pintype "input")
+			)
+		)
+		(net
+			(code "17")
+			(name "S2_SCK")
+			(class "Default")
+			(node
+				(ref "U302")
+				(pin "10")
+				(pinfunction "SCLK_10")
+				(pintype "input")
+			)
+		)
+		(net
+			(code "18")
+			(name "VSEN_1V9")
+			(class "Default")
+			(node
+				(ref "C303")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "C304")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "C305")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "C310")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "C311")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "C312")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R302")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R304")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "U301")
+				(pin "4")
+				(pinfunction "VDD_4")
+				(pintype "power_in")
+			)
+			(node
+				(ref "U302")
+				(pin "4")
+				(pinfunction "VDD_4")
+				(pintype "power_in")
+			)
+		)
+	)
+)
