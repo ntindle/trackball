@@ -5522,4 +5522,139 @@
     )
     (pin "1" (uuid "217ad64a-8855-45bf-a5d9-6e7aa53a00fd"))
   )
+  (label "Net-(J201-CC1)"
+    (at 292.10 123.19 0)
+    (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (justify left bottom))
+    (uuid "51354e19-f664-4860-bb05-a638fad21513")
+  )
+  (label "Net-(J201-CC2)"
+    (at 342.90 123.19 0)
+    (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (justify left bottom))
+    (uuid "b338bbea-d9f4-48d3-8097-244ec05a5b05")
+  )
+  (label "Net-(J202-Pin_2)"
+    (at 325.12 204.47 0)
+    (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (justify left bottom))
+    (uuid "0b6ea886-c498-41af-97ce-8e71ad0996c8")
+  )
+  (label "Net-(J202-Pin_4)"
+    (at 325.12 207.01 0)
+    (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (justify left bottom))
+    (uuid "5b54a3ed-c100-4470-bb5c-30044dff0eb2")
+  )
+  (label "Net-(U201-D+)"
+    (at 207.01 185.42 0)
+    (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (justify left bottom))
+    (uuid "490b618f-856c-40ec-9564-b27432f8f5ea")
+  )
+  (label "Net-(U201-D-)"
+    (at 207.01 180.34 0)
+    (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (justify left bottom))
+    (uuid "35ad675b-ea07-49df-8542-232fa5cd2bb5")
+  )
+  (label "Net-(U201-P0.00{slash}XL1)"
+    (at 137.16 190.50 0)
+    (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (justify left bottom))
+    (uuid "c13a0194-e968-482b-9a9a-e2c2b8c9a60b")
+  )
+  (label "Net-(U201-P0.01{slash}XL2)"
+    (at 130.81 193.04 0)
+    (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (justify left bottom))
+    (uuid "24c1e3d9-862b-43e9-b7dd-3ea7f1c56fc1")
+  )
+  (label "Net-(U201-P0.12)"
+    (at 168.91 212.09 0)
+    (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (justify left bottom))
+    (uuid "6819d421-ccf1-4dcc-a522-747cb335a288")
+  )
+  (label "Net-(U201-P0.13)"
+    (at 215.90 190.50 0)
+    (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (justify left bottom))
+    (uuid "aa0c87a6-ffe5-4adb-b7a8-6ece1d758fe1")
+  )
+  (label "Net-(U201-P0.28{slash}AIN4)"
+    (at 165.10 167.64 90)
+    (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (justify left bottom))
+    (uuid "15c30974-081d-4162-9c2b-bae32a881712")
+  )
+  (label "Net-(U201-P0.29{slash}AIN5)"
+    (at 142.24 179.07 90)
+    (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (justify left bottom))
+    (uuid "cd928c80-eb2c-45a8-b951-c48a228943a1")
+  )
+  (label "Net-(U201-P1.11)"
+    (at 165.10 160.02 90)
+    (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (justify left bottom))
+    (uuid "68ff81d4-9ecb-4436-bffa-522e96c803e3")
+  )
+  (label "Net-(U202-IOA1)"
+    (at 302.26 128.27 0)
+    (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (justify left bottom))
+    (uuid "c1a3e648-f7c2-4084-b306-4b111fcba8d3")
+  )
+  (label "Net-(U202-IOB1)"
+    (at 302.26 125.73 0)
+    (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (justify left bottom))
+    (uuid "ea8fcdda-7972-4971-b897-5cef453655c7")
+  )
 )

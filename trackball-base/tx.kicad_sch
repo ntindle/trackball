@@ -4270,4 +4270,94 @@
     (color 0 0 0 0)
     (uuid "e8f344b0-404b-429e-af75-b803ee925403")
   )
+  (label "Net-(D501-A)"
+    (at 236.22 152.40 90)
+    (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (justify left bottom))
+    (uuid "60ad3a00-ad25-40af-9a87-59cc8907d8cb")
+  )
+  (label "Net-(R514-Pad2)"
+    (at 246.38 149.86 0)
+    (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (justify left bottom))
+    (uuid "0e877c49-ef02-4637-9333-550bb7b7e6f5")
+  )
+  (label "Net-(U501-CTD)"
+    (at 207.01 135.89 90)
+    (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (justify left bottom))
+    (uuid "e5fe3652-950b-4ada-b15c-3b2f0580da44")
+  )
+  (label "Net-(U501-CTS)"
+    (at 203.20 143.51 90)
+    (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (justify left bottom))
+    (uuid "a19b16a6-9722-468e-a29c-3ccb4cac8064")
+  )
+  (label "Net-(U501-DTH)"
+    (at 147.32 144.78 90)
+    (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (justify left bottom))
+    (uuid "4d946ec8-26ee-4dda-a188-6f16fa3e47d4")
+  )
+  (label "Net-(U501-EN)"
+    (at 173.99 135.89 0)
+    (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (justify left bottom))
+    (uuid "ea9bc659-127a-46a4-8f5a-8a78dfd172b4")
+  )
+  (label "Net-(U501-FTH)"
+    (at 157.48 144.78 90)
+    (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (justify left bottom))
+    (uuid "f1fbe05c-01ac-4865-86e5-5c4aef996e97")
+  )
+  (label "Net-(U501-IS+)"
+    (at 167.64 121.92 90)
+    (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (justify left bottom))
+    (uuid "d529174f-83cb-4360-baec-376ebd825f35")
+  )
+  (label "Net-(U501-NTC)"
+    (at 214.63 119.38 90)
+    (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (justify left bottom))
+    (uuid "02f599f7-a708-4b52-9e61-e17679bfbb63")
+  )
+  (label "Net-(U501-SW2)"
+    (at 236.22 157.48 0)
+    (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (justify left bottom))
+    (uuid "1ffa2402-c119-44fc-bcfb-acf11b7dbec4")
+  )
 )

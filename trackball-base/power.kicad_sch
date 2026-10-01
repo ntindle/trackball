@@ -5449,4 +5449,49 @@
     (color 0 0 0 0)
     (uuid "90ca07a0-8b0f-48b1-a474-722fcec81af8")
   )
+  (label "Net-(Q101-G)"
+    (at 326.39 191.77 90)
+    (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (justify left bottom))
+    (uuid "dcffec15-ae46-4d3e-9b63-0324b77553d6")
+  )
+  (label "Net-(U104-CT)"
+    (at 185.42 124.46 0)
+    (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (justify left bottom))
+    (uuid "8f616a9f-a178-4be2-a1b0-7e25eceff5e8")
+  )
+  (label "Net-(U105-CT)"
+    (at 287.02 73.66 0)
+    (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (justify left bottom))
+    (uuid "0947eace-6732-4046-9f45-1729e412220c")
+  )
+  (label "Net-(U106-IN+)"
+    (at 281.94 129.54 90)
+    (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (justify left bottom))
+    (uuid "dbc29759-6055-447a-b00b-bef328f145ba")
+  )
+  (label "Net-(U107-IN+)"
+    (at 281.94 167.64 90)
+    (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (justify left bottom))
+    (uuid "e484da32-38b6-442c-8d97-9456cb8731c8")
+  )
 )

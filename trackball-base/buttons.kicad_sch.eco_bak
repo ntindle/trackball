@@ -1,0 +1,1658 @@
+(kicad_sch
+  (version 20250114)
+  (generator "eeschema")
+  (generator_version "10.0")
+  (paper "A3")
+  (uuid "86c71648-88f2-4983-b26f-912074e025dc")
+  (title_block
+    (title "trackball-base/buttons")
+    (date "2026-09-21")
+    (rev "0.1")
+    (company "ultimate-mouse")
+  )
+  (lib_symbols
+	(symbol "Device:C_Small"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0.254)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "C"
+				(at 0.254 1.778 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "C_Small"
+				(at 0.254 -2.032 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Unpolarized capacitor, small symbol"
+				(at 0 -10.16 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "capacitor cap"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "C_*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "C_Small_0_1"
+				(polyline
+					(pts
+						(xy -1.524 0.508) (xy 1.524 0.508)
+					)
+					(stroke
+						(width 0.3048)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.524 -0.508) (xy 1.524 -0.508)
+					)
+					(stroke
+						(width 0.3048)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "C_Small_1_1"
+				(pin passive line
+					(at 0 2.54 270)
+					(length 2.032)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -2.54 90)
+					(length 2.032)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+	(symbol "Device:R_Small_US"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0.254)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "R"
+				(at 0.762 0.508 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "R_Small_US"
+				(at 0.762 -1.016 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Resistor, small US symbol"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "r resistor"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "R_*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "R_Small_US_1_1"
+				(polyline
+					(pts
+						(xy 0 1.524) (xy 1.016 1.143) (xy 0 0.762) (xy -1.016 0.381) (xy 0 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 0) (xy 1.016 -0.381) (xy 0 -0.762) (xy -1.016 -1.143) (xy 0 -1.524)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at 0 2.54 270)
+					(length 1.016)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -2.54 90)
+					(length 1.016)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+	(symbol "power:GND"
+			(power global)
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "#PWR"
+				(at 0 -6.35 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "GND"
+				(at 0 -3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "global power"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "GND_0_1"
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 -1.27) (xy 1.27 -1.27) (xy 0 -2.54) (xy -1.27 -1.27) (xy 0 -1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "GND_1_1"
+				(pin power_in line
+					(at 0 0 270)
+					(length 0)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+	(symbol "power:VCC"
+			(power global)
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "#PWR"
+				(at 0 -3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "VCC"
+				(at 0 3.556 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Power symbol creates a global label with name \"VCC\""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "global power"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "VCC_0_1"
+				(polyline
+					(pts
+						(xy -0.762 1.27) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 2.54) (xy 0.762 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "VCC_1_1"
+				(pin power_in line
+					(at 0 0 90)
+					(length 0)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+	(symbol "trackball:D2FC"
+	  (pin_numbers hide)
+	  (pin_names (offset 1.016) (hide yes))
+	  (in_bom yes)
+	  (on_board yes)
+	  (property "Reference" "SW"
+	    (at 0.00 5.08 0)
+	    (effects (font (size 1.27 1.27)))
+	  )
+	  (property "Value" "D2FC"
+	    (at 0.00 -5.08 0)
+	    (effects (font (size 1.27 1.27)))
+	  )
+	  (property "Footprint" ""
+	    (at 0.00 0.00 0)
+	    (effects (font (size 1.27 1.27)) hide)
+	  )
+	  (property "Datasheet" "Omron D2F/D2FC series"
+	    (at 0.00 0.00 0)
+	    (effects (font (size 1.27 1.27)) hide)
+	  )
+	  (property "Description" "Omron D2FC-F-7N(20M) microswitch"
+	    (at 0.00 0.00 0)
+	    (effects (font (size 1.27 1.27)) hide)
+	  )
+	  (symbol "D2FC_0_1"
+	    (circle
+	      (center -2.54 0.00)
+	      (radius 0.508)
+	      (stroke (width 0.254) (type default))
+	      (fill (type none))
+	    )
+	    (circle
+	      (center 2.54 0.00)
+	      (radius 0.508)
+	      (stroke (width 0.254) (type default))
+	      (fill (type none))
+	    )
+	    (polyline
+	      (pts (xy -2.54 0.00) (xy 1.60 2.20))
+	      (stroke (width 0.254) (type default))
+	      (fill (type none))
+	    )
+	  )
+	  (symbol "D2FC_1_1"
+	    (pin passive line
+	      (at -5.08 0.00 0)
+	      (length 2.54)
+	      (name "COM"
+	        (effects (font (size 1.27 1.27)))
+	      )
+	      (number "1"
+	        (effects (font (size 1.27 1.27)))
+	      )
+	    )
+	    (pin passive line
+	      (at 5.08 0.00 180)
+	      (length 2.54)
+	      (name "NO"
+	        (effects (font (size 1.27 1.27)))
+	      )
+	      (number "2"
+	        (effects (font (size 1.27 1.27)))
+	      )
+	    )
+	  )
+	)
+  )
+  (text "BUTTONS"
+    (at 12.70 10.16 0)
+    (effects
+        (font
+          (size 2.54 2.54)
+        )
+        (justify left top))
+    (uuid "64822361-6646-41fa-847e-a4a5388269f7")
+  )
+  (text "3x D2FC-F-7N click switches + RC debounce + ESD series R"
+    (at 12.70 17.78 0)
+    (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (justify left top))
+    (uuid "fcf40adc-f3e8-4387-8b26-62b775ee3c6e")
+  )
+  (rectangle
+    (start 101.60 106.68)
+    (end 180.34 226.06)
+    (stroke (width 0.254) (type default) (color 0 0 0 1))
+    (fill (type none))
+    (uuid "160553be-2d18-4b01-8552-eb343c5b001d")
+  )
+  (text "CLICK BUTTONS"
+    (at 104.14 109.22 0)
+    (effects
+        (font
+          (size 1.524 1.524)
+        )
+        (justify left top))
+    (uuid "1b915969-7a9f-416b-beb9-35e6ba362aba")
+  )
+  (symbol
+    (lib_id "trackball:D2FC")
+    (at 127.00 127.00 0)
+    (unit 1)
+    (exclude_from_sim no)
+    (in_bom yes)
+    (on_board yes)
+    (fields_autoplaced yes)
+    (uuid "eee6fa36-eb49-48a8-9272-dc67ce091ba1")
+    (property "Reference" "SW401"
+      (at 127.00 121.92 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        ))
+    )
+    (property "Value" "D2FC-F-7N"
+      (at 127.00 132.08 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        ))
+    )
+    (property "Description" "Omron D2FC-F-7N microswitch"
+    	(id 4)
+    	(at 0 0 0)
+    	(effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Footprint" "trackball:D2FC-F-7N"
+      (at 127.00 127.00 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "Omron D2F/D2FC series"
+      (at 127.00 127.00 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid "0df35668-9883-4b5a-840b-632aedb72419"))
+    (pin "2" (uuid "60cc5aca-f7df-4aa8-bbd3-8cc3658236bf"))
+  )
+  (wire
+    (pts (xy 121.92 127.00) (xy 116.84 127.00))
+    (stroke (width 0) (type default))
+    (uuid "406081be-ad64-4112-b461-b5688bad3e2c")
+  )
+  (wire
+    (pts (xy 116.84 127.00) (xy 116.84 132.08))
+    (stroke (width 0) (type default))
+    (uuid "d2d0dc1f-235d-49fc-b5a0-969574d4c819")
+  )
+  (symbol
+    (lib_id "power:GND")
+    (at 116.84 132.08 0)
+    (unit 1)
+    (exclude_from_sim no)
+    (in_bom yes)
+    (on_board yes)
+    (fields_autoplaced yes)
+    (uuid "55861461-db71-4533-8e75-2dd3eb2c7852")
+    (property "Reference" "#PWR301"
+      (at 116.84 132.08 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Value" "GND"
+      (at 116.84 135.89 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        ))
+    )
+    (property "Footprint" ""
+      (at 116.84 132.08 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" ""
+      (at 116.84 132.08 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid "de24cc3b-8c1b-440c-a6ec-2f7e266062ee"))
+  )
+  (wire
+    (pts (xy 132.08 127.00) (xy 134.62 127.00))
+    (stroke (width 0) (type default))
+    (uuid "15af55e5-ed20-44d9-8937-85144a0572e5")
+  )
+  (symbol
+    (lib_id "Device:R_Small_US")
+    (at 137.16 127.00 90)
+    (unit 1)
+    (exclude_from_sim no)
+    (in_bom yes)
+    (on_board yes)
+    (fields_autoplaced yes)
+    (uuid "36dc20ec-711b-45d4-b214-a3e1acef7b0b")
+    (property "Reference" "R401"
+      (at 132.08 121.92 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        ))
+    )
+    (property "Value" "1k"
+      (at 137.16 130.81 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        ))
+    )
+    (property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+      (at 137.16 127.00 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" ""
+      (at 137.16 127.00 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid "4278fc39-8c1b-4379-bda7-b449968cfe32"))
+    (pin "2" (uuid "1ddcc2bc-7a08-443d-9fb8-9f94ba25213b"))
+  )
+  (wire
+    (pts (xy 139.70 127.00) (xy 149.86 127.00))
+    (stroke (width 0) (type default))
+    (uuid "f79684e4-40ba-4c1e-acdc-2867118059b7")
+  )
+  (symbol
+    (lib_id "Device:R_Small_US")
+    (at 144.78 120.65 0)
+    (unit 1)
+    (exclude_from_sim no)
+    (in_bom yes)
+    (on_board yes)
+    (fields_autoplaced yes)
+    (uuid "3990ee67-43da-4ec3-98a4-ca42247c286d")
+    (property "Reference" "R402"
+      (at 139.70 120.65 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        ))
+    )
+    (property "Value" "10k"
+      (at 149.86 120.65 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        ))
+    )
+    (property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+      (at 144.78 120.65 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" ""
+      (at 144.78 120.65 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid "461bffd4-0cf5-4086-b3c6-66e32ed6f0dc"))
+    (pin "2" (uuid "e02737f9-2a5d-47e7-8c16-bdd308582131"))
+  )
+  (wire
+    (pts (xy 144.78 123.19) (xy 144.78 127.00))
+    (stroke (width 0) (type default))
+    (uuid "19423cf4-4084-46be-83dc-f4540f315c50")
+  )
+  (wire
+    (pts (xy 144.78 118.11) (xy 144.78 115.57))
+    (stroke (width 0) (type default))
+    (uuid "95049ed1-144a-4842-9a09-6bbab649ab6f")
+  )
+  (symbol
+    (lib_id "power:VCC")
+    (at 144.78 115.57 0)
+    (unit 1)
+    (exclude_from_sim no)
+    (in_bom yes)
+    (on_board yes)
+    (fields_autoplaced yes)
+    (uuid "7878ff7f-6cf0-4730-80fb-1090b2aa11a1")
+    (property "Reference" "#PWR302"
+      (at 144.78 115.57 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Value" "+3V3"
+      (at 144.78 111.76 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        ))
+    )
+    (property "Footprint" ""
+      (at 144.78 115.57 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" ""
+      (at 144.78 115.57 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid "68f419e8-5d0f-4da6-bdbc-215eef937eff"))
+  )
+  (symbol
+    (lib_id "Device:C_Small")
+    (at 149.86 132.08 0)
+    (unit 1)
+    (exclude_from_sim no)
+    (in_bom yes)
+    (on_board yes)
+    (fields_autoplaced yes)
+    (uuid "13ff8b2c-55ae-4f3a-b3e2-61a0f6786fdd")
+    (property "Reference" "C401"
+      (at 144.78 132.08 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        ))
+    )
+    (property "Value" "100nF"
+      (at 144.78 135.89 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        ))
+    )
+    (property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+      (at 149.86 132.08 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" ""
+      (at 149.86 132.08 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid "8d946237-c400-4a73-8180-a44db1c4cd05"))
+    (pin "2" (uuid "d7a46e91-a8c1-40ba-a2c8-18da805e39d3"))
+  )
+  (wire
+    (pts (xy 149.86 129.54) (xy 149.86 127.00))
+    (stroke (width 0) (type default))
+    (uuid "fa4da61e-914b-4bd7-9f02-4928d4d22c04")
+  )
+  (wire
+    (pts (xy 149.86 134.62) (xy 149.86 139.70))
+    (stroke (width 0) (type default))
+    (uuid "bc2783a0-fde0-4a47-afa7-ddededf98cd8")
+  )
+  (symbol
+    (lib_id "power:GND")
+    (at 149.86 139.70 0)
+    (unit 1)
+    (exclude_from_sim no)
+    (in_bom yes)
+    (on_board yes)
+    (fields_autoplaced yes)
+    (uuid "14519b5d-06b7-4f8e-9647-6efef463e4bb")
+    (property "Reference" "#PWR303"
+      (at 149.86 139.70 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Value" "GND"
+      (at 149.86 143.51 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        ))
+    )
+    (property "Footprint" ""
+      (at 149.86 139.70 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" ""
+      (at 149.86 139.70 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid "117cb6a2-4f63-4e87-b6c3-249ec9956097"))
+  )
+  (wire
+    (pts (xy 149.86 127.00) (xy 160.02 127.00))
+    (stroke (width 0) (type default))
+    (uuid "4ec039d7-0273-4744-a4ed-2b2c3ba156f1")
+  )
+  (global_label "BTN1"
+    (shape output)
+    (at 160.02 127.00 180)
+    (fields_autoplaced yes)
+    (effects
+        (font
+          (size 1.27 1.27)
+        ))
+    (uuid "c18f6725-f6b6-4942-ba2a-0ef471048389")
+    (property "Intersheetrefs" "${INTERSHEET_REFS}"
+      (at 160.02 127.00 180)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+  )
+  (text "LEFT"
+    (at 109.22 123.19 0)
+    (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (justify left top))
+    (uuid "f40ff404-9e5a-4b9f-bc44-a50b4f7eed60")
+  )
+  (symbol
+    (lib_id "trackball:D2FC")
+    (at 127.00 165.10 0)
+    (unit 1)
+    (exclude_from_sim no)
+    (in_bom yes)
+    (on_board yes)
+    (fields_autoplaced yes)
+    (uuid "8714c731-334a-4d1d-89b4-d1445fe0bbc4")
+    (property "Reference" "SW402"
+      (at 127.00 160.02 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        ))
+    )
+    (property "Value" "D2FC-F-7N"
+      (at 127.00 170.18 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        ))
+    )
+    (property "Description" "Omron D2FC-F-7N microswitch"
+    	(id 4)
+    	(at 0 0 0)
+    	(effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Footprint" "trackball:D2FC-F-7N"
+      (at 127.00 165.10 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "Omron D2F/D2FC series"
+      (at 127.00 165.10 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid "3df4ba2f-844f-4ab8-b6cf-20efbd0568be"))
+    (pin "2" (uuid "ff10b452-d6ca-42e6-ae59-e59aaac705d9"))
+  )
+  (wire
+    (pts (xy 121.92 165.10) (xy 116.84 165.10))
+    (stroke (width 0) (type default))
+    (uuid "1bf3becd-a73e-44e6-ba8d-4acdcebf1617")
+  )
+  (wire
+    (pts (xy 116.84 165.10) (xy 116.84 170.18))
+    (stroke (width 0) (type default))
+    (uuid "5bf1ae16-5ac0-469b-b244-ac182e1ff897")
+  )
+  (symbol
+    (lib_id "power:GND")
+    (at 116.84 170.18 0)
+    (unit 1)
+    (exclude_from_sim no)
+    (in_bom yes)
+    (on_board yes)
+    (fields_autoplaced yes)
+    (uuid "e610530d-6b7c-406d-b070-b760785a7f8c")
+    (property "Reference" "#PWR304"
+      (at 116.84 170.18 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Value" "GND"
+      (at 116.84 173.99 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        ))
+    )
+    (property "Footprint" ""
+      (at 116.84 170.18 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" ""
+      (at 116.84 170.18 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid "154c2313-da8a-408a-8d3c-db1a4d6bdbab"))
+  )
+  (wire
+    (pts (xy 132.08 165.10) (xy 134.62 165.10))
+    (stroke (width 0) (type default))
+    (uuid "aaedb72a-5fda-4462-9817-a4dd115f1876")
+  )
+  (symbol
+    (lib_id "Device:R_Small_US")
+    (at 137.16 165.10 90)
+    (unit 1)
+    (exclude_from_sim no)
+    (in_bom yes)
+    (on_board yes)
+    (fields_autoplaced yes)
+    (uuid "d297f4b6-50c6-4cb0-a214-bcbf25a7226a")
+    (property "Reference" "R403"
+      (at 132.08 160.02 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        ))
+    )
+    (property "Value" "1k"
+      (at 137.16 168.91 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        ))
+    )
+    (property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+      (at 137.16 165.10 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" ""
+      (at 137.16 165.10 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid "8215bc1e-1907-43da-a1d0-fc1090805157"))
+    (pin "2" (uuid "3907a115-da09-46ad-b2f0-915a15fd41d2"))
+  )
+  (wire
+    (pts (xy 139.70 165.10) (xy 149.86 165.10))
+    (stroke (width 0) (type default))
+    (uuid "7c3c2cd7-ccd1-4a18-a76e-df4ef4909a1c")
+  )
+  (symbol
+    (lib_id "Device:R_Small_US")
+    (at 144.78 158.75 0)
+    (unit 1)
+    (exclude_from_sim no)
+    (in_bom yes)
+    (on_board yes)
+    (fields_autoplaced yes)
+    (uuid "1cac5834-0dbd-4fee-9cec-59559f785aa7")
+    (property "Reference" "R404"
+      (at 139.70 158.75 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        ))
+    )
+    (property "Value" "10k"
+      (at 149.86 158.75 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        ))
+    )
+    (property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+      (at 144.78 158.75 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" ""
+      (at 144.78 158.75 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid "631b412a-2297-43e7-ba30-ade74a496c48"))
+    (pin "2" (uuid "99641b8f-57b4-470f-84a2-e0f23abdf1e5"))
+  )
+  (wire
+    (pts (xy 144.78 161.29) (xy 144.78 165.10))
+    (stroke (width 0) (type default))
+    (uuid "9a117420-ff5d-42a8-b8f7-156e864d448b")
+  )
+  (wire
+    (pts (xy 144.78 156.21) (xy 144.78 153.67))
+    (stroke (width 0) (type default))
+    (uuid "a7370191-12bb-4306-b71a-aea7e0e7a9ab")
+  )
+  (symbol
+    (lib_id "power:VCC")
+    (at 144.78 153.67 0)
+    (unit 1)
+    (exclude_from_sim no)
+    (in_bom yes)
+    (on_board yes)
+    (fields_autoplaced yes)
+    (uuid "cd016003-ffd6-4670-ba20-f61808c502d3")
+    (property "Reference" "#PWR305"
+      (at 144.78 153.67 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Value" "+3V3"
+      (at 144.78 149.86 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        ))
+    )
+    (property "Footprint" ""
+      (at 144.78 153.67 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" ""
+      (at 144.78 153.67 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid "fbc92b5b-5b35-4a80-b974-c534ec376650"))
+  )
+  (symbol
+    (lib_id "Device:C_Small")
+    (at 149.86 170.18 0)
+    (unit 1)
+    (exclude_from_sim no)
+    (in_bom yes)
+    (on_board yes)
+    (fields_autoplaced yes)
+    (uuid "3a2f1de3-ddd2-477d-8870-6f9759af41da")
+    (property "Reference" "C402"
+      (at 144.78 170.18 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        ))
+    )
+    (property "Value" "100nF"
+      (at 144.78 173.99 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        ))
+    )
+    (property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+      (at 149.86 170.18 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" ""
+      (at 149.86 170.18 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid "efb91e1f-39fa-4643-a9b4-92d87248c346"))
+    (pin "2" (uuid "5d3cee64-6d4e-4723-a375-38c449cef620"))
+  )
+  (wire
+    (pts (xy 149.86 167.64) (xy 149.86 165.10))
+    (stroke (width 0) (type default))
+    (uuid "1d15d623-3016-4df8-9795-2f1c9dce848b")
+  )
+  (wire
+    (pts (xy 149.86 172.72) (xy 149.86 177.80))
+    (stroke (width 0) (type default))
+    (uuid "06076423-3c13-46b3-8bdf-6ad749a67584")
+  )
+  (symbol
+    (lib_id "power:GND")
+    (at 149.86 177.80 0)
+    (unit 1)
+    (exclude_from_sim no)
+    (in_bom yes)
+    (on_board yes)
+    (fields_autoplaced yes)
+    (uuid "6747a672-ebbc-481e-a1f6-724eb1b83efb")
+    (property "Reference" "#PWR306"
+      (at 149.86 177.80 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Value" "GND"
+      (at 149.86 181.61 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        ))
+    )
+    (property "Footprint" ""
+      (at 149.86 177.80 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" ""
+      (at 149.86 177.80 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid "6bfe0898-6ca2-4c90-8855-a63a35180c0d"))
+  )
+  (wire
+    (pts (xy 149.86 165.10) (xy 160.02 165.10))
+    (stroke (width 0) (type default))
+    (uuid "2de604e3-8680-47ca-91e9-c397d4146ba0")
+  )
+  (global_label "BTN2"
+    (shape output)
+    (at 160.02 165.10 180)
+    (fields_autoplaced yes)
+    (effects
+        (font
+          (size 1.27 1.27)
+        ))
+    (uuid "d7ee1d76-ad28-4e8b-b436-6a6319c8ce23")
+    (property "Intersheetrefs" "${INTERSHEET_REFS}"
+      (at 160.02 165.10 180)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+  )
+  (text "RIGHT"
+    (at 109.22 161.29 0)
+    (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (justify left top))
+    (uuid "57e07300-14ca-4166-b9be-c916966a3a41")
+  )
+  (symbol
+    (lib_id "trackball:D2FC")
+    (at 127.00 203.20 0)
+    (unit 1)
+    (exclude_from_sim no)
+    (in_bom yes)
+    (on_board yes)
+    (fields_autoplaced yes)
+    (uuid "59ddd3cf-c651-44bd-bfa9-3524d50e947b")
+    (property "Reference" "SW403"
+      (at 127.00 198.12 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        ))
+    )
+    (property "Value" "D2FC-F-7N"
+      (at 127.00 208.28 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        ))
+    )
+    (property "Description" "Omron D2FC-F-7N microswitch"
+    	(id 4)
+    	(at 0 0 0)
+    	(effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Footprint" "trackball:D2FC-F-7N"
+      (at 127.00 203.20 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "Omron D2F/D2FC series"
+      (at 127.00 203.20 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid "2188bf76-1f48-4d6e-b759-fe21b32e88bf"))
+    (pin "2" (uuid "e31378a7-1ff9-4c91-96e6-1aa7bc7c228e"))
+  )
+  (wire
+    (pts (xy 121.92 203.20) (xy 116.84 203.20))
+    (stroke (width 0) (type default))
+    (uuid "06c87c5f-17eb-4e9b-8f77-11bc36f774f1")
+  )
+  (wire
+    (pts (xy 116.84 203.20) (xy 116.84 208.28))
+    (stroke (width 0) (type default))
+    (uuid "ba5800a9-1752-4e0c-9fa7-bc43998fc63b")
+  )
+  (symbol
+    (lib_id "power:GND")
+    (at 116.84 208.28 0)
+    (unit 1)
+    (exclude_from_sim no)
+    (in_bom yes)
+    (on_board yes)
+    (fields_autoplaced yes)
+    (uuid "81749dcb-c0a5-44a4-9c77-7258e1ec18ec")
+    (property "Reference" "#PWR307"
+      (at 116.84 208.28 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Value" "GND"
+      (at 116.84 212.09 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        ))
+    )
+    (property "Footprint" ""
+      (at 116.84 208.28 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" ""
+      (at 116.84 208.28 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid "d001430e-bfe1-4cfd-8c42-12e6c5e7cc15"))
+  )
+  (wire
+    (pts (xy 132.08 203.20) (xy 134.62 203.20))
+    (stroke (width 0) (type default))
+    (uuid "2882c944-3871-47a5-8805-6cd4b0aa7be2")
+  )
+  (symbol
+    (lib_id "Device:R_Small_US")
+    (at 137.16 203.20 90)
+    (unit 1)
+    (exclude_from_sim no)
+    (in_bom yes)
+    (on_board yes)
+    (fields_autoplaced yes)
+    (uuid "e8cfd67a-67e5-4a5f-a908-bf543c73701f")
+    (property "Reference" "R405"
+      (at 132.08 198.12 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        ))
+    )
+    (property "Value" "1k"
+      (at 137.16 207.01 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        ))
+    )
+    (property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+      (at 137.16 203.20 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" ""
+      (at 137.16 203.20 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid "8df60cea-194d-414e-9a65-e207ff9bbdde"))
+    (pin "2" (uuid "de97491d-04b9-499c-8598-b83639beea97"))
+  )
+  (wire
+    (pts (xy 139.70 203.20) (xy 149.86 203.20))
+    (stroke (width 0) (type default))
+    (uuid "3503cbb9-8c6a-4205-ab29-f2bc5ffbfdf4")
+  )
+  (symbol
+    (lib_id "Device:R_Small_US")
+    (at 144.78 196.85 0)
+    (unit 1)
+    (exclude_from_sim no)
+    (in_bom yes)
+    (on_board yes)
+    (fields_autoplaced yes)
+    (uuid "c4db8583-e554-4e37-9681-3173e241015d")
+    (property "Reference" "R406"
+      (at 139.70 196.85 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        ))
+    )
+    (property "Value" "10k"
+      (at 149.86 196.85 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        ))
+    )
+    (property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+      (at 144.78 196.85 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" ""
+      (at 144.78 196.85 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid "c3b6da25-7521-4a3c-b303-fe96df2b4e84"))
+    (pin "2" (uuid "b61fa6b8-7bfa-4581-9af6-fbe26ded5a79"))
+  )
+  (wire
+    (pts (xy 144.78 199.39) (xy 144.78 203.20))
+    (stroke (width 0) (type default))
+    (uuid "dd183c20-bc7f-466e-9a8c-b049473050cc")
+  )
+  (wire
+    (pts (xy 144.78 194.31) (xy 144.78 191.77))
+    (stroke (width 0) (type default))
+    (uuid "c8c34275-fefe-4e23-9d6d-09a252973f0e")
+  )
+  (symbol
+    (lib_id "power:VCC")
+    (at 144.78 191.77 0)
+    (unit 1)
+    (exclude_from_sim no)
+    (in_bom yes)
+    (on_board yes)
+    (fields_autoplaced yes)
+    (uuid "ec9b84ba-c86c-4463-aae8-67d533170a26")
+    (property "Reference" "#PWR308"
+      (at 144.78 191.77 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Value" "+3V3"
+      (at 144.78 187.96 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        ))
+    )
+    (property "Footprint" ""
+      (at 144.78 191.77 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" ""
+      (at 144.78 191.77 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid "22a0cee3-1f08-4c01-bf72-7ed0060a6a99"))
+  )
+  (symbol
+    (lib_id "Device:C_Small")
+    (at 149.86 208.28 0)
+    (unit 1)
+    (exclude_from_sim no)
+    (in_bom yes)
+    (on_board yes)
+    (fields_autoplaced yes)
+    (uuid "e7e91b8f-391b-4f88-b926-aa297ea518ab")
+    (property "Reference" "C403"
+      (at 144.78 208.28 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        ))
+    )
+    (property "Value" "100nF"
+      (at 144.78 212.09 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        ))
+    )
+    (property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+      (at 149.86 208.28 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" ""
+      (at 149.86 208.28 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid "a1b6de16-9bf3-4915-970c-148c19b022f7"))
+    (pin "2" (uuid "d2dcb886-e4d3-4b22-9fca-03c761134e5f"))
+  )
+  (wire
+    (pts (xy 149.86 205.74) (xy 149.86 203.20))
+    (stroke (width 0) (type default))
+    (uuid "ef0ef7f4-7ef1-45a2-81e5-4464178add41")
+  )
+  (wire
+    (pts (xy 149.86 210.82) (xy 149.86 215.90))
+    (stroke (width 0) (type default))
+    (uuid "629a5222-55c3-4137-ad1a-bf87270de8e7")
+  )
+  (symbol
+    (lib_id "power:GND")
+    (at 149.86 215.90 0)
+    (unit 1)
+    (exclude_from_sim no)
+    (in_bom yes)
+    (on_board yes)
+    (fields_autoplaced yes)
+    (uuid "63241dbf-451d-4d9e-8bba-6267777e6e8c")
+    (property "Reference" "#PWR309"
+      (at 149.86 215.90 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Value" "GND"
+      (at 149.86 219.71 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        ))
+    )
+    (property "Footprint" ""
+      (at 149.86 215.90 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" ""
+      (at 149.86 215.90 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid "17ab44f8-e90e-461b-90cf-0ca5ae6aac47"))
+  )
+  (wire
+    (pts (xy 149.86 203.20) (xy 160.02 203.20))
+    (stroke (width 0) (type default))
+    (uuid "e0a29ade-79e3-4ed0-a58b-6d8dae78a761")
+  )
+  (global_label "BTN3"
+    (shape output)
+    (at 160.02 203.20 180)
+    (fields_autoplaced yes)
+    (effects
+        (font
+          (size 1.27 1.27)
+        ))
+    (uuid "cf59deed-544d-4c2c-8a0e-5419b83d9bc8")
+    (property "Intersheetrefs" "${INTERSHEET_REFS}"
+      (at 160.02 203.20 180)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+  )
+  (text "MIDDLE"
+    (at 109.22 199.39 0)
+    (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (justify left top))
+    (uuid "836e01a6-77ba-49b7-919b-bd03179cd519")
+  )
+  (text "+3V3/GND join by name; drivers on power sheet"
+    (at 181.61 137.16 0)
+    (effects
+        (font
+          (size 1.0 1.0)
+        )
+        (justify left top))
+    (uuid "de4f9006-3bc5-4059-93e7-55f74d6ff108")
+  )
+  (text "NOTES:"
+    (at 12.70 238.76 0)
+    (effects
+        (font
+          (size 1.524 1.524)
+        )
+        (justify left top))
+    (uuid "28ac38be-1383-4d4c-b8d7-b1dc4abee638")
+  )
+  (text "1. RC debounce: press ~100us (1k), release ~1ms (10k); FW debounces 5-20ms."
+    (at 12.70 245.11 0)
+    (effects
+        (font
+          (size 1.0 1.0)
+        )
+        (justify left top))
+    (uuid "a1858297-7df9-468d-b5bc-b8062f9171dd")
+  )
+  (text "2. 1k series limits ESD strike current into MCU clamp diodes."
+    (at 12.70 250.19 0)
+    (effects
+        (font
+          (size 1.0 1.0)
+        )
+        (justify left top))
+    (uuid "a8efe31e-bdc5-435c-a80a-9b3bda1cfa1d")
+  )
+  (text "3. D2FC-F-7N are THT (mechanical strength): hand-solder, DNI from JLC."
+    (at 12.70 255.27 0)
+    (effects
+        (font
+          (size 1.0 1.0)
+        )
+        (justify left top))
+    (uuid "22f8930a-e8c0-4192-9ea2-c5195b962ebc")
+  )
+  (junction
+    (at 144.78 127.00)
+    (diameter 0)
+    (color 0 0 0 0)
+    (uuid "2840279d-84d5-46e6-893e-f4ab6e286422")
+  )
+  (junction
+    (at 144.78 165.10)
+    (diameter 0)
+    (color 0 0 0 0)
+    (uuid "9bd89241-6e95-4373-a550-7e08c09c169e")
+  )
+  (junction
+    (at 144.78 203.20)
+    (diameter 0)
+    (color 0 0 0 0)
+    (uuid "1a048b6b-822e-4f18-a08f-bf2c697162aa")
+  )
+  (junction
+    (at 149.86 127.00)
+    (diameter 0)
+    (color 0 0 0 0)
+    (uuid "3a4d11ed-3c86-4fa1-a315-664e4bcc2c61")
+  )
+  (junction
+    (at 149.86 165.10)
+    (diameter 0)
+    (color 0 0 0 0)
+    (uuid "a40da8b5-30fa-46e7-84d3-9d838b6c1009")
+  )
+  (junction
+    (at 149.86 203.20)
+    (diameter 0)
+    (color 0 0 0 0)
+    (uuid "4631f2b0-aca6-4720-977e-09b7e4092303")
+  )
+)

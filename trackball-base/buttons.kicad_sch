@@ -1655,4 +1655,31 @@
     (color 0 0 0 0)
     (uuid "4631f2b0-aca6-4720-977e-09b7e4092303")
   )
+  (label "Net-(SW401-NO)"
+    (at 134.62 127.00 0)
+    (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (justify left bottom))
+    (uuid "8f4521e7-76eb-4ec9-901d-11712fe50e26")
+  )
+  (label "Net-(SW402-NO)"
+    (at 134.62 165.10 0)
+    (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (justify left bottom))
+    (uuid "a38f6b7e-ff09-4301-9584-4348c9762a78")
+  )
+  (label "Net-(SW403-NO)"
+    (at 134.62 203.20 0)
+    (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (justify left bottom))
+    (uuid "1f8d0fea-7403-4aac-9846-cd535672c42d")
+  )
 )

@@ -3834,4 +3834,40 @@
     (color 0 0 0 0)
     (uuid "2f311472-f1e5-4c52-bfe8-110b59238cfe")
   )
+  (label "Net-(U301-LED_P)"
+    (at 144.78 158.75 0)
+    (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (justify left bottom))
+    (uuid "257fd3bd-1ebb-4e46-86b6-c90c96822328")
+  )
+  (label "Net-(U301-VDDPIX)"
+    (at 114.30 144.78 90)
+    (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (justify left bottom))
+    (uuid "08708bd0-e8a7-4dac-8ca7-ff7b9e0e21e7")
+  )
+  (label "Net-(U302-LED_P)"
+    (at 297.18 158.75 0)
+    (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (justify left bottom))
+    (uuid "6749f8c2-8466-4426-bb14-9f7f03f1b646")
+  )
+  (label "Net-(U302-VDDPIX)"
+    (at 266.70 144.78 90)
+    (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (justify left bottom))
+    (uuid "d90ba5d3-c263-495a-8047-5a88633564d7")
+  )
 )
