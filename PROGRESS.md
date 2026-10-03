@@ -76,3 +76,11 @@ accept-or-destructive). QUESTIONS.md updated (TPs resolved).
 - Post-commit audit: `git show --stat HEAD` = exactly 4 files (pcb + PROGRESS + LAYOUT_REVIEW + QUESTIONS); no collateral in c9bbc9c.
 - `trackball-base.kicad_prl` deleted by pre-commit `rm -f`, restored from HEAD~1 blob (byte-identical; was unmodified pre-rm). All eco_bak/prl tracked + unmodified, `git status` clean.
 - Awaiting owner on Q5 (4 opens / schematic ECO) + Q6-remainder (23 opens / destructive re-place). No further executable layout craft.
+
+## 2026-10-03 10:20 -0600 — Q4 stage-1 Blender-manual review done, §9 committed (BLOCKED Q5/Q6 stands)
+- Auto check_*.py scripts MISSING (not in repo, ~/workspace/trackball-drc absent) — stated, none invented. Manual equivalents in LAYOUT_REVIEW §9.
+- Fresh drc-stage1.json (179 warn/26 unc/0 err/0 parity = drc127 scope), STEP+GLB regen, 4 Blender renders (hero/top/sensor/back, Cycles 64sp, calibration resid 0.0000mm) + kicad top/bottom cross-checks, all inspected.
+- Measured: outline 110.1x140.1 sharp corners; H1-H6 3.2mm; U301/U302 26.68 apart rot0; J201 6 TH legs + 6.05 from edge; U202->J201 courtyard 3.99 (ELEC-006 PASS); L501 2xPTH 1.6; antenna strip x[10,34] y<2.0 clear both layers.
+- FINDINGS: F9-1 zero zones in file (§1/§2.4/§3 pour claims corrected to intent); F9-2 project .wrl unloadable in KiCad 10 export + wrong-scale in render, J201/F101/D502 stock steps missing — deterministic Blender fallbacks used (J201 h3.5 / L501 h6.0 NOMINAL, App A.7-9).
+- MECH-002/003/022, RF-022 volumetric, MECH-008/049, ELEC-029 need enclosure CAD/ball datum/coil geometry — recorded as not-verifiable-at-PCB-stage with PCB-side inputs.
+- No schematic ECOs, no re-places. Awaiting owner on Q5 (4 alt-taps) + Q6-remainder (23 accept-or-destructive).

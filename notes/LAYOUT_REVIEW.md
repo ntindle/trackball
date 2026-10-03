@@ -1,6 +1,6 @@
 # BASE PCB Layout Review — trackball-base
 
-**Branch:** `job/trackball-base-layout` · **Checkpoint:** drc127 (unc26/0err/0parity; TP305/306 ECO + U2 closed; was drc126 unc27)
+**Branch:** `job/trackball-base-layout` · **Checkpoint:** drc127 (unc26/0err/0parity; TP305/306 ECO + U2 closed; was drc126 unc27) + §9 stage-1 Blender-manual review
 **Date:** 2026-10-01, resumed 2026-10-03 (owner Q1–Q4 approved) · **Tools:** KiCad 10.0.6, Blender 5.2.2 LTS, Python 3.12.3, freerouting 2.4.1 (headless, JRE 25)
 **Status:** BLOCKED Q5/Q6 (schematic-ECO 4 pads + placement-ECO decision) — see `notes/QUESTIONS.md`
 **Spec:** `docs/FINAL_SPEC.md` Rev 3.1 · **Rules:** `trackball-drc/RULES.md` (normative)
@@ -24,7 +24,7 @@ laid out forward from schematic branch `job/trackball-base-schematic`
 | DRC (drc127, `--schematic-parity`) | **0 errors**, 0 parity |
 | Unconnected | 26 (documented blockers, §7; was 27 at drc126, 57 at drc143) |
 | Stackup | 2L FR-4 1.6 mm, TOP signals + power, BB signals + power |
-| GND | Poured zones both sides + 8 mm stitch intent (KICAD-019) |
+| GND | 0 zones in file (F9-1 §9); GND = track stitching only (pour = intent, KICAD-019) |
 | Assembly | JLCPCB SMT except 2× PMW3360 (hand-solder) |
 
 **Routing status is PARTIAL.** §7 lists every open net with root cause.
@@ -60,8 +60,10 @@ bench TBD). CC1/CC2, SBU, VBUS fanout placed; VBUS tree partial (§7).
 
 ### 2.4 RF — E73-2G4M08S1C + antenna keepout (REAR)
 
-E73 module on REAR (opposite USB-C FRONT) with antenna keepout poured
-clear on both layers. Keepout verified by script (§4).
+E73 module on REAR (opposite USB-C FRONT); antenna-edge strip
+measured clear on both layers (planar census §9.6 — first actual
+measurement; prior "verified by script" had no supporting evidence).
+No zones exist (F9-1), so "poured clear" was intent, not copper.
 
 ### 2.5 Wireless TX — LTC4125 (U501) + annular coil interface
 
@@ -130,7 +132,8 @@ signals (E35); phased phase-1 USB+SPI (E37). Alternate layer-first (E23).
 - S1_MOSI 200 mm → 99 mm, S2_NCS 175 mm → ~140 mm after rip-up +
   tighten (ELEC-012 150 mm budget — PROVISIONAL, length TBD on closers).
 
-GND: poured zones both sides + track stitching.
+GND: 0 zones in file (F9-1 §9) — track stitching only; pour is
+post-Q5/Q6 route-close work.
 VBUS: power tree + U101-EN tied (E51).
 
 ### 3.1 Autorouter (freerouting.org, owner Q1)
@@ -156,11 +159,11 @@ only, not `trackball.kicad_dru` custom rules) — deviation E52 §6.
 | M1 | USB D+/D− skew <0.5 mm | `usb_tune.py` post-route audit | OPEN — split per E14, audit pending close |
 | M2 | USB90 width/gap | caliper on Gerber | PROVISIONAL stackup (KICAD-019/020) |
 | M3 | SPI lengths ≤150 mm | DRC length + 1.6/via | S1_MOSI 99, S2_NCS ~140 (PROVISIONAL) |
-| M4 | Antenna keepout clear | `check_antenna_keepout.py` | PENDING Stage-1 run |
-| M5 | Coil keepouts (5 mm / 0.8 mm) | `check_coil_keepouts.py` | PENDING Stage-1 run |
-| M6 | Sensor geometry 80–100° | `check_sensor_geometry.py` | PENDING Stage-1 run |
-| M7 | Ball socket / base stability | `check_ball_socket.py`, `check_base_stability.py` | PENDING Stage-1 run |
-| M8 | Buttons + USB placement | `check_buttons_usb.py` | PENDING Stage-1 run |
+| M4 | Antenna keepout clear | `check_antenna_keepout.py` (MISSING — §9.6 manual planar census instead) | MANUAL-PLANAR-ONLY (RF-022 volumetric needs enclosure CAD) |
+| M5 | Coil keepouts (5 mm / 0.8 mm) | `check_coil_keepouts.py` (MISSING — §9.5 manual partial) | MANUAL-PARTIAL (coil geometry PROVISIONAL/off-board) |
+| M6 | Sensor geometry 80–100° | `check_sensor_geometry.py` (MISSING — §9.2 manual XY only) | MANUAL-XY-ONLY (angle/Z need ball datum) |
+| M7 | Ball socket / base stability | `check_ball_socket.py`, `check_base_stability.py` (MISSING) | NOT RUNNABLE (enclosure CAD absent) |
+| M8 | Buttons + USB placement | `check_buttons_usb.py` (MISSING — §9.3/9.4 manual partial) | MANUAL-PARTIAL (ELEC-006 3.99 ✓; enclosure items open) |
 | M9 | Courtyards 0 overlap | DRC `courtyards_overlap` | 0 (drc126) |
 | M10 | Holes 0 violation | DRC `hole_*` | 0 (drc126; drc125 hole_to_hole FIXED P130) |
 | M11 | ERC clean | `kicad-cli sch erc` | 1 benign pin_to_pin |
@@ -363,10 +366,158 @@ accept-or-ripup on 23); 2–3 sessions after ECOs.
 
 ## 8. Rule citations (index)
 
-ELEC-002/004/005/006/012/027/029, CHG-009/011, PWR-002, MECH-006/049,
-TOUCH-001, KICAD-011/013/019/020/022, SENSOR_SELECTION, SCROLL_UX_DESIGN,
+ELEC-002/004/005/006/012/027/029, CHG-001/009/011, PWR-002,
+MECH-002/003/006/008/022/049, RF-002/022, TOUCH-001,
+KICAD-011/013/019/020/022, SENSOR_SELECTION, SCROLL_UX_DESIGN,
 FINAL_SPEC Rev 3.1, RULES.md (normative). E-series deviations E13.2–E49
 per devlog (`/tmp/devlog.md`, merged above).
+
+---
+
+## 9. Stage-1 Blender-manual geometry review (Q4, drc127)
+
+Scope: owner Q4 (2026-10-02) authorized the Blender-manual path. The six
+automated `blender/check_*.py` scripts (§4 M4–M8) are NOT runnable here:
+absent from this repo, and `~/workspace/trackball-drc/` does not exist on
+this box — stated per prompt §Validation, no script invented. This section
+records the manual equivalents: fresh STEP/GLB exports, 4 Blender review
+renders with deterministic fallback bodies, KiCad top/bottom cross-check
+renders, and pcbnew measurements. Coordinates in mm, file origin, +y
+south (toward the USB edge).
+
+DRC at review time: `notes/stage1/drc-stage1.json` — 179 warnings (123
+`lib_footprint_mismatch` per KICAD-013, 49 `track_dangling`, 3
+`via_dangling`, 2 `holes_co_located`, 2 `silk_edge`) + 26 unconnected,
+0 errors, 0 parity — same scope as drc127 §5. Review proceeds under the
+explicit task authorization; opens stay documented in §7, BLOCKED Q5/Q6
+stands.
+
+### 9.1 Board outline, stackup, mounting
+
+- Outline: rect 110.1 × 140.1 (x −0.05…110.05, y −0.05…140.05),
+  4 straight segments, SHARP corners (no arcs). kicad-pcb practice
+  prefers rounded/chamfered corners — flagged for MECH confirm, not a
+  rule violation. Renders confirm all holes cut through.
+- Stackup: 2L FR-4, `(thickness 1.6)` from file; GLB board-top z =
+  1.595 mm (Blender GLB→world calibration residual 0.0000 mm on
+  U501/U202/SW201/SW202).
+- Mounting: H1–H6, 3.2 mm drill, corners (5,5) (105,5) (5,135)
+  (105,135) + mid-sides (5,70) (105,70); symmetric about x = 55.
+  (MECH-006 steel-insert mounting is enclosure scope.)
+
+### 9.2 Sensors (MECH-002/003/022; M6)
+
+- U301 (41.66,71.59) rot0 F, U302 (68.34,71.59) rot0 F, custom
+  PMW3360DM-T2QU DIP; center distance 26.68. Both rot0 = parallel
+  packages: consistent — MECH-003's 80–100° is the angle between
+  ball-center→patch vectors (enclosure datum), not a footprint rotation.
+- PTH census: 16 pins × 0.7 mm drill each ✓ (16-pin DIP per
+  SENSOR_SELECTION §1).
+- NOT verifiable at PCB stage: MECH-003 axis angle (needs ball-center XY
+  + patch coords from enclosure CAD), MECH-002 Z = 2.4±0.1 (needs DIP
+  shoulder + LM19-LSI stack + ball surface datum), MECH-022 ≤0.25 stack.
+  Sensor XY above is the PCB-side input; enclosure CAD plus the missing
+  `check_sensor_geometry.py` own the verdict. M6 → MANUAL-XY-ONLY.
+
+### 9.3 Buttons (MECH-008/049; M8-partial)
+
+- SW401 (35,100), SW402 (75,100), SW403 (55,93), all rot0 F, D2FC-F-7N.
+  L/R spread 40 mm about x = 55; scroll 7 mm south of the L/R row,
+  centered.
+- MECH-008 (below equator, ≥8 mm from ball) and MECH-049 (thumb reach
+  ≤45 mm) need the ball-center/enclosure datum — not verifiable at PCB
+  stage. D2FC plunger-side orientation still PROVISIONAL (App A.1):
+  fallback plunger modeled at local x −5.2 per project .wrl.
+
+### 9.4 USB-C (MECH-006, ELEC-004/005/006; M8-partial)
+
+- J201 (55,134) rot0 F, USB_C_Receptacle_HRO_TYPE-C-31-M-12; 6 TH legs
+  (slot drills 0.6×1.2, 0.6×1.7 + 0.65 round) + 16 SMD → MECH-006 "≥4 TH
+  shield legs" SATISFIED by count; the mid-mount deviation stands (§6).
+- Placement: center 6.05 from the south edge; courtyard y 128.71…138.18
+  (1.875 inside the outline) ✓ seated, no overhang.
+- U202 (55,124) SOT-563 rot−90: min U202-pad → J201-courtyard-edge =
+  3.99 (pad-bbox top 124.713 vs courtyard ymin 128.705, x-ranges
+  overlap) → ELEC-005/006 "<5 mm from connector" SATISFIED vs the shell
+  courtyard (pad-to-pad 5.248 recorded for the file). §2.3 claim holds.
+
+### 9.5 TX coil interface (CHG-001, ELEC-029; M5-partial)
+
+- L501 (55,10) rot0 F, TX_COIL_IF_2P508: 2×PTH 1.6 mm drill ✓ (§2.5);
+  courtyard 7.04×6.06. U501 QFN-20 at (55,16), 6.0 south of L501 center.
+- Coil is off-board/custom per BOM (Wurth 760308100110 ref geometry,
+  PROVISIONAL): ELEC-029 SPI-to-coil 5 mm / edge-to-coil 3 mm cannot be
+  verified until coil geometry lands. Interface position + PTH recorded.
+
+### 9.6 RF module + antenna keepout (RF-002/022; M4-manual)
+
+- U201 = E73-2G4M08S1C module at (22,10) rot180 F; courtyard x
+  14.38…29.62, y 0.68…20.12 (0.73 from the south edge). Module long axis
+  N–S; shield/antenna end faces the south board edge per project .wrl
+  massing (local +y → board −y under rot180).
+- Planar census (first actual measurement; §2.4 "verified by script" had
+  no supporting evidence — corrected): 0 tracks/vias in the strip
+  x∈[10,34], y<2.0 south of the module on EITHER layer ✓; nearest other
+  pad to the module courtyard R202.2 @ 1.08. The 163 in-courtyard copper
+  hits are predominantly U201's own pin fanout (SPI/GPIO/USB/BTN stubs)
+  plus crossing stubs of open nets — all under the module body, not a
+  keepout verdict either way.
+- RF-022 volumetric 8 mm keepout needs enclosure CAD + module datasheet
+  antenna geometry — not verifiable at PCB stage. M4 → MANUAL-PLANAR-ONLY.
+
+### 9.7 FINDING F9-1 — no zones in file (KICAD-019)
+
+- Measured: 0 `(zone` entries (file grep + pcbnew `board.Zones()`),
+  2318 tracks. §1 "GND poured zones both sides", §2.4 "keepout poured
+  clear", §3 "poured zones" were INTENT, not embodied copper — corrected
+  in place. GND today = track stitching only; keepout claims reduce to
+  "clear by absence" (verified §9.6 for the antenna strip). Zones must be
+  placed + refilled before fab (route-close work, after Q5/Q6 unblock).
+  GLB `--include-zones` exported nothing.
+
+### 9.8 FINDING F9-2 — 3D massing models unusable in KiCad 10 (MECH review aid)
+
+- Project .wrl (PMW3360/D2FC/E73, plausible-mm dims): KiCad 10 export
+  reports "No model for filename" (6×) for GLB and refuses VRML for
+  STEP; `pcb render` loads them at wrong scale (giant grey/white blocks
+  in `kicad-render-top.png`). Root cause not chased (loader/unit issue);
+  footprints need a `(model (scale …))` fix or STEP replacements before
+  MECH sign-off.
+- Stock .step missing from install: J201 HRO receptacle ("File not
+  found"), F101, D502 ("Could not add 3D model"). L501 has no model entry.
+- Blender fallbacks used (deterministic, from .wrl numbers-as-mm):
+  PMW3360 body 16.2×10.1×2.4 + lens cyl r5 h6.7 + plate 21.15×18.85×1.0;
+  D2FC body 12.8×5.8×6.0 + plunger r0.6; E73 13×18×2.2 + shield 10×3×0.8;
+  J201 courtyard-box 10.68×9.47 hNOM 3.5; L501 courtyard-box 7.04×6.06
+  hNOM 6.0. J201/L501 heights are NOMINAL placeholders (App A.7/8) —
+  verify against vendor drawings before MECH sign-off.
+
+### 9.9 Render evidence + observations
+
+- `notes/stage1/blend-hero.png` (1920×1080), `blend-top.png`,
+  `blend-sensor.png`, `blend-back.png` (1600²), Cycles CPU 64sp +
+  denoise, builder `notes/stage1/build_scene.py` (GLB→world calibration
+  residual 0.0000 mm). Cross-checks: `kicad-render-top/bottom.png`.
+  Sources: `trackball-base-review.step` + `.glb`, regenerated from the
+  drc127 board for this review (`--force --no-dnp --subst-models`,
+  tracks/pads/zones/silk/mask, `--cut-vias-in-body` on GLB).
+- Observed: outline + all 6 holes + J201 slots present; all 16 fallback
+  bodies seated on their pads (sensor stacks over the PTH pin fields,
+  D2FC boxes on pin fields, E73/J201/L501 on courtyards); no body-to-body or
+  body-to-hole interference visible at review resolution; bottom shows
+  sensor PTH stubs + J201 slots + routing.
+- Limits: the GLB track mesh sits buried under mask faces (copper
+  reviewed via the kicad renders, not Blender); mask color in renders is
+  KiCad-default green — NOT a fab color decision (App A.9); F101/D502
+  render as bare pads (no model, minor parts).
+
+### 9.10 M-row reconciliation
+
+| M4 antenna | MANUAL-PLANAR-ONLY §9.6 (RF-022 volumetric needs enclosure CAD) |
+| M5 coil | MANUAL-PARTIAL §9.5 (coil geometry PROVISIONAL/off-board) |
+| M6 sensor | MANUAL-XY-ONLY §9.2 (angle/Z need ball datum + missing script) |
+| M7 socket/stability | NOT RUNNABLE — enclosure CAD absent, scripts missing |
+| M8 buttons/USB | MANUAL-PARTIAL §9.3/9.4 (ELEC-006 3.99 ✓; enclosure items open) |
 
 ---
 
@@ -378,6 +529,9 @@ per devlog (`/tmp/devlog.md`, merged above).
 4. USB90 0.25/0.20 GCPW provisional pending stackup sim.
 5. All PROVISIONAL values require bench before fab.
 6. Partial route accepted for this checkpoint; §7 is the work list.
+7. J201 render body height 3.5 NOMINAL (§9.8 render placeholder only).
+8. L501 render body height 6.0 NOMINAL (§9.8 render placeholder only).
+9. Render mask color (KiCad-default green) is NOT a fab color decision.
 
 ## Appendix B. Evidence files
 
@@ -386,5 +540,11 @@ per devlog (`/tmp/devlog.md`, merged above).
 - Scripts: `/tmp/raw.py`, `/tmp/ripbatch.py`, `/tmp/svbatch.py`,
   `/tmp/audit.py`, `/tmp/q*.py`, `/tmp/p*.json`, `/tmp/rb*.json`,
   `/tmp/drc.sh`, `/tmp/freerouting-2.4.1.jar` (+ Temurin JRE 25).
-- Stage-1 checks: PARTIAL (M4–M8 need route-close; blocked Q5/Q6).
+- Stage-1 checks: MANUAL review §9 (auto scripts missing; M4–M6/M8
+  manual-partial, M7 not runnable; route-close + Q5/Q6 still block M1–M3).
+- Stage-1 evidence (`notes/stage1/`, drc127 board): `drc-stage1.json`
+  (179 warn / 26 unc / 0 err / 0 parity), `trackball-base-review.step`
+  + `.glb` (fresh exports), `build_scene.py` (deterministic Blender
+  builder), `blend-hero/top/sensor/back.png` (review renders),
+  `kicad-render-top/bottom.png` (copper cross-checks).
 - Blockers: `notes/QUESTIONS.md` (Q5 schematic-ECO 4 pads, Q6 placement).
