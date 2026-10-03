@@ -362,6 +362,54 @@ RST-maze (P103, 12 errors), SEN-N (rb23), U8N (rb25), C505N
 (rb28/rb29). **Path:** owner answers Q5 (4 alt-taps) + Q6 (TP move +
 accept-or-ripup on 23); 2–3 sessions after ECOs.
 
+### 7.6 Known-opens for respin (drc128 triage — all 26 items)
+
+Board unchanged since drc127 (drc128: 179 warn / 26 unc / 0 err /
+0 parity, item-for-item identical). Every row below was verified by
+TRUE pcbnew corridor surveys (0.5 mm margin) + file audit; ripups
+attempted & reverted: TX-zone rb36/P109 (10 errors), RST-maze P103
+(12 errors), SEN-N rb23, U8N rb25, C505N rb28/rb29, C203N rb32,
+C101N, J201N/E, VIN-N rb42/P128. Independent oracle: freerouting.org
+2.4.1 headless (JRE 25, 50-pass) stuck at 73 unconnected, score frozen
+716.45 across passes 2–4 — autorouter agrees the cages hold.
+
+**Q5 — schematic-ECO group (4 nets, both endpoints pad-caged):**
+
+| ID | Net | Caged endpoints | What was tried |
+|---|---|---|---|
+| U20 | MCU_TX_EN | U201.28 (QFN row) ↔ R111.2, 104 mm across maze | Corridor surveys both ends caged; no ripup (cross-board, pad-caged) |
+| U21 | VBUS_SENSE | U201.3 (adj-pin cage) ↔ R-triple / B-E-W-y=122.9 stub, 115 mm | Corridor surveys both ends caged; no ripup |
+| U22/23 | SENSOR_EN | U201.42 (TX_STAT W 0.4clr + U201.40 N OVERLAP) ↔ R103.1 (R103.2 OVERLAP) / U104.3 (GND cage), 79.5 mm | All taps surveyed caged; N-stub SHORTED vs BTN1/R401.2, ripped |
+| U26 | CTD (`/tx/Net-(U501-CTD)`) | U501.14 (0.5-pitch: 0.65 > 0.5 gap, unthreadable) ↔ C507.1 (C507.2 3-sided cage) | Surveys fail all rows; rb36/P109 ripup placed then SHORTED (C507.2 0.065, TX_STAT-via OVERLAP, D501-A crossing, 10 errors), reverted rb39/P112; C507-N move fails W-end; U501 move breaks 20 |
+
+**Q6-remainder — placement group (22 nets; TP305/TP306 U2 FIXED drc127
+via ECO4 + P131, noted — not in this table):**
+
+| ID | Net | Caged endpoints | What was tried |
+|---|---|---|---|
+| U0 | +3V3 | (24.67,20.09)↔(22.66,19.0): GND-x=23.9 crossing (CLR 0.2) | Surveys; needs U201 move |
+| U1 | +3V3 | (33.48,26.6)↔(26.5,23.6): S2_MOSI-x=28.9 crossing | Surveys; needs U201 move |
+| U3 | GND | diag↔E-W-y=14.2-W-end: via (46.9,14.2) vs MCU_RST-x=46.43 SHORT (0.47) | Surveys; needs MCU_RST-zone ripup |
+| U4 | GND | (56.88,116.7)↔(56.52,115.0): via-B crosses +3V3-y=115.875 | Surveys; accept |
+| U5 | GND | mesh↔rect-S: VBUS-via 0.125 (vbus_clearance 0.25), +3V3-x=61.225 SHORT, C106.2 0.1 | Surveys; accept |
+| U6 | GND | N-S-x=59.95↔60.45: via (59.95,117.0) vs VBUS-x=59.3 SHORT | Surveys; accept |
+| U7 | GND | (74.985,15.0)↔N-S-x=71.8: TX_EN-x=74.51 X; 0.05 clr | Surveys; C507 move fails (Q5-1); accept-or-move |
+| U8 | MCU_RST | (12.475,20.75)↔(13.025,19.705): R202.1-S-edge vs E-W-y=20.6, 0.0 clr (Power 0.2) | Surveys; needs R202 move |
+| U9 | MCU_RST | TP205↔maze: N-S-x=12.7 crossed 6 items, 12 DRC errors (P103) | P103 ripup reverted (rb35/P104/P105); accept-or-ripup P1.11 zone |
+| U10 | VBUS | crawls↔U201.27: 3-sided cage (S2_MOSI N, U201.28 W, MCU_RST N) | Surveys; needs U201 move |
+| U11 | VBUS | N-S-x=49.5↔43.8: IOB1-via F OVERLAP, D+-y=124.7 B X | Surveys; accept |
+| U12 | VBUS | C118.1↔N-S-x=59.3: C106 gap 0.9 < 1.0 (w0.5 + 2×0.25); neck w0.25 REJECTED (vbus_min_width) | Surveys; needs C106 move |
+| U13 | VSEN_1V9 | 34 mm: F GND-x=51.725 X + VDDIO_S1 OVERLAP; B TX_5V_SW-x=50.99 X + S2_MISO-diag X | Surveys + SEN-N rb23 ripup reverted; accept |
+| U14 | TX_IMON | U201.15↔stub, 29 mm maze (10+ nets) | Surveys; accept |
+| U15 | VIN | U501.2-CTS pad between U501.1/U501.3 OVERLAP | Surveys; needs U501 move (breaks 20) |
+| U16 | VIN | IS+-x=50.48, 0.12 clr | Surveys; needs U501 move (breaks 20) |
+| U17 | VIN-E | N-end BTN3-diag cage (X, 0.0747 clr); W/E cross BTN3 | Surveys + VIN-N rb42/P128 ripup reverted; accept |
+| U18 | FTH | U501.9↔stub, 14.7 mm maze | Surveys; accept |
+| U19 | D501-A | F FB_PK-diag X + D501.1-pad OVERLAP; B TX_EN-x=61.9 X + FB_PK-x=64.55 X | Surveys; needs D501/D502 move |
+| U27 | J202-Pin_2 | F Pin_4 X + MCU_RST-x=9.725 SHORT; B Pin_4 (0.182) + MCU_RST SHORT | Surveys; accept-or-ripup J202 zone |
+| U28 | P0.12 | F S2_MOSI + MCU_RST-x=29.77 X; B S1_MOSI-x=24.4 X + AIN5-x=23.34 X | Surveys; accept (Q6 table lists U201-move alt) |
+| U29 | S2_MOT | F-W S1_SCK-x=40.0 X + BTN3-x=40.793 X; S GND-via 0.05 + C504.1-N-edge SHORT + GND-diag X | Surveys; accept (Q6 table lists U201-move alt) |
+
 ---
 
 ## 8. Rule citations (index)
@@ -547,4 +595,7 @@ stands.
   + `.glb` (fresh exports), `build_scene.py` (deterministic Blender
   builder), `blend-hero/top/sensor/back.png` (review renders),
   `kicad-render-top/bottom.png` (copper cross-checks).
+- Triage snapshot (drc128, board unchanged): `notes/stage1/`
+  `drc128-triage.json` + `kicad-render128-top/bottom.png`; known-opens
+  tables §7.6; owner options in `notes/QUESTIONS.md`.
 - Blockers: `notes/QUESTIONS.md` (Q5 schematic-ECO 4 pads, Q6 placement).

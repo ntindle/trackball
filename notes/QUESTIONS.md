@@ -1,13 +1,14 @@
 # BLOCKED Questions — trackball-base layout (job/trackball-base-layout)
 
-**Date:** 2026-10-03 · **DRC:** drc127 (0 errors, 0 parity, 26 unconnected)
+**Date:** 2026-10-03 (triage) · **DRC:** drc128 (0 errors, 0 parity,
+26 unconnected — item-for-item identical to drc127; board unchanged)
 **Prior:** Q1–Q4 owner-approved 2026-10-02 (placement ECOs, freerouting.org,
 via/placement micro-moves, Blender-manual). This file asks ONLY what exceeds
 that authority: schematic-intent + destructive placement rework.
 **Resolved:** TP305/TP306 micro-move DONE drc127 (ECO4 + P131, U2 closed —
-see below). Q5 + Q6-remainder still awaiting owner.
+see below). Q5 + Q6-remainder OWNER-DECISION PENDING (see options).
 
-## Q5 — Schematic ECO: alternate taps for 4 unroutable pads (BLOCKING)
+## Q5 — Schematic ECO: alternate taps for 4 unroutable pads (OWNER-DECISION PENDING)
 
 4 nets are unroutable because BOTH endpoints are caged by fixed adjacent
 pads/traces no layout move can clear (verified by survey + ripup-attempt +
@@ -20,15 +21,17 @@ independent freerouting.org run stuck with no progress):
 | 3 | `SENSOR_EN` | U201.42 (U201 QFN row: TX_STAT-x=25.4 W-cage (0.4 clr), U201.40-TX_STAT N-cage (OVERLAP)) | R103.1 (R103.2-GND E-cage (OVERLAP)), U104.3 (GND-cage (N-S-x=28.363 crossing, E-W-y=87.0 OVERLAP)) | All 3 sensor-end taps caged; MCU-end caged. N-stub attempt SHORTED vs BTN1/R401.2 (ripped). |
 | 4 | `MCU_TX_EN` | U201.28 (U201 QFN row cage) | R111.2 (mid-board, 104 mm gap across routed maze) | 104 mm pad-to-pad gap across routed maze; both ends caged. |
 
-**Ask:** schematic ECO adding alternate taps (test-point or via-stitched
-stub on an accessible segment) OR owner acceptance of 4 unconnected nets
-(documented in LAYOUT_REVIEW §7 as known-opens for respin).
+**Owner options:** (a) accept the 4 Q5 opens for respin (documented in
+LAYOUT_REVIEW §7.6 as known-opens); (b) authorize the Q5 schematic ECO
+(alternate taps: test-point or via-stitched stub on an accessible segment).
+No schematic ECO attempted — exceeds standing authority.
 
-## Q6 — Destructive placement ECO: re-place U501/C106/U201/R202/C203 (BLOCKING, expensive)
+## Q6 — Destructive placement ECO: re-place U501/C106/U201/R202/C203/C507/D501/D502 (OWNER-DECISION PENDING, expensive)
 
-23 further nets are unroutable due to FIXED-pad cages a placement ECO could
-clear, but every candidate move breaks already-routed nets (ripup verified
-necessary, not attempted — destructive):
+22 remaining nets (Q6-remainder; TP305/TP306 U2 FIXED drc127) are
+unroutable due to FIXED-pad cages a placement ECO could clear, but every
+candidate move breaks already-routed nets (ripup verified necessary, not
+attempted — destructive):
 
 | Cage | Nets blocked | Move needed | Breaks |
 |---|---|---|---|
@@ -41,9 +44,11 @@ necessary, not attempted — destructive):
 | D501.1-FB_PK, D502.1-VIN | D501-A U19 (crossing/OVERLAP) | Move D501/D502 | TX coil-fan mesh |
 | TP305/TP306 (testpoints) | +3V3 U2 | **DONE drc127** (ECO4: TP305→(44.0,43.5), TP306→(44.0,47.2), stubs kept; P131 east loop closed U2; probe showed pads F-only, true cages were S2_SCK-diag + S2_SCK-y=42.8) | Nothing (testpoints) |
 
-**Ask:** owner decision: (a) accept 23 opens for respin, (b) authorize
-destructive re-place + full ripup of affected zones (est. 2–3 sessions),
-(c) at minimum authorize TP305/TP306 micro-move (cheap, closes U2).
+**Owner options:** (a) accept the 22 Q6-remainder opens for respin
+(documented in LAYOUT_REVIEW §7.6 as known-opens); (c) authorize the Q6
+destructive re-place + full ripup of affected zones (est. 2–3 sessions).
+No destructive re-place attempted — exceeds standing authority.
+(TP305/TP306 micro-move already DONE drc127.)
 
 ## Corroboration
 
@@ -54,7 +59,10 @@ destructive re-place + full ripup of affected zones (est. 2–3 sessions),
   (score frozen 716.45) before timeout — autorouter agrees cages hold.
 - DRC127: 0 errors, 0 parity, 26 unconnected, 179 warnings
   (123 lib_footprint_mismatch expected per KICAD-013).
+- DRC128 triage: identical (board unchanged) — see
+  `notes/stage1/drc128-triage.json` + `kicad-render128-top/bottom.png`.
 
-BLOCKED: schematic-ECO (Q5, 4 pads) + placement-ECO decision (Q6 remainder,
-23 nets — TP305/TP306 portion RESOLVED, no schematic or destructive moves
-attempted per directive).
+OWNER-DECISION PENDING: Q5 (4 nets — option a accept / b schematic ECO) +
+Q6-remainder (22 nets, TP305/TP306 RESOLVED — option a accept / c
+destructive re-place). No schematic ECO or destructive moves attempted —
+exceed standing directives; no new routing waves opened this turn.

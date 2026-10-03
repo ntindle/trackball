@@ -84,3 +84,8 @@ accept-or-destructive). QUESTIONS.md updated (TPs resolved).
 - FINDINGS: F9-1 zero zones in file (§1/§2.4/§3 pour claims corrected to intent); F9-2 project .wrl unloadable in KiCad 10 export + wrong-scale in render, J201/F101/D502 stock steps missing — deterministic Blender fallbacks used (J201 h3.5 / L501 h6.0 NOMINAL, App A.7-9).
 - MECH-002/003/022, RF-022 volumetric, MECH-008/049, ELEC-029 need enclosure CAD/ball datum/coil geometry — recorded as not-verifiable-at-PCB-stage with PCB-side inputs.
 - No schematic ECOs, no re-places. Awaiting owner on Q5 (4 alt-taps) + Q6-remainder (23 accept-or-destructive).
+
+## 2026-10-03 15:50 -0600 — BLOCKED triage: §7.6 known-opens (26) + drc128 snapshot committed, Q5/Q6 OWNER-DECISION PENDING
+- No routing, no schematic ECO, no destructive re-place (all exceed standing directives). drc128 identical to drc127 (179 warn/26 unc/0 err/0 parity).
+- LAYOUT_REVIEW §7.6: all 26 opens tabulated (Q5: U20/U21/U22-23/U26; Q6-remainder: 22 rows, TP fixed noted) with caged endpoints + tried (surveys/ripups/freerouting oracle).
+- Snapshot: notes/stage1/drc128-triage.json + kicad-render128-top/bottom.png; QUESTIONS.md options (a) accept opens (b) Q5 ECO (c) Q6 re-place. Idle awaiting owner.
