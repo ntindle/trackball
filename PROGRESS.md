@@ -71,3 +71,8 @@ DRC127: unconnected_items=26 parity=[] errors=0 warnings=179
 
 Still BLOCKED: Q5 (4 alt-taps, schematic-intent) + Q6 remainder (23
 accept-or-destructive). QUESTIONS.md updated (TPs resolved).
+
+## 2026-10-03 06:55 -0600 — drc127 housekeeping: prl restore verified, tree clean
+- Post-commit audit: `git show --stat HEAD` = exactly 4 files (pcb + PROGRESS + LAYOUT_REVIEW + QUESTIONS); no collateral in c9bbc9c.
+- `trackball-base.kicad_prl` deleted by pre-commit `rm -f`, restored from HEAD~1 blob (byte-identical; was unmodified pre-rm). All eco_bak/prl tracked + unmodified, `git status` clean.
+- Awaiting owner on Q5 (4 opens / schematic ECO) + Q6-remainder (23 opens / destructive re-place). No further executable layout craft.
