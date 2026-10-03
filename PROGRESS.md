@@ -48,3 +48,26 @@ exceeds Q1–Q4) + Q6 placement-ECO decision (TP305/TP306 cheap move +
 accept-or-destructive-ripup on 23). See notes/QUESTIONS.md.
 Fab outputs NOT refreshed (27 opens — not shippable); LAYOUT_REVIEW
 §1/§4/§5/§7/AppB updated to drc126.
+
+## 2026-10-03 — TP305/TP306 micro-move + U2 close: 27→26 unc, 0 errors, 0 parity (DRC127)
+
+Per continuation directive (Q6 cheap move; NO Q5 schematic ECO, NO
+destructive re-places). Probe revealed TP305/TP306 pads are F.Cu-only,
+no drill — they never blocked B copper; the real U2 cages were
+S2_SCK-diag (path A y=41.7, crossing (43.22,41.7)) and S2_SCK-E-W-y=42.8
++ N-S-x=78.0 corner (path B N-S-x=63.51).
+
+ECO4 (standing Q1 craft): TP305 (44.0,42.0)→(44.0,43.5),
+TP306 (44.0,46.0)→(44.0,47.2); both stay stub-connected (same-net F
+overlap, surveyed tp305n/tp306n clear). P131 (audit 7/7): B-E-W-y=45.0
+x[44.9,77.0] (corr45 clear) + via (77.0,45.0) + F-hop x[77.0,78.8]
+(fhop EMPTY) + via (78.8,45.0) + B-N-S-x=78.8 y[42.0,45.0] +
+B-E-W-y=42.0 x[63.51,78.8] (e41/e45/n78 clear; y=42.0 dodges GND-x=64.1
+S-end (0.425) and S2_SCK-y=42.8 (0.425)) + N-S-x=63.51 stub y[41.7,42.0]
+(exact endpoint joins, no T-quirk).
+
+DRC127: unconnected_items=26 parity=[] errors=0 warnings=179
+(+3V3 left: U0/U1 F-west only (Q6)). See /tmp/resume_drc127.json.
+
+Still BLOCKED: Q5 (4 alt-taps, schematic-intent) + Q6 remainder (23
+accept-or-destructive). QUESTIONS.md updated (TPs resolved).

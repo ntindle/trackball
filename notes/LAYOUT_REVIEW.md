@@ -1,6 +1,6 @@
 # BASE PCB Layout Review — trackball-base
 
-**Branch:** `job/trackball-base-layout` · **Checkpoint:** drc126 (unc27/0err/0parity; was `2e2fc6a` pre-freeroute, `6707a18`/drc143 unc57 at Q1–Q4 BLOCKED)
+**Branch:** `job/trackball-base-layout` · **Checkpoint:** drc127 (unc26/0err/0parity; TP305/306 ECO + U2 closed; was drc126 unc27)
 **Date:** 2026-10-01, resumed 2026-10-03 (owner Q1–Q4 approved) · **Tools:** KiCad 10.0.6, Blender 5.2.2 LTS, Python 3.12.3, freerouting 2.4.1 (headless, JRE 25)
 **Status:** BLOCKED Q5/Q6 (schematic-ECO 4 pads + placement-ECO decision) — see `notes/QUESTIONS.md`
 **Spec:** `docs/FINAL_SPEC.md` Rev 3.1 · **Rules:** `trackball-drc/RULES.md` (normative)
@@ -21,8 +21,8 @@ laid out forward from schematic branch `job/trackball-base-schematic`
 | Footprints placed | 155 |
 | Courtyard violations | 0 (after ECOs, §6) |
 | ERC | 1 benign `pin_to_pin` (documented in SCHEMATIC_REVIEW) |
-| DRC (drc126, `--schematic-parity`) | **0 errors**, 0 parity |
-| Unconnected | 27 (documented blockers, §7; was 57 at drc143) |
+| DRC (drc127, `--schematic-parity`) | **0 errors**, 0 parity |
+| Unconnected | 26 (documented blockers, §7; was 27 at drc126, 57 at drc143) |
 | Stackup | 2L FR-4 1.6 mm, TOP signals + power, BB signals + power |
 | GND | Poured zones both sides + 8 mm stitch intent (KICAD-019) |
 | Assembly | JLCPCB SMT except 2× PMW3360 (hand-solder) |
@@ -168,12 +168,12 @@ only, not `trackball.kicad_dru` custom rules) — deviation E52 §6.
 
 ---
 
-## 5. DRC evidence (drc126)
+## 5. DRC evidence (drc127)
 
 ```
 viol: lib_footprint_mismatch 123, track_dangling 49, via_dangling 3,
       holes_co_located 2, silk_edge_clearance 2
-unc: 27 (+3V3 3, GND 5, MCU_RST 2, VBUS 3, VSEN_1V9 1, TX_IMON 1,
+unc: 26 (+3V3 2, GND 5, MCU_RST 2, VBUS 3, VSEN_1V9 1, TX_IMON 1,
       VIN 3, FTH 1, D501-A 1, MCU_TX_EN 1, VBUS_SENSE 1,
       SENSOR_EN 1, CTD 1, J202-Pin_2 1, P0.12 1, S2_MOT 1)
 real violations: 0    parity: 0
@@ -184,9 +184,10 @@ real violations: 0    parity: 0
 - `track_dangling` 49 / `via_dangling` 3: open stubs on unrouted nets (§7).
 - `holes_co_located` 2: accepted (intentional stacked vias, no fab risk).
 - `silk_edge_clearance` 2: accepted (silk clipped at edge, no fab risk).
-- Full JSON: `/tmp/resume_drc126.json` (job archive).
-- Progress drc143→drc126: 57→27 unconnected (−30) via P6–P130
-  (survey-verified hand routes + T-junction workarounds + ripup-reverts).
+- Full JSON: `/tmp/resume_drc127.json` (job archive).
+- Progress drc143→drc127: 57→26 unconnected (−31) via P6–P131
+  (survey-verified hand routes + T-junction workarounds + ripup-reverts
+  + TP305/306 ECO4 + U2 east loop).
 - Independent corroboration: freerouting.org 2.4.1 headless (JRE 25,
   50-pass budget) stuck at 73 unrouted, score frozen 716.45 across
   passes 2–4 — autorouter agrees remaining cages hold.
@@ -242,7 +243,7 @@ ELEC-012 SPI length, USB90 stackup (KICAD-019/020).
 
 ---
 
-## 7. Open nets — blockers (27 at drc126; BLOCKED Q5/Q6 — was 57 at drc143)
+## 7. Open nets — blockers (26 at drc127; BLOCKED Q5/Q6 — was 27 at drc126, 57 at drc143)
 
 Root cause: placement density exceeds hand-routing capacity in QFN
 fanout zones + BB minefield (USB spine + SPI + GND + P1.11). Resolution
@@ -295,16 +296,18 @@ pass (spread U501 south row, U201 east row, TX south band; place C115
 with keepout survey) + BB corridor plan (USB spine fixed; route SPI/GND
 around) + autorouter (freerouting.org) for singles.
 
-### 7.5 drc126 — 27 opens (BLOCKED Q5/Q6; every row survey-verified)
+### 7.5 drc127 — 26 opens (BLOCKED Q5/Q6; every row survey-verified)
 
 Root cause: fixed-pad cages (0.5 mm-pitch QFN rows, adjacent-pad pairs,
 testpoint overlaps) + routed mazes no ripup clears without breaking
 placed copper. Q-ref = `notes/QUESTIONS.md`.
 
-**+3V3 (3):** U0 (24.67,20.09)↔(22.66,19.0): GND-x=23.9 crossing (CLR 0.2)
+**+3V3 (2):** U0 (24.67,20.09)↔(22.66,19.0): GND-x=23.9 crossing (CLR 0.2)
 — Q6 (move U201). U1 (33.48,26.6)↔(26.5,23.6): S2_MOSI-x=28.9 crossing —
-Q6 (move U201). U2 E-W-y=41.7↔N-S-x=40.9: R511.2-pad caged
-(GND-x=62.97 N (0.165), TX_STAT W (X), FB E (OVERLAP)) — Q6 (TP305/306).
+Q6 (move U201). U2 CLOSED drc127 (ECO4 TP305→(44.0,43.5),
+TP306→(44.0,47.2) + P131 east loop: B-y=45.0/F-hop/B-x=78.8/B-y=42.0
+around S2_SCK corner (78.0,42.8); probe showed TP pads are F-only so the
+true cages were S2_SCK-diag (path A) and S2_SCK-y=42.8 (path B direct)).
 
 **GND (5):** U3 diag↔E-W-y=14.2-W-end: via (46.9,14.2) vs MCU_RST-x=46.43
 SHORT (0.47) — Q6 (ripup MCU_RST zone). U4 (56.88,116.7)↔(56.52,115.0):
@@ -346,10 +349,11 @@ B S1_MOSI-x=24.4 (X) + AIN5-x=23.34 (X) — accept. U29 S2_MOT: F-W
 S1_SCK-x=40.0 (X) + BTN3-x=40.793 (X); S GND-via (0.05) +
 C504.1-N-edge (SHORT) + GND-diag (X) — accept.
 
-**Closed drc143→drc126 (−30):** T-junction workarounds (P37/P99/P100),
+**Closed drc143→drc127 (−31):** T-junction workarounds (P37/P99/P100),
 via stitches (P129/P130), U2 (P101/P102), U7-GND (P106), U10-RST (P107),
 U12-RST (P101/P104), U26-D501-A-B (P108), VBUS/GND crawls (H3.1 P78,
-GND-S P91, U7-U8 P44, U15-U17 P31, U14 P32, U5 P33).
+GND-S P91, U7-U8 P44, U15-U17 P31, U14 P32, U5 P33), U2 east loop
+(ECO4 TP305/306 + P131).
 **Ripup attempted & reverted:** TX-zone (rb36/P109, 10 errors),
 RST-maze (P103, 12 errors), SEN-N (rb23), U8N (rb25), C505N
 (rb28/rb29). **Path:** owner answers Q5 (4 alt-taps) + Q6 (TP move +
@@ -377,8 +381,8 @@ per devlog (`/tmp/devlog.md`, merged above).
 
 ## Appendix B. Evidence files
 
-- DRC: `/tmp/resume_drc126.json` (+ drc18–drc126 series in job archive).
-- Board: `trackball-base.kicad_pcb` @ drc126 (job/trackball-base-layout).
+- DRC: `/tmp/resume_drc127.json` (+ drc18–drc127 series in job archive).
+- Board: `trackball-base.kicad_pcb` @ drc127 (job/trackball-base-layout).
 - Scripts: `/tmp/raw.py`, `/tmp/ripbatch.py`, `/tmp/svbatch.py`,
   `/tmp/audit.py`, `/tmp/q*.py`, `/tmp/p*.json`, `/tmp/rb*.json`,
   `/tmp/drc.sh`, `/tmp/freerouting-2.4.1.jar` (+ Temurin JRE 25).

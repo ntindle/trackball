@@ -1,9 +1,11 @@
 # BLOCKED Questions — trackball-base layout (job/trackball-base-layout)
 
-**Date:** 2026-10-03 · **DRC:** drc126 (0 errors, 0 parity, 27 unconnected)
+**Date:** 2026-10-03 · **DRC:** drc127 (0 errors, 0 parity, 26 unconnected)
 **Prior:** Q1–Q4 owner-approved 2026-10-02 (placement ECOs, freerouting.org,
 via/placement micro-moves, Blender-manual). This file asks ONLY what exceeds
 that authority: schematic-intent + destructive placement rework.
+**Resolved:** TP305/TP306 micro-move DONE drc127 (ECO4 + P131, U2 closed —
+see below). Q5 + Q6-remainder still awaiting owner.
 
 ## Q5 — Schematic ECO: alternate taps for 4 unroutable pads (BLOCKING)
 
@@ -37,7 +39,7 @@ necessary, not attempted — destructive):
 | C203.2-GND (W-edge 24.2) | +3V3 U0-N (OVERLAP) | Move C203 ≥0.5 mm | +3V3/GND mesh |
 | C507.2-GND | GND U7 (TX_EN-cage), CTD (see Q5) | Move C507 (attempted N: fails W-end) | GND/TX_EN mesh |
 | D501.1-FB_PK, D502.1-VIN | D501-A U19 (crossing/OVERLAP) | Move D501/D502 | TX coil-fan mesh |
-| TP305/TP306 (testpoints) | +3V3 U2 (TP306 OVERLAP), +3V3-EAST (TP305 crossing) | Move TPs (cheap) | Nothing (testpoints) — **recommended: do this one** |
+| TP305/TP306 (testpoints) | +3V3 U2 | **DONE drc127** (ECO4: TP305→(44.0,43.5), TP306→(44.0,47.2), stubs kept; P131 east loop closed U2; probe showed pads F-only, true cages were S2_SCK-diag + S2_SCK-y=42.8) | Nothing (testpoints) |
 
 **Ask:** owner decision: (a) accept 23 opens for respin, (b) authorize
 destructive re-place + full ripup of affected zones (est. 2–3 sessions),
@@ -50,7 +52,9 @@ destructive re-place + full ripup of affected zones (est. 2–3 sessions),
 - Independent oracle: freerouting.org 2.4.1 headless (Java 25, 50-pass
   budget) stuck at 73 unrouted with ZERO progress across passes 2–4
   (score frozen 716.45) before timeout — autorouter agrees cages hold.
-- DRC126: 0 errors, 0 parity, 27 unconnected, 182 warnings
+- DRC127: 0 errors, 0 parity, 26 unconnected, 179 warnings
   (123 lib_footprint_mismatch expected per KICAD-013).
 
-BLOCKED: schematic-ECO (Q5, 4 pads) + placement-ECO decision (Q6).
+BLOCKED: schematic-ECO (Q5, 4 pads) + placement-ECO decision (Q6 remainder,
+23 nets — TP305/TP306 portion RESOLVED, no schematic or destructive moves
+attempted per directive).
