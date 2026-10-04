@@ -67,3 +67,6 @@ committed before any ripup. (TP305/TP306 micro-move already DONE drc127.)
 OWNER DECIDED 2026-10-04 (do it right, not easy — no accepted opens):
 Q5 EXECUTED (R113/114/115/515, ERC clean, netlist verified); Q6 APPROVED —
 re-place in progress, checkpoint before ripup, partial moves first.
+
+WaveC 2026-10-04: J202-Pin2 closed (17->16 unc, drc177 0err/0parity); 8 nets ->WaveD
+(micro sealed, evidence in PROGRESS.md + §7.7). WaveD=15 + WaveZ. Next: destructive re-place.

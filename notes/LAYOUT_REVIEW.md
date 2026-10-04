@@ -600,3 +600,12 @@ stands.
   `drc128-triage.json` + `kicad-render128-top/bottom.png`; known-opens
   tables §7.6; owner options in `notes/QUESTIONS.md`.
 - Blockers: `notes/QUESTIONS.md` (Q5 schematic-ECO 4 pads, Q6 placement).
+
+## §7.7 WaveC results (2026-10-04, drc164→drc177, 17→16 unc, 0 err, 0 parity)
+- CLOSED: J202-Pin2 (B-route x=13.8 + VSEN-via bypass + vias (12.2,9.45)/(9.95,19.7)).
+- →WaveD (micro-route provably sealed, net-zero rips): MCU_RST-north (F-+3V3-maze/B-S1/USB-D+ seals);
+  VIN-8/U501.1-3 (CTS-pad sandwich + GND-E-W); P0.12 (U201 pad-forest + TX_EN/D±/S1_NCS);
+  S2_MOT (U201-col + SENSOR_EN + TX_STAT-L + FID1-0.6 + B-GND/TX_EN/P1.11);
+  MCU_RST-west (GND + P1.11 + +3V3-maze); VSEN_1V9 (F×7 + B-VDDPIX/TX_5V_SW/S2_MOSI-diag);
+  VIN-east (TX_STAT/SW2/D501-A + SW2-via + CTD); FTH (U501-8/10/21 cage + GND-B + NTC/TX_STAT-vias).
+- WaveD=15, WaveZ=GND-3. Next: Q6-authorized destructive re-place (checkpoint drc177 clean).
