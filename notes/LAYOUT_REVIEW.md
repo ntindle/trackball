@@ -642,3 +642,12 @@ stands.
   U201-move breaks ~30 nets, USELESS for own-pad seals (P0.12/S2_MOT) — NOT RECOMMENDED.
 - NEXT: freerouting.org ORACLE-as-advisor (standing Q2): run on drc179 copy, inspect oracle
   corridors for the 16 opens, hand-place verified corridors on real board (no blind import).
+
+### 7.10.3 Zone-lock survey (drc182+1, oracle-2 running): 5 opens proven SEALED
+Fresh DRC unconnected dump + pad-geometry survey (U501 QFN pins 0.82x0.25, EP x[53.75,56.25] y[14.75,17.25]):
+- VIN-#7 (U501-3 pin3 <-> N-S (53.06,13.6-15.0)): PIN-CAGED. F-east sealed by GND-EP (0.275 gap < 0.55 needed); F-west crosses CTS-E-W @15.50/CTS-diag; via-bridge corridor (15.625+0.425 vs 16.375-0.425) INVERTED between CTS-pin2 and IS+-pin4; pin3 north/south escape gaps 0.25 < 0.55. Via-in-pad would violate standing via>=0.6/0.3 rule. NEEDS U501-move (zone-2).
+- +3V3-#1 ((22.66,19.0) <-> (24.67,20.09)): south-under sealed by P0.29-E-W @13.88 + TX_EN-E-W @13.16 + TX_EN-via sandwiches; north-over sealed by GND ladder (E-W @24.60/@25.10/@25.60/@26.00); B sealed by P0.29-N-S + S1_MOSI-N-S. NEEDS GND-ladder zone rework.
+- GND-#3 ((55.9,124.7) <-> (58.8,124.0)): sealed all 6 sides — north: VBUS-SENSE via-pair + E-W @127.50; south-F: IOA1-E-W @122.00 + VBUS-E-W @122.00; south-B: VBUS-E-W @123.70; east: via-pair; west-around: dies at east wall; F-north: VBUS-N-S x=57.40 + VBUS-E-W @128.50 + VBUS-via. NEEDS U202/VBUS zone rework.
+- +3V3-#2 ((25.0,23.6) <-> (33.48,26.6)): F sealed by GND maze (N-S x=32.45/x=31.02, E-W @23.50/@24.50/@25.97/@26.00, vias, S2_MOSI x=28.90, C204); B sealed by 4-spine wall (SENSOR_EN x=30.85, D- x=31.50, D+ x=32.00, S1_MISO x=33.20, all full-span). NEEDS spine-zone rework.
+- S2_MOT (oracle @7.53 violates SPI-0.6 on copy; @5.5/@6.0/@6.5 sealed by J202-Pin4-E-W @6.00 + S1_NCS-E-W @6.85 sandwich). Awaiting oracle-2 for SPI-clean corridor.
+Board is in ZONE-LOCK: 14 opens need zone rework or deep-oracle corridors. Oracle-2 (-mp 100) running on copy.
