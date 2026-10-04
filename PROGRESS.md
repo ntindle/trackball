@@ -170,3 +170,5 @@ PROGRESS 2026-10-04T12:29:58Z drc164 17unc/0err/0parity: TX_IMON+MCU_TX_ENx2->Wa
 ## 2026-10-04 03:30 UTC — RIP CHECKPOINT drc185 22unc/0err/0parity: /tmp/rip.py removed 65 (S1_NCS-keystone, Pin_2, Pin_4, BTN3-west, P0.12-west, S2_MOSI-south); spines/TX_IMON/islands/anchors preserved; zero real errors. §7.10.7 committed. Next: survey emptied band, lane-ordered re-route S2_MOT-west first.
 
 ## 2026-10-04 04:00 UTC — RIP REVERTED drc186 14/0/0 (§7.10.8): post-rip lane design proved triple mutual exclusion (S1_NCS-@6.85 + Pin_4-rise + S2_MOT-lane; R114 immovable SENSOR_EN-series; 14 S2_MOT lane-proofs). Reverted net-zero to ef13502. S2_MOT stays OPEN by proof. Next: closable opens each with own lane design (P0.12-west, Pin_2, BTN3-west, S2_MOSI-south first — pre-rip surveys stand).
+
+## 2026-10-04 04:30 UTC — BLOCKED (Q7): P0.12-north final proof (hop-1/hop-2/S2_MOSI-immovable); 0Rs verified (R113/114/115 self-pair, R515 series closed). 14/14 opens sealed (ledger §7.10.9); Q6 moves can't break package-cages; oracle exhausted. Need schematic pin-reassignment ECO (or via-in-pad/stackup/accept-opens decision). Board held 14/0/0. QUESTIONS.md Q7 filed.

@@ -77,3 +77,8 @@ P0.12-B, MCU_RST-west-B, VIN-8/CTS); board untouched drc177 16/0/0. Next: Q6 zon
 
 Zone-3 2026-10-04: VBUS-5/+3V3-1/MCU_TX_EN-12 sealed (§7.10); U501/U201 moves assessed
 not-recommended. Next: freerouting oracle-as-advisor (standing Q2, no owner question).
+
+## Q7 (2026-10-04, BLOCKING): schematic pin-reassignment ECO for pin-caged opens — OWNER DECISION NEEDED
+All 14 opens proven sealed by exhaustive survey (ledger in LAYOUT_REVIEW.md §7.10.9); oracle exhausted (0/14); Q6 moves/rip cannot break package-relative cages; owner forbade accepted opens. Layout craft is exhausted.
+Options: (a) schematic ECO reassigning caged nets to free pins (RECOMMENDED: S2_MOT off U201-38, VIN off U501-3, + P0.12/VBUS/FTH/MCU_TX_EN/VBUS_SENSE per ledger) — needs schematic-job + firmware-map update; (b) via-in-pad/micro-via process exception; (c) stackup change; (d) accept opens (against 10-04 directive).
+Board held clean at 14unc/0err/0parity (HEAD 4203791). Awaiting owner pick; layout resumes on ECO delivery.
