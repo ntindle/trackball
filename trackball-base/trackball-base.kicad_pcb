@@ -26200,6 +26200,14 @@
 		(uuid "04525990-6666-4c64-852c-5a246bf98658")
 	)
 	(segment
+		(start 75.13 17)
+		(end 75.13 15)
+		(width 0.25)
+		(layer "F.Cu")
+		(net "GND")
+		(uuid "04c28dbe-31a1-4920-902b-91dc70242ec7")
+	)
+	(segment
 		(start 72.362 123.5)
 		(end 72.1 123.5)
 		(width 0.25)
@@ -26910,6 +26918,14 @@
 		(layer "F.Cu")
 		(net "GND")
 		(uuid "3ab77295-d1c5-4ce7-a25e-c1d03e574362")
+	)
+	(segment
+		(start 71.8 17)
+		(end 75.13 17)
+		(width 0.25)
+		(layer "F.Cu")
+		(net "GND")
+		(uuid "3abe0375-e164-4d2e-a80d-5a63036a64b6")
 	)
 	(segment
 		(start 34.55 89)
@@ -30984,6 +31000,14 @@
 		(uuid "1cac4ed2-1aa2-47f3-8c58-74a661c92aa1")
 	)
 	(segment
+		(start 13.025 20.2)
+		(end 13.025 20.4)
+		(width 0.25)
+		(layer "F.Cu")
+		(net "MCU_RST")
+		(uuid "1e215634-dc2a-4b8d-8762-a96d60a256f2")
+	)
+	(segment
 		(start 36.93 28.425)
 		(end 36.73 28.425)
 		(width 0.25)
@@ -31112,20 +31136,20 @@
 		(uuid "58008dea-3dbf-4aee-8fb3-0038089f1c6b")
 	)
 	(segment
+		(start 12.475 20.4)
+		(end 13.025 20.4)
+		(width 0.25)
+		(layer "F.Cu")
+		(net "MCU_RST")
+		(uuid "5f08c43f-a215-43e1-bb31-848bb00925f0")
+	)
+	(segment
 		(start 36.64 66.24)
 		(end 36.64 69.24)
 		(width 0.25)
 		(layer "F.Cu")
 		(net "MCU_RST")
 		(uuid "6a766913-d79c-4054-b36f-ffd584765226")
-	)
-	(segment
-		(start 12.475 20.75)
-		(end 12.475 22.975)
-		(width 0.25)
-		(layer "F.Cu")
-		(net "MCU_RST")
-		(uuid "6d701d38-841c-4d39-9217-dd7e37fc30ec")
 	)
 	(segment
 		(start 35.7 29.6)
@@ -31320,6 +31344,14 @@
 		(uuid "c063e68b-b858-4664-9b98-8969dc8d3fae")
 	)
 	(segment
+		(start 12.475 20.75)
+		(end 12.475 22.975)
+		(width 0.25)
+		(layer "F.Cu")
+		(net "MCU_RST")
+		(uuid "c33d51ef-ef88-4b3f-afcb-5935fb980c4f")
+	)
+	(segment
 		(start 62.82 70.75)
 		(end 62.82 67.24)
 		(width 0.25)
@@ -31334,6 +31366,14 @@
 		(layer "F.Cu")
 		(net "MCU_RST")
 		(uuid "cc0a5109-f9f7-410f-820f-8e1753617135")
+	)
+	(segment
+		(start 12.475 20.4)
+		(end 12.475 20.75)
+		(width 0.25)
+		(layer "F.Cu")
+		(net "MCU_RST")
+		(uuid "ce235386-89bb-4762-acb6-89b77e1b71e0")
 	)
 	(segment
 		(start 62.965 4.25)
