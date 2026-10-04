@@ -143,3 +143,4 @@ accept-or-destructive). QUESTIONS.md updated (TPs resolved).
 PROGRESS 2026-10-04T12:04:19Z drc148 20unc/0err/0parity: B2c closed VBUS-8,VIN-13,D501-A,R115,R113,VS-east,SEN-R114; VIN-12 deferred WaveD(U501-cage); VIN w>=0.3 rule, via>=0.6/0.3
 PROGRESS 2026-10-04T12:20:54Z drc158 17unc/0err/0parity: VBUS-8v4+GND-2v2+GND-4 closed; C106+0.2/C107+0.3; MCU_RST-reroute-west; WaveD=+3V3x2/VIN-12/VIN-14(sealed,doc); GND-3 WaveZ(zone-close); 7 routable remain
 PROGRESS 2026-10-04T12:26:53Z drc162 17unc/0err/0parity: VS-south->WaveD(all N-S corridors sealed: x16.6/x13.1/x19.15/x14.5); B-run over-rip restored from 87cd012; WaveD=7(+3V3x2/VINx2/VBUS-S/VS-S); 5 routable(MCU_RST-N/VSEN/TX_IMON/FTH/MCU_TX_ENx2)+4 WaveC remain
+PROGRESS 2026-10-04T12:29:58Z drc164 17unc/0err/0parity: TX_IMON+MCU_TX_ENx2->WaveD(all dirs sealed); WaveD=10; 3 routable(MCU_RST-N/VSEN/FTH)+4 WaveC+GND-3Z remain
