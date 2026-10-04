@@ -6,9 +6,10 @@
 via/placement micro-moves, Blender-manual). This file asks ONLY what exceeds
 that authority: schematic-intent + destructive placement rework.
 **Resolved:** TP305/TP306 micro-move DONE drc127 (ECO4 + P131, U2 closed —
-see below). Q5 + Q6-remainder OWNER-DECISION PENDING (see options).
+see below). Q5 APPROVED + EXECUTED (Q5 ECO, SCHEMATIC_REVIEW §11). Q6
+APPROVED — destructive re-place IN PROGRESS (no accepted opens).
 
-## Q5 — Schematic ECO: alternate taps for 4 unroutable pads (OWNER-DECISION PENDING)
+## Q5 — Schematic ECO: alternate taps for 4 unroutable pads (APPROVED + EXECUTED 2026-10-04)
 
 4 nets are unroutable because BOTH endpoints are caged by fixed adjacent
 pads/traces no layout move can clear (verified by survey + ripup-attempt +
@@ -21,12 +22,14 @@ independent freerouting.org run stuck with no progress):
 | 3 | `SENSOR_EN` | U201.42 (U201 QFN row: TX_STAT-x=25.4 W-cage (0.4 clr), U201.40-TX_STAT N-cage (OVERLAP)) | R103.1 (R103.2-GND E-cage (OVERLAP)), U104.3 (GND-cage (N-S-x=28.363 crossing, E-W-y=87.0 OVERLAP)) | All 3 sensor-end taps caged; MCU-end caged. N-stub attempt SHORTED vs BTN1/R401.2 (ripped). |
 | 4 | `MCU_TX_EN` | U201.28 (U201 QFN row cage) | R111.2 (mid-board, 104 mm gap across routed maze) | 104 mm pad-to-pad gap across routed maze; both ends caged. |
 
-**Owner options:** (a) accept the 4 Q5 opens for respin (documented in
-LAYOUT_REVIEW §7.6 as known-opens); (b) authorize the Q5 schematic ECO
-(alternate taps: test-point or via-stitched stub on an accessible segment).
-No schematic ECO attempted — exceeds standing authority.
+**Owner decision 2026-10-04:** option (b) — Q5 schematic ECO APPROVED
+(no accepted opens). EXECUTED: R113 (VBUS_SENSE), R114 (SENSOR_EN),
+R115 (MCU_TX_EN) 0R branch jumpers on power sheet; R515 (CTD) 0R in-line
+on TX sheet (CTD split into `/tx/CTD_U501` + `/tx/Net-(U501-CTD)`).
+ERC 0 errors + 1 benign warning; netlist diff verified minimal (§4-net
+only). See SCHEMATIC_REVIEW §11 + LAYOUT_REVIEW E53.
 
-## Q6 — Destructive placement ECO: re-place U501/C106/U201/R202/C203/C507/D501/D502 (OWNER-DECISION PENDING, expensive)
+## Q6 — Destructive placement ECO: re-place U501/C106/U201/R202/C203/C507/D501/D502 (APPROVED 2026-10-04 — IN PROGRESS)
 
 22 remaining nets (Q6-remainder; TP305/TP306 U2 FIXED drc127) are
 unroutable due to FIXED-pad cages a placement ECO could clear, but every
@@ -44,11 +47,10 @@ attempted — destructive):
 | D501.1-FB_PK, D502.1-VIN | D501-A U19 (crossing/OVERLAP) | Move D501/D502 | TX coil-fan mesh |
 | TP305/TP306 (testpoints) | +3V3 U2 | **DONE drc127** (ECO4: TP305→(44.0,43.5), TP306→(44.0,47.2), stubs kept; P131 east loop closed U2; probe showed pads F-only, true cages were S2_SCK-diag + S2_SCK-y=42.8) | Nothing (testpoints) |
 
-**Owner options:** (a) accept the 22 Q6-remainder opens for respin
-(documented in LAYOUT_REVIEW §7.6 as known-opens); (c) authorize the Q6
-destructive re-place + full ripup of affected zones (est. 2–3 sessions).
-No destructive re-place attempted — exceeds standing authority.
-(TP305/TP306 micro-move already DONE drc127.)
+**Owner decision 2026-10-04:** option (c) — Q6 destructive re-place
+APPROVED (no accepted opens; cheap partial moves first, fully destructive
+only where partial provably fails). IN PROGRESS on this branch; checkpoint
+committed before any ripup. (TP305/TP306 micro-move already DONE drc127.)
 
 ## Corroboration
 
@@ -62,7 +64,6 @@ No destructive re-place attempted — exceeds standing authority.
 - DRC128 triage: identical (board unchanged) — see
   `notes/stage1/drc128-triage.json` + `kicad-render128-top/bottom.png`.
 
-OWNER-DECISION PENDING: Q5 (4 nets — option a accept / b schematic ECO) +
-Q6-remainder (22 nets, TP305/TP306 RESOLVED — option a accept / c
-destructive re-place). No schematic ECO or destructive moves attempted —
-exceed standing directives; no new routing waves opened this turn.
+OWNER DECIDED 2026-10-04 (do it right, not easy — no accepted opens):
+Q5 EXECUTED (R113/114/115/515, ERC clean, netlist verified); Q6 APPROVED —
+re-place in progress, checkpoint before ripup, partial moves first.

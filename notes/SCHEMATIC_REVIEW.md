@@ -321,3 +321,33 @@ TP501 coil tap, rail TPs; U501 EP + PTHM on GND. No duplicate refs.
   TX coil/ferrite out of antenna near field; PWR_FLAGs at rail entries.
 - Factory pogo: TP203/204/205/206 (SWD + GND) must be bottom-accessible
   probes; TP501/TP101–105 bench access.
+
+## 11. DEVIATION — Q5 layout-jumper ECO (layout job, owner-approved 2026-10-04)
+
+Four nets were unroutable because both endpoints are pad-caged by fixed
+adjacent pads/traces no layout move can clear (LAYOUT_REVIEW §7.5 U20/U21/
+U22–23/U26 + QUESTIONS.md Q5: survey-verified, ripup-attempted, freerouting
+oracle corroborates). Owner approved a schematic ECO (no accepted opens).
+Change: 4× 0 Ω series/branch jumpers (0603, JLC basic) added as alternate
+taps — R113 (VBUS_SENSE), R114 (SENSOR_EN), R115 (MCU_TX_EN) on the power
+sheet as same-net branches (both pins labeled to the existing global net),
+R515 (CTD) on the TX sheet in-line (deleted 1 wire segment U501.14–C507.1,
+R515 bridges it; U501-side sub-net explicitly labeled `/tx/CTD_U501`, C507
+side keeps `/tx/Net-(U501-CTD)`).
+Netlist delta (verified by pre/post diff): +4 refs (155→159 by netlist ref
+count), nets 89→90 (CTD split); ONLY the 4 target nets changed. ERC after
+ECO: 0 errors + the same 1 benign `pin_to_pin` warning (§8).
+Justification for accepting the deviation:
+- Zero electrical change: 0 Ω jumpers add no resistance, no drive level
+  shift, no timing change on control/ADC-sense nets; CTD keeps its 470 pF
+  timing cap on the same copper path through R515 (trace + 0 Ω is
+  negligible for a timing node, not a hot loop).
+- Standard JLC-placeable 0603 parts (BOM passives row); +4 placements, no
+  cost driver, no new rails or modes.
+- The alternative (accept 4 opens) was explicitly rejected by owner
+  directive 2026-10-04 ("do it right, not easy").
+Layout must route each net THROUGH its jumper pads (R515.1↔U501.14 and
+R515.2↔C507.1 as separate closable sub-nets; R113/114/115 similarly) —
+parity DRC enforces the new nodes. No bench validation required (passive
+jumpers); validation is ERC + netlist diff (done) + route-close with
+`--schematic-parity` DRC (layout job).

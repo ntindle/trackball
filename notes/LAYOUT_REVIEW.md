@@ -214,6 +214,7 @@ real violations: 0    parity: 0
 | CLR 0.2 | Base clearance spans | Density |
 | E51 | U101 EN tie via GND-via micro-move (layout-only) | See DEVIATION E51 below |
 | E52 | freerouting autorouter for singles/pours | See DEVIATION E52 below |
+| E53 | Q5 schematic ECO: 4× 0R jumpers (R113/114/115/515) on pad-caged nets | Owner-approved 2026-10-04; see SCHEMATIC_REVIEW §11 |
 
 ### 6.1 DEVIATION E51 — U101 EN tie via GND-via micro-move (documented, owner Q3)
 

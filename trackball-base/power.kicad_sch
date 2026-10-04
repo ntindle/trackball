@@ -5494,4 +5494,316 @@
         (justify left bottom))
     (uuid "e484da32-38b6-442c-8d97-9456cb8731c8")
   )
+  (symbol
+    (lib_id "Device:R_Small_US")
+    (at 147.32 60.96 90)
+    (unit 1)
+    (exclude_from_sim no)
+    (in_bom yes)
+    (on_board yes)
+    (fields_autoplaced yes)
+    (uuid "8b08e939-1373-47a0-bfcf-4cb7dadebfce")
+    (property "Reference" "R113"
+      (at 147.32 57.15 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        ))
+    )
+    (property "Value" "0R"
+      (at 147.32 64.77 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        ))
+    )
+    (property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+      (at 147.32 60.96 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" ""
+      (at 147.32 60.96 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid "99d8eddf-1c5c-43db-b0e7-a79c0d9da733"))
+    (pin "2" (uuid "61dc059c-651d-4dca-a4df-308ed47ebe6f"))
+  )
+
+  (wire
+    (pts (xy 144.78 60.96) (xy 137.16 60.96))
+    (stroke (width 0) (type default))
+    (uuid "5f89040a-15e9-4776-9e1f-5c65f8c53b13")
+  )
+
+  (global_label "VBUS_SENSE"
+    (shape input)
+    (at 137.16 60.96 0)
+    (fields_autoplaced yes)
+    (effects
+        (font
+          (size 1.27 1.27)
+        ))
+    (uuid "8491aada-8dc9-4761-b3c8-19ff2221df71")
+    (property "Intersheetrefs" "${INTERSHEET_REFS}"
+      (at 137.16 60.96 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+  )
+
+
+
+  (text "Q5 jumper R113"
+    (at 137.16 67.31 0)
+    (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (justify left bottom))
+    (uuid "ad2aac73-9aeb-46df-afa1-89400dc781a0")
+  )
+
+  (symbol
+    (lib_id "Device:R_Small_US")
+    (at 147.32 121.92 90)
+    (unit 1)
+    (exclude_from_sim no)
+    (in_bom yes)
+    (on_board yes)
+    (fields_autoplaced yes)
+    (uuid "03c6d727-e85c-4726-9aed-b73a59067df0")
+    (property "Reference" "R114"
+      (at 147.32 118.11 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        ))
+    )
+    (property "Value" "0R"
+      (at 147.32 125.73 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        ))
+    )
+    (property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+      (at 147.32 121.92 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" ""
+      (at 147.32 121.92 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid "23053459-621c-4b27-83f8-af9f846889e8"))
+    (pin "2" (uuid "01aac68a-b22e-4aaf-a201-a6e7050ca4af"))
+  )
+
+  (wire
+    (pts (xy 144.78 121.92) (xy 134.62 121.92))
+    (stroke (width 0) (type default))
+    (uuid "0af94647-7db3-40fe-ab95-b0e1ae80f33a")
+  )
+
+  (global_label "SENSOR_EN"
+    (shape input)
+    (at 134.62 121.92 0)
+    (fields_autoplaced yes)
+    (effects
+        (font
+          (size 1.27 1.27)
+        ))
+    (uuid "a429d653-7040-4ce3-8d97-a512be6f071a")
+    (property "Intersheetrefs" "${INTERSHEET_REFS}"
+      (at 134.62 121.92 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+  )
+
+  (wire
+    (pts (xy 149.86 121.92) (xy 149.86 116.84))
+    (stroke (width 0) (type default))
+    (uuid "1b294b92-3b0d-4e41-920e-cf9beacf3c61")
+  )
+  (junction
+    (at 149.86 116.84)
+    (diameter 0)
+    (color 0 0 0 0)
+    (uuid "875831f9-7163-43fd-95fd-23d136eb13f8")
+  )
+  (wire
+    (pts (xy 149.86 116.84) (xy 134.62 116.84))
+    (stroke (width 0) (type default))
+    (uuid "f28e2f9b-eaab-4ca1-8f28-e64b4de3f787")
+  )
+
+  (global_label "SENSOR_EN"
+    (shape input)
+    (at 134.62 116.84 0)
+    (fields_autoplaced yes)
+    (effects
+        (font
+          (size 1.27 1.27)
+        ))
+    (uuid "f1c96298-2305-46e1-8c22-443e7edb6cda")
+    (property "Intersheetrefs" "${INTERSHEET_REFS}"
+      (at 134.62 116.84 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+  )
+
+  (text "Q5 jumper R114"
+    (at 134.62 129.54 0)
+    (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (justify left bottom))
+    (uuid "32e01833-7a70-4fe8-994d-64a534ba2f71")
+  )
+
+  (symbol
+    (lib_id "Device:R_Small_US")
+    (at 355.60 151.13 0)
+    (unit 1)
+    (exclude_from_sim no)
+    (in_bom yes)
+    (on_board yes)
+    (fields_autoplaced yes)
+    (uuid "a23c6b60-4ed9-4650-a987-e5177ad48d35")
+    (property "Reference" "R115"
+      (at 350.52 151.13 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        ))
+    )
+    (property "Value" "0R"
+      (at 360.68 151.13 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        ))
+    )
+    (property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+      (at 355.60 151.13 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" ""
+      (at 355.60 151.13 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid "6c3c87f4-2f60-40e8-ad13-4a3a9844fe9b"))
+    (pin "2" (uuid "f67161ec-2a01-45d2-bf2e-f86226a8e1e9"))
+  )
+
+  (wire
+    (pts (xy 355.60 148.59) (xy 355.60 146.05))
+    (stroke (width 0) (type default))
+    (uuid "0bc00c25-02d3-4ad2-ab44-f42f19e62153")
+  )
+  (junction
+    (at 355.60 146.05)
+    (diameter 0)
+    (color 0 0 0 0)
+    (uuid "b0862fee-9a62-4326-9950-09d021307624")
+  )
+
+
+  (wire
+    (pts (xy 355.60 153.67) (xy 355.60 156.21))
+    (stroke (width 0) (type default))
+    (uuid "b54e4ad9-0fe7-40d2-b989-4070b88c0b1e")
+  )
+  (junction
+    (at 355.60 156.21)
+    (diameter 0)
+    (color 0 0 0 0)
+    (uuid "4a78f944-f50b-4e61-ba1b-cca45e4d3fa3")
+  )
+
+
+  (text "Q5 jumper R115"
+    (at 355.60 160.02 0)
+    (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (justify left bottom))
+    (uuid "e35887e3-941f-4233-89ff-a84d649e72c7")
+  )
+
+  (wire
+    (pts (xy 149.86 60.96) (xy 149.86 63.50))
+    (stroke (width 0) (type default))
+    (uuid "01002987-8a50-49ff-8b53-bd614bd703b5")
+  )
+
+  (junction
+    (at 149.86 63.50)
+    (diameter 0)
+    (color 0 0 0 0)
+    (uuid "a4137efd-3e2a-41a0-ad7a-905e086f5380")
+  )
+
+  (wire
+    (pts (xy 149.86 63.50) (xy 137.16 63.50))
+    (stroke (width 0) (type default))
+    (uuid "61128b59-d8e1-47e2-8b49-1e57e0edca12")
+  )
+
+  (global_label "VBUS_SENSE"
+    (shape input)
+    (at 137.16 63.50 0)
+    (fields_autoplaced yes)
+    (effects
+        (font
+          (size 1.27 1.27)
+        ))
+    (uuid "c66e3d7e-01f5-427d-b5ac-f1ebfeca6e59")
+    (property "Intersheetrefs" "${INTERSHEET_REFS}"
+      (at 137.16 63.50 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+  )
+
+  (wire
+    (pts (xy 355.60 146.05) (xy 368.30 146.05))
+    (stroke (width 0) (type default))
+    (uuid "a55027a2-3ef3-4261-87c2-90bf9a153073")
+  )
+
+  (global_label "MCU_TX_EN"
+    (shape output)
+    (at 368.30 146.05 0)
+    (fields_autoplaced yes)
+    (effects
+        (font
+          (size 1.27 1.27)
+        ))
+    (uuid "842c060c-4f9e-4b13-bf73-928cc07d864f")
+    (property "Intersheetrefs" "${INTERSHEET_REFS}"
+      (at 368.30 146.05 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+  )
+
+  (wire
+    (pts (xy 355.60 156.21) (xy 368.30 156.21))
+    (stroke (width 0) (type default))
+    (uuid "d3b32609-0f7c-4102-bfe1-8c07ab086f6a")
+  )
+
+  (global_label "MCU_TX_EN"
+    (shape output)
+    (at 368.30 156.21 0)
+    (fields_autoplaced yes)
+    (effects
+        (font
+          (size 1.27 1.27)
+        ))
+    (uuid "b2654d24-1da9-4bf2-959a-05745b303048")
+    (property "Intersheetrefs" "${INTERSHEET_REFS}"
+      (at 368.30 156.21 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+  )
 )

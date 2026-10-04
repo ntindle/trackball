@@ -3273,11 +3273,6 @@
     (pin "1" (uuid "6be4f222-dc0e-4195-b0de-90134f1810fd"))
   )
   (wire
-    (pts (xy 201.93 133.35) (xy 207.01 133.35))
-    (stroke (width 0) (type default))
-    (uuid "800ed306-d1ad-45dd-995b-ffe8b18d671c")
-  )
-  (wire
     (pts (xy 207.01 133.35) (xy 207.01 135.89))
     (stroke (width 0) (type default))
     (uuid "342e314e-b96e-4c01-bf03-a3eea84a13c5")
@@ -4359,5 +4354,58 @@
         )
         (justify left bottom))
     (uuid "1ffa2402-c119-44fc-bcfb-acf11b7dbec4")
+  )
+  (symbol
+    (lib_id "Device:R_Small_US")
+    (at 204.47 133.35 90)
+    (unit 1)
+    (exclude_from_sim no)
+    (in_bom yes)
+    (on_board yes)
+    (fields_autoplaced yes)
+    (uuid "9c4af2a2-a45f-4eb2-9ab7-9b2df9a031eb")
+    (property "Reference" "R515"
+      (at 204.47 129.54 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        ))
+    )
+    (property "Value" "0R"
+      (at 204.47 141.00 0)
+      (effects
+        (font
+          (size 1.27 1.27)
+        ))
+    )
+    (property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+      (at 204.47 133.35 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" ""
+      (at 204.47 133.35 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid "0724444c-1832-440d-9d07-bd3e54468e47"))
+    (pin "2" (uuid "5e7ec3d0-635f-4517-afce-d468b7989679"))
+  )
+
+  (text "Q5 R515"
+    (at 204.47 124.46 0)
+    (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (justify left bottom))
+    (uuid "f9d8a9d6-6854-428e-96eb-ccca6ecb0a20")
+  )
+  (label "CTD_U501"
+    (at 201.93 133.35 90)
+    (effects
+        (font
+          (size 1.27 1.27)
+        )
+        (justify left bottom))
+    (uuid "5ee0cd6e-6842-4e70-924f-5e2efe6bf618")
   )
 )

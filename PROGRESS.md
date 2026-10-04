@@ -89,3 +89,9 @@ accept-or-destructive). QUESTIONS.md updated (TPs resolved).
 - No routing, no schematic ECO, no destructive re-place (all exceed standing directives). drc128 identical to drc127 (179 warn/26 unc/0 err/0 parity).
 - LAYOUT_REVIEW §7.6: all 26 opens tabulated (Q5: U20/U21/U22-23/U26; Q6-remainder: 22 rows, TP fixed noted) with caged endpoints + tried (surveys/ripups/freerouting oracle).
 - Snapshot: notes/stage1/drc128-triage.json + kicad-render128-top/bottom.png; QUESTIONS.md options (a) accept opens (b) Q5 ECO (c) Q6 re-place. Idle awaiting owner.
+
+## 2026-10-04 02:50 -0600 — Q5 ECO EXECUTED: R113/114/115/515 placed, ERC clean, drc129 33unc/0err/0parity (pre-ripup checkpoint)
+- Schematic: 3x 0R branch jumpers on power (R113 VBUS_SENSE, R114 SENSOR_EN, R115 MCU_TX_EN) + R515 CTD in-line on tx (split /tx/CTD_U501 + /tx/Net-(U501-CTD)). Fixed 2 file-format issues found by ERC: 3-pt polylines unsupported (split to 2-pt + junctions), CTD auto-split renamed (verbatim CTD_U501 label).
+- ERC 0 errors + 1 known benign pin_to_pin; netlist diff proves only the 4 nets changed (+4 refs, 89->90 nets); all 4 sites visually verified in PDF crops.
+- PCB: 4x 0603 staged at x=92 open column, nets assigned, U501.14 moved to CTD_U501. drc129: 179 warn (same breakdown, no courtyard hits), 0 errors, 0 parity, 33 unc (+7 new jumper nodes as expected).
+- Docs: SCHEMATIC_REVIEW §11 deviation, BOM row, LAYOUT_REVIEW E53, QUESTIONS Q5-executed/Q6-in-progress. Next: Q6 partial moves first (U201/R202/C106/C203/C507/D501/D502), then route-close to 0.

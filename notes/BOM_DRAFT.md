@@ -63,6 +63,7 @@ sub X7R→Y5V etc.).
 | R203, R204 | 5.1 k | 5% OK (CC termination) | R_0603 |
 | R302, R304 | 39 Ω | 5% OK (LED feed; tune point) | R_0603 |
 | R206, R207 | 33 Ω | 5% OK (SCK termination) | R_0603 |
+| R113, R114, R115, R515 | 0R | jumper, thick-film (Q5 ECO) | R_0603 |
 | C509 | 100 nF 100 V | C0G/NP0, ≥100 V — PROVISIONAL, re-rate per measured Vpk | C_1206 |
 | C504, C505, C506 | 47 µF | X5R/X7R, ≥10 V | C_1206 |
 | C101, C103, C106, C108, C112, C114 | 10 µF/16 V | X5R/X7R, ≥10 V | C_0805 |
