@@ -70,3 +70,7 @@ re-place in progress, checkpoint before ripup, partial moves first.
 
 WaveC 2026-10-04: J202-Pin2 closed (17->16 unc, drc177 0err/0parity); 8 nets ->WaveD
 (micro sealed, evidence in PROGRESS.md + §7.7). WaveD=15 + WaveZ. Next: destructive re-place.
+
+WaveD-micro 2026-10-04: 4 fresh B-side/surgical angles sealed w/ evidence (S2_MOT-B,
+P0.12-B, MCU_RST-west-B, VIN-8/CTS); board untouched drc177 16/0/0. Next: Q6 zone-redo
+(south-band, U501-TX, N-S spines) per §7.8 — authorized, no owner question.

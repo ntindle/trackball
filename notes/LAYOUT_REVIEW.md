@@ -609,3 +609,13 @@ stands.
   MCU_RST-west (GND + P1.11 + +3V3-maze); VSEN_1V9 (F×7 + B-VDDPIX/TX_5V_SW/S2_MOSI-diag);
   VIN-east (TX_STAT/SW2/D501-A + SW2-via + CTD); FTH (U501-8/10/21 cage + GND-B + NTC/TX_STAT-vias).
 - WaveD=15, WaveZ=GND-3. Next: Q6-authorized destructive re-place (checkpoint drc177 clean).
+
+## §7.8 WaveD micro-angles exhausted (2026-10-04, board untouched, drc177 16/0/0 stands)
+- S2_MOT-B @7.5: sealed (B: BTN3-E-W @7.96/diag/via (38.39,10.0) + S1_NCS-N-S x=39.02/E-W @6.85; south-jog + north-hop both sealed).
+- P0.12-B @9.6: sealed (B: J202-E-W @8.81/via + SENSOR_EN-N-S + BTN3-diag/E-W + S1_MOT-diag/via + S1_NCS; F-east sealed by BTN3-E-W @10.00 + S1_SCK-E-Ws).
+- MCU_RST-west-B: sealed (B: J202-maze/Pin4-N-S/vias/E-W @20.50 + BTN2/VSEN/BTN1/S2_NCS N-Ss + +3V3-diag/E-W; F sealed per §7.7).
+- VIN-8/CTS-reroute-east: sealed (CTS-east blocked by GND-N-S x=54.00 + TX_IMON-N-S + IS+-diag; VIN west bypass independently sealed by GND-via (51.47,15.0)).
+- Disposition: micro-routing at its limit for all 15 WaveD nets. Next = Q6 zone-redo:
+  (1) south-band y[4,18] x[21,44] rip + coherent bus re-route (P0.12/S2_MOT/TX_IMON-w);
+  (2) U501-TX zone rip + re-route (VIN-8/9/FTH); (3) N-S spine corridors
+  (MCU_RST-n/VBUS/VSEN/MCU_TX_EN/VBUS_SENSE); (4) WaveZ GND-3 zone-close.
