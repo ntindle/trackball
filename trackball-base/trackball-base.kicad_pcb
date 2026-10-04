@@ -43104,14 +43104,6 @@
 		(uuid "191b58c1-7f80-4846-8760-614f70cc97b5")
 	)
 	(segment
-		(start 43.95 13.2)
-		(end 43.95 37.2)
-		(width 0.25)
-		(layer "F.Cu")
-		(net "S2_MOT")
-		(uuid "3d7fb178-b237-4070-bc30-17a77bc1595f")
-	)
-	(segment
 		(start 54.4 42.325)
 		(end 54.4 49.2)
 		(width 0.25)
