@@ -95,3 +95,41 @@ accept-or-destructive). QUESTIONS.md updated (TPs resolved).
 - ERC 0 errors + 1 known benign pin_to_pin; netlist diff proves only the 4 nets changed (+4 refs, 89->90 nets); all 4 sites visually verified in PDF crops.
 - PCB: 4x 0603 staged at x=92 open column, nets assigned, U501.14 moved to CTD_U501. drc129: 179 warn (same breakdown, no courtyard hits), 0 errors, 0 parity, 33 unc (+7 new jumper nodes as expected).
 - Docs: SCHEMATIC_REVIEW §11 deviation, BOM row, LAYOUT_REVIEW E53, QUESTIONS Q5-executed/Q6-in-progress. Next: Q6 partial moves first (U201/R202/C106/C203/C507/D501/D502), then route-close to 0.
+
+## 2026-10-04 03:10 -0600 — Q6 started: SENSOR_EN plan (R114 micro-tap + Pin_4 via shift), B-side ruled out
+- Micro-exit surveys (svbatch, 0.5 margin): U201.3 E-exit at y=7.8 (0.45 past TX_EN); U201.42 S-exit blocked by TX_STAT+TQs; U201.42 E-exit threads between U201.41/43 (0.77 gap, 0.65 needed) but J202-Pin_4 via (30.4,6.1) overlaps by 0.03; U201.28 sealed on F (all 4 dirs copper); U501.14 east blocked by FB/TX_STAT/SW2; B-layer TX zone sealed (EN floor + SW2/TX_STAT walls).
+- Key constraints found: courtyards_overlap=ERROR forbids U201-adjacent jumpers (R114 must clear x=29.62 cyd -> site (31.3,5.605)); B-side footprints = 0 (F-only assembly, no B-side parts without owner process approval).
+- SENSOR_EN plan: shift Pin_4 via (30.4,6.1)->(30.4,6.8) + extend B vertical, place R114 (31.3,5.605), stub U201.42->R114.1. CTD will need TX zone rewrite (rip U501 fanout, re-route CTD-first, no U501 move yet).
+
+## 2026-10-04 03:45 -0600 — SENSOR_EN: N-S corridors walled on F (middle + east); trying B-side highway
+- drc130 holds (32unc/0err/0parity). N-S survey x[32.5,35]: F = wall of ~15 E-W crossings (SPI/PWR/RST); B = spines (S1_MISO/MOSI/NCS, D+/D-) + ~10 E-W crossings. Threading needs 9+ ripups incl. 3 SPI (M2 risk) — rejected for now.
+- B-highway plan: R114.2 -> via (33.0,4.5) -> B east y=4.5 (channel between P1.11 4.095 and TX_EN 5.1) -> B north x~82 -> B west y~88 -> via up at cluster. Only 2 vias, no SPI touched. Surveying B south/east/north now.
+## 2026-10-04 03:05 UTC — Q6 SENSOR_EN highway FAILED + recovered (drc131c 32unc/0err/0parity, committed)
+- P134 placed 5 B-jogs (TX_EN/Pin_4/S1_NCS/BTN3/P1.11 @x~29-31) + SENSOR_EN via (33.2,4.7)+F-stub+B-west+N-S x=29.9 to north. Audit 30/30.
+- DRC131 (misread flags: no --severity-all, wrong unconn key) showed 197 "errors" incl 123 lib_footprint_mismatch WARNINGS (env/library drift, pre-existing) — real errors were mine:
+  1) N-S x=29.9 crossed UNSURVEYED B copper: MCU_RST nest (y16-30), GND (25.97), P0.29 (32.86), S1_MOSI (44) — 9 shorts + 7 crossings. Root cause: corridor "clear" claim from ~8 known segs, never a full-strip survey. N-S concept at x=29.9 DEAD.
+  2) B-west @4.7 crossed TX_EN jog east leg (30.6) — unchecked own-geometry crossing.
+  3) Via (33.2,4.7) annular vs TX_EN 5.3-seg: 0.075 gap — d0.8 via doesn't fit P1.11/5.3-seg channel (needs d0.6 or relocate).
+- rb46 ripped SENSOR_EN P134 copper but box ALSO killed pre-existing B-run (30.363,85.142-91.845) -> 33rd unconn. Restored via P135 (w0.25, verified from HEAD sexpr). drc131c: 32unc/0err/0parity = drc130 parity. COMMITTED.
+- LESSONS: (a) always drc.sh (proper flags) for DRC reads; (b) FULL-strip survey before any long run; (c) rip boxes must exclude pre-existing copper (compare HEAD sexpr when rip count surprises); (d) same-net branch-0R pads (R113/114/115) self-flag as unconnected pairs — 3 DRC artifacts to disposition (copper short vs document).
+- NEXT: full-strip B surveys for SENSOR_EN redesign (candidates x=27 / x=33 / east-around x=62); 5 jogs kept (proven clean, reused if corridor crosses x~30 south band).
+## 2026-10-04 03:40 UTC — Plans M/Q/E dead; PLAN F (MCU_RST maze relocation) FORCED for SENSOR_EN (5f0bad7 landed, 32unc/0err)
+- q6s6+q6s7 surveys killed 4 more plans: (E) east-around DEAD @TX via cluster x58-62 (TX_EN/TX_STAT vias + P1.11 pinch 0.38<0.65); over-top DEAD (VBUS_SENSE E-W @127.5 + VBUS w0.5 + D-maze); (M) F-long-run DEAD (F-strip x30.7 has TP301-304 row + SPI fanout + VBUS w0.5 + GND/MCU_RST mazes); (Q) east N-S x34.2 DEAD (join crosses USB D-/D+).
+- KEY FINDING: USB D-/D+ (B N-S x31.5/32.0, y12.6-125.2) bisects board; maze-east (x30.8, y21-56) + D- leave 0.575 channel — NO x fits y[21,56]. F-feed EAST CONFIRMED CLEAR: R114.2→F-diag→d0.6 via (33.9,4.6)→B-west @4.6 (30.85-33.9, clears P134 jog legs which end x30.6!). Bmaze full map: 25 segs + 3 vias, N-S x30.745 to y56.25.
+- PLAN F: relocate MCU_RST maze x-5.5 (to x[23,25.5]) + F-end reroute @16.1 + 2 N-S side-jogs (@S1_MOSI-34.225, @S2_MISO-46); then SENSOR_EN N-S x30.85 (4 east side-jogs legs31.3/32.1 + east feed + north join). ~9 waves. Maze is slow/DC (M2-exempt) — still "partial", no U201/U501 move.
+- Endpoints (drc131c): SENSOR_EN closable WEST-side only (U104.3 north endpt confirmed); MCU_TX_EN north (R111.2 @47,118.675) + VBUS_SENSE north (x58-74,y123-127) are EAST-side → need USB-crossing (deferred; SENSOR_EN + CTD first, both USB-free).
+- RISK OPEN: route.py len output shows 66 FAIL pairs incl S1_NCS (TP304-U201.32) — M2 length-match vs my S1_NCS jog (+0.6)?? MUST compare HEAD vs WORK S1-bus lengths next turn; revert S1_NCS jog if M2 broken. P134 jogs kept for now (0 errors).
+- NEXT: (1) read bundled:git skill (pre-commit rule); (2) S1-bus lengths HEAD vs WORK; (3) PLAN F surveys (B x[22.5,25.5] y[15,31], N-S jog boxes, via F boxes); (4) execute maze move.
+## 2026-10-04 04:10 UTC — RESUMED: found+reverted route.py autoroute pollution; clean redo committed fe3c2cc (drc132b = drc131c)
+- SMOKING GUN: `route.py len S1_NCS` has NO len subcommand — unknown args hit `else: main()+add_zones()+stitch()+fill+SaveBoard` (route.py:1046-1053). The "length check" background job ran a FULL autoroute: +566 segs/+264 vias+zones. 5f0bad7 DRC: 18unc BUT 473 errors (187 shorts/165 crossings/101 clearance/11 hole-hole/6 length/3 thermal). NEVER run route.py as script again (import-only).
+- Reverted pcb to f61c790 (drc-rev = drc129 exactly: 33/0/[]/179), redid rb44F+p133+rb45+p134+rb46+p135+R114-place. drc132b: 32unc/0err/0parity/178warn, per-net counts + SENSOR_EN pairs IDENTICAL to drc131c. Committed fe3c2cc.
+- M2 DISPOSITION: S1_NCS 140.896->141.496 (+0.6, +0.4%, as designed); DRC spi_max_length(150mm) passes. route.py's 66 FAILs are pair-analysis gaps (span untouched nets), not violations. Intra-bus ±10%-of-SCLK deviation is pre-existing (f61c790: 140.9 vs 96.0 SCLK), not jog-caused. Jog KEPT.
+- Surveys q6s4-q6s7 are CLEAN (all ran before router's save). sexlen.py is now the length tool (pcbnew can't load old-revision files).
+- NEXT: PLAN F (MCU_RST maze x-5.5 relocation) surveys, then execute.
+## 2026-10-04 04:35 UTC — PLAN F DEAD (home blocked); pivoting to PLAN C (maze compress-in-place)
+- FhomeB: maze-new home x[22.7,25.175] pierced by THREE B N-S spines: +3V3 x22.63 (w0.5), P0.29 x23.34, S1_MOSI x24.898. Relocation DEAD. West-center B x[22,25.5] recorded as blocked (matters for later waves).
+- PLAN C (compress): keep maze west + south via; rewrite maze-east (x>30.0, ~12 B segs) into x<=30.2; N-S 30.745->30.35; vias (30.4,29.6)->(30.2,29.6)d0.6, (30.745,30.225)->(30.35,30.225), north (30.745,56.25)->(30.35,56.25); F-N-S 30.745->30.6 (dodges S1_NCS-F x30 east 30.125 by 0.35); F E-W extend to 30.6. Corridor x=30.85 gaps 0.4/0.45. ~4 waves. Compress surveys running.
+## 2026-10-04 05:15 UTC — PLAN C compress DONE, corridor x=30.85 OPEN (b02cf67, drc134 33unc/0err/0parity)
+- rb47 ripped maze-east (26 obj) + N-S + 3 vias + F-N-S/F-E-W; C2a placed snake-straight + GND-via west-jog (x27.2, fixed GND-via short found by drc133) + E-W + F-diags (30.2 via d0.6). Maze-east now <=30.5 (via annular), corridor gap 0.225-0.4.
+- North feed: options (E)-all-B (S1_MISO wall @52.5 + USB cross), (F)-east-B (SPI crossings), (G)-F-east (pinches), (18b)-F-x31.5 (C303/S1_NCS) ALL DEAD. North open DEFERRED (+1, documented; Q6-remainder via endpoint-move or SPI-jog). Maze group intact (2 west pre-existing + 1 north).
+- SENSOR_EN south RESTRUCTURED: no B-west (TX_EN-leg conflict); via (30.85,4.6)d0.6 + F-diag to R114.2 (FdiagS clear) + N-S x=30.85 + 4 EAST side-jogs (legs 31.5/32.3) + P1.11 straight. NEXT: revert 5 P134 jogs, place P137, close SENSOR_EN.
