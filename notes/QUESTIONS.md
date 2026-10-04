@@ -74,3 +74,6 @@ WaveC 2026-10-04: J202-Pin2 closed (17->16 unc, drc177 0err/0parity); 8 nets ->W
 WaveD-micro 2026-10-04: 4 fresh B-side/surgical angles sealed w/ evidence (S2_MOT-B,
 P0.12-B, MCU_RST-west-B, VIN-8/CTS); board untouched drc177 16/0/0. Next: Q6 zone-redo
 (south-band, U501-TX, N-S spines) per §7.8 — authorized, no owner question.
+
+Zone-3 2026-10-04: VBUS-5/+3V3-1/MCU_TX_EN-12 sealed (§7.10); U501/U201 moves assessed
+not-recommended. Next: freerouting oracle-as-advisor (standing Q2, no owner question).

@@ -619,3 +619,26 @@ stands.
   (1) south-band y[4,18] x[21,44] rip + coherent bus re-route (P0.12/S2_MOT/TX_IMON-w);
   (2) U501-TX zone rip + re-route (VIN-8/9/FTH); (3) N-S spine corridors
   (MCU_RST-n/VBUS/VSEN/MCU_TX_EN/VBUS_SENSE); (4) WaveZ GND-3 zone-close.
+
+## §7.9 Zone-1 + Zone-2 seals (2026-10-04, drc179 16/0/0 net-zero)
+- ZONE-1 south-band SEALED: P0.12-north-dip closed (16->15) but 6 errors — U201-28/U201-27-vbus
+  0.125 corridor, SPI-intra-0.6 vs S2_MOSI (P0.12 is SPI-netclass), D--via/VBUS sandwich;
+  S2_MOSI-reroute sealed by GND-maze (E-W @17.65 + N-S x=23.9 to y24.6). Ripped net-zero.
+- ZONE-2 U501-TX SEALED: FTH needs TX_STAT-E-W @18.94 + FB-N-S x=58.94 (16.5-28.0) double-rip,
+  but reroutes re-cross (full-height walls; perpendicular crossings unsolvable without 5-net
+  cascade); VIN-9/D502-move west sealed (FB-reroute: D501-A+CTD inverted corridor, SW2-via+D501-A
+  inverted corridor; VIN-east @15.0 bus re-feed needs 16mm B-run); VIN-8 needs U501-move
+  (GND-rip ripples into VIN/IS+). Rips reverted; drc179 stands.
+- NEXT: Zone-3 N-S spines (MCU_RST-n/VBUS/VSEN/MCU_TX_EN/VBUS_SENSE + U501-move assessment).
+
+## §7.10 Zone-3 spine seals + move assessment (2026-10-04, drc179 16/0/0 net-zero)
+- VBUS-5: F-column x=28.4 DEATH (20+ crossings + U103 @93.0); B-column x=28.4 DEATH
+  (GND/MCU_RST-maze/S1_MOSI/S1_MOT-diag/BTN1-diag/GND-N-S+via/U103). Meander ~45 segs est.
+- +3V3-1: F sealed (GND-maze + S2_MOSI-N-S full-height); B sealed (MCU_RST/SENSOR_EN/USB-D±/S1_MISO 5-N-S forest).
+- MCU_TX_EN-12: F @118.68 sealed (5 GND-N-S + +3V3-N-S/diag); @117.6 DEATH (9 crossings);
+  @116.6 DEATH (10 crossings incl VBUS/TX_ON); @114.6 south-hops sealed (Q101/TX_ON-E-W + TX_ON-diag + GND).
+- MOVE ASSESSMENT: U501-move breaks ~15 nets, own-pad sandwiches persist (VIN-8/FTH cages move
+  along), new-neighbor risk (D501/C507/C106), ~2 turns uncertain — NOT RECOMMENDED next.
+  U201-move breaks ~30 nets, USELESS for own-pad seals (P0.12/S2_MOT) — NOT RECOMMENDED.
+- NEXT: freerouting.org ORACLE-as-advisor (standing Q2): run on drc179 copy, inspect oracle
+  corridors for the 16 opens, hand-place verified corridors on real board (no blind import).
