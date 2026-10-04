@@ -141,3 +141,4 @@ accept-or-destructive). QUESTIONS.md updated (TPs resolved).
 - CTD: R515 @ (64.5,15.5) + west FB-hop (vias (58.35,15.3)/(59.65,16.0)d0.6) + east D501-hop ((65.5,15.7)/(67.15,15.85)) + GND-hop ((70.7,15.85)/(72.48,15.85)->C507.1). Fixed: C507.2-short, FB-E-W graze, U501.15-EN corner (0.197).
 - Wave A: pairs 8 (MCU_RST west) + 6 (GND east) placed clean; +3V3-0 needs B-detour (S1_MOSI N-S blocks direct hop; E-W @21.2 clear pending); VIN-15 F-strap SHORTED (missed U501.21 EP 2.5x2.5 + CTS pad) -> ripped, B-strap plan; MCU_RST-8 E-W SHORTED (missed R202.1 pad) -> fixed @20.4.
 PROGRESS 2026-10-04T12:04:19Z drc148 20unc/0err/0parity: B2c closed VBUS-8,VIN-13,D501-A,R115,R113,VS-east,SEN-R114; VIN-12 deferred WaveD(U501-cage); VIN w>=0.3 rule, via>=0.6/0.3
+PROGRESS 2026-10-04T12:20:54Z drc158 17unc/0err/0parity: VBUS-8v4+GND-2v2+GND-4 closed; C106+0.2/C107+0.3; MCU_RST-reroute-west; WaveD=+3V3x2/VIN-12/VIN-14(sealed,doc); GND-3 WaveZ(zone-close); 7 routable remain
