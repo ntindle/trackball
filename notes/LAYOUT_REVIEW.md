@@ -768,3 +768,7 @@ REMAINING: 8 items / 8 nets (+3V3-gap-a, GND, MCU_RST, VBUS, VIN-pad3, FTH, P0.1
 - KILLED: B-south-around (N-S x56.70 crossed VBUS-@123.70 — forgot N-S crosses the rail it avoids; E-W @122.30 died on VBUS_SENSE-via barrel (checked tip copper, forgot barrel — LESSON: via sites = barrel + copper)); B-north-around (VBUS-N-S tip higher than surveyed (129.10 not 128.20 — LESSON: re-verify rail tips from full dumps, not memory; J201-SH PTH 0.195; VBUS-via (58.40,128.50)).
 - LESSONS: survey B-rail tips exactly (length/endpoint, not assumed); every via site needs barrel-aware B-check; N-S segments cross E-W rails they parallel-avoid (check both orientations).
 REMAINING: 7 items / 7 nets (+3V3-gap-a, MCU_RST, VBUS, VIN-pad3, FTH, P0.12, S2_MOT).
+
+### 7.10.23 Wave-7 FTH PARKED-SEALED (pad-cage class, no board change)
+- U501-9 (55.50,17.94) box (55.38-55.62, 17.52-18.35): F-sealed all sides (W: TX_STAT-pad8 gap 0.26; E: empty-pad10 gap 0.26; S: TX_STAT-rail @18.94; N: chip). No d0.6 via fits: between-pad9/10 band 0.26 < 0.5; south-overlap dies on pad10-corner + TX_STAT-N-S x55.03; far island via (60.01,32.00) PROVEN CLEAR (B-empty, F-clear) but unreachable. In2 corridor x54-62 y18-33 probed (6 vias, no PTH). Relief needs schematic: move FTH off pin 9 / move TX_STAT / DNC-pad10 ruling (NOT layout craft — pad10 is a footprint pin).
+REMAINING: 7 items / 7 nets (+3V3-gap-a, MCU_RST, VBUS, VIN-pad3, FTH-sealed, P0.12, S2_MOT).

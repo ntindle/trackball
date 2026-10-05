@@ -204,3 +204,5 @@ PROGRESS 2026-10-04T12:29:58Z drc164 17unc/0err/0parity: TX_IMON+MCU_TX_ENx2->Wa
 ## 2026-10-05 19:30 UTC — Wave-5 +3V3 gap-b CLOSED, gap-a PARKED-SEALED drc222 8/0/0 (§7.10.21): 5 failed placements, GND-rail ECO rejected (load-bearing, reverted byte-exact). Committed board. Next: GND (tiny B-gap) / MCU_RST / VBUS / FTH / P0.12 / S2_MOT / pad3.
 
 ## 2026-10-05 20:10 UTC — Wave-6 GND CLOSED drc225 7/0/0 (§7.10.22): In2 direct reusing GND vias; B-arounds dead (VBUS rail tip higher than surveyed + J201-SH). Committed board. Next: MCU_RST/VBUS/FTH/P0.12/S2_MOT/pad3/gap-a.
+
+## 2026-10-05 20:40 UTC — Wave-7 FTH PARKED-SEALED (§7.10.23, no board change): U501-9 pad-caged all sides, no via slot; far-island via clear but unreachable. Next: MCU_RST/VBUS/P0.12/S2_MOT/pad3 surveys.
