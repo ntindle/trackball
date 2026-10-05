@@ -738,3 +738,10 @@ REMAINING waves: VIN-#8, MCU_TX_ENx2, MCU_RST-w, +3V3x2, GND-3, VBUS, VINx2, FTH
 - RIPPED net-zero drc207 12/0/0. WALL PROOFS (In2, w0.30): @11.85+ vs SW2-row inverted; south y<=8.15 mined (TX_STAT/FB_PK/D501-A); basement y<=7.07 vs R512/SW201 inverted; x55-gap slalom dies at TX_STAT-via turn (0.00 exact); x59.50 pocket (FB-via); x60.00 (TX_STAT-via); x61.15 (TX_STAT/SW2 pair inversion); north tiled (U501 thermals + CTD row). F/B previously sealed (ledger §7.10.3/4).
 - PLAN: grand tour — In2 west @12.70 from (56.00,12.70) to clear x, south in clear zone, east along bottom edge (y<5), north up riser x73.49 (clear y8-14 verified; y5-8 partially). Needs 3 probes (west span vias/PTH, south corridor, bottom span). Width: prefer w0.50 inner for VIN current if space allows. Pad3: separate micro-wave (CTS re-route or accept-open escalation).
 REMAINING: 12 items / 9 nets (VINx2 incl. pad3, MCU_TX_ENx2, MCU_RST-w, +3V3x2, GND-3, VBUS, FTH, P0.12, S2_MOT).
+
+### 7.10.18 Wave-4b CLOSED (2nd attempt): VIN B-C grand tour (drc208 11unc/0err/0parity)
+- ROUTE (all In2 w0.30, 6 segs, all verified persisted): E-W @12.70 (56.00->55.00) [SW2-via gap 0.53] + N-S x55.00 (12.70->8.10) [L501 gap 0.89 both sides] + E-W @8.10 (55.00->40.00) [L501-1 bottom gap 0.25, west-under EMPTY] + N-S x40.00 (8.10->4.00) [EMPTY] + E-W @4.00 (40.00->73.49) [bottom vias clear, min gap 0.13 over TX_STAT-via; 4.1 from board edge] + N-S x73.49 (4.00->14.00) [meets existing VIN via barrel; riser-low EMPTY].
+- Probed EMPTY (vias+PTH): west-under x35-51 y7-9.5, south-drop x38-42 y3-8.5, riser-low x72.5-74.5 y4-11. Bottom span x40-74 y3-6 holds only 3 vias (TX_EN x2, TX_STAT) threaded @4.00.
+- NOTE: VIN inner width w0.30 (DRC-legal, matches existing stubs) but below the w0.50 of F/B power runs — flag for power-integrity review at WaveZ (upgrade to w0.50 if space allows; current path carries VIN across ~150 mm inner).
+- VIN REMAINDER: pad3 micro-wave only (F-sealed; CTS re-route or escalation).
+REMAINING: 11 items / 9 nets (+3V3x2, GND, MCU_RST, VBUS, VIN-pad3, FTH, MCU_TX_ENx2, P0.12, S2_MOT).
