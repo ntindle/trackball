@@ -190,3 +190,5 @@ PROGRESS 2026-10-04T12:29:58Z drc164 17unc/0err/0parity: TX_IMON+MCU_TX_ENx2->Wa
 ## 2026-10-05 09:00 UTC — Wave-2 net-zero drc195 14/0/0 (§7.10.14): FTH dead (pad-row/TX_STAT sandwich); VBUS v1 placed-then-ripped (U201-28-pad, vbus_min_width 0.5, vbus_clearance 0.25, narrow windows), v2 dead (U201-26-pad/SEN sandwich). Rules learned: vbus 0.5/0.25, windows+1.0, pad-dump mandatory. Next: VSEN/VIN-#8/MCU_TX_EN/VBUS_SENSE/MCU_RST-w/+3V3s/GND-3.
 
 ## 2026-10-05 09:30 UTC — Wave-3 VSEN CLOSED drc198 13/0/0 (§7.10.15): In2 @63.50 U301-4->U302-4 (hole_to_hole + GND-via field dodged, 2 iterations). First 4L close committed. Next: VIN-#8/MCU_TX_EN/VBUS_SENSE/MCU_RST-w/+3V3s/GND-3.
+
+## 2026-10-05 16:00 UTC — Wave-4a VBUS_SENSE CLOSED drc205 12/0/0 (§7.10.16): F-stub east + via (17.50,7.51) + In2 slalom x16.50 w/ BTN2-bypass jog; 2 placed-then-ripped iterations (F-staircase 8err, x17.50 N-S 2 shorts). Committed 2b2be0f. Next: VIN-#8/MCU_TX_EN/MCU_RST-w/+3V3s/GND-3/VBUS/VIN/FTH/P0.12/S2_MOT.
