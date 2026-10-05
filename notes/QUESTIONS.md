@@ -82,3 +82,7 @@ not-recommended. Next: freerouting oracle-as-advisor (standing Q2, no owner ques
 All 14 opens proven sealed by exhaustive survey (ledger in LAYOUT_REVIEW.md §7.10.9); oracle exhausted (0/14); Q6 moves/rip cannot break package-relative cages; owner forbade accepted opens. Layout craft is exhausted.
 Options: (a) schematic ECO reassigning caged nets to free pins (RECOMMENDED: S2_MOT off U201-38, VIN off U501-3, + P0.12/VBUS/FTH/MCU_TX_EN/VBUS_SENSE per ledger) — needs schematic-job + firmware-map update; (b) via-in-pad/micro-via process exception; (c) stackup change; (d) accept opens (against 10-04 directive).
 Board held clean at 14unc/0err/0parity (HEAD 4203791). Awaiting owner pick; layout resumes on ECO delivery.
+
+## Q7 outcome (2026-10-05): pin ECO fully prosecuted — 0 swaps / 0 moves viable; narrowed ask
+Implemented: full pin inventory (7 free U201 GPIOs), pad-caged-vs-mid-route triage, TP205/R505/R111 move attempts (all net-zero), MCU_TX_EN greenfield survey, PINMAP.md, VIN-#7 electrical review. Results: S2_MOT/P0.12/VBUS_SENSE no free pin reaches; MCU_TX_EN distance-not-cage; VIN/VBUS/FTH power-unswappable; TP205/R505/R111 immovable; VIN-#7 DNC electrically rejected (5 W bridge, 4 VIN pins share ~2 A). No .kicad_sch change was valid (no ERC owed, no deviation incurred).
+Narrowed owner decision NEEDED: for the 14 sealed opens, pick (b) via-in-pad/micro-via exception, (c) stackup change, or (d) accept opens for respin — layout craft (incl. Q7-as-specified) is exhausted with proof. Fab/SUMMARY/DONE held until opens close or (d).

@@ -180,3 +180,5 @@ PROGRESS 2026-10-04T12:29:58Z drc164 17unc/0err/0parity: TX_IMON+MCU_TX_ENx2->Wa
 ## 2026-10-05 06:00 UTC — TP205/R505 post-mortem CLOSED: both move attempts reverted net-zero (TP205 SHORTED J202-8 then R202-1/J202-4/6; exact courtyards prove immovable); board restored byte-exact to triage state (tree clean, 14/0/0 by transitivity to drc186). Procedure fix recorded (pad+courtyard surveys). NEXT: R111/MCU_TX_EN-north greenfield + VIN-#7 electrical escalation.
 
 ## 2026-10-05 06:30 UTC — MCU_TX_EN greenfield DEAD (§7.10.11): N-S x=20.10 empty to y=75 then BTN1/GND/VBUS walls; every east-join dies (TX_ON-tip/U105/TX_5V_SW/GND-@120/GND-N-S); LEG-B needs via-in-pad. R111 GND-caged. Q7 CLOSE-OUT: 0 swaps + 0 moves viable; VIN-#7 DNC electrical call outstanding. Board untouched 14/0/0.
+
+## 2026-10-05 07:00 UTC — VIN-#7 verdict (§7.10.12): U501-3 DNC REJECTED (5 W bridge, 4 VINs share ~2 A; unroutable at all widths). Q7 outcome filed: 0 swaps/0 moves viable, narrowed ask (via-in-pad/stackup/accept). Fab/SUMMARY held. Board 14/0/0 clean.
