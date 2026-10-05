@@ -787,3 +787,16 @@ REMAINING: 5 items / 5 nets (+3V3-gap-a, VIN-pad3, FTH-sealed, P0.12, S2_MOT).
 - PATH: B-N-S x21.23 bottom (21.23,7.75, exists) + via d0.6 (21.23,7.75) [B: S1_NCS-@6.85 gap 0.375; F: EMPTY] + In2 E-W @7.75 (21.23->39.30) [S1_NCS-via 0.095, SENSOR_EN-via 0.225, J202-Pin_2-via 0.185 — all legal] + In2 N-S x39.30 (7.75->18.50) [BTN3-via 0.285, GND-via 0.95] + In2 E-W @18.50 (39.30->38.80) + via d0.6 (38.80,18.50) [TX_IMON-F-rail 0.125] + F-N-S x38.80 (17.77->18.50, touches R207-2 top) [R207-1 (S2_SCK) gap 0.97]. KEY FINDS: east island terminates at R207-2 (not a stub); B-rails never block In2 spans (only vias/PTH pierce) — the B-route detour analysis was wasted effort, In2-direct was always the answer.
 - LESSON: for In2 spans, probe ONLY vias/PTH/holes (never B/F tracks); R-pad terminations (R207-2) hide island ends — always check both islands' far pads.
 REMAINING: 4 items / 4 nets (+3V3-gap-a, VIN-pad3, FTH-sealed, S2_MOT).
+
+### 7.10.27 Wave-11 S2_MOT PARKED-SEALED (pad-cage + corridor-mined, no board change)
+- Pad38 (26.40,8.14) box (25.98-26.82, 7.72-8.57): N-gap 0.42 (S1_MOT-pad36), S-gap 0.42 (TX_STAT-pad40) both inverted for w0.25; E-lane @8.60 dies on SENSOR_EN-@8.09 (band [8.60..] vs via (27.175,9.00) needs 0.625: 0.51/0.71/0.81/0.91 all fail below 9.00; at 9.00 B-rail check pending but F-lead @8.60/ N-S x27.175 cross SENSOR_EN-rail). E-via (27.175,9.00) planning only.
+- Corridor x27-44 y9-37 (In2): N-S x27.175 dies on +3V3-via (27.20,20.45); x28.40 dies on MCU_RST-via (28.70,16.40) (band [28.05,28.075] 25µm); E-W @9.00-9.60 dies on SENSOR_EN-via (33.90,8.60)/BTN3-via (38.39,10.00) inversion; E-W @7.70 dies on S1_MISO-via (33.20,10.05); N-S x32.40-33.90 dies on S1_MISO/SENSOR_EN-via pinch; x29.50-spine dies on 12 stacked vias + own +3V3-E-W @23.60. Consistent with 14 prior 2L proofs; 4L adds no path (vias pierce all layers).
+- CLASS: schematic relief (reassign S2_MOT off pin 38, or move SENSOR_EN-rail/BTN3-via — latter is placement ECO with ripple; former is schematic-intent).
+REMAINING: 4 items / 4 nets, ALL SEALED class (+3V3-gap-a §7.10.21, VIN-pad3 below, FTH §7.10.23, S2_MOT here).
+
+### 7.10.28 SEALED BATCH — 4 opens need schematic relief (escalation)
+1. +3V3-gap-a (maze<->x25.00-spine, 2mm): walled F (GND-x23.90 solid), B (S1_MOSI-x24.40/24.90), In2 (TX_EN-spine/via/jog, U201-17-pad, P0.29/S1_MOSI pinch, S1_MOT-diag). GND-rail ECO rejected (load-bearing). Relief: move GND-x23.90 pair with GND-stitch plan, or schematic tie.
+2. VIN-pad3 (U501-3): pad2/pad4/thermal-west/CTS-diagonal seal all via slots (0.26 gap fits nothing). Relief: move VIN off pin 3 (pins 1/17/20 already VIN), or CTS re-route + ripple.
+3. FTH (U501-9): pad8/pad10/TX_STAT-rail seal; DNC-pad10 ruling needed. Relief: move FTH off pin 9, move TX_STAT, or DNC-pad10 use ruling.
+4. S2_MOT (U201-38): pad-cage + mined corridor (above). Relief: reassign off pin 38, or move SENSOR_EN-rail/BTN3-via.
+- VIN inner widths (w0.30 grand tour) + via-in-pad ×3 (26.30,14.20 / 47.00,119.30 / 91.175,100.00 — all DRC-clean, no mask-bridge) flagged for WaveZ review (power-integrity + fab tent/plug notes).

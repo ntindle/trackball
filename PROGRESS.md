@@ -212,3 +212,5 @@ PROGRESS 2026-10-04T12:29:58Z drc164 17unc/0err/0parity: TX_IMON+MCU_TX_ENx2->Wa
 ## 2026-10-05 22:00 UTC — Wave-9 VBUS CLOSED drc234 5/0/0 (§7.10.25): C205-1 via + 90mm In2 N-S x31.50 (+3V3-tip jog) + @105.50 transition; 3 iterations. Committed board. Next: P0.12/S2_MOT surveys, pad3/gap-a/FTH sealed batch.
 
 ## 2026-10-05 22:30 UTC — Wave-10 P0.12 CLOSED first-try drc235 4/0/0 (§7.10.26): B-bottom via + In2 @7.75 + x39.30 + R207-2 step. Committed board. Next: S2_MOT survey; sealed batch (gap-a/pad3/FTH) escalation.
+
+## 2026-10-05 22:50 UTC — Wave-11 S2_MOT PARKED-SEALED (§7.10.27); SEALED BATCH §7.10.28 (4 opens need schematic relief: gap-a/pad3/FTH/S2_MOT). No board change. Stopping for owner on schematic-intent per standing orders.
