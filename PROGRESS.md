@@ -216,3 +216,5 @@ PROGRESS 2026-10-04T12:29:58Z drc164 17unc/0err/0parity: TX_IMON+MCU_TX_ENx2->Wa
 ## 2026-10-05 22:50 UTC — Wave-11 S2_MOT PARKED-SEALED (§7.10.27); SEALED BATCH §7.10.28 (4 opens need schematic relief: gap-a/pad3/FTH/S2_MOT). No board change. Stopping for owner on schematic-intent per standing orders.
 
 ## 2026-10-05 23:05 UTC — Wave-11 S2_MOT PARKED-SEALED (§7.10.27: F-cage + B-mined + via-in-pad killed by BTN3-B). SEALED BATCH = 4 opens (gap-a/pad3/FTH/S2_MOT) needs schematic relief. No board change. STOPPING for owner per standing orders (schematic-intent only).
+
+## 2026-10-06 00:10 UTC — Wave-12 relief (1) +3V3-gap-a BLOCKED (§7.10.29): In2-hop placed-then-ripped (TX_EN-spine crossing + annular convention); exhaustive relocation/re-feed search proves placement ECO has no geometry (pinch bands inverted, south maze rail-fed-only, circular re-feed). Needs schematic tie (unauthorized). No board change. Next: relief (2) VIN-pad3 CTS re-route.
