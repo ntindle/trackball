@@ -182,3 +182,7 @@ PROGRESS 2026-10-04T12:29:58Z drc164 17unc/0err/0parity: TX_IMON+MCU_TX_ENx2->Wa
 ## 2026-10-05 06:30 UTC — MCU_TX_EN greenfield DEAD (§7.10.11): N-S x=20.10 empty to y=75 then BTN1/GND/VBUS walls; every east-join dies (TX_ON-tip/U105/TX_5V_SW/GND-@120/GND-N-S); LEG-B needs via-in-pad. R111 GND-caged. Q7 CLOSE-OUT: 0 swaps + 0 moves viable; VIN-#7 DNC electrical call outstanding. Board untouched 14/0/0.
 
 ## 2026-10-05 07:00 UTC — VIN-#7 verdict (§7.10.12): U501-3 DNC REJECTED (5 W bridge, 4 VINs share ~2 A; unroutable at all widths). Q7 outcome filed: 0 swaps/0 moves viable, narrowed ask (via-in-pad/stackup/accept). Fab/SUMMARY held. Board 14/0/0 clean.
+
+## 2026-10-05 08:00 UTC — Q7 RESOLVED: go 4L (owner 10-05). Pre-stackup checkpoint = HEAD 9e35549 (14/0/0 clean). Plan: (1) 4L 1.6mm stackup edit (L1 sig/L2 GND/L3 sig+pwr/L4 sig); (2) DRC on new stackup; (3) inner-escape waves (VIN-#7 + S2_MOT first); (4) fab regen 4L at 0 unc.
+
+## 2026-10-05 08:30 UTC — 4L live drc189 14/0/0; Wave-1: VIN-#7 placed-then-ripped (TX_IMON-riser sandwich), S2_MOT west-via dead everywhere (BTN3-@7.96 immovable), P0.12 placed-then-ripped (S2_MOSI-pad/spine/GND/MCU_RST walls). drc193 14/0/0 net-zero. §7.10.13 + binding survey procedure. Next: remaining 9 waves w/ pad+courtyard discipline.
