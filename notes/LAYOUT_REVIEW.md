@@ -721,3 +721,6 @@ REMAINING 4L waves: FTH, VBUS, VSEN, VIN-#8, MCU_TX_ENx2, VBUS_SENSE, MCU_RST-w,
 - VBUS: placed v1 (west feed) closed net but hit U201-28-pad (pad-blind!), vbus_min_width 0.5 (stub w0.3), vbus_clearance 0.25 (S2_MOSI walls), missed S1_MOSI-via (28.0,34.225) + +3V3-vias (window too narrow). Ripped 12. Redesign v2 (direct-pad via + N-S x=30.20 inner, all 11 field vias dodged) died at F-jog: U201-26-pad + S2_MOSI-@15.80 sandwich inverted under vbus_clearance 0.25; direct-pad via blocked by MCU_RST-via (28.70,16.40). Ripped 0 (nothing placed). drc195 14/0/0 net-zero.
 - RULES LEARNED (binding): vbus_min_width 0.5, vbus_clearance 0.25 (apply to ALL power routing); survey windows must exceed target span by >=1.0; pad-dump mandatory (U201-28-pad, U201-26-pad both missed by tracks-only surveys).
 REMAINING 4L waves: VSEN, VIN-#8, MCU_TX_ENx2, VBUS_SENSE, MCU_RST-w, +3V3x2, GND-3.
+
+### 7.10.15 Wave-3 CLOSED: VSEN_1V9 (drc198 13unc/0err/0parity)
+U301-4/U302-4 PTH pads via F-stubs (vias ON stubs, not pads: hole_to_hole 0.25 respected at 0.29+); In2-E-W @63.50 w0.25 dodging GND-via field (49.725/57.748/61.15 @64.24, GND (41.23,63.00)); U301-pin3-VDDPIX PTH avoided (E-W south of it, gap 0.715). Iterations: @66.00 (pin3-short + GND-via), @64.90 (2 GND-vias at window edge) -> @63.50 clean. First 4L close. VSEN = Power netclass (clearance 0.2, w0.25 OK).
