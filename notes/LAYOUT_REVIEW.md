@@ -745,3 +745,8 @@ REMAINING: 12 items / 9 nets (VINx2 incl. pad3, MCU_TX_ENx2, MCU_RST-w, +3V3x2, 
 - NOTE: VIN inner width w0.30 (DRC-legal, matches existing stubs) but below the w0.50 of F/B power runs — flag for power-integrity review at WaveZ (upgrade to w0.50 if space allows; current path carries VIN across ~150 mm inner).
 - VIN REMAINDER: pad3 micro-wave only (F-sealed; CTS re-route or escalation).
 REMAINING: 11 items / 9 nets (+3V3x2, GND, MCU_RST, VBUS, VIN-pad3, FTH, MCU_TX_ENx2, P0.12, S2_MOT).
+
+### 7.10.19 Wave-4c MCU_TX_EN (IN PROGRESS): F-escape from U201-28 SOLVED, long link pending
+- F-ESCAPE (w0.25, all gaps computed, NOT yet placed): E-W @14.60 (25.98->23.75) [dodges P0.12 diagonal east tip (23.27,16.17) by 0.255; BTN1-@15.13 gap 0.28] + N-S x23.75 (14.60->16.65) [tip dx-gap 0.255; S2_MOSI-x24.54 gap 0.565] + E-W @16.65 (23.75->20.30) [tip dy-gap 0.255] + via d0.6 (20.30,16.65) [B-side clear: P0.29-@13.88 dy 2.77, BTN1-B tip dist 1.67, S2_NCS-via dist 0.82]. KILLED alternatives: direct @14.49 (P0.12 tip, 0.125<0.2); @14.70 (BTN1-F 0.18); @14.90 (BTN1-F overlap); via (20.30,14.40) (B-P0.29 rail 0.095); d0.6 via band between B-P0.29-@13.88/F-BTN1-@15.13 is exactly zero-width (14.505). PENDING: F-pads probe at jog corners (x20-24 y14.5-16.8) before placing.
+- LONG LINK (U201-28/R111-2/R115-1, ~100 mm, both pairs open): options: (i) In2 south from (20.30,16.65) to R111-2 (47,118.675) — needs full x20-47 y16-119 via/PTH survey; (ii) bottom-route E-W @4.50 In2 parallel to VIN-@4.00 (gap 0.225) + riser to R115-1/R111 — needs riser probes; (iii) R111-2->R115-1 first (both SE, 45 mm, x47-91 y100-119 survey). R111-2 exits: south blocked (R111-1 TX_ON), west corridor to R112 unprobed.
+REMAINING: 11 items / 9 nets.
