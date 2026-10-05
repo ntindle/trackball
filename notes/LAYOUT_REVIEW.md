@@ -814,3 +814,9 @@ REMAINING: 4 items / 4 nets, ALL SEALED class (+3V3-gap-a §7.10.21, VIN-pad3, F
 - FOUND but unusable: +3V3 dead-copper island at y26 (x23.35-N-S to @29.00, @26.0 cluster) — no via, dangling B-end (22.63,26.5) killed by P0.29 (0.11). Usable only with schematic-tie-class rework.
 - REMAINING OPTION (not authorized): schematic tie west<->east island, or move S2_MISO-x21.36 rail (outside relief scope). CLASS: schematic-intent. STOPPING on this item per HARD RULE.
 REMAINING: 4 opens (+3V3-gap-a BLOCKED, VIN-pad3, FTH, S2_MOT).
+
+### 7.10.30 Wave-12 relief (2) VIN-pad3 BLOCKED — CTS re-route cannot open corridor (no board change)
+- Pad3 VIN box (52.65-53.48, 15.88-16.12); pad2 CTS (15.38-15.62); sandwich gap 0.26. VIN stub x53.06 top (53.06,15.0). Tried: (a) extend stub N-S (crosses pad2 body at x53.06 — pad shadow, any CTS move irrelevant); (b) west E-W @16.00 (sandwich fits max w0.1 zero-margin: rect-bottom 15.82 vs pad2-top 15.62 gap exactly 0.20 = cl minimum, REJECTED on do-it-right no-razor); (c) CTS E-W vacate x53.06 + N-S x52.05 + E-W @16.29 re-route (legal for CTS, but VIN west E-W still sandwich-killed); (d) east (thermal 53.75 + GND-x54.00, band inverted); (e) north (pad4 IS+ shadow); (f) B/In2 vias in sandwich (need 0.5 headroom in 0.26 gap); (g) CTS south-exit variants (all cross VIN stub or pad shadow).
+- ARITHMETIC SEAL: 0.26 gap - 2xcl(0.2) < 0 → no legal copper threads pad2/pad3 at any width with nonzero margin. CTS re-route changes nothing (blocker is pad bodies + thermal, not CTS copper).
+- REMAINING OPTION (not authorized): move VIN off pin 3 (pins 1/17/20 already VIN — schematic intent). CLASS: schematic-intent. STOPPING on this item per HARD RULE.
+REMAINING: 4 opens (+3V3-gap-a BLOCKED, VIN-pad3 BLOCKED, FTH, S2_MOT).
