@@ -198,3 +198,5 @@ PROGRESS 2026-10-04T12:29:58Z drc164 17unc/0err/0parity: TX_IMON+MCU_TX_ENx2->Wa
 ## 2026-10-05 17:10 UTC — Wave-4b VIN B-C CLOSED via grand tour drc208 11/0/0 (§7.10.18): 6-seg In2 x55/x40/@4.00/x73.49, 0 errors, all reload-verified. VIN remainder = pad3 micro-wave. Committed board. Next: MCU_TX_ENx2/MCU_RST-w/+3V3s/GND-3/VBUS/FTH/P0.12/S2_MOT/pad3.
 
 ## 2026-10-05 17:40 UTC — Wave-4c MCU_TX_EN surveyed (§7.10.19): F-escape route solved on paper (jog around P0.12 tip, via (20.30,16.65)), long-link options triaged; placement + south surveys next. Tree clean drc208 11/0/0.
+
+## 2026-10-05 18:20 UTC — Wave-4c MCU_TX_EN CLOSED drc211 9/0/0 (§7.10.20): linkA (F-escape v3 + N-S x24.60 + via-in-pad (47.00,119.30)) + linkB (@119.10 + riser x91.175 + via-in-pad R115-1); v1 via shorted S1_MOSI-B-rail (truncated-probe lesson). Committed board. Next: +3V3s/GND/MCU_RST/VBUS/FTH/P0.12/S2_MOT/pad3.
