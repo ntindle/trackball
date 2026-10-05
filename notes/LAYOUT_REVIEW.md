@@ -715,3 +715,9 @@ Stackup: L1 Top sig / L2 GND plane (solid, WaveZ pour) / L3 sig+power (escape la
 - P0.12 inner: placed (closed net!) but hit S2_MOSI-pad (pads invisible to dn.py!), S1_MOSI-B-spine x=24.40 (confused with S2_MOSI-x24.54), GND-N-S x=25.31, MCU_RST-@16.96 (window-edge miss by 0.015), S2_MOSI-N-S span (tip-gap fallacy: E-W @16.60 inside span [15.80,16.90]). West-via dead both sides (S1_NCS/P0.29 + P0.29/S2_MOSI/GND sandwiches). Ripped net-zero, drc193 14/0/0.
 PROCEDURE (binding): pad-dump in EVERY window (dn.py blind); margin windows >=0.5; distinguish same-x nets; tip-gap only south of tip; reload-verify every save (caught a null round-trip this turn: VIN tracks vanished between place and rip — cause undetermined, reload-check now mandatory).
 REMAINING 4L waves: FTH, VBUS, VSEN, VIN-#8, MCU_TX_ENx2, VBUS_SENSE, MCU_RST-w, +3V3x2, GND-3 (each: pad+courtyard survey, via-slot proof, place, DRC).
+
+### 7.10.14 Wave-2 (4L): FTH + VBUS both OPEN — vbus_clearance 0.25 + pad forest
+- FTH: F-exit from U501-9 dies (U501-8/10 pad-row + TX_STAT-E-W @18.94 sandwich, corridor inverted). No placement risked. FTH OPEN.
+- VBUS: placed v1 (west feed) closed net but hit U201-28-pad (pad-blind!), vbus_min_width 0.5 (stub w0.3), vbus_clearance 0.25 (S2_MOSI walls), missed S1_MOSI-via (28.0,34.225) + +3V3-vias (window too narrow). Ripped 12. Redesign v2 (direct-pad via + N-S x=30.20 inner, all 11 field vias dodged) died at F-jog: U201-26-pad + S2_MOSI-@15.80 sandwich inverted under vbus_clearance 0.25; direct-pad via blocked by MCU_RST-via (28.70,16.40). Ripped 0 (nothing placed). drc195 14/0/0 net-zero.
+- RULES LEARNED (binding): vbus_min_width 0.5, vbus_clearance 0.25 (apply to ALL power routing); survey windows must exceed target span by >=1.0; pad-dump mandatory (U201-28-pad, U201-26-pad both missed by tracks-only surveys).
+REMAINING 4L waves: VSEN, VIN-#8, MCU_TX_ENx2, VBUS_SENSE, MCU_RST-w, +3V3x2, GND-3.

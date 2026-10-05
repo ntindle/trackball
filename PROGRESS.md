@@ -186,3 +186,5 @@ PROGRESS 2026-10-04T12:29:58Z drc164 17unc/0err/0parity: TX_IMON+MCU_TX_ENx2->Wa
 ## 2026-10-05 08:00 UTC — Q7 RESOLVED: go 4L (owner 10-05). Pre-stackup checkpoint = HEAD 9e35549 (14/0/0 clean). Plan: (1) 4L 1.6mm stackup edit (L1 sig/L2 GND/L3 sig+pwr/L4 sig); (2) DRC on new stackup; (3) inner-escape waves (VIN-#7 + S2_MOT first); (4) fab regen 4L at 0 unc.
 
 ## 2026-10-05 08:30 UTC — 4L live drc189 14/0/0; Wave-1: VIN-#7 placed-then-ripped (TX_IMON-riser sandwich), S2_MOT west-via dead everywhere (BTN3-@7.96 immovable), P0.12 placed-then-ripped (S2_MOSI-pad/spine/GND/MCU_RST walls). drc193 14/0/0 net-zero. §7.10.13 + binding survey procedure. Next: remaining 9 waves w/ pad+courtyard discipline.
+
+## 2026-10-05 09:00 UTC — Wave-2 net-zero drc195 14/0/0 (§7.10.14): FTH dead (pad-row/TX_STAT sandwich); VBUS v1 placed-then-ripped (U201-28-pad, vbus_min_width 0.5, vbus_clearance 0.25, narrow windows), v2 dead (U201-26-pad/SEN sandwich). Rules learned: vbus 0.5/0.25, windows+1.0, pad-dump mandatory. Next: VSEN/VIN-#8/MCU_TX_EN/VBUS_SENSE/MCU_RST-w/+3V3s/GND-3.
