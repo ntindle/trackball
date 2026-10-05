@@ -826,3 +826,11 @@ REMAINING: 4 opens (+3V3-gap-a BLOCKED, VIN-pad3 BLOCKED, FTH, S2_MOT).
 - STRUCTURAL SEAL: pad8's sole exit (N-S x55.03) forces @18.94-rail through FTH's south corridor; rail cannot move (DTH-via + FTH-hug pin all alternatives); FTH cannot exit W (pad8/TX_STAT 0.26), E (DNC-pad10), N (chip), S (rail/hug/pad10).
 - REMAINING OPTION (not authorized): move FTH off pin 9, or DNC-pad10 use ruling. CLASS: schematic-intent. STOPPING on this item per HARD RULE.
 REMAINING: 4 opens (+3V3-gap-a BLOCKED, VIN-pad3 BLOCKED, FTH BLOCKED, S2_MOT).
+
+### 7.10.32 Wave-12 relief (4) S2_MOT BLOCKED — SENSOR_EN/BTN3 ripple exhausted (no board change)
+- SENSOR_EN: N-S x27.16 (5.61->8.09) + E-W @8.09 (27.16->34.00) + riser + via (33.9,8.6). Tried: rail-Y south to @7.70 (J202-Pin_4-maze (28.43-30.40,7.01-7.51) dy=0.19<0.45, even shortened — east feed stuck at maze); rail-Y north (worse for E-lane); rail-X shift to x27.80 (rail-Y wall unchanged, razor 0.03); west-end shorten (strands E-W); east re-feed (source is west).
+- BTN3-B: @7.96 (23.99->36.15) + diag legs (21.83,10.11)-(23.99,7.96) + (36.15,7.96)-(38.19,10.0). Tried: north to @9.30-9.50 (J202-B-@8.66/@8.81 box north moves: band [9.235,9.41+] inverted, need 0.75 have 0.60; @9.50 crosses S1_MOT-B-diag (25.21,9.50); jogs die on S1_MOT-via (25.2,9.41)); south to @7.40-7.30 (S1_NCS-B-@6.85 band [7.25,7.54] inverted, need 1.0 have 0.29); west N-S legs (J202-B dx=0.35<0.45).
+- BTN3-via (38.39,10.00)->(38.39,11.00): E-W @9.50 still dies on S1_MISO-via (33.20,10.05) (band [9.325,9.125] inverted) — via move futile, wall is behind it. SENSOR_EN-rail move futile (via (27.175,9.00)/pad walls behind it: S1_MOSI-B 25µm, pad36/S1_MISO 30µm).
+- STRUCTURAL SEAL: all four ripple moves are either geometrically impossible (boxed bands) or futile (walls behind). Via slots near pad38 dead independent of ripple (BTN3-B under pad 0.079; S1_MOT/TX_STAT pads; J202-B maze).
+- REMAINING OPTION (not authorized): reassign S2_MOT off pin 38. CLASS: schematic-intent. STOPPING on this item per HARD RULE.
+REMAINING: 4 opens, ALL BLOCKED on schematic intent (+3V3-gap-a: schematic tie; VIN-pad3: VIN-off-pin-3; FTH: FTH-off-pin-9/DNC ruling; S2_MOT: reassign-off-pin-38).

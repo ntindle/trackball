@@ -222,3 +222,5 @@ PROGRESS 2026-10-04T12:29:58Z drc164 17unc/0err/0parity: TX_IMON+MCU_TX_ENx2->Wa
 ## 2026-10-06 00:35 UTC — Wave-12 relief (2) VIN-pad3 BLOCKED (§7.10.30): 0.26 pad2/pad3 sandwich arithmetically seals all approaches (max w0.1 zero-margin rejected); CTS re-route proven irrelevant (blockers are pad bodies + thermal). Needs VIN-off-pin-3 (unauthorized). No board change. Next: relief (3) FTH TX_STAT move.
 
 ## 2026-10-06 01:05 UTC — Wave-12 relief (3) FTH BLOCKED (§7.10.31): TX_STAT rail cannot vacate (pad8 stranded — no via site, DTH/GND pinch inverts all N-S; FTH S-exit walled by rail/hug/pad10; east via clear but needs DNC-pad10). Needs FTH-off-pin-9 or DNC ruling (unauthorized). No board change. Next: relief (4) S2_MOT SENSOR_EN/BTN3 ripple.
+
+## 2026-10-06 01:30 UTC — Wave-12 relief (4) S2_MOT BLOCKED (§7.10.32): SENSOR_EN-rail Y load-bearing (S/maze, N/worse); BTN3-B boxed N+S (inverted bands); BTN3-via move futile (S1_MISO wall behind). All 4 reliefs exhausted at placement level — remaining paths all schematic-intent. No board change. STOPPING for owner.
