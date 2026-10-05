@@ -31058,6 +31058,22 @@
 		(uuid "ffcddb93-5b0f-4851-ad3b-47c511a96ba7")
 	)
 	(segment
+		(start 55.9 124.7)
+		(end 59.27 124.7)
+		(width 0.25)
+		(layer "In2.Cu")
+		(net "GND")
+		(uuid "00e0a305-5bf1-46e8-81f4-0e2815cf7edc")
+	)
+	(segment
+		(start 59.27 124.7)
+		(end 59.27 124)
+		(width 0.25)
+		(layer "In2.Cu")
+		(net "GND")
+		(uuid "c349088f-8313-411f-a390-d722751c4f2c")
+	)
+	(segment
 		(start 9.505 14.95)
 		(end 6.062 14.95)
 		(width 0.25)
