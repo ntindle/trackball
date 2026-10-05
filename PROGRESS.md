@@ -214,3 +214,5 @@ PROGRESS 2026-10-04T12:29:58Z drc164 17unc/0err/0parity: TX_IMON+MCU_TX_ENx2->Wa
 ## 2026-10-05 22:30 UTC — Wave-10 P0.12 CLOSED first-try drc235 4/0/0 (§7.10.26): B-bottom via + In2 @7.75 + x39.30 + R207-2 step. Committed board. Next: S2_MOT survey; sealed batch (gap-a/pad3/FTH) escalation.
 
 ## 2026-10-05 22:50 UTC — Wave-11 S2_MOT PARKED-SEALED (§7.10.27); SEALED BATCH §7.10.28 (4 opens need schematic relief: gap-a/pad3/FTH/S2_MOT). No board change. Stopping for owner on schematic-intent per standing orders.
+
+## 2026-10-05 23:05 UTC — Wave-11 S2_MOT PARKED-SEALED (§7.10.27: F-cage + B-mined + via-in-pad killed by BTN3-B). SEALED BATCH = 4 opens (gap-a/pad3/FTH/S2_MOT) needs schematic relief. No board change. STOPPING for owner per standing orders (schematic-intent only).

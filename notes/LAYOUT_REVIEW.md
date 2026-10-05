@@ -800,3 +800,10 @@ REMAINING: 4 items / 4 nets, ALL SEALED class (+3V3-gap-a §7.10.21, VIN-pad3 be
 3. FTH (U501-9): pad8/pad10/TX_STAT-rail seal; DNC-pad10 ruling needed. Relief: move FTH off pin 9, move TX_STAT, or DNC-pad10 use ruling.
 4. S2_MOT (U201-38): pad-cage + mined corridor (above). Relief: reassign off pin 38, or move SENSOR_EN-rail/BTN3-via.
 - VIN inner widths (w0.30 grand tour) + via-in-pad ×3 (26.30,14.20 / 47.00,119.30 / 91.175,100.00 — all DRC-clean, no mask-bridge) flagged for WaveZ review (power-integrity + fab tent/plug notes).
+
+### 7.10.27 Wave-11 S2_MOT PARKED-SEALED (pad-cage + B-mined + via-in-pad dead, no board change)
+- Pad38 (26.40,8.14) box (25.98-26.82, 7.72-8.57): N-gap 0.42 (S1_MOT-pad36), S-gap 0.42 (TX_STAT-pad40) both inverted for w0.25 (need 0.65); E-lane @8.57 dies on SENSOR_EN-@8.09 + pad36/S1_MISO 30µm inversion (x27.10-27.30 band); W dies on J202-Pin_2 F-N-S x24.20 crossing.
+- B-layer: BTN3-B-E-W @7.96 (23.99-36.15) parallels whole zone (dy=0.18 from any B-copper at pad y); J202-Pin_2 B-maze (@8.66/@8.81) walls east; via-in-pad (26.40,8.14) probed vs ALL pads + B-tracks + vias: BLOCKED by BTN3-B (0.079 < 0.5). North-edge via razors into S1_MOT-pad36.
+- West-In2 corridor (x23.65 + P0.29-jog + @37.20) exists but UNREACHABLE: no via slot connects pad38 to any inner/B layer.
+- CLASS: schematic relief (reassign S2_MOT off pin 38, or move BTN3-B-rail/SENSOR_EN-rail — placement ECOs with ripple; reassignment is schematic-intent).
+REMAINING: 4 items / 4 nets, ALL SEALED class (+3V3-gap-a §7.10.21, VIN-pad3, FTH §7.10.23, S2_MOT here).
