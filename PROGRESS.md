@@ -224,3 +224,5 @@ PROGRESS 2026-10-04T12:29:58Z drc164 17unc/0err/0parity: TX_IMON+MCU_TX_ENx2->Wa
 ## 2026-10-06 01:05 UTC — Wave-12 relief (3) FTH BLOCKED (§7.10.31): TX_STAT rail cannot vacate (pad8 stranded — no via site, DTH/GND pinch inverts all N-S; FTH S-exit walled by rail/hug/pad10; east via clear but needs DNC-pad10). Needs FTH-off-pin-9 or DNC ruling (unauthorized). No board change. Next: relief (4) S2_MOT SENSOR_EN/BTN3 ripple.
 
 ## 2026-10-06 01:30 UTC — Wave-12 relief (4) S2_MOT BLOCKED (§7.10.32): SENSOR_EN-rail Y load-bearing (S/maze, N/worse); BTN3-B boxed N+S (inverted bands); BTN3-via move futile (S1_MISO wall behind). All 4 reliefs exhausted at placement level — remaining paths all schematic-intent. No board change. STOPPING for owner.
+
+## 2026-10-06 02:00 UTC — WaveZ fab-prep docs §7.10.33 (copper read-only): 4L stackup record (L2/In1 empty, 9 nets L3; no Z-rules; order notes), via-in-pad tent/plug + R111 wicking note (overlap verified), VIN w0.30 census + widen-later PI note, Q5 jumper-ECO record (ERC re-verified 0/1-benign). Docs only.

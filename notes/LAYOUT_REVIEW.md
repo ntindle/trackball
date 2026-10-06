@@ -834,3 +834,43 @@ REMAINING: 4 opens (+3V3-gap-a BLOCKED, VIN-pad3 BLOCKED, FTH BLOCKED, S2_MOT).
 - STRUCTURAL SEAL: all four ripple moves are either geometrically impossible (boxed bands) or futile (walls behind). Via slots near pad38 dead independent of ripple (BTN3-B under pad 0.079; S1_MOT/TX_STAT pads; J202-B maze).
 - REMAINING OPTION (not authorized): reassign S2_MOT off pin 38. CLASS: schematic-intent. STOPPING on this item per HARD RULE.
 REMAINING: 4 opens, ALL BLOCKED on schematic intent (+3V3-gap-a: schematic tie; VIN-pad3: VIN-off-pin-3; FTH: FTH-off-pin-9/DNC ruling; S2_MOT: reassign-off-pin-38).
+
+### 7.10.33 WaveZ fab-prep docs (drc238 board, copper read-only, 2026-10-06)
+(1) 4L STACKUP (verified from board files, not asserted): `trackball-base.kicad_pcb`
+layers `F.Cu / In1.Cu / In2.Cu / B.Cu` (all typed `signal` in file). Usage:
+L1 Top = signal; L2 (In1.Cu) = reserved GND plane — ZERO tracks placed
+(verified census 2026-10-06), pour pending owner calls; L3 (In2.Cu) =
+signal+power inner escape (9 nets routed); L4 Bottom = signal.
+`.kicad_pro` carries NO explicit stackup/thickness section (KiCad defaults);
+`.kicad_dru` carries NO impedance (Z-target) rules — only `diff_pair_gap`
+0.15-0.25mm for USB D+/D- (KICAD-019). FAB ORDER NOTES (confirm at order,
+not in files): JLCPCB standard 4L 1.6mm FR-4; 1oz outer / 0.5oz inner Cu
+(35/17um); prepreg thickness per JLC stackup table; NO impedance control
+ordered (no Z-rules govern the layout; D+/D- per gap rule + length match).
+(2) VIA-IN-PAD (3x d0.3/w0.6, annular 0.15 = board min, DRC-clean, verified
+2026-10-06): (26.30,14.20) ON-PAD U201-28 + (91.175,100.00) ON-PAD R115-1
+(MCU_TX_EN) — TENT AND PLUG at fab (JLC via-plugging note on order);
+(47.00,119.30) PAD-ADJACENT R111-2 (barrel overlaps pad edge ~80um,
+same net MCU_TX_EN) — wicking-risk note: solder may wick into barrel
+during reflow; tent/plug this via too, or accept hand-inspect flag.
+(3) VIN INNER WIDTH FLAG: grand-tour inner = w0.30 x6 segs on L3 vs w0.50
+F/B power runs (F 44x0.5/9x0.3, B 16x0.5/2x0.3 — census 2026-10-06).
+w0.30 is DRC-legal (Power cl 0.2) and matches the Wave-4b corridor that
+fit; POWER-INTEGRITY UPGRADE NOTE (PWR-002 ripple <100mVpp): widen the L3
+VIN grand tour to w0.50 at order-time respin IF space allows after the
+4 opens close (re-probe TX_EN-x24.60 dx margins first); do NOT widen now
+(unrouted islands shift corridors). No bench claim made.
+(4) Q5 JUMPER-ECO RECORD (SCHEMATIC_REVIEW-deviations style): commit
+f61c790 (owner-approved 2026-10-04): 4x 0R 0603 branch/in-line jumpers —
+R113 (VBUS_SENSE), R114 (SENSOR_EN), R115 (MCU_TX_EN) same-net branches on
+power sheet; R515 (CTD) in-line on tx sheet (U501.14 side `/tx/CTD_U501`,
+C507 side `/tx/Net-(U501-CTD)`); netlist delta +4 refs, nets 89->90.
+Purpose: alternate routable taps for pad-caged endpoints (see §7.5 +
+SCHEMATIC_REVIEW §11 for zero-electrical-change justification; standard
+JLC basic 0603, no cost driver). ERC STATUS RE-VERIFIED 2026-10-06 on
+current schematic: 0 errors + 1 warning (`pin_to_pin` U201-P7/U104-P6,
+same known-benign warning as §8/f61c790). LAYOUT OBLIGATION (standing):
+route each net THROUGH its jumper pads as separate closable sub-nets;
+`--schematic-parity` DRC enforces the new nodes.
+(GND pour, measurements, Blender, fab/ outputs remain queued on Q5 owner
+calls; 4 sealed opens untouched this wave — git diff below proves it.)
