@@ -232,3 +232,5 @@ PROGRESS 2026-10-04T12:29:58Z drc164 17unc/0err/0parity: TX_IMON+MCU_TX_ENx2->Wa
 ## 2026-10-06 03:30 UTC — Wave-13 relief (2) VIN-pad3 ACCEPT-OPEN last resort (§7.10.35): U501-nudge proven futile by rigid-body invariant (all 4 approach walls intra-footprint; motion preserves gaps) — correctly not attempted (would orphan ~15 nets). 3/4 VIN pins connected; derating topology-only, no current claims. Docs only. Next: (3) FTH east-via inner escape.
 
 ## 2026-10-06 04:00 UTC — Wave-13 relief (3) FTH ruling applied, start-via sealed (§7.10.36): 13-site exhaustive probe — all pad9-touching sites killed (pad8/pad10/TX), killer-free sites unreachable; under-pad10 middle moot without ends. No copper placed (no bodges). Still needs pin-9 move. Next: (4) S2_MOT cluster ECO + firmware note.
+
+## 2026-10-06 04:30 UTC — Wave-13 relief (4) S2_MOT decision note (§7.10.37): net = U201-38<->U302-9; wider-ECO matrix proves over-constrained seal (U201/J202/S2/S1/BTN moves all fail >=1 wall); FW poll alternative grounded (Mnahm... Motion 0x02b7 per SENSOR_SELECTION.md:83) with tradeoffs; options (A)/(B)/(C), no default accept. Docs only (Q6 filed for owner pick).

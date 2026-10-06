@@ -944,3 +944,40 @@ micro-via d0.2/w0.5 still needs 0.45 > 0.38 available. The ruling unlocks
 the MIDDLE (under-pad10) but both ENDS are sealed: pad9-end structurally
 (this proof), R505-end reachable but moot. FTH still needs FTH-off-pin-9.
 REMAINING: 1 open (FTH) + S2_MOT + 1 documented accept (VIN-pad3).
+
+### 7.10.37 Wave-13 relief (4) S2_MOT: wider-ECO matrix + firmware alternative, DECISION NOTE (no board change)
+- NET IDENTITY (verified): S2_MOT = U201-38 (MCU, pad cage [25.98-26.82,
+7.72-8.57]) <-> U302-9 (sensor-2 MOT pin) via east F/B maze
+(x43.95-61.54, y37.2-76.94, DRC-flagged tip (43.95,37.2)). West tip sealed
+(§7.10.27/32); east island fully routed.
+- WIDER PLACEMENT ECO MATRIX (each row = one ECO, columns = the 5 walls
+N-pad36 / S-pad40 / E-rail+inversions / W-J202 / via-slots; a row must clear
+ALL to open a lane): U201-shift — N/S invariant (rigid intra-footprint),
+E/W/vias invariant (board-board copper) → FAILS. J202-shift — W-wall moves
+but west via slots dead (BTN3-B invariant) + E walls invariant + connector
+maze orphans → FAILS. S2/U302-shift — moves the EAST TARGET, not the
+pad38 cage (all 5 walls non-U302) → FAILS (shortens nothing at the seal).
+S1-shift — S1_MISO inversion moves WITH S1 (relative geometry kept) +
+violates MECH-003 optical-axes contract → FAILS + out of scope. BTN-move —
+BTN3-B-rail is board copper (stays) → FAILS. SENSOR_EN-source move — rail-Y
+load-bearing proven §7.10.32 → FAILS. CONCLUSION: seal is OVER-CONSTRAINED
+(5 independent walls); no placement ECO clears all 5. Proven by analysis,
+no copper moved (moves would orphan connectors/sensors for zero gain).
+- FIRMWARE ALTERNATIVE (evaluated, FW job owns): poll sensor-2 Motion
+register over SPI instead of MOT-pin interrupt. GROUNDED: SENSOR_SELECTION
+.md:83 documents Motion reg 0x02 bit 7 = MOT (same source the pin reports);
+S2 has its own chip-select on the shared SPI bus (S2_NCS in layout).
+TRADEOFFS (design considerations, no values stated — bench/FW to bound):
+(a) idle power: periodic SPI wake-ups vs edge-interrupt sleep (battery-life
+impact unmeasured); (b) latency: detection latency <= poll period (must meet
+FW wake-latency spec); (c) bus load: poll traffic arbitrated with S1/S2
+motion-burst reads on shared SPI; (d) robustness: same MOT source, no SI
+change; (e) reversibility: FW-only, no copper/schematic change.
+- DECISION NOTE (owner picks, no default): (A) FW poll + leave pin38 open
+(needs owner waiver of no-accept-opens; DRC carries 1 documented open);
+(B) reassign S2_MOT off pin 38 (schematic intent + FW PINMAP update;
+note PINMAP: no free pin reaches the east island — reassignment needs a
+mid-route target, FW+layout to co-design); (C) assessment: (A) is lowest
+schedule risk (reversible, no copper), (B) cleanest electrically. NOT
+recording accept-open now per orders.
+REMAINING: 1 open (FTH, needs pin-9 move) + 1 decision (S2_MOT) + 1 documented accept (VIN-pad3).
