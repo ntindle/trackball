@@ -874,3 +874,30 @@ route each net THROUGH its jumper pads as separate closable sub-nets;
 `--schematic-parity` DRC enforces the new nodes.
 (GND pour, measurements, Blender, fab/ outputs remain queued on Q5 owner
 calls; 4 sealed opens untouched this wave — git diff below proves it.)
+
+### 7.10.34 Wave-13 CLOSED: +3V3-gap-a via L2 hop (drc240 3unc/0err/0parity)
+- Rail-move attempt (owner order, first): S2_MISO-F-x21.36 CAN move west
+(probed: B-side is 23mm B-N-S x21.36 — moving it unprobed-ripple; F-only
+jog N-S x20.90 + keep-via + B-E-W stub works) BUT proven FUTILE: GND-rail
+relocation dies on south-maze re-feed INDEPENDENT of S2_MISO position
+(pads pinch N-S band [22.085,21.905] inverted; +3V3-U201-pad fatal overlap
+of E-W @18.18 found on re-verification). Rail move = ripple without
+benefit — NOT placed. Written proof stands in §7.10.29 + this section.
+- Jumper-tie fallback (owner order, second): NO standard 2-T footprint
+straddles with legal margins (proven: 0603/0805/1206/0402/SOT pitches vs
+GND-keepout [23.125,24.675] + S2_MISO-pad band — systematic 25um-razor
+pattern; SOT-23 east span too short; 2.54mm header pads too big). Fallback
+geometrically impossible — documented, not placed.
+- CLOSED VIA THIRD PATH (standing layout authority, Q7 inner escape):
+L2/In1.Cu hop reusing EXISTING west +3V3 via (22.63,20.9): In1-E-W @20.45
+(22.63->27.90) + In1-N-S x22.63 (20.45->20.90) + east via d0.4/w0.8
+(27.90,20.45) [hole-edge 0.30 vs existing (27.20,20.45); B-margins
+diag 0.281/x24.90 1.375] + F-E-W @20.45 (27.20->27.50, touches maze rail).
+Iterations: v1 east via (27.00,20.45) PLACED then RIPPED on hole_to_hole
+(same-net barrels 0.20 apart — LESSON: hole_to_hole is net-agnostic, never
+skip same-net in via-via drill checks; verify script fixed).
+- L2-USAGE FLAG (WaveZ review): 2 segs +3V3 on the GND-plane layer
+(2.6mm island + 1 new via). Pour must clearance it (0.2); return-path
+detour ~3mm local. Accepted as least-ripple close (no parts, no schematic
+change, standard via); alternative was unplaceable jumper. No bench claim.
+REMAINING: 3 opens (VIN-pad3, FTH, S2_MOT).

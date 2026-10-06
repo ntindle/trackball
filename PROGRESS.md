@@ -226,3 +226,5 @@ PROGRESS 2026-10-04T12:29:58Z drc164 17unc/0err/0parity: TX_IMON+MCU_TX_ENx2->Wa
 ## 2026-10-06 01:30 UTC — Wave-12 relief (4) S2_MOT BLOCKED (§7.10.32): SENSOR_EN-rail Y load-bearing (S/maze, N/worse); BTN3-B boxed N+S (inverted bands); BTN3-via move futile (S1_MISO wall behind). All 4 reliefs exhausted at placement level — remaining paths all schematic-intent. No board change. STOPPING for owner.
 
 ## 2026-10-06 02:00 UTC — WaveZ fab-prep docs §7.10.33 (copper read-only): 4L stackup record (L2/In1 empty, 9 nets L3; no Z-rules; order notes), via-in-pad tent/plug + R111 wicking note (overlap verified), VIN w0.30 census + widen-later PI note, Q5 jumper-ECO record (ERC re-verified 0/1-benign). Docs only.
+
+## 2026-10-06 03:00 UTC — Wave-13 +3V3-gap-a CLOSED drc240 3/0/0 (§7.10.34): rail-move proven futile (re-feed independent of S2_MISO) + jumper proven unplaceable (no standard footprint straddles); closed via L2/In1 hop (existing west via + In1 segs + east via (27.90,20.45) + F-ext). v1 ripped on same-net hole_to_hole (lesson recorded). Committed board. Next: (2) VIN-pad3 U501 nudge.
