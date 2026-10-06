@@ -927,3 +927,20 @@ call, NOT stated here). DRC will carry 1 documented unconnected item for
 this net. Mitigation available at respin: footprint with wider pin pitch
 or VIN-off-pin-3 schematic relief (both future, not this build).
 REMAINING: 2 opens (FTH, S2_MOT) + 1 documented accept (VIN-pad3).
+
+### 7.10.36 Wave-13 relief (3) FTH: under-pad10 ruling APPLIED but start-via sealed (no board change)
+- Ruling applied in analysis: inner (L2/L3) escape may pass UNDER DNC-pad10
+(F-SMD, no barrel — no connection possible) to the CLEAR east-via site
+(56.80,17.94) (§7.10.31 verified). Genuine attempt made: 13-candidate
+exhaustive start-via probe (script /tmp/r3_proof.py) for a pad9-touching
+transition via. RESULT: every site touching pad9 has killers
+(on-pad sites: pad8 0.275-0.475 + pad10 0.275-0.475 + TX_STAT 0.245-0.461;
+SE-diagonal sites: pad10 0.296-0.493 + TX hug 0.213-0.465; south sites:
+TX rail/hug); the only killer-free sites ((55.90,19.90),(55.50,19.90))
+do NOT touch pad9 and are unreachable on F (N-S x55.50/x55.90 cross
+TX-@18.94 or pad10) — placing copper there = dangling bodge, NOT placed.
+- ARITHMETIC SEAL: pad9-SE/pad10-SW corners 0.26 apart < via 0.5 headroom;
+micro-via d0.2/w0.5 still needs 0.45 > 0.38 available. The ruling unlocks
+the MIDDLE (under-pad10) but both ENDS are sealed: pad9-end structurally
+(this proof), R505-end reachable but moot. FTH still needs FTH-off-pin-9.
+REMAINING: 1 open (FTH) + S2_MOT + 1 documented accept (VIN-pad3).
