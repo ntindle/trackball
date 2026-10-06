@@ -901,3 +901,29 @@ skip same-net in via-via drill checks; verify script fixed).
 detour ~3mm local. Accepted as least-ripple close (no parts, no schematic
 change, standard via); alternative was unplaceable jumper. No bench claim.
 REMAINING: 3 opens (VIN-pad3, FTH, S2_MOT).
+
+### 7.10.35 Wave-13 relief (2) VIN-pad3: U501-nudge PROVEN FUTILE by construction, ACCEPT-OPEN last resort (no board change)
+- U501 LTC4125 placed (55.0,16.0) rot 0 (verified). Owner-ordered ECO: nudge
+U501 to open the pad2/pad3 0.26 sandwich. PROOF OF FUTILITY (rigid-body
+invariant, no copper touched): pad2 (CTS) / pad3 (VIN) / pad4 (IS+) /
+thermal-pad21 are ALL pins of ONE footprint; any rigid motion (translate +
+rotate) preserves ALL intra-footprint gaps. The §7.10.30 seal references
+ONLY intra-footprint walls: S = pad2 body (0.26 below pad3), N = pad4 body
+(0.26 above), E = thermal-pad21 west edge (0.27 east of pad3), W = pad2-top
+edge (E-W @16.00 needs 0.30 headroom in 0.26 gap). The sole board-copper
+wall (CTS E-W @15.50) is NOT load-bearing for the seal (re-route proven
+irrelevant §7.10.30). THEREFORE no U501 placement opens any approach to
+pad3 — the ECO cannot create a corridor at any offset/rotation. Attempting
+it physically would orphan ~15 connected nets (VIN x3, GND x4+thermal,
+TX_STAT, IS+, CTS, TX_IMON, NTC, DTH, FTH, FB, CTD, EN, SW1/2) for zero
+theoretical gain; correctly NOT attempted (do-no-harm).
+- ACCEPT-OPEN (owner-authorized last resort for this net): U501 pin 3 (VIN)
+left unconnected. DERATING NOTE (topology only, no current claims):
+3 of 4 VIN pins connected (pins 1/17/20 + stubs + grand tour, all DRC-
+closed); pin 3 is one of four parallel VIN pads on the same LTC4125
+package (Q7 current-capacity record, PINMAP line 3, stands — the package
+still receives VIN on 3 pins; per-pin current capacity is a bench/derating
+call, NOT stated here). DRC will carry 1 documented unconnected item for
+this net. Mitigation available at respin: footprint with wider pin pitch
+or VIN-off-pin-3 schematic relief (both future, not this build).
+REMAINING: 2 opens (FTH, S2_MOT) + 1 documented accept (VIN-pad3).
