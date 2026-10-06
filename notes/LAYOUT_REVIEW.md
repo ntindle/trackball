@@ -981,3 +981,19 @@ mid-route target, FW+layout to co-design); (C) assessment: (A) is lowest
 schedule risk (reversible, no copper), (B) cleanest electrically. NOT
 recording accept-open now per orders.
 REMAINING: 1 open (FTH, needs pin-9 move) + 1 decision (S2_MOT) + 1 documented accept (VIN-pad3).
+
+### 7.10.38 WaveZ-1 L2 GND POUR (drc241 3unc/0err/0parity)
+- Zone: rect (0.5,0.5)-(109.5,139.5) (0.5 inset from 110x140 outline),
+layer L2/In1.Cu, net GND, local clearance 0.2, min thickness 0.2, KiCad
+defaults otherwise. Filled via ZONE_FILLER. API notes: class is
+`pcbnew.ZONE` (not PCB_ZONE); clearance via `SetLocalClearance` (not
+SetZoneClearance) in this build.
+- DRC effect: 0 errors, parity clean; warnings 177->175 (via_dangling
+4->2 — pour stitched 2 dangling GND vias, intended GND improvement).
+Unconnected still 3 (VIN-pad3 accept + FTH + S2_MOT pending owner).
++3V3 L2 island clears pour by construction (0.2 local clearance; DRC
+confirms no violation at the island).
+- Scope: L2 only (designated plane). No F/B pours (out of scope, avoids
+assembly-side thermal/clearance churn). Re-pour after any L2-touching
+edit (WaveZ rule).
+REMAINING: 1 open (FTH) + 1 decision (S2_MOT) + 1 accept (VIN-pad3).
