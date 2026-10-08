@@ -238,3 +238,5 @@ PROGRESS 2026-10-04T12:29:58Z drc164 17unc/0err/0parity: TX_IMON+MCU_TX_ENx2->Wa
 ## 2026-10-06 05:00 UTC — WaveZ-1 L2 GND pour drc241 3/0/0 (§7.10.38): rect zone 0.5-inset, cl 0.2; 0 errors; warnings -2 (stitched GND vias). +3V3 island clears. Committing board.
 
 ## 2026-10-06 05:30 UTC — FTH footprint variant committed (drc242 3/0/0 + 1 parity note): project-local NoP10 (pad10 block deleted, stock untouched), U501 relinked PCB-only, DNC verified 4 ways. Routing next.
+
+## 2026-10-06 06:00 UTC — FTH routing BLOCKED §7.10.40 (NoP10 exit verified CLEAR to x58.40, but F->inner/B middle transition sealed: TX/FB 60um + GND-B/TX 25um bands, C511/maze kill riser; v1/v2/v4 all verify-aborted, zero copper). Needs pin-9 move. S2_MOT untouched.

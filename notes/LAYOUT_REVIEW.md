@@ -1018,3 +1018,27 @@ not a datum).
 errors still 0. Expected consequence of owner-ordered board-only relink;
 resolves automatically if a future schematic ECO aligns the symbol.
 FTH net still open at this commit (routing next).
+
+### 7.10.40 FTH routing BLOCKED at middle transition despite NoP10 exit (no board change)
+- NoP10 exit WORKS: F-E-W @18.30 (55.62->58.40) w0.25 VERIFIED CLEAR
+(TX-@18.94 dy 0.265, TX-x57.98 dy 0.265, FB endpoint dx 0.215, pad11/C511
+clear) — pad9 can leave east on F through the former pad-10 area. The
+variant does its job.
+- MIDDLE TRANSITION (F@18.30 -> inner/B toward R505/R506) SEALED: every
+F<->inner/B via slot in the x57-59.6/y18-20 band dies in interlocking
+25-60um bands: TX-x57.98/FB-x58.94 pair (N-S 60um band [58.43,58.49];
+d0.3-via band [58.605,58.315] inverted; d0.4 [58.705,58.215] inverted);
+GND-B-x56.50/TX-x57.98 pair (d0.3 band [57.125,57.355]; d0.4
+[57.225,57.255]); TX-B-via(57.4,18.94)-copper vs d0.3 middle vias;
+C511-GND-pad + GND-maze kill the x59.8 riser (C511 overlap, diag cross).
+v1 (middle via (56.80,17.94)) died on GND-B-x56.50 (0.175); v2 east chain
+(via (61.00,31.00) + riser, all margins verified) is UNREACHABLE from the
+west; v4 (riser x58.90) died on FB-N-S x58.94 overlap. F-all-the-way north
+(@33.00) dies on 60um band + maze + R505-1; south (@15.70) dies on pad
+row 11/12/13. Verify scripts aborted BEFORE placement every time — zero
+copper placed, tree clean.
+- CONCLUSION: NoP10 was necessary but not sufficient. FTH needs FTH-off-
+pin-9 (or a south-pad exemption wider than this steer). S2_MOT untouched
+per scope guard. East-chain geometry (via (61.00,31.00) + riser) is
+surveyed and reusable when pin 9 moves.
+REMAINING: 2 opens (FTH, S2_MOT) + 1 documented accept (VIN-pad3).
