@@ -1062,3 +1062,44 @@ CLEAR but unreachable from the west across the maze.
 CONCLUSION: FTH unclosable from pin 9 on any layer without moving TX/FB/
 GND-maze copper (out of scope) — needs FTH-off-pin-9. S2_MOT untouched.
 REMAINING: 2 opens (FTH, S2_MOT) + 1 documented accept (VIN-pad3).
+
+### 7.10.42 FTH divider-relocation refinement ABORTED pre-placement (no board change)
+- PRESCRIPTION (owner steer, placement ECO only): R505+R506 (0402, pads
+0.54x0.64, pitch 1.02) E-W in series at x~56.0-58.5/y~18.3 (R505 west,
+R506 east, FTH junction between), FTH zero-via on F.Cu pad9->east->junction,
+R505-1 to VIN / R506-2 to GND by shortest legal route, old copper at
+(59.5,32)/(62,32) deleted. Verified with script BEFORE placement per step 4.
+- LAYER-ID CORRECTION (matters for reach analysis, found during survey):
+board layer ids are non-standard (2L->4L conversion legacy): 0=F.Cu,
+4=In1.Cu (GND plane), 6=In2.Cu (sig+power), 2=B.Cu. Prior "L2" readings in
+this log section = B.Cu, not inner. F.Cu placement analysis unaffected.
+- REFUTATION (all numbers edge-to-edge vs 0.2 DRC, point-segment verifier
+/tmp/div_verify.py over live board copper, 0402 pad rects exact):
+T1 both-west-of-FB analytic: R505-1 west (c1-0.78) needs c1>=56.605 (pad9
+east 55.625, FTH vs VIN) while R506-2 east (c1+2.34, zero junction gap)
+needs c1<=56.250 (FB west 58.790) — inverted 0.355. Sealed.
+T2 prescribed FTH E-W @17.90 (55.62->58.99, w0.25): seg-gap -0.275
+OVERLAP vs FB N-S x58.94 (58.79-59.09, y16.02-28.00 continuous L with
+E-W foot @16.02 x56.94-59.00). Any FTH copper east of x58.59 reaching a
+junction east of FB must cross this full-height wall on F with zero vias —
+impossible as prescribed.
+T3 south-around-FB corridor (E-W w0.25, y15.70-16.70): overlap at every y
+(-0.275 throughout; south bounded by CTD/EN F tracks + pad row 13/14/15).
+T4 exhaustive grid: 1944 candidates (c1 56.00-60.00 x yc 16.70-18.10 x
+junction gap 0/0.20/0.44, exact pad rects, same-net exclusions): BEST
+min-gap 0.118 < 0.200 (c1=57.45/c2=59.45/yc=17.70, binding=FB N-S).
+Zero placements pass copper clearance in the surveyed space.
+- ROOT CAUSE: FB N-S is a full-height F.Cu wall (y16.02-28) between the
+pin-9 west field and any divider site east of it; the west slot (pad9 east
+55.625 to FB west 58.790 = 3.165) cannot hold two E-W 0402s (3.320 minimum
+span at zero junction gap); the east side is reachable only by crossing FB.
+Zone x56.0-58.5 as prescribed holds at most one 0402 (R506-1 needs x>=58.99).
+- ABORT per steer step 4 (0402s do not fit with 0.2 clearance): ZERO copper
+placed, ZERO footprints moved, old (59.5,32)/(62,32) copper intact, board
+byte-identical (git clean). VIN/GND reach to the illegal site MOOT and
+unattempted (nearest VIN copper 3.9mm south at y<=14.06, noted for the
+record). VIN-pad3 accept, FTH_NoP10 variant, and S2_MOT note untouched.
+- OUT: FTH still needs FTH-off-pin-9 (or an FB-net move, out of scope) —
+same owner call as §7.10.40-41. North-around-FB (y>28) un-surveyed and
+outside this prescription; not attempted.
+REMAINING: 2 opens (FTH, S2_MOT) + 1 documented accept (VIN-pad3).
