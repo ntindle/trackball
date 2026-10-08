@@ -236,3 +236,5 @@ PROGRESS 2026-10-04T12:29:58Z drc164 17unc/0err/0parity: TX_IMON+MCU_TX_ENx2->Wa
 ## 2026-10-06 04:30 UTC — Wave-13 relief (4) S2_MOT decision note (§7.10.37): net = U201-38<->U302-9; wider-ECO matrix proves over-constrained seal (U201/J202/S2/S1/BTN moves all fail >=1 wall); FW poll alternative grounded (Motion reg 0x02 bit 7 per SENSOR_SELECTION.md:83) with tradeoffs; options (A)/(B)/(C), no default accept. Docs only (Q6 filed for owner pick).
 
 ## 2026-10-06 05:00 UTC — WaveZ-1 L2 GND pour drc241 3/0/0 (§7.10.38): rect zone 0.5-inset, cl 0.2; 0 errors; warnings -2 (stitched GND vias). +3V3 island clears. Committing board.
+
+## 2026-10-06 05:30 UTC — FTH footprint variant committed (drc242 3/0/0 + 1 parity note): project-local NoP10 (pad10 block deleted, stock untouched), U501 relinked PCB-only, DNC verified 4 ways. Routing next.

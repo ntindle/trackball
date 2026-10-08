@@ -7899,7 +7899,7 @@
 			)
 		)
 	)
-	(footprint "Package_DFN_QFN:QFN-20-1EP_4x4mm_P0.5mm_EP2.5x2.5mm_ThermalVias"
+	(footprint "trackball:QFN-20-1EP_4x4mm_P0.5mm_EP2.5x2.5mm_NoP10"
 		(layer "F.Cu")
 		(uuid "538ad3fa-63a0-4514-a8e2-2900a3f21758")
 		(at 55 16)
@@ -8379,13 +8379,6 @@
 			(roundrect_rratio 0.25)
 			(net "/tx/Net-(U501-FTH)")
 			(uuid "a68ea2ce-ec43-4905-8592-95c0da889d69")
-		)
-		(pad "10" smd roundrect
-			(at 1 1.9375)
-			(size 0.25 0.825)
-			(layers "F.Cu" "F.Mask" "F.Paste")
-			(roundrect_rratio 0.25)
-			(uuid "a5486bf3-5aed-48f1-98a2-9c53cb52ebe3")
 		)
 		(pad "11" smd roundrect
 			(at 1.9375 1)

@@ -997,3 +997,24 @@ confirms no violation at the island).
 assembly-side thermal/clearance churn). Re-pour after any L2-touching
 edit (WaveZ rule).
 REMAINING: 1 open (FTH) + 1 decision (S2_MOT) + 1 accept (VIN-pad3).
+
+### 7.10.39 FTH footprint variant: U501 NoP10 (drc242 3unc/0err + 1 parity note)
+- VARIANT (project-local, stock untouched): `trackball-base/trackball.pretty/
+QFN-20-1EP_4x4mm_P0.5mm_EP2.5x2.5mm_NoP10.kicad_mod` — byte-copy of stock
+`Package_DFN_QFN:QFN-20-1EP_4x4mm_P0.5mm_EP2.5x2.5mm_ThermalVias` with ONLY
+the `(pad "10" ...)` block deleted (copper + mask + paste); header renamed,
+descr records the deviation; courtyard/silk/EP+thermal-vias/3D-model ref
+unchanged. U501 relinked on PCB only (pos (55.0,16.0) rot 0 untouched);
+instance pad10 removed to match. No schematic change per orders.
+- DNC VERIFICATION (pad 10 carries no net): PCB pad10 net was `''`
+(netlist-derived); schematic U501 pin 10 has no wire (tx sheet); ERC clean
+(0/1-benign); PINMAP Q7 record lists pads 10/11 DNC. RATIONALE: DNC
+constrains electrical connection only — absent copper cannot connect.
+MECHANICAL: 19/20 perimeter pads + EP thermal pad remain; courtyard/3D
+unchanged; assembly datum unaffected (pad10 is a perimeter gull-wing site,
+not a datum).
+- PARITY NOTE (honest fingerprint): `--schematic-parity` now lists 1 item
+(board `trackball:NoP10` vs symbol stock footprint) — warning class,
+errors still 0. Expected consequence of owner-ordered board-only relink;
+resolves automatically if a future schematic ECO aligns the symbol.
+FTH net still open at this commit (routing next).
