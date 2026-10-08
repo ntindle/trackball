@@ -1103,3 +1103,35 @@ record). VIN-pad3 accept, FTH_NoP10 variant, and S2_MOT note untouched.
 same owner call as §7.10.40-41. North-around-FB (y>28) un-surveyed and
 outside this prescription; not attempted.
 REMAINING: 2 opens (FTH, S2_MOT) + 1 documented accept (VIN-pad3).
+
+### 7.10.43 FTH north-corridor attempt ABORTED pre-placement (no board change)
+- PRESCRIPTION: FTH north on F.Cu between TX_STAT/FB verticals to divider
+(R505-2/R506-1 at y32). Step 1: shift TX N-S west 0.30 (57.985->57.685),
+gap 0.678->~0.98, route FTH w0.25. Step 2 fallback: FTH w0.2 at midpoint
+x58.449 unmoved (0.239/side). Step 3: abort if both fail. Verifier
+/tmp/fth_north.py over live copper, 0.2 DRC, same-net exclusions.
+- STEP 1 PRESCRIBED FAILS: new F N-S x57.685 hits NTC via (56.992,26.330)
+d0.4/w0.8 at gap 0.168 <0.2 — via outside all prior survey boxes, first
+found here. Variant shift 0.235 (x57.75): N-S passes (0.233 vs same via)
+but full FTH path sealed downstream — TX_STAT move WITHHELD (zero benefit,
+net untouched, connectivity intact).
+- STEP 2 FAILS: N-S corridor 0.239/side exists y18.9-27.3, but TX-top-via /
+FB-stub gate seals transit: FTH N-S x58.449 hits TX via (57.985,28.00)
+r0.4 at -0.036; slot past via-east (58.385) to FB-stub-west (58.87) inverted
+for w0.2. Unreachable past y~27.3. (Gate would open to ~0.29/side with the
+Step-1 via move — analytic — but downstream still seals, so moot.)
+- DOWNSTREAM SEALS (independent, kill every variant): GND diagonal F-wall
+(57.51,32.00)-(59.98,28.00) w0.25: E-W @29 crossing -0.250; N-S x58.45 hits
+it y30.02; slope outruns any 0.2-clearance staircase; west-end rounding
+overlaps VIN N-S x58.99 (-0.375 @32.40); east-end rounding overlaps GND
+@28.505 cluster (-0.155); y28.5 GND cluster (N-S x60.04 + E-W 60.04-60.48
++ N-S x60.48) seals x60.0-60.9. Divider sits inside a GND pocket: no F path
+from the west corridor without crossing GND/FB copper or rounding sealed ends.
+- CORRECTION to §7.10.40: NoP10 exit E-W is CLEAR at @18.15 (0.213 vs FB),
+NOT @18.30 (0.113 vs TX via (57.40,18.938) r0.4 — via missed in §7.10.40,
+same mistake class as §7.10.31). Exit geometry for any future attempt: ye=18.15.
+- ABORT per step 3: ZERO copper placed, ZERO moved (TX_STAT, FB, GND maze,
+NTC all intact), board byte-identical. S2_MOT untouched per scope guard.
+- OUT: FTH closable only by FTH-off-pin-9, or moving FB/GND-maze copper
+(out of scope), or a far-east detour (un-surveyed, outside prescription).
+REMAINING: 2 opens (FTH, S2_MOT) + 1 documented accept (VIN-pad3).
