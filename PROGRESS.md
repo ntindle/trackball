@@ -240,3 +240,5 @@ PROGRESS 2026-10-04T12:29:58Z drc164 17unc/0err/0parity: TX_IMON+MCU_TX_ENx2->Wa
 ## 2026-10-06 05:30 UTC — FTH footprint variant committed (drc242 3/0/0 + 1 parity note): project-local NoP10 (pad10 block deleted, stock untouched), U501 relinked PCB-only, DNC verified 4 ways. Routing next.
 
 ## 2026-10-06 06:00 UTC — FTH routing BLOCKED §7.10.40 (NoP10 exit verified CLEAR to x58.40, but F->inner/B middle transition sealed: TX/FB 60um + GND-B/TX 25um bands, C511/maze kill riser; v1/v2/v4 all verify-aborted, zero copper). Needs pin-9 move. S2_MOT untouched.
+
+## 2026-10-06 06:30 UTC — FTH maze proof §7.10.41 (§7.10.31 CLEAR claim corrected: middle via hard-fails GND-B): GND stub is dangling (no vias/pads) but removal moot — east maze (TX/FB 60um, C511/TX-via pinch, R506 sandwich, diag, pad row) seals all transitions; ~15 probes, zero copper. Needs pin-9 move. S2_MOT untouched.
