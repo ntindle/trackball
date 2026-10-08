@@ -1054,7 +1054,7 @@ but removal is moot (below) so it stays (WaveZ cleanup candidate).
 TX-x57.98/FB-x58.94 N-S 60um band; GND-B-x56.50/TX-x57.98 25um band;
 C511-GND-pad/TX-via(61.49,28.03) pinch [60.585,60.965]; R506-1/R506-2
 0.48 sandwich; GND-diag(57.51-59.98); R505-1 VIN shadow; NTC-via/TX-x57.98
-15um band; pad-row 11/12/13 south wall. v1/v2/v4 + ~15Reset probes:
+15um band; pad-row 11/12/13 south wall. v1/v2/v4 + ~15 follow-up probes:
 every F/inner/B transition dies in a 25-155um inversion; F-north (@33.00)
 and F-south (@15.70) also dead. East chain (via (61.00,31.00)+riser) verified
 CLEAR but unreachable from the west across the maze.
