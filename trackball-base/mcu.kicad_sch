@@ -4844,24 +4844,9 @@
       (effects (font (size 1.27 1.27)) hide)
     )
   )
-  (wire
-    (pts (xy 207.01 203.20) (xy 231.14 203.20))
-    (stroke (width 0) (type default))
-    (uuid "fdb54a2d-9de8-4406-b872-4514a8b326c3")
-  )
-  (global_label "S2_MOT"
-    (shape input)
-    (at 231.14 203.20 180)
-    (fields_autoplaced yes)
-    (effects
-        (font
-          (size 1.27 1.27)
-        ))
-    (uuid "de5e7721-0ff8-40c3-ba6f-0056133ec690")
-    (property "Intersheetrefs" "${INTERSHEET_REFS}"
-      (at 231.14 203.20 180)
-      (effects (font (size 1.27 1.27)) hide)
-    )
+  (no_connect
+    (at 207.01 203.20)
+    (uuid "0283bf14-185f-469a-bef8-395153c7bd1d")
   )
   (wire
     (pts (xy 207.01 208.28) (xy 231.14 208.28))
