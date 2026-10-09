@@ -351,3 +351,22 @@ R515.2↔C507.1 as separate closable sub-nets; R113/114/115 similarly) —
 parity DRC enforces the new nodes. No bench validation required (passive
 jumpers); validation is ERC + netlist diff (done) + route-close with
 `--schematic-parity` DRC (layout job).
+
+## 12. DEVIATION — Q6-A S2_MOT removal (layout job, owner-approved 2026-10-09)
+Owner decision Q6 Option A: drop S2_MOT from the schematic; firmware polls
+sensor-2 Motion register (0x02, bit 7 = MOT, per docs/SENSOR_SELECTION.md §5)
+over SPI; S1_MOT remains the shared wake interrupt. Rationale (owner):
+layout exhaustion proven six ways (§7.10.37 ECO matrix, 5 independent walls,
+0.60mm needed vs 0.42mm gap); USB-C powered so idle-polling tradeoff moot;
+latency bounded by poll interval; SPI arbitration is the firmware design
+point. Functional relocation to firmware, not a dead open.
+Change (this branch): mcu.kicad_sch — deleted wire (207.01,203.20)→
+(231.14,203.20) + `S2_MOT` global_label (input); placed no-connect on U201
+pin 38 at (207.01,203.20). sensors.kicad_sch — deleted wire
+(292.10,146.05)→(307.34,146.05) + `S2_MOT` global_label (output); placed
+no-connect on U302 pin 9 at (292.10,146.05). S1_MOT untouched. grep S2_MOT
+over *.kicad_sch: zero hits.
+Verification: `kicad-cli sch erc` 0 errors + the same 1 benign `pin_to_pin`
+warning (§8). Layout follow-up (same branch): purged 15 S2_MOT tracks + 3
+vias + cleared U201-38/U302-9 pad nets; DRC drc245 1unc (VIN-pad3 accept) /
+0err. Fully reversible: re-add two labels + wire to restore.

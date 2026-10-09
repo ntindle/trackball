@@ -1165,3 +1165,20 @@ same net (no short risk) but mask sliver may not resolve -> minor wicking
 watch, hand-touchable 0402. FTH is a DC threshold; ~14mm In2 run under GND
 plane is electrically inert.
 REMAINING: 1 open (S2_MOT) + 1 documented accept (VIN-pad3). FTH DONE.
+
+### 7.10.45 Q6-A EXECUTED: S2_MOT removed from schematic + board (owner 2026-10-09)
+- Schematic (41be83a): S2_MOT wire + global labels deleted on mcu/sensors
+sheets; no-connects on U201-38 (207.01,203.20) and U302-9 (292.10,146.05);
+S1_MOT untouched. ERC: 0 errors + same 1 benign pin_to_pin (§12 deviation).
+- Board: purged all S2_MOT copper (15 tracks: 12 F + 3 B, 3 vias — the net
+was a larger partial route than the 4.45mm DRC stub suggested); cleared
+U201-38/U302-9 pad nets to unconnected (file persists pad nets by name).
+grep S2_MOT over .kicad_pcb: zero hits.
+- DRC drc245: 1unc/0err, warnings 174 (drc242 baseline 175; delta = one
+track_dangling resolved with the purge; all other classes identical). Sole
+unconnected = VIN-pad3 documented accept (Pad 3 U501 ↔ VIN track). No parity
+errors (standing NoP10 note only). FTH routing and VIN-pad3 untouched.
+- Firmware handoff: notes/FW_HANDOFF_S2MOT.md (poll 0x02b7 at HID rate,
+S1 shared wake, S2-only-motion latency = poll interval, SPI arbitration
+design point, reversible, zero copper risk).
+REMAINING: 0 opens + 1 documented accept (VIN-pad3). BOARD ELECTRICALLY CLOSED.
