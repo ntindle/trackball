@@ -1182,3 +1182,28 @@ errors (standing NoP10 note only). FTH routing and VIN-pad3 untouched.
 S1 shared wake, S2-only-motion latency = poll interval, SPI arbitration
 design point, reversible, zero copper risk).
 REMAINING: 0 opens + 1 documented accept (VIN-pad3). BOARD ELECTRICALLY CLOSED.
+
+### 7.10.46 WaveZ sign-off checklist (2026-10-09, drc246 1unc/0err)
+- ERC: 0 errors + 1 benign pin_to_pin (post-Q6-A). DRC drc246: 1unc
+(VIN-pad3 documented accept §7.10.35) / 0err / warnings identical to drc242
+baseline per class. Schematic parity: standing NoP10 note only.
+- Pours: In1 GND refilled post-purge, refill idempotent (md5-stable).
+Single pour zone board-wide; no In2/B/F pours.
+- Measurements (live board): outline 110.10x140.10mm, 4 Cu; FTH as-built
+min gap 0.263 (TX via, matches pre-place); U501 pad2/pad3 inter-pad 0.25
+(footprint geometry, DRC-clean; accept is routability per §7.10.30/35).
+- Visual: kicad-cli 3D renders top/bottom (notes/wavez/) inspected — no
+blocking findings (buttons edge-accessible, mounting holes ringed, no
+silk/copper anomalies at board zoom; 3D models low-fidelity placeholders).
+Blender STEP-import unavailable headless (no io_import_step); STEP validity
+checked instead (ISO-10303-21, 36 closed shells). Full Blender-manual pass
+deferred to a GUI session (non-blocking).
+- Fab (fab/ regenerated 4L, stale Oct-1 2L set replaced): 13 gerbers
+(F/In1/In2/B Cu, F/B mask/silk/paste, edge, F/B fab) + job file, Excellon
+drill (mm), both-side positions, STEP, generic BOM (150 refs, no LCSC
+claimed), README with stackup/order/assembly-watch notes. FTH/vin-pad3
+untouched by fab regen.
+- Pre-existing non-blockers (unchanged): provisional values need bench
+validation (SCHEMATIC_REVIEW §7); no enclosure CAD; coil PROVISIONAL.
+- Firmware-owned: S2_MOT poll plan (notes/FW_HANDOFF_S2MOT.md).
+SIGN-OFF: layout complete except documented VIN-pad3 accept. See SUMMARY.md.
