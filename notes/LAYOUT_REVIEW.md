@@ -1133,5 +1133,35 @@ same mistake class as §7.10.31). Exit geometry for any future attempt: ye=18.15
 - ABORT per step 3: ZERO copper placed, ZERO moved (TX_STAT, FB, GND maze,
 NTC all intact), board byte-identical. S2_MOT untouched per scope guard.
 - OUT: FTH closable only by FTH-off-pin-9, or moving FB/GND-maze copper
-(out of scope), or a far-east detour (un-surveyed, outside prescription).
+(out of scope), or a far-east detour (un-surveyed, outside this prescription).
 REMAINING: 2 opens (FTH, S2_MOT) + 1 documented accept (VIN-pad3).
+
+### 7.10.44 FTH CLOSED via west-field-via + long-In2-transit (idea C, placed)
+- SURVEY (driver steer, analysis-first): zones (only pour: GND on In1, board-
+wide — no In2/B/F pours to fight); In2 EMPTY across x54-63.5/y14-33.5 (42
+In2 segs board-wide, none on path); B field mapped (GND loop + y20.54 rail,
+NTC E-W @26.33 x56.99-82.65, DTH N-S x55.50, TX B); via field y19-27/x58-61
+empty. East-chain (61.00,31.00)+riser superseded — direct In2 reaches the
+divider with fewer vias; far-east-F moot once C verified.
+- PATH (no copper moved, S2_MOT/schematic untouched): pad9 -> F E-W @18.15
+(55.62->57.18) w0.25 -> via (57.18,18.00) d0.3/w0.6 -> In2 dogleg
+(57.18,18.00)->(58.40,18.30)->(60.60,31.75) w0.25 -> via (60.60,31.75)
+d0.4/w0.8 -> F E-W @31.75 (60.60->60.05) w0.25 into R505-2 south (pad
+y31.68-32.32). Pre-place verify /tmp/fth_ideac.py + dogleg scan, 0.2 edge /
+0.25 hole, same-net exclusions, conservative inner annuli: F1 0.293, Wv
+F0.263/B0.255/H0.613, In2 0.333/0.565 (dogleg around TX via; straight
+diagonal died -0.512 through it), Dv F0.940/B2.260/H3.425, F2 0.665. ALL PASS.
+- DRC: drc243 4 errors (2 clearance + 2 hole_clearance, actual 0.0000) —
+new via holes piercing the STALE In1 GND pour (filled pre-via; drc.sh has no
+--refill-zones). Cause identified, zones refilled (ZONE_FILLER, same
+settings), no other change. drc244: 2unc/0err, warnings 175 IDENTICAL to
+drc242 baseline per class. Unconnected = VIN-pad3 (documented accept) +
+S2_MOT (owner Q6 call) — FTH ABSENT: FTH CLOSED. Lesson: point-segment
+verifier does not model zone pours; refill zones after any via placement
+(recommend adding --refill-zones to drc.sh).
+- ASSEMBLY notes: standard census vias (d0.3/w0.6, d0.4/w0.8); no via-in-pad
+(west hole 1.4mm from pads); divider hole edge 0.12 from R505-2 pad edge —
+same net (no short risk) but mask sliver may not resolve -> minor wicking
+watch, hand-touchable 0402. FTH is a DC threshold; ~14mm In2 run under GND
+plane is electrically inert.
+REMAINING: 1 open (S2_MOT) + 1 documented accept (VIN-pad3). FTH DONE.
