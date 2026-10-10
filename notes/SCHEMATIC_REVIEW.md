@@ -1,5 +1,11 @@
 # Schematic review — trackball base (BAL-BASE-001), Rev 0.1
 
+## Appendix B — Ball schematic deviations (2026-10-10 owner approvals; base content above untouched)
+
+- Q13(a): CHRG↔FAULT swapped at ball U1 (P0.05=FAULT now, P0.06=CHRG now). In-sheet note added at U1 west pins; firmware MUST remap (see notes/BALL_FW_HANDOFF.md). Charger side (U4.14/15, R11, TP9/TP10) unchanged.
+- Q14d(ii): C18 footprint pads mirrored (C18.1=GND west, C18.2=INTVCC east) to match symbol C-Small pinout (pin 1 top=GND, pin 2 bottom=INTVCC per library) — this CORRECTS a latent sch/pcb mismatch (pre-mirror pad1=INTVCC vs pin1=GND); electrically null for X7R ceramic; assembly unaffected.
+- Q10(a): NRESET left OPEN + TP7 DNP (owner-authorized accept-open; rationale in QUESTIONS.md Q10).
+
 Hierarchical KiCad 10 project: root (`trackball-base.kicad_sch`) + 5 sheets
 (power, mcu, sensors, buttons, tx). Inter-sheet connection is by global label
 + power net; there are no hierarchical sheet pins (map is printed on the root

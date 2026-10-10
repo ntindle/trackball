@@ -120,18 +120,22 @@
     (stroke (width 0) (type default))
     (uuid "ba11ba11-0000-4000-8000-000000000042")
   )
-  (label "CHRG"
+  (label "FAULT"
     (at 134.68 137.7 0)
     (fields_autoplaced yes)
     (effects (font (size 1.27 1.27)) (justify right))
     (uuid "ba11ba11-0000-4000-8000-000000000043")
+  )
+  (text "Q13a 2026-10-10 (owner): CHRG<->FAULT swapped at U1 — P0.05=FAULT now (dog-bone), P0.06=CHRG now (short stub). Firmware must remap pins."
+    (at 134.68 131 0)
+    (effects (font (size 1.27 1.27)) (justify right))
   )
   (wire
     (pts (xy 139.68 135.16) (xy 134.68 135.16))
     (stroke (width 0) (type default))
     (uuid "ba11ba11-0000-4000-8000-000000000044")
   )
-  (label "FAULT"
+  (label "CHRG"
     (at 134.68 135.16 0)
     (fields_autoplaced yes)
     (effects (font (size 1.27 1.27)) (justify right))
