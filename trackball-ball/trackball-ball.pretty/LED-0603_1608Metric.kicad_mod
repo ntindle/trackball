@@ -1,0 +1,32 @@
+(footprint "LED-0603_1608Metric"
+  (version 20250114)
+  (generator "pcbnew")
+  (generator_version "10.0")
+  (layer "F.Cu")
+  (descr "LED 0603 (1608 metric), 2-pad. 1=A(left), 2=K(right).")
+  (tags "LED 0603")
+  (property "Reference" "D**"
+    (at 0 -1.6 0)
+    (layer "F.SilkS")
+    (effects (font (size 1 1) (thickness 0.15)))
+  )
+  (property "Value" "LED-0603_1608Metric"
+    (at 0 1.6 0)
+    (layer "F.Fab")
+    (effects (font (size 1 1) (thickness 0.15)))
+  )
+  (property "Datasheet" ""
+    (at 0 0 0)
+    (layer "F.Fab")
+    (effects (font (size 1 1) (thickness 0.15)) hide)
+  )
+  (property "Description" ""
+    (at 0 0 0)
+    (layer "F.Fab")
+    (effects (font (size 1 1) (thickness 0.15)) hide)
+  )
+  (pad "1" smd rect (at -0.8 0) (size 0.9 0.9) (layers "F.Cu" "F.Paste" "F.Mask") (pinfunction "") (pintype ""))
+  (pad "2" smd rect (at 0.8 0) (size 0.9 0.9) (layers "F.Cu" "F.Paste" "F.Mask") (pinfunction "") (pintype ""))
+  (fp_rect (start -1.5 -1) (end 1.5 1) (stroke (width 0.05) (type solid)) (layer "F.CrtYd"))
+  (fp_rect (start -0.8 -0.8) (end 0.8 0.8) (stroke (width 0.1) (type solid)) (layer "F.Fab"))
+)

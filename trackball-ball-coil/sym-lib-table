@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "trackball-ball-coil")(type "KiCad")(uri "${KIPRJMOD}/trackball-ball-coil.kicad_sym")(options "")(descr "Ball coil symbols"))
+)

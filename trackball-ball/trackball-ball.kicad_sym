@@ -1,0 +1,1079 @@
+(kicad_symbol_lib
+  (version 20250114)
+  (generator "eeschema")
+  (generator_version "10.0")
+  (symbol "trackball-ball:NRF52810-QCAA"
+    (pin_numbers hide)
+    (pin_names (offset 1.016) (hide yes))
+    (exclude_from_sim no)
+    (in_bom yes)
+    (on_board yes)
+    (property "Reference" "U"
+      (at 0 27.94 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "NRF52810-QCAA"
+      (at 0 -27.94 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "trackball-ball:QFN-32-1EP_5x5mm_P0.5mm"
+      (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "https://docs.nordicsemi.com/bundle/ps_nrf52810/page/pin.html (Nordic nRF52810 PS; pinout cross-checked vs PS text rows for pins 3/7/8/13/14/16/17/18/19/20 + ref-schematic GPIO set; AUDIT before fab)"
+      (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Description" "Nordic nRF52810 BLE5/ESB SoC, QFN32 5x5. Ball MCU+radio (ESB proprietary; BLE DFU only). LDO mode (DCC open)."
+      (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "MPN" "NRF52810-QCAA-R7"
+      (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Manufacturer" "Nordic Semiconductor"
+      (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "LCSC" ""
+      (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (symbol "NRF52810-QCAA_0_1"
+      (rectangle
+        (start -17.78 25.4)
+        (end 17.78 -25.4)
+        (stroke (width 0.254) (type default))
+        (fill (type none))
+      )
+    )
+    (symbol "NRF52810-QCAA_1_1"
+      (pin bidirectional line (at -20.32 20.32 0) (length 2.54) (name "P0.00" (effects (font (size 1.27 1.27)))) (number "2" (effects (font (size 1.27 1.27)))) (alternate "XL1" input line))
+      (pin bidirectional line (at -20.32 17.78 0) (length 2.54) (name "P0.01" (effects (font (size 1.27 1.27)))) (number "3" (effects (font (size 1.27 1.27)))) (alternate "XL2" input line))
+      (pin bidirectional line (at -20.32 15.24 0) (length 2.54) (name "P0.04" (effects (font (size 1.27 1.27)))) (number "4" (effects (font (size 1.27 1.27)))) (alternate "AIN2" input line))
+      (pin bidirectional line (at -20.32 12.7 0) (length 2.54) (name "P0.05" (effects (font (size 1.27 1.27)))) (number "5" (effects (font (size 1.27 1.27)))) (alternate "AIN3" input line))
+      (pin bidirectional line (at -20.32 10.16 0) (length 2.54) (name "P0.06" (effects (font (size 1.27 1.27)))) (number "6" (effects (font (size 1.27 1.27)))))
+      (pin bidirectional line (at -20.32 7.62 0) (length 2.54) (name "P0.09" (effects (font (size 1.27 1.27)))) (number "7" (effects (font (size 1.27 1.27)))))
+      (pin bidirectional line (at -20.32 5.08 0) (length 2.54) (name "P0.10" (effects (font (size 1.27 1.27)))) (number "8" (effects (font (size 1.27 1.27)))))
+      (pin bidirectional line (at -20.32 2.54 0) (length 2.54) (name "P0.12" (effects (font (size 1.27 1.27)))) (number "10" (effects (font (size 1.27 1.27)))))
+      (pin bidirectional line (at -20.32 0 0) (length 2.54) (name "P0.14" (effects (font (size 1.27 1.27)))) (number "11" (effects (font (size 1.27 1.27)))))
+      (pin bidirectional line (at -20.32 -2.54 0) (length 2.54) (name "P0.15" (effects (font (size 1.27 1.27)))) (number "12" (effects (font (size 1.27 1.27)))))
+      (pin bidirectional line (at -20.32 -5.08 0) (length 2.54) (name "P0.16" (effects (font (size 1.27 1.27)))) (number "13" (effects (font (size 1.27 1.27)))))
+      (pin bidirectional line (at -20.32 -7.62 0) (length 2.54) (name "P0.18" (effects (font (size 1.27 1.27)))) (number "14" (effects (font (size 1.27 1.27)))))
+      (pin bidirectional line (at -20.32 -10.16 0) (length 2.54) (name "P0.20" (effects (font (size 1.27 1.27)))) (number "15" (effects (font (size 1.27 1.27)))))
+      (pin bidirectional line (at -20.32 -12.7 0) (length 2.54) (name "P0.25" (effects (font (size 1.27 1.27)))) (number "26" (effects (font (size 1.27 1.27)))))
+      (pin bidirectional line (at -20.32 -15.24 0) (length 2.54) (name "P0.28" (effects (font (size 1.27 1.27)))) (number "27" (effects (font (size 1.27 1.27)))) (alternate "AIN4" input line))
+      (pin bidirectional line (at -20.32 -17.78 0) (length 2.54) (name "P0.30" (effects (font (size 1.27 1.27)))) (number "28" (effects (font (size 1.27 1.27)))) (alternate "AIN6" input line))
+      (pin input line (at 20.32 20.32 180) (length 2.54) (name "XC1" (effects (font (size 1.27 1.27)))) (number "23" (effects (font (size 1.27 1.27)))))
+      (pin input line (at 20.32 17.78 180) (length 2.54) (name "XC2" (effects (font (size 1.27 1.27)))) (number "24" (effects (font (size 1.27 1.27)))))
+      (pin passive line (at 20.32 5.08 180) (length 2.54) (name "ANT" (effects (font (size 1.27 1.27)))) (number "19" (effects (font (size 1.27 1.27)))))
+      (pin input line (at 20.32 -12.7 180) (length 2.54) (name "RESET" (effects (font (size 1.27 1.27)))) (number "16" (effects (font (size 1.27 1.27)))) (alternate "P0.21" bidirectional line))
+      (pin input line (at 20.32 -15.24 180) (length 2.54) (name "SWDCLK" (effects (font (size 1.27 1.27)))) (number "17" (effects (font (size 1.27 1.27)))))
+      (pin bidirectional line (at 20.32 -17.78 180) (length 2.54) (name "SWDIO" (effects (font (size 1.27 1.27)))) (number "18" (effects (font (size 1.27 1.27)))))
+      (pin power_in line (at -7.62 27.94 270) (length 2.54) (name "VDD" (effects (font (size 1.27 1.27)))) (number "9" (effects (font (size 1.27 1.27)))))
+      (pin power_in line (at -2.54 27.94 270) (length 2.54) (name "VDD" (effects (font (size 1.27 1.27)))) (number "25" (effects (font (size 1.27 1.27)))))
+      (pin power_in line (at 2.54 27.94 270) (length 2.54) (name "VDD" (effects (font (size 1.27 1.27)))) (number "32" (effects (font (size 1.27 1.27)))))
+      (pin passive line (at 7.62 27.94 270) (length 2.54) (name "DCC" (effects (font (size 1.27 1.27)))) (number "31" (effects (font (size 1.27 1.27)))))
+      (pin power_in line (at -12.7 -27.94 90) (length 2.54) (name "VSS" (effects (font (size 1.27 1.27)))) (number "20" (effects (font (size 1.27 1.27)))))
+      (pin power_in line (at -7.62 -27.94 90) (length 2.54) (name "VSS" (effects (font (size 1.27 1.27)))) (number "29" (effects (font (size 1.27 1.27)))))
+      (pin power_in line (at -2.54 -27.94 90) (length 2.54) (name "EP" (effects (font (size 1.27 1.27)))) (number "33" (effects (font (size 1.27 1.27)))))
+      (pin passive line (at 2.54 -27.94 90) (length 2.54) (name "DEC1" (effects (font (size 1.27 1.27)))) (number "1" (effects (font (size 1.27 1.27)))))
+      (pin passive line (at 7.62 -27.94 90) (length 2.54) (name "DEC2" (effects (font (size 1.27 1.27)))) (number "21" (effects (font (size 1.27 1.27)))))
+      (pin passive line (at 12.7 -27.94 90) (length 2.54) (name "DEC3" (effects (font (size 1.27 1.27)))) (number "22" (effects (font (size 1.27 1.27)))))
+      (pin passive line (at 15.24 -27.94 90) (length 2.54) (name "DEC4" (effects (font (size 1.27 1.27)))) (number "30" (effects (font (size 1.27 1.27)))))
+    )
+  )
+  (symbol "trackball-ball:CY8CMBR3116"
+    (pin_numbers hide)
+    (pin_names (offset 1.016) (hide yes))
+    (exclude_from_sim no)
+    (in_bom yes)
+    (on_board yes)
+    (property "Reference" "U"
+      (at 0 27.94 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "CY8CMBR3116"
+      (at 0 -27.94 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "trackball-ball:QFN-24-1EP_4x4mm_P0.5mm"
+      (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "Infineon 001-85330 (CY8CMBR3116 16-ch self-cap CSD, SmartSense, I2C addr configurable 0x08..; default 0x37; production programs U_T2 to 0x38)"
+      (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Description" "CapSense Express 16-button self-capacitance controller, 24-QFN. Touch ring front-end (difference counts over I2C for centroid)."
+      (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "MPN" "CY8CMBR3116-LQXI"
+      (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Manufacturer" "Infineon (Cypress)"
+      (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "LCSC" ""
+      (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (symbol "CY8CMBR3116_0_1"
+      (rectangle
+        (start -17.78 25.4)
+        (end 17.78 -25.4)
+        (stroke (width 0.254) (type default))
+        (fill (type none))
+      )
+    )
+    (symbol "CY8CMBR3116_1_1"
+      (pin bidirectional line (at -20.32 20.32 0) (length 2.54) (name "CS0" (effects (font (size 1.27 1.27)))) (number "1" (effects (font (size 1.27 1.27)))) (alternate "PS0" bidirectional line))
+      (pin bidirectional line (at -20.32 17.78 0) (length 2.54) (name "CS1" (effects (font (size 1.27 1.27)))) (number "2" (effects (font (size 1.27 1.27)))) (alternate "PS1" bidirectional line))
+      (pin bidirectional line (at -20.32 15.24 0) (length 2.54) (name "CS2" (effects (font (size 1.27 1.27)))) (number "3" (effects (font (size 1.27 1.27)))) (alternate "GUARD" bidirectional line))
+      (pin bidirectional line (at -20.32 12.7 0) (length 2.54) (name "CS3" (effects (font (size 1.27 1.27)))) (number "4" (effects (font (size 1.27 1.27)))))
+      (pin bidirectional line (at -20.32 10.16 0) (length 2.54) (name "CS4" (effects (font (size 1.27 1.27)))) (number "20" (effects (font (size 1.27 1.27)))))
+      (pin bidirectional line (at -20.32 7.62 0) (length 2.54) (name "CS5" (effects (font (size 1.27 1.27)))) (number "19" (effects (font (size 1.27 1.27)))))
+      (pin bidirectional line (at -20.32 5.08 0) (length 2.54) (name "CS6" (effects (font (size 1.27 1.27)))) (number "18" (effects (font (size 1.27 1.27)))))
+      (pin bidirectional line (at -20.32 2.54 0) (length 2.54) (name "CS7" (effects (font (size 1.27 1.27)))) (number "17" (effects (font (size 1.27 1.27)))))
+      (pin bidirectional line (at -20.32 0 0) (length 2.54) (name "CS8" (effects (font (size 1.27 1.27)))) (number "16" (effects (font (size 1.27 1.27)))) (alternate "GPO0" output line))
+      (pin bidirectional line (at -20.32 -2.54 0) (length 2.54) (name "CS9" (effects (font (size 1.27 1.27)))) (number "15" (effects (font (size 1.27 1.27)))) (alternate "GPO1" output line))
+      (pin bidirectional line (at -20.32 -5.08 0) (length 2.54) (name "CS10" (effects (font (size 1.27 1.27)))) (number "14" (effects (font (size 1.27 1.27)))))
+      (pin bidirectional line (at -20.32 -7.62 0) (length 2.54) (name "CS11" (effects (font (size 1.27 1.27)))) (number "13" (effects (font (size 1.27 1.27)))))
+      (pin bidirectional line (at -20.32 -10.16 0) (length 2.54) (name "CS12" (effects (font (size 1.27 1.27)))) (number "12" (effects (font (size 1.27 1.27)))) (alternate "GPO4" output line))
+      (pin bidirectional line (at -20.32 -12.7 0) (length 2.54) (name "CS13" (effects (font (size 1.27 1.27)))) (number "11" (effects (font (size 1.27 1.27)))) (alternate "GPO5" output line))
+      (pin bidirectional line (at -20.32 -15.24 0) (length 2.54) (name "CS14" (effects (font (size 1.27 1.27)))) (number "10" (effects (font (size 1.27 1.27)))) (alternate "GPO6" output line))
+      (pin bidirectional line (at -20.32 -17.78 0) (length 2.54) (name "CS15" (effects (font (size 1.27 1.27)))) (number "9" (effects (font (size 1.27 1.27)))) (alternate "SH" bidirectional line))
+      (pin passive line (at 20.32 12.7 180) (length 2.54) (name "CMOD" (effects (font (size 1.27 1.27)))) (number "5" (effects (font (size 1.27 1.27)))))
+      (pin input line (at 20.32 10.16 180) (length 2.54) (name "XRES" (effects (font (size 1.27 1.27)))) (number "24" (effects (font (size 1.27 1.27)))))
+      (pin bidirectional line (at 20.32 7.62 180) (length 2.54) (name "SDA" (effects (font (size 1.27 1.27)))) (number "21" (effects (font (size 1.27 1.27)))))
+      (pin bidirectional line (at 20.32 5.08 180) (length 2.54) (name "SCL" (effects (font (size 1.27 1.27)))) (number "22" (effects (font (size 1.27 1.27)))))
+      (pin output line (at 20.32 2.54 180) (length 2.54) (name "HI" (effects (font (size 1.27 1.27)))) (number "23" (effects (font (size 1.27 1.27)))) (alternate "BUZ" output line))
+      (pin passive line (at 20.32 0 180) (length 2.54) (name "RSVD" (effects (font (size 1.27 1.27)))) (number "6" (effects (font (size 1.27 1.27)))))
+      (pin power_in line (at 0 27.94 270) (length 2.54) (name "VDD" (effects (font (size 1.27 1.27)))) (number "7" (effects (font (size 1.27 1.27)))))
+      (pin power_in line (at -5.08 -27.94 90) (length 2.54) (name "VSS" (effects (font (size 1.27 1.27)))) (number "8" (effects (font (size 1.27 1.27)))))
+      (pin power_in line (at 5.08 -27.94 90) (length 2.54) (name "EP" (effects (font (size 1.27 1.27)))) (number "25" (effects (font (size 1.27 1.27)))))
+    )
+  )
+  (symbol "trackball-ball:LTC4120-4.2"
+    (pin_numbers hide)
+    (pin_names (offset 1.016) (hide yes))
+    (exclude_from_sim no)
+    (in_bom yes)
+    (on_board yes)
+    (property "Reference" "U"
+      (at 0 22.86 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "LTC4120-4.2"
+      (at 0 -22.86 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "trackball-ball:QFN-16-1EP_3x3mm_P0.5mm"
+      (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "ADI LTC4120/LTC4120-4.2 (wireless RX + buck charger; RPROG=20k->60mA via hPROG=988; RUN thr 2.45V; fixed 4.2V)"
+      (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Description" "Wireless power receiver + 400mA buck LiPo charger, fixed 4.2V, QFN16. Ball charge path primary (CHG-005 level 1)."
+      (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "MPN" "LTC4120EUD-4.2#PBF"
+      (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Manufacturer" "Analog Devices"
+      (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "LCSC" ""
+      (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (symbol "LTC4120-4.2_0_1"
+      (rectangle
+        (start -15.24 20.32)
+        (end 15.24 -20.32)
+        (stroke (width 0.254) (type default))
+        (fill (type none))
+      )
+    )
+    (symbol "LTC4120-4.2_1_1"
+      (pin input line (at -17.78 15.24 0) (length 2.54) (name "RUN" (effects (font (size 1.27 1.27)))) (number "16" (effects (font (size 1.27 1.27)))))
+      (pin input line (at -17.78 12.7 0) (length 2.54) (name "NTC" (effects (font (size 1.27 1.27)))) (number "12" (effects (font (size 1.27 1.27)))))
+      (pin passive line (at -17.78 10.16 0) (length 2.54) (name "PROG" (effects (font (size 1.27 1.27)))) (number "13" (effects (font (size 1.27 1.27)))))
+      (pin input line (at -17.78 7.62 0) (length 2.54) (name "FREQ" (effects (font (size 1.27 1.27)))) (number "7" (effects (font (size 1.27 1.27)))))
+      (pin passive line (at -17.78 5.08 0) (length 2.54) (name "DHC" (effects (font (size 1.27 1.27)))) (number "6" (effects (font (size 1.27 1.27)))))
+      (pin open_collector line (at 17.78 15.24 180) (length 2.54) (name "CHRG" (effects (font (size 1.27 1.27)))) (number "14" (effects (font (size 1.27 1.27)))))
+      (pin open_collector line (at 17.78 12.7 180) (length 2.54) (name "FAULT" (effects (font (size 1.27 1.27)))) (number "15" (effects (font (size 1.27 1.27)))))
+      (pin power_out line (at 17.78 10.16 180) (length 2.54) (name "SW" (effects (font (size 1.27 1.27)))) (number "4" (effects (font (size 1.27 1.27)))))
+      (pin power_out line (at 17.78 7.62 180) (length 2.54) (name "BAT" (effects (font (size 1.27 1.27)))) (number "9" (effects (font (size 1.27 1.27)))))
+      (pin input line (at 17.78 5.08 180) (length 2.54) (name "BATSNS" (effects (font (size 1.27 1.27)))) (number "10" (effects (font (size 1.27 1.27)))))
+      (pin passive line (at 17.78 2.54 180) (length 2.54) (name "CHGSNS" (effects (font (size 1.27 1.27)))) (number "8" (effects (font (size 1.27 1.27)))))
+      (pin power_out line (at 0 22.86 270) (length 2.54) (name "INTVCC" (effects (font (size 1.27 1.27)))) (number "1" (effects (font (size 1.27 1.27)))))
+      (pin passive line (at 5.08 22.86 270) (length 2.54) (name "BOOST" (effects (font (size 1.27 1.27)))) (number "2" (effects (font (size 1.27 1.27)))))
+      (pin power_in line (at 10.16 22.86 270) (length 2.54) (name "IN" (effects (font (size 1.27 1.27)))) (number "3" (effects (font (size 1.27 1.27)))))
+      (pin power_in line (at -5.08 -22.86 90) (length 2.54) (name "GND" (effects (font (size 1.27 1.27)))) (number "5" (effects (font (size 1.27 1.27)))))
+      (pin power_in line (at 5.08 -22.86 90) (length 2.54) (name "EP" (effects (font (size 1.27 1.27)))) (number "17" (effects (font (size 1.27 1.27)))))
+      (pin no_connect line (at 10.16 -22.86 90) (length 2.54) (name "NC" (effects (font (size 1.27 1.27)))) (number "11" (effects (font (size 1.27 1.27)))))
+    )
+  )
+  (symbol "trackball-ball:BQ29700"
+    (pin_numbers hide)
+    (pin_names (offset 1.016) (hide yes))
+    (exclude_from_sim no)
+    (in_bom yes)
+    (on_board yes)
+    (property "Reference" "U"
+      (at 0 10.16 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "BQ29700"
+      (at 0 -10.16 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "trackball-ball:WSON-6_1.5x1.5mm"
+      (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "TI SLUSBU9 (bq29700 Vovp=4.275V; COUT/DOUT; V- current sense)"
+      (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Description" "Single-cell LiPo protector, secondary level (CHG-005 level 2) with own dual FET."
+      (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "MPN" "BQ29700DSER"
+      (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Manufacturer" "Texas Instruments"
+      (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "LCSC" ""
+      (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (symbol "BQ29700_0_1"
+      (rectangle
+        (start -10.16 7.62)
+        (end 10.16 -7.62)
+        (stroke (width 0.254) (type default))
+        (fill (type none))
+      )
+    )
+    (symbol "BQ29700_1_1"
+      (pin input line (at -12.7 2.54 0) (length 2.54) (name "BAT" (effects (font (size 1.27 1.27)))) (number "5" (effects (font (size 1.27 1.27)))))
+      (pin power_in line (at -12.7 -2.54 0) (length 2.54) (name "VSS" (effects (font (size 1.27 1.27)))) (number "4" (effects (font (size 1.27 1.27)))))
+      (pin output line (at 12.7 2.54 180) (length 2.54) (name "COUT" (effects (font (size 1.27 1.27)))) (number "2" (effects (font (size 1.27 1.27)))))
+      (pin output line (at 12.7 0 180) (length 2.54) (name "DOUT" (effects (font (size 1.27 1.27)))) (number "3" (effects (font (size 1.27 1.27)))))
+      (pin input line (at 12.7 -2.54 180) (length 2.54) (name "V-" (effects (font (size 1.27 1.27)))) (number "6" (effects (font (size 1.27 1.27)))))
+      (pin no_connect line (at 0 -10.16 90) (length 2.54) (name "NC" (effects (font (size 1.27 1.27)))) (number "1" (effects (font (size 1.27 1.27)))))
+    )
+  )
+  (symbol "trackball-ball:DMG6968U"
+    (pin_numbers hide)
+    (pin_names (offset 1.016) (hide yes))
+    (exclude_from_sim no)
+    (in_bom yes)
+    (on_board yes)
+    (property "Reference" "Q"
+      (at 0 10.16 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "DMG6968U"
+      (at 0 -10.16 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "trackball-ball:SOT-23-6"
+      (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "Diodes Inc DMG6968U (dual N, 20V; SOT-26 pinout assumed 1=S1 2=G1 3=S2 4=D2 5=G2 6=D1 - AUDIT before fab)"
+      (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Description" "Dual N-FET for BQ29700 secondary protection (back-to-back common-source in PACK- return)."
+      (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "MPN" "DMG6968U-7"
+      (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Manufacturer" "Diodes Incorporated"
+      (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "LCSC" ""
+      (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (symbol "DMG6968U_0_1"
+      (rectangle
+        (start -10.16 7.62)
+        (end 10.16 -7.62)
+        (stroke (width 0.254) (type default))
+        (fill (type none))
+      )
+    )
+    (symbol "DMG6968U_1_1"
+      (pin passive line (at -12.7 2.54 0) (length 2.54) (name "S1" (effects (font (size 1.27 1.27)))) (number "1" (effects (font (size 1.27 1.27)))))
+      (pin input line (at -12.7 0 0) (length 2.54) (name "G1" (effects (font (size 1.27 1.27)))) (number "2" (effects (font (size 1.27 1.27)))))
+      (pin passive line (at -12.7 -2.54 0) (length 2.54) (name "S2" (effects (font (size 1.27 1.27)))) (number "3" (effects (font (size 1.27 1.27)))))
+      (pin passive line (at 12.7 2.54 180) (length 2.54) (name "D1" (effects (font (size 1.27 1.27)))) (number "6" (effects (font (size 1.27 1.27)))))
+      (pin input line (at 12.7 0 180) (length 2.54) (name "G2" (effects (font (size 1.27 1.27)))) (number "5" (effects (font (size 1.27 1.27)))))
+      (pin passive line (at 12.7 -2.54 180) (length 2.54) (name "D2" (effects (font (size 1.27 1.27)))) (number "4" (effects (font (size 1.27 1.27)))))
+    )
+  )
+  (symbol "trackball-ball:FH28D-28S"
+    (pin_numbers hide)
+    (pin_names (offset 1.016) (hide yes))
+    (exclude_from_sim no)
+    (in_bom yes)
+    (on_board yes)
+    (property "Reference" "J"
+      (at 0 22.86 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "FH28D-28S"
+      (at 0 -22.86 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "trackball-ball:FH28D-28S-0.5SH"
+      (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "Hirose FH28D-28S-0.5SH (28pos 0.5mm FPC; pinout 1=GND 2=ANT_FEED 3=GND 4-15=T00-T11 16=GND 17-28=T12-T23; AUDIT footprint vs Hirose drawing before fab)"
+      (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Description" "FPC connector to touch-ring flex: 24 touch + ANT feed + 3 GND guards."
+      (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "MPN" "FH28D-28S-0.5SH"
+      (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Manufacturer" "Hirose"
+      (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "LCSC" ""
+      (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (symbol "FH28D-28S_0_1"
+      (rectangle
+        (start -12.7 20.32)
+        (end 12.7 -20.32)
+        (stroke (width 0.254) (type default))
+        (fill (type none))
+      )
+    )
+    (symbol "FH28D-28S_1_1"
+      (pin passive line (at -15.24 17.78 0) (length 2.54) (name "1" (effects (font (size 1.27 1.27)))) (number "1" (effects (font (size 1.27 1.27)))))
+      (pin passive line (at -15.24 15.24 0) (length 2.54) (name "2" (effects (font (size 1.27 1.27)))) (number "2" (effects (font (size 1.27 1.27)))))
+      (pin passive line (at -15.24 12.7 0) (length 2.54) (name "3" (effects (font (size 1.27 1.27)))) (number "3" (effects (font (size 1.27 1.27)))))
+      (pin passive line (at -15.24 10.16 0) (length 2.54) (name "4" (effects (font (size 1.27 1.27)))) (number "4" (effects (font (size 1.27 1.27)))))
+      (pin passive line (at -15.24 7.62 0) (length 2.54) (name "5" (effects (font (size 1.27 1.27)))) (number "5" (effects (font (size 1.27 1.27)))))
+      (pin passive line (at -15.24 5.08 0) (length 2.54) (name "6" (effects (font (size 1.27 1.27)))) (number "6" (effects (font (size 1.27 1.27)))))
+      (pin passive line (at -15.24 2.54 0) (length 2.54) (name "7" (effects (font (size 1.27 1.27)))) (number "7" (effects (font (size 1.27 1.27)))))
+      (pin passive line (at -15.24 0 0) (length 2.54) (name "8" (effects (font (size 1.27 1.27)))) (number "8" (effects (font (size 1.27 1.27)))))
+      (pin passive line (at -15.24 -2.54 0) (length 2.54) (name "9" (effects (font (size 1.27 1.27)))) (number "9" (effects (font (size 1.27 1.27)))))
+      (pin passive line (at -15.24 -5.08 0) (length 2.54) (name "10" (effects (font (size 1.27 1.27)))) (number "10" (effects (font (size 1.27 1.27)))))
+      (pin passive line (at -15.24 -7.62 0) (length 2.54) (name "11" (effects (font (size 1.27 1.27)))) (number "11" (effects (font (size 1.27 1.27)))))
+      (pin passive line (at -15.24 -10.16 0) (length 2.54) (name "12" (effects (font (size 1.27 1.27)))) (number "12" (effects (font (size 1.27 1.27)))))
+      (pin passive line (at -15.24 -12.7 0) (length 2.54) (name "13" (effects (font (size 1.27 1.27)))) (number "13" (effects (font (size 1.27 1.27)))))
+      (pin passive line (at -15.24 -15.24 0) (length 2.54) (name "14" (effects (font (size 1.27 1.27)))) (number "14" (effects (font (size 1.27 1.27)))))
+      (pin passive line (at 15.24 17.78 180) (length 2.54) (name "28" (effects (font (size 1.27 1.27)))) (number "28" (effects (font (size 1.27 1.27)))))
+      (pin passive line (at 15.24 15.24 180) (length 2.54) (name "27" (effects (font (size 1.27 1.27)))) (number "27" (effects (font (size 1.27 1.27)))))
+      (pin passive line (at 15.24 12.7 180) (length 2.54) (name "26" (effects (font (size 1.27 1.27)))) (number "26" (effects (font (size 1.27 1.27)))))
+      (pin passive line (at 15.24 10.16 180) (length 2.54) (name "25" (effects (font (size 1.27 1.27)))) (number "25" (effects (font (size 1.27 1.27)))))
+      (pin passive line (at 15.24 7.62 180) (length 2.54) (name "24" (effects (font (size 1.27 1.27)))) (number "24" (effects (font (size 1.27 1.27)))))
+      (pin passive line (at 15.24 5.08 180) (length 2.54) (name "23" (effects (font (size 1.27 1.27)))) (number "23" (effects (font (size 1.27 1.27)))))
+      (pin passive line (at 15.24 2.54 180) (length 2.54) (name "22" (effects (font (size 1.27 1.27)))) (number "22" (effects (font (size 1.27 1.27)))))
+      (pin passive line (at 15.24 0 180) (length 2.54) (name "21" (effects (font (size 1.27 1.27)))) (number "21" (effects (font (size 1.27 1.27)))))
+      (pin passive line (at 15.24 -2.54 180) (length 2.54) (name "20" (effects (font (size 1.27 1.27)))) (number "20" (effects (font (size 1.27 1.27)))))
+      (pin passive line (at 15.24 -5.08 180) (length 2.54) (name "19" (effects (font (size 1.27 1.27)))) (number "19" (effects (font (size 1.27 1.27)))))
+      (pin passive line (at 15.24 -7.62 180) (length 2.54) (name "18" (effects (font (size 1.27 1.27)))) (number "18" (effects (font (size 1.27 1.27)))))
+      (pin passive line (at 15.24 -10.16 180) (length 2.54) (name "17" (effects (font (size 1.27 1.27)))) (number "17" (effects (font (size 1.27 1.27)))))
+      (pin passive line (at 15.24 -12.7 180) (length 2.54) (name "16" (effects (font (size 1.27 1.27)))) (number "16" (effects (font (size 1.27 1.27)))))
+      (pin passive line (at 15.24 -15.24 180) (length 2.54) (name "15" (effects (font (size 1.27 1.27)))) (number "15" (effects (font (size 1.27 1.27)))))
+    )
+  )
+  (symbol "trackball-ball:JST-PH-2"
+    (pin_numbers hide)
+    (pin_names (offset 1.016) (hide yes))
+    (exclude_from_sim no)
+    (in_bom yes)
+    (on_board yes)
+    (property "Reference" "J"
+      (at 0 5.08 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "JST-PH-2"
+      (at 0 -5.08 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "trackball-ball:JST-PH-2_2.0mm"
+      (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "JST PH series (cell flying leads)"
+      (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Description" "2-pin JST-PH wire-to-board (LiPo cell)."
+      (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "MPN" "B2B-PH-K-S"
+      (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Manufacturer" "JST"
+      (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "LCSC" ""
+      (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (symbol "JST-PH-2_0_1"
+      (rectangle
+        (start -5.08 2.54)
+        (end 5.08 -2.54)
+        (stroke (width 0.254) (type default))
+        (fill (type none))
+      )
+    )
+    (symbol "JST-PH-2_1_1"
+      (pin passive line (at -7.62 0 0) (length 2.54) (name "1" (effects (font (size 1.27 1.27)))) (number "1" (effects (font (size 1.27 1.27)))))
+      (pin passive line (at 7.62 0 180) (length 2.54) (name "2" (effects (font (size 1.27 1.27)))) (number "2" (effects (font (size 1.27 1.27)))))
+    )
+  )
+  (symbol "trackball-ball:JST-PH-3"
+    (pin_numbers hide)
+    (pin_names (offset 1.016) (hide yes))
+    (exclude_from_sim no)
+    (in_bom yes)
+    (on_board yes)
+    (property "Reference" "J"
+      (at 0 7.62 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "JST-PH-3"
+      (at 0 -7.62 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "trackball-ball:JST-PH-3_2.0mm"
+      (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "JST PH series (coil PCB umbilical: VIN_RX/GND/DHC_SNS)"
+      (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Description" "3-pin JST-PH wire-to-board (RX coil PCB)."
+      (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "MPN" "B3B-PH-K-S"
+      (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Manufacturer" "JST"
+      (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "LCSC" ""
+      (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (symbol "JST-PH-3_0_1"
+      (rectangle
+        (start -5.08 5.08)
+        (end 5.08 -5.08)
+        (stroke (width 0.254) (type default))
+        (fill (type none))
+      )
+    )
+    (symbol "JST-PH-3_1_1"
+      (pin passive line (at -7.62 2.54 0) (length 2.54) (name "1" (effects (font (size 1.27 1.27)))) (number "1" (effects (font (size 1.27 1.27)))))
+      (pin passive line (at -7.62 0 0) (length 2.54) (name "2" (effects (font (size 1.27 1.27)))) (number "2" (effects (font (size 1.27 1.27)))))
+      (pin passive line (at -7.62 -2.54 0) (length 2.54) (name "3" (effects (font (size 1.27 1.27)))) (number "3" (effects (font (size 1.27 1.27)))))
+    )
+  )
+  (symbol "trackball-ball:XTAL-3225-4P"
+    (pin_numbers hide)
+    (pin_names (offset 1.016) (hide yes))
+    (exclude_from_sim no)
+    (in_bom yes)
+    (on_board yes)
+    (property "Reference" "Y"
+      (at 0 5.08 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "XTAL-3225-4P"
+      (at 0 -5.08 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "trackball-ball:Crystal-3225-4P"
+      (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "Abracon ABM8-32.000MHZ-9-D1G-T (32MHz +-10ppm CL=9pF ESR 40R; LCSC C1985283; loads 12pF NP0, trim at bring-up)"
+      (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Description" "32MHz HFXO crystal for nRF52810 (pads 1/3 crystal, 2/4 GND - AUDIT)."
+      (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "MPN" "ABM8-32.000MHZ-9-D1G-T"
+      (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Manufacturer" "Abracon"
+      (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "LCSC" "C1985283"
+      (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (symbol "XTAL-3225-4P_0_1"
+      (rectangle
+        (start -5.08 5.08)
+        (end 5.08 -5.08)
+        (stroke (width 0.254) (type default))
+        (fill (type none))
+      )
+    )
+    (symbol "XTAL-3225-4P_1_1"
+      (pin passive line (at -7.62 2.54 0) (length 2.54) (name "1" (effects (font (size 1.27 1.27)))) (number "1" (effects (font (size 1.27 1.27)))))
+      (pin passive line (at -7.62 -2.54 0) (length 2.54) (name "2" (effects (font (size 1.27 1.27)))) (number "2" (effects (font (size 1.27 1.27)))))
+      (pin passive line (at 7.62 2.54 180) (length 2.54) (name "3" (effects (font (size 1.27 1.27)))) (number "3" (effects (font (size 1.27 1.27)))))
+      (pin passive line (at 7.62 -2.54 180) (length 2.54) (name "4" (effects (font (size 1.27 1.27)))) (number "4" (effects (font (size 1.27 1.27)))))
+    )
+  )
+  (symbol "trackball-ball:LED-0603"
+    (pin_numbers hide)
+    (pin_names (offset 1.016) (hide yes))
+    (exclude_from_sim no)
+    (in_bom yes)
+    (on_board yes)
+    (property "Reference" "D"
+      (at 0 5.08 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "LED-0603"
+      (at 0 -5.08 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "trackball-ball:LED-0603_1608Metric"
+      (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "Green 0603 LED Vf~2.0V @5mA (exact MPN at order; drive 200R from +3V0 = ~5mA per ELEC-025)"
+      (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Description" "Dot-up charge-status LED (CHG-007: green iff measured charging)."
+      (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "MPN" "TBD-at-order (green 0603)"
+      (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Manufacturer" "TBD"
+      (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "LCSC" ""
+      (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (symbol "LED-0603_0_1"
+      (polyline
+        (pts (xy -2.54 0) (xy 2.54 0))
+        (stroke (width 0.254) (type default))
+        (fill (type none))
+      )
+      (polyline
+        (pts (xy -1.27 1.27) (xy 1.27 -1.27))
+        (stroke (width 0.254) (type default))
+        (fill (type none))
+      )
+      (polyline
+        (pts (xy -1.27 -1.27) (xy 1.27 1.27))
+        (stroke (width 0.254) (type default))
+        (fill (type none))
+      )
+    )
+    (symbol "LED-0603_1_1"
+      (pin passive line (at -5.08 0 0) (length 2.54) (name "A" (effects (font (size 1.27 1.27)))) (number "1" (effects (font (size 1.27 1.27)))))
+      (pin passive line (at 5.08 0 180) (length 2.54) (name "K" (effects (font (size 1.27 1.27)))) (number "2" (effects (font (size 1.27 1.27)))))
+    )
+  )
+  (symbol "trackball-ball:R-Small-US"
+    (pin_numbers hide)
+    (pin_names (offset 0.254) (hide yes))
+    (exclude_from_sim no)
+    (in_bom yes)
+    (on_board yes)
+    (property "Reference" "R"
+      (at 0.254 1.778 0)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Value" "R-Small-US"
+      (at 0.254 -2.032 0)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Footprint" ""
+      (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" ""
+      (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Description" "Resistor, US symbol (pinout-identical simplified port of Device:R_Small_US; pin 1 top, pin 2 bottom)"
+      (at 0 -10.16 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "MPN" ""
+      (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Manufacturer" ""
+      (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "LCSC" ""
+      (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (symbol "R-Small-US_0_1"
+      (polyline
+        (pts (xy -1.27 2.54) (xy 0 1.27) (xy 0 0.635))
+        (stroke (width 0.254) (type default))
+        (fill (type none))
+      )
+      (polyline
+        (pts (xy 0 0.635) (xy -1.27 -0.635) (xy 1.27 -1.905) (xy 0 -2.54))
+        (stroke (width 0.254) (type default))
+        (fill (type none))
+      )
+      (polyline
+        (pts (xy 0 -2.54) (xy 1.27 -3.175) (xy -1.27 -4.445) (xy 0 -5.08))
+        (stroke (width 0.254) (type default))
+        (fill (type none))
+      )
+    )
+    (symbol "R-Small-US_1_1"
+      (pin passive line (at 0 5.08 270) (length 2.54) (name "1" (effects (font (size 1.27 1.27)))) (number "1" (effects (font (size 1.27 1.27)))))
+      (pin passive line (at 0 -5.08 90) (length 2.54) (name "2" (effects (font (size 1.27 1.27)))) (number "2" (effects (font (size 1.27 1.27)))))
+    )
+  )
+  (symbol "trackball-ball:C-Small"
+    (pin_numbers hide)
+    (pin_names (offset 0.254) (hide yes))
+    (exclude_from_sim no)
+    (in_bom yes)
+    (on_board yes)
+    (property "Reference" "C"
+      (at 0.254 1.778 0)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Value" "C-Small"
+      (at 0.254 -2.032 0)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Footprint" ""
+      (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" ""
+      (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Description" "Capacitor, small symbol (pinout-identical simplified port of Device:C_Small; pin 1 top, pin 2 bottom)"
+      (at 0 -10.16 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "MPN" ""
+      (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Manufacturer" ""
+      (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "LCSC" ""
+      (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (symbol "C-Small_0_1"
+      (polyline
+        (pts (xy -1.524 0.508) (xy 1.524 0.508))
+        (stroke (width 0.3048) (type default))
+        (fill (type none))
+      )
+      (polyline
+        (pts (xy -1.524 -0.508) (xy 1.524 -0.508))
+        (stroke (width 0.3048) (type default))
+        (fill (type none))
+      )
+    )
+    (symbol "C-Small_1_1"
+      (pin passive line (at 0 2.54 270) (length 2.032) (name "1" (effects (font (size 1.27 1.27)))) (number "1" (effects (font (size 1.27 1.27)))))
+      (pin passive line (at 0 -2.54 90) (length 2.032) (name "2" (effects (font (size 1.27 1.27)))) (number "2" (effects (font (size 1.27 1.27)))))
+    )
+  )
+  (symbol "trackball-ball:GND"
+    (power)
+    (pin_numbers hide)
+    (pin_names (offset 0) (hide yes))
+    (exclude_from_sim no)
+    (in_bom no)
+    (on_board yes)
+    (property "Reference" "#PWR"
+      (at 0 -3.81 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Value" "GND"
+      (at 0 3.556 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" ""
+      (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" ""
+      (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Description" "Ground power symbol"
+      (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (symbol "GND_0_1"
+      (polyline
+        (pts (xy 0 0) (xy 0 -1.27))
+        (stroke (width 0.254) (type default))
+        (fill (type none))
+      )
+      (polyline
+        (pts (xy -2.54 -1.27) (xy 2.54 -1.27))
+        (stroke (width 0.254) (type default))
+        (fill (type none))
+      )
+      (polyline
+        (pts (xy -1.778 -2.032) (xy 1.778 -2.032))
+        (stroke (width 0.254) (type default))
+        (fill (type none))
+      )
+      (polyline
+        (pts (xy -1.016 -2.794) (xy 1.016 -2.794))
+        (stroke (width 0.254) (type default))
+        (fill (type none))
+      )
+    )
+    (symbol "GND_1_1"
+      (pin power_in line (at 0 0 270) (length 0) (name "1" (effects (font (size 1.27 1.27)))) (number "1" (effects (font (size 1.27 1.27)))))
+    )
+  )
+  (symbol "trackball-ball:PWRV"
+    (power)
+    (pin_numbers hide)
+    (pin_names (offset 0) (hide yes))
+    (exclude_from_sim no)
+    (in_bom no)
+    (on_board yes)
+    (property "Reference" "#PWR"
+      (at 0 3.81 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Value" "PWRV"
+      (at 0 -3.556 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" ""
+      (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" ""
+      (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Description" "Positive power symbol (up arrow; value names the net: +3V0, VBAT, VIN_RX)"
+      (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (symbol "PWRV_0_1"
+      (polyline
+        (pts (xy 0 2.54) (xy 0 0))
+        (stroke (width 0.254) (type default))
+        (fill (type none))
+      )
+      (polyline
+        (pts (xy -1.27 1.27) (xy 0 2.54) (xy 1.27 1.27))
+        (stroke (width 0.254) (type default))
+        (fill (type none))
+      )
+    )
+    (symbol "PWRV_1_1"
+      (pin power_in line (at 0 0 90) (length 0) (name "1" (effects (font (size 1.27 1.27)))) (number "1" (effects (font (size 1.27 1.27)))))
+    )
+  )
+  (symbol "trackball-ball:PWR-FLAG"
+    (power)
+    (pin_numbers hide)
+    (pin_names (offset 0) (hide yes))
+    (exclude_from_sim no)
+    (in_bom no)
+    (on_board yes)
+    (property "Reference" "#FLG"
+      (at 0 -3.81 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Value" "PWR_FLAG"
+      (at 0 3.556 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Footprint" ""
+      (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" ""
+      (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Description" "Power flag (marks net as driven for ERC)"
+      (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (symbol "PWR-FLAG_0_1"
+      (polyline
+        (pts (xy -2.54 1.27) (xy 2.54 1.27) (xy 0 -1.27) (xy -2.54 1.27))
+        (stroke (width 0.254) (type default))
+        (fill (type none))
+      )
+    )
+    (symbol "PWR-FLAG_1_1"
+      (pin power_out line (at 0 0 270) (length 0) (name "1" (effects (font (size 1.27 1.27)))) (number "1" (effects (font (size 1.27 1.27)))))
+    )
+  )
+  (symbol "trackball-ball:XC6206-SOT23"
+    (pin_numbers hide)
+    (pin_names (offset 1.016) (hide yes))
+    (exclude_from_sim no)
+    (in_bom yes)
+    (on_board yes)
+    (property "Reference" "U"
+      (at 0 7.62 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "XC6206-SOT23"
+      (at 0 -7.62 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "trackball-ball:SOT-23"
+      (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "Torex XC6206 (SOT-23: 1=VSS 2=VOUT 3=VIN per pin-assignment table - AUDIT; 200mA, Iq 1-3uA)"
+      (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Description" "3.0V LDO, system rail from VBAT (ELEC-031 input bulk >=10uF)."
+      (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "MPN" "XC6206P302MR-G"
+      (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Manufacturer" "Torex"
+      (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "LCSC" ""
+      (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (symbol "XC6206-SOT23_0_1"
+      (rectangle
+        (start -7.62 5.08)
+        (end 7.62 -5.08)
+        (stroke (width 0.254) (type default))
+        (fill (type none))
+      )
+    )
+    (symbol "XC6206-SOT23_1_1"
+      (pin power_in line (at -10.16 0 0) (length 2.54) (name "VIN" (effects (font (size 1.27 1.27)))) (number "3" (effects (font (size 1.27 1.27)))))
+      (pin power_out line (at 10.16 0 180) (length 2.54) (name "VOUT" (effects (font (size 1.27 1.27)))) (number "2" (effects (font (size 1.27 1.27)))))
+      (pin power_in line (at 0 -7.62 90) (length 2.54) (name "VSS" (effects (font (size 1.27 1.27)))) (number "1" (effects (font (size 1.27 1.27)))))
+    )
+  )
+  (symbol "trackball-ball:TVS-2P"
+    (pin_numbers hide)
+    (pin_names (offset 1.016) (hide yes))
+    (exclude_from_sim no)
+    (in_bom yes)
+    (on_board yes)
+    (property "Reference" "D"
+      (at 0 5.08 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "TVS-2P"
+      (at 0 -5.08 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "trackball-ball:ESD-1005-2P"
+      (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "TI TPD1E05U06 (0.42pF, IEC61000-4-2 L4; ELEC-004 <=1pF; exact package/pinout TBD at layout audit)"
+      (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Description" "Ultra-low-C TVS for connector-exposed I2C lines (ELEC-004)."
+      (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "MPN" "TPD1E05U06"
+      (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Manufacturer" "Texas Instruments"
+      (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "LCSC" ""
+      (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (symbol "TVS-2P_0_1"
+      (polyline
+        (pts (xy -2.54 1.27) (xy 2.54 1.27))
+        (stroke (width 0.254) (type default))
+        (fill (type none))
+      )
+      (polyline
+        (pts (xy -2.54 -1.27) (xy 2.54 -1.27))
+        (stroke (width 0.254) (type default))
+        (fill (type none))
+      )
+    )
+    (symbol "TVS-2P_1_1"
+      (pin passive line (at -5.08 0 0) (length 2.54) (name "IO" (effects (font (size 1.27 1.27)))) (number "1" (effects (font (size 1.27 1.27)))))
+      (pin passive line (at 5.08 0 180) (length 2.54) (name "GND" (effects (font (size 1.27 1.27)))) (number "2" (effects (font (size 1.27 1.27)))))
+    )
+  )
+  (symbol "trackball-ball:L-Small"
+    (pin_numbers hide)
+    (pin_names (offset 0.254) (hide yes))
+    (exclude_from_sim no)
+    (in_bom yes)
+    (on_board yes)
+    (property "Reference" "L"
+      (at 0.254 1.778 0)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Value" "L-Small"
+      (at 0.254 -2.032 0)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Footprint" ""
+      (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" ""
+      (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Description" "Inductor, small symbol (pin 1 top, pin 2 bottom)"
+      (at 0 -10.16 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "MPN" ""
+      (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Manufacturer" ""
+      (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "LCSC" ""
+      (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (symbol "L-Small_0_1"
+      (polyline
+        (pts (xy 0 2.54) (xy 0 1.27) (xy -0.635 0.635) (xy -0.635 -0.635) (xy 0 -1.27))
+        (stroke (width 0.254) (type default))
+        (fill (type none))
+      )
+      (polyline
+        (pts (xy 0 -1.27) (xy 0 -2.54))
+        (stroke (width 0.254) (type default))
+        (fill (type none))
+      )
+    )
+    (symbol "L-Small_1_1"
+      (pin passive line (at 0 5.08 270) (length 2.54) (name "1" (effects (font (size 1.27 1.27)))) (number "1" (effects (font (size 1.27 1.27)))))
+      (pin passive line (at 0 -5.08 90) (length 2.54) (name "2" (effects (font (size 1.27 1.27)))) (number "2" (effects (font (size 1.27 1.27)))))
+    )
+  )
+  (symbol "trackball-ball:TP-PAD"
+    (pin_numbers hide)
+    (pin_names (offset 0) (hide yes))
+    (exclude_from_sim no)
+    (in_bom no)
+    (on_board yes)
+    (property "Reference" "TP"
+      (at 0 2.54 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "TP-PAD"
+      (at 0 -2.54 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "trackball-ball:TestPoint-Pad-D1.0mm"
+      (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" ""
+      (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Description" "Test point pad D1.0mm (ELEC-018 observability; SWD pogo group marked)"
+      (at 0 0 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (symbol "TP-PAD_0_1"
+      (circle
+        (center 0 0)
+        (radius 1.27)
+        (stroke (width 0.254) (type default))
+        (fill (type none))
+      )
+    )
+    (symbol "TP-PAD_1_1"
+      (pin passive line (at 0 0 270) (length 0) (name "1" (effects (font (size 1.27 1.27)))) (number "1" (effects (font (size 1.27 1.27)))))
+    )
+  )
+)

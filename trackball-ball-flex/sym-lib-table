@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "trackball-ball-flex")(type "KiCad")(uri "${KIPRJMOD}/trackball-ball-flex.kicad_sym")(options "")(descr "Ball flex symbols"))
+)

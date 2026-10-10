@@ -1,0 +1,1 @@
+Flex pretty placeholder: RING-24 and all flex copper live INLINE in trackball-ball-flex.kicad_pcb (single-footprint flex method). This directory exists so fp-lib-table resolves without warnings. No .kicad_mod files by design — see notes/BALL_REVIEW.md.

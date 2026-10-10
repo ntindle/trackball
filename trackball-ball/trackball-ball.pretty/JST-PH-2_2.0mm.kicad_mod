@@ -1,0 +1,31 @@
+(footprint "JST-PH-2_2.0mm"
+  (version 20250114)
+  (generator "pcbnew")
+  (generator_version "10.0")
+  (layer "F.Cu")
+  (descr "JST PH 2-pin 2.0mm wire-to-board (B2B-PH-K-S). TH. AUDIT drill/annular vs JST drawing.")
+  (tags "JST PH")
+  (property "Reference" "J**"
+    (at 0 -3.5 0)
+    (layer "F.SilkS")
+    (effects (font (size 1 1) (thickness 0.15)))
+  )
+  (property "Value" "JST-PH-2_2.0mm"
+    (at 0 3.5 0)
+    (layer "F.Fab")
+    (effects (font (size 1 1) (thickness 0.15)))
+  )
+  (property "Datasheet" ""
+    (at 0 0 0)
+    (layer "F.Fab")
+    (effects (font (size 1 1) (thickness 0.15)) hide)
+  )
+  (property "Description" ""
+    (at 0 0 0)
+    (layer "F.Fab")
+    (effects (font (size 1 1) (thickness 0.15)) hide)
+  )
+  (pad "1" thru_hole circle (at -1 0) (size 1.7 1.7) (drill 0.9) (layers "*.Cu" "*.Mask") (pinfunction "") (pintype ""))
+  (pad "2" thru_hole circle (at 1 0) (size 1.7 1.7) (drill 0.9) (layers "*.Cu" "*.Mask") (pinfunction "") (pintype ""))
+  (fp_rect (start -2.9 -2.5) (end 2.9 2.5) (stroke (width 0.05) (type solid)) (layer "F.CrtYd"))
+)

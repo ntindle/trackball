@@ -1,0 +1,4 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "trackball-ball")(type "KiCad")(uri "${KIPRJMOD}/trackball-ball.pretty")(options "")(descr "trackball ball project footprints"))
+)

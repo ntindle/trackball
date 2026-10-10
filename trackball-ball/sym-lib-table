@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "trackball-ball")(type "KiCad")(uri "${KIPRJMOD}/trackball-ball.kicad_sym")(options "")(descr "trackball ball project symbols"))
+)

@@ -1,0 +1,31 @@
+(version 1)
+
+# trackball-ball custom DRC — ball main PCB (Ø28mm 4L).
+# Mirrors trackball-base/trackball.kicad_dru style. Ball-side rules that were
+# vacuous on base (noted "empty on base") are LIVE here.
+# Status: DRC run is TOOL-RUN-TBD (no shell on this box).
+
+(rule chg_rx_coil_to_touch_keepout
+  (constraint clearance (min 5mm))
+  (condition "A.NetClass == 'COIL_RX' && B.NetClass == 'TOUCH'")
+)
+
+(rule rf_ball_ant_to_rx_coil
+  (constraint clearance (min 8mm))
+  (condition "A.NetClass == 'ANT' && B.NetClass == 'COIL_RX'")
+)
+
+(rule coil_rx_min_width
+  (constraint track_width (min 0.5mm))
+  (condition "A.NetClass == 'COIL_RX'")
+)
+
+(rule ant_feed_width
+  (constraint track_width (min 0.3mm) (max 0.4mm))
+  (condition "A.NetClass == 'ANT'")
+)
+
+(rule ant_feed_length
+  (constraint length (max 20mm))
+  (condition "A.NetClass == 'ANT'")
+)
