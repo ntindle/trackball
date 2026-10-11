@@ -15,7 +15,7 @@
 
 ## Parked with proof (delegate scope, no verified route yet)
 
-U1.25/U1.32-VDD (redundant pins; rail LIVE via pad9 — pinout audit to confirm), C6.1/C11.1, C23.2-CELL_N + TP12, RUN divider + U4.16, PROG/NTC/CHGSNS, VIN-west (R12.1/C20.1), J2.2-GND + C8.2-GND (GND-pour pull pending), J3.1/C21.1 landlocked. U1-VDD rail live; no floating-rail accept-opens outstanding.
+U1.25/U1.32-VDD (redundant pins; rail LIVE via pad9 — pinout audit to confirm), C6.1/C11.1, C23.2-CELL_N + TP12, RUN divider + U4.16, PROG/NTC/CHGSNS, VIN-west (R12.1/C20.1), J2.2-GND + C8.2-GND (GND pours verified present (B.Cu + In1.Cu whole-board, 0.3 clr + thermals): J2.2-GND + C8.2-GND + R16.2-GND closed pour-fed; U5_VM (U5.6→R16.1) parked NEW with proof + CHG-005 protection-degraded flag for human datasheet audit), J3.1/C21.1 landlocked. U1-VDD rail live; no floating-rail accept-opens outstanding.
 
 ## Human TOOL-RUN-TBD (branch job/trackball-ball-electronics, no shell for delegate)
 
