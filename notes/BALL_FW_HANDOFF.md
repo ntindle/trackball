@@ -17,3 +17,10 @@ Owner-approved pin changes the firmware MUST honor (2026-10-10):
 5. ESB protocol + BASE_STATUS reservation: see notes/BALL_ESB.md and
    base notes/FW_HANDOFF_S2MOT.md (register 0x02 bit 7 is the base
    firmware job's problem; ball side reserves the channel).
+6. U3 (0x38) HW-reset unavailable (2026-10-10 layout): XRES2 copper from
+   U1.13 was deleted (it shorted U1-EP; U1.13 is F.Cu-sealed — owner
+   RATIFIED 2026-10-10 (Q10a-precedent accept-open, see QUESTIONS Q11);
+   P0.16 stays unconfigured/disabled). R9 pulls U3.24 HIGH so U3
+   runs normally; but MCU GPIO reset to U3 is gone — S2 firmware MUST
+   use I2C software-reset (or dock power-cycle) for U3, never assume
+   HW-reset works. U2 (0x37) XRES1 path is unaffected.

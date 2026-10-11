@@ -1,22 +1,22 @@
-# SUMMARY — trackball ball electronics (Stage 1 + Stage 2 design)
+# SUMMARY — trackball ball electronics (delegate status, 2026-10-10Z)
 
-**Design work complete. Nothing ordered (gated on Phase 1 exit + owner purchase approval).**
+**Design work advanced; nothing ordered (DO-NOT-ORDER: gated on Phase 1 exit + owner purchase approval). No shell on this box — all tool runs are human-side.**
 
-## Deliverables (all under `work/` — job-dir writes were sandbox-denied, human to move: PROGRESS/QUESTIONS/SUMMARY/notes)
+## CLOSED (file-verified this job)
 
-1. **Main ball PCB v0.2-routing-in-progress** (`trackball-ball/`): pro/sym/sch/dru + 16 footprints in `.pretty` + placed `.kicad_pcb` (Ø27.5, 4L, pours, keepouts, outline). ROUTED & CLOSED by hand-math (0.25mm/0.6-0.3 vias/0.2 clr, no via-in-pad): Geometry A (U2 0x37: T00-T11 + CS0-CS11 + CMOD, t001-t185), Geometry B (U3 0x38: T12-T23 + CS0-CS11 + CMOD, t186-t399), control (HI1/HI2/XRES1/XRES2/I2C-west/LED/SWD/SPARE/DEC1-2-4/XC/VBAT_SNS/CHRG/FAULT/U6 + GND stitches, t400-t703). ERC-directed by construction; DRC/exports/STEP/commit all TOOL-RUN-TBD (no shell — bwrap denied). CLOSED since: Q9 (U3-I2C t709-t723), Q12 (ANT t724-t732), Q15-partial (U5_BAT, p20/C6.2, +3V0 U6.2→R8.1→R9.1 t753-t761, CELL_N t762; sealed set parked), coil v0.2. 2026-10-10 OWNER VERDICTS EXECUTED: Q10a (NRESET open + TP7 DNP recorded), Q13a (CHRG↔FAULT swap: sch+pcb+note+FW handoff), Q14d(ii) (C18 mirror + SPARE-east + INTVCC t749-t752; rotation avoided), Q15a (above; R35-37 declined). Q11c REJECTED (electrically invalid); new Q11 recommendation awaits approval (SPARE-via-north + B.Cu-north DEC3). REMAIN: BOOST/SW tails + VIN/VBAT/DHC bulk + J2/J3/L1/C20/C21/R12-R16/Q1 survey + BALL_REVIEW refresh + human TOOL-RUN-TBD (ERC/DRC/exports/STEP/commit+push; no shell).
-2. **Flex v0.1** (`trackball-ball-flex/`): 24-electrode geometry-A ring + tail + antenna tab + π-match, FAB-HOLD silk pending coupon winner.
-3. **Coil board v0.2** (`trackball-ball-coil/`): sch nets separated (RX_A/VIN_RX/GND); 14.8mm square 5.7-turn spiral fits r11 (0.39 edge; documented deviation from 19mm est, bench re-tune CHG-009); all 3 nets routed (RX_A lead/lane/stub, VIN lane + B.Cu J1.1 feed, GND B.Cu + y109 F.Cu bus); net-tie NT1 at center hole (syntax for human DRC, 0R fallback); net0 pours removed (eddy); C1→(96,108.3), D1→(105,108.5); provisional tank/zener values kept; ferrite note kept.
-4. **Stage 1** (`notes/STAGE1_COUPONS.md`): coupon T-A/T-B/C/M fab specs, gates 2.1–2.6 with explicit PASS criteria, bench handoff (equipment/procedure/sheet), DO-NOT-ORDER BOM.
-5. **CAD** (`cad/ball_cad.py` + `notes/BALL_CAD.md`): parametric frozen-nominal model, STL now, STEP via FreeCAD.
-6. **ESB** (`notes/BALL_ESB.md`): 32 B packets, channels, DFU relay (FW-010), BASE_STATUS reserved, RING_SCROLL_ENABLE gating.
-7. **Review/BOM** (`notes/BALL_REVIEW.md`, `notes/BALL_BOM_DRAFT.md`): every governed choice rule-cited, provisional list, 3 explicit deviations, real-parts BOM with VERIFY flags.
-8. **QUESTIONS.md**: 15 items — Q1-Q8 (pinout audits, TX-MPN/λ_sensor gaps, no-shell caveat) + Q9-Q15 (routing contact points with audited options; In2-hops REJECTED after full In2 occupancy audit found no east-west corridor).
+- **Main PCB touch + control**: Geometry A (U2 0x37) + Geometry B (U3 0x38), all control (HI/XRES/I2C/LED/SWD/SPARE/DEC1-2-4/XC/VBAT_SNS/CHRG/FAULT), U3-I2C, DEC3, DHC, VBAT-loop, +3V0-island (U2/U3-VDD, pullups), INTVCC, BOOST/SW/VIN. 13 live-short defects found+fixed (#1–#11, #13; #5/#7–#11 EP-class, #12/#14 filed or disproven — see below).
+- **Owner verdicts executed**: Q10a NRESET accept-open, Q13a CHRG↔FAULT swap, Q14d(ii) C18-mirror, Q15a power cascade, Q11(A) U1.13-XRES2-open RATIFIED (accept-open, Q10a precedent; firmware P0.16-disabled, U3 on SW-reset).
+- **Coil v0.2 + J1-edge fix**: 14.8mm spiral, separated nets, all feeds verified; J1 moved south 0.2 (J1.3-copper was 0.04 over r11). DONE pending human DRC/exports.
+- **Flex v0.1** (geometry A, FAB-HOLD), **Stage 1** coupons/test-plans/bench-handoff/DO-NOT-ORDER BOM, **CAD** (frozen-nominal parametric), **ESB** protocol doc, firmware handoff notes.
 
-## Key judgments
+## Owner-BLOCKED (exact questions, in QUESTIONS.md Q11)
 
-MBR3 over IQS (channel count); both geometries on-board (no re-spin); single-net coil spiral v0.1 with v0.2 net-tie TODO; J1.3=DHC_SNS=RX_A provisional; LDO 3.0 V; bottom-side mirrored-X; H1/J1/coil placements fixed after collision analysis.
+1. **East-field cascade arbitration** (ANT net6 + DEFECT #12, parked, do NOT route): (i) 6-net cascade (t490/t491/t788 delete + SWDIO-t572/573/574 move + R9 restitch + ANT route — NOT recommended blind); (ii) schematic ANT-to-GPIO move (almost certainly INVALID, RF-pin class — same error as DEC3); (iii) no-RF V1 (NOT recommended, kills radio link). DEFECT #12 (live SWDIO-t573-via ↔ DEC2-t594 short, 0.25×0.6, debug-into-regulator) rides this verdict — owner-urgent, no verified standalone fix. R9-displacement was STOPPED per owner fallback with three independent file-proofs.
 
-## Human runbook (shell was broken — bwrap denied)
+## Parked with proof (delegate scope, no verified route yet)
 
-`kicad-cli sch erc` + `pcb drc` all three projects → route v0.2 → `kicad-cli` fab exports + KiKit + Blender/FreeCAD → `git commit`. Pinout audits before any fab. Then bench gates 2.1–2.6.
+U1.25/U1.32-VDD (redundant pins; rail LIVE via pad9 — pinout audit to confirm), C6.1/C11.1, C23.2-CELL_N + TP12, RUN divider + U4.16, PROG/NTC/CHGSNS, VIN-west (R12.1/C20.1), J2.2-GND + C8.2-GND (GND-pour pull pending), J3.1/C21.1 landlocked. U1-VDD rail live; no floating-rail accept-opens outstanding.
+
+## Human TOOL-RUN-TBD (branch job/trackball-ball-electronics, no shell for delegate)
+
+`kicad-cli sch erc` + `pcb drc` (expect: parked-net unconnecteds + RATIFIED XRES2-open + ONE live short #12 + 0.2-exact inventory + U4-EP 0.1-footprint flags; 0 clearance violations elsewhere), fab exports (Gerbers/STEP), KiKit, Blender/FreeCAD STEP, pinout + lib audits (incl U4-EP 1.7×1.7 oversize flag, C8 descr, nRF52 RESET pull-up confirm, U1-VDD redundancy), `git add/commit/push`, bench gates 2.1–2.6.
