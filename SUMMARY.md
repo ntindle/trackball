@@ -11,7 +11,7 @@
 
 ## Owner-BLOCKED (exact questions, in QUESTIONS.md Q11)
 
-1. **East-field cascade arbitration** (ANT net6 + DEFECT #12, parked, do NOT route): (i) 6-net cascade (t490/t491/t788 delete + SWDIO-t572/573/574 move + R9 restitch + ANT route — NOT recommended blind); (ii) schematic ANT-to-GPIO move (almost certainly INVALID, RF-pin class — same error as DEC3); (iii) no-RF V1 (NOT recommended, kills radio link). DEFECT #12 (live SWDIO-t573-via ↔ DEC2-t594 short, 0.25×0.6, debug-into-regulator) rides this verdict — owner-urgent, no verified standalone fix. R9-displacement was STOPPED per owner fallback with three independent file-proofs.
+1. **East-field cascade (i) EXECUTED 2026-10-12** (owner-authorized): ANT CLOSED pad19→J1.2, SWDIO rerouted, R9 moved+refed, U3.7 ext-fed, DEFECT #12 DEAD (t573 removed). Gates 1–4 pass hand-verified (3× 0.2-exact, zero below 0.2); gate 5 tool-DRC QUEUED human (no shell — clean NOT claimed). C5.1 parked per authorization (rail live; degraded-decoupling flag for human review).
 
 ## Parked with proof (delegate scope, no verified route yet)
 
