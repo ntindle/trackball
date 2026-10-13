@@ -1082,9 +1082,14 @@
     (uuid "ba11ba11-0000-4000-8000-000000000182")
   )
   (wire
-    (pts (xy 190 172.38) (xy 190 168) (xy 197.38 168))
+    (pts (xy 190 172.38) (xy 190 168))
     (stroke (width 0) (type default))
     (uuid "ba11ba11-0000-4000-8000-000000000183")
+  )
+  (wire
+    (pts (xy 190 168) (xy 197.38 168))
+    (stroke (width 0) (type default))
+    (uuid "ba11ba11-0000-4000-8000-000000000842")
   )
   (symbol
     (lib_id "trackball-ball:LED-0603")
@@ -5322,21 +5327,9 @@
     )
     (pin "1" (uuid "ba11ba11-0000-4000-8000-000000000841"))
   )
-  (sheet_instances
-    (path "/" (page "1"))
-  )
-  (embedded_fonts no)
-)
-)
   (symbol
     (lib_id "trackball-ball:PWR-FLAG")
     (at 280.16 147.86 0)
-    (unit 1)
-    (exclude_from_sim no)
-    (in_bom no)
-    (on_board yes)
-    (fields_autoplaced yes)
-    (uuid "ba11ba11-0000-4000-8000-000000000719")
     (unit 1)
     (exclude_from_sim no)
     (in_bom no)
@@ -5351,13 +5344,18 @@
       (at 280.16 151.42 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Footprint" ""
+    (property "Datasheet" ""
       (at 280.16 147.86 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" ""
+    (property "Footprint" ""
       (at 280.16 147.86 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid "ba11ba11-0000-4000-8000-000000000720"))
   )
+  (sheet_instances
+    (path "/" (page "1"))
+  )
+  (embedded_fonts no)
+)

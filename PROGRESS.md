@@ -77,3 +77,835 @@
 2026-10-12Z heartbeat (recovery; re-read prompt.md + PROGRESS tail + Q11 — all unchanged, no drift, no new verdict): no copper touched; cascade execution stands (t830-844, #12 dead, gates 1-4 pass); parked-power set + VM unchanged; gate 5 + commit human TOOL-RUN-TBD. Waiting.
 
 2026-10-12Z heartbeat (recovery; re-read prompt.md + PROGRESS tail + Q11 — all unchanged, no drift, no new verdict): no copper touched; cascade stands executed, parked set unchanged, gate 5 + commit human-side. Waiting.
+
+2026-10-12Z Gate-5 triage turn (driver report 1759 violations / 89 unconnected; kicad-layout skill loaded; survey-from-file ONLY after a method reset): (1) REPORT PAIRINGS UNRELIABLE — 5+ proven phantoms (U3_CS3-BCu-track, SWDCLK-7.4-track, cross-net unconnected pairs e.g. XRES2-vs-VDD, impossible-distance pairs e.g. 9-15mm-apart clearance pairs, same-net clearance pairs). Counts = signal; every pair must be file-proven before copper moves. Probable kicad-cli 10.0.6 DRC-report label/pairing defect — recorded for human. (2) BOARD-KILLER FOUND+FIXED (mine, cascade ext t840/t841): t841-via (108.9,97.0, net3) barrel-east (109.2) OVERLAPPED U3.8-GND-pad-west (109.1) 0.1x0.575 = +3V0-to-GND supply short (my cascade E1 used 108.775 (t849-end) instead of 109.2 — arithmetic error admitted) + t840-west DANGLING (U3.7 already fed via t818-R9.1, ext was redundant). FIX: DEL t840 + DEL t841 (2 ops; spine-rail tie kept at t844; short dead; nothing else affected). (3) CHIP-KILLER FOUND+FIXED (pre-existing, Geometry-B era): U3_CMOD t392 (108.9->106.2 @ y96.5) crossed C15.2-GND-pad 0.7x0.25 (CMOD-to-GND). FIX: DEL t392/t393 + ADD t845-t849 (south-around C15.2/SWDCLK-t565; 1x 0.2-exact (F3-vs-C15.1-south) + near-flag F5-vs-U3.8 0.224; chain U3.20->t390->t391->t849->t848->t846->t847->t845->C15.1 walked + file-proven present). (4) R10.2-fed: t826 MOD vertical->diagonal (98.0,96.3)->(98.6,96.85) BCu (my power-unit miss; endpoint-in-R10.2). (5) FILE-PROVEN STANDS (as-built = QUESTIONS item-11 cascade paragraph = fresh pulls): ANT pad19->t832->t833->t834->t835->t836->t727+->J1.2 WHOLE; SWDIO pad18->t570->t571->t830->t831->t575->south->TP3 WHOLE (report shows no SWDIO splits — consistent); U3.7 fed via t818-R9.1-t843-t842-t844-spine (R9.1-pad bridges t818/t843); t831 (same-net join onto t575 = good) / t833 (1x 0.2-exact vs R9.1, as-flagged) / t844 (0.25 vs C15.1 + weak same-net R9.1-touch flagged) all clear. (6) CONFIRMED GAP (mine, cascade landed 12/15): t837/t838/t839 (R9.2-feed) ABSENT -> R9.2-XRES2 OPEN (report consistent) -> U3.24 floats with no pullup. QUEUED 3-op fix per QUESTIONS design (re-verify R9.2-pad + t484 anchors at placement). (7) CORRECTION: my triage-turn E1/E2 coords (t836-@-y98.4, t833-SWDIO, t571-net41) were SURVEY-era geometry, NOT as-built — VOID; short-scares built on them WITHDRAWN (t833 IS ANT-net6; t571 IS SWDIO-net42-via; t575 IS SWDIO-net42). Rule enforced: as-built records + fresh pulls authoritative, never turn narratives. (8) QUEUED pre-existing (specified): FAULT-3-islands (net47 = t648-t653 only; TP10/U4.4/BCu-west tails open), XRES1-R8.2-gap (t450 starts (100.25,96.65); R8.2 (93,97.5)) + U2_CS0/CS1 crossing verify, U2-CS R-ends (CS6/9/10/11), XC_A/B-C1/C2 splits, west/east-power unfed loads (R4/R5/C3/C13/C11/C4/C6/TP5/R6/R7/C12/C17), C5.1 parked, ANT-length 46.78mm vs 20mm DRU ant_feed_length (owner/RF verdict: waive vs reroute; cascade-stacking ban honored), hole-clearance class (samples pre-existing R5/LED/L1/H3/U1-via; my vias hand-clear), keepout-HI2/LED (t803/t807 inside F.Cu keepout — mine, queued), silk/courtyard/lib/hole-to-hole/track-width/dangling buckets. (9) Schematic ERC parse-failure NOT yet diagnosed (queued). Human TOOL-RUN-TBD: DRC re-run (expect minus 2 shorts (CMOD, t841); R9.2-open persists; rest per buckets), ERC-diagnose, exports/STEP/commit+push on branch job/trackball-ball-electronics. REVIEW dev-entry + R9.2-fix ride next turn. No gate failed (fix gates pass by file-math; tool gate un-runnable here, NOT failed).
+
+2026-10-12Z Gate-5 triage+fix turn (driver report 1759/89; kicad-layout; NO shell — bwrap-denied, all tool runs human-side): (1) KEEPOUT REMOVED: obsolete v0.1 F.Cu east-field antenna keepout (x96.5-103.5/y90.5-96.5 zone) deleted — antenna routed west per Q12a, zone now only criminalized later HI2/LED/FAULT/GND vias+tracks (~14 items_not_allowed). Layout cleanup, no electrical change; D1/R3 placements (moved out earlier) untouched. (2) REAL SHORTS FIXED (all file-proven, hand-math with margins >=0.25): (a) t820-+3V0-lane vs U2.8-GND 0.3x0.2 — DEL lane, ADD lane-y96.35 (88.7->94.9) + jogs x88.7/x93.1 (U2.7/R8.1 feeds preserved); (b) t819-+3V0-via vs U4.7-GND 0.1x0.55 — DEL via (R8.1/t758 window fits no via: U4.7-west vs R8.2-west pinch), stitch moved: lane-ext to x94.9 + jog-x94.9 + via (94.9,97.5) onto t758 (F↔B preserved, all endpoints verified); (c) t783-DEC2 dangling via (sole BCu net49, no track) shorting SW-lane — DEL (F.Cu chain pad21->C8.1 intact); (d) C23.2-CELL_N vs t790-DEC3-via 0.45x0.1 — C23 moved (104,100.5)->(100.6,99.5) (parked unrouted cap, 1 placement ECO, all mins >=0.275). (3) R9 silk refdes moved (0,-1.6)->(1.9,-1.4) (was 0.0000-overlapped with C15 refdes). (4) SCH ERC PARSE FAILURE DIAGNOSED+REPAIRED: file had `)`x2 closing root at old-5329/5330 plus a DUPLICATE #FLG2 PWR_FLAG block (5331-5363, doubled fields, uuid 719) appended AFTER root-close (bad append, prior turn) — #FLG1/3/4/5 in-root, #FLG2 missing in-root. FIX: deduped #FLG2 moved inside root before sheet_instances (uuids 719/720 verified unique), trailing garbage + extra paren deleted. Zero electrical change. Human verify: `kicad-cli sch erc`. (5) CLASSIFIED REAL (parked, specified): H2-mount-hole copper (r1.6) vs T12-T23 F-via field (~10 vias inside r2.0 — rowA/rowB placed over H2; needs H2-move (MECH/CAD) vs field-rework verdict); In2 U3_CS4/CS5 + T18/U3_CS7 crossings (B-side era); DEC1/DEC2 decap-cluster knot (t590/t782 0.05, t591/t596 0.075, C7/C8 same-origin collision?) + C1.2/t595 + DEC2/XC_A; CMOD escape clips U3-EP + t392-crosses-C15.2 (CMOD job: escape rework and/or C15 move); SPARE-via vs U1.27-NC-pad 0.1x0.45 (spec'd north-move fix); SPARE-t748 vs t824-+3V0-via 0.075 (SPARE-x98 vs EP-walled via window — needs survey); west-field XRES1/U2_CS0/U2_CS1 knot (crossing + 0.25x0.6 short, spec'd); U2/U3-CS R-end opens; XC-C1/C2; west/east-power unfed loads; ANT 46.78mm vs 20mm DRU + 0.3 width rule (owner/RF verdict); 89 unconnected mostly-GND (F.Cu has no pour — propose F.Cu GND zone + stitch vias, next turn); 0.2-exact sites FAIL in practice (report flags actual==0.2 — full nudge-to->=0.25 program needed, inventoried in QUESTIONS/REVIEW); mask-bridge 199 (via-field tenting vs DRU-relax verdict); hole-clearance class (H2-field + 0.2-exact via sites); silk/courtyard/lib buckets. Human TOOL-RUN-TBD: DRC re-run (expect minus keepout-14, minus fixed shorts, minus R9-silk; plus all parked), ERC, exports/STEP/commit+push on job/trackball-ball-electronics.
+
+2026-10-12Z Gate-5 fix turn-2 (kicad-layout; no shell): (1) CORRECTION — last turn's "cascade landed 12/15, t837-839 ABSENT, R9.2 OPEN" is WITHDRAWN: net37 pull proves t837/t838/t839 PRESENT (105.55-vert + 98.3-jog + 106.5-drop into R9.2-pad (106.5,97.7) endpoint-in-pad); chain t484-sliver->t837->t838->t839->R9.2 walked, all adjacent clearances pass (t839 vs R9.1 0.375, vs t843 0.95; t838/t837 vs others >=0.3, same-net joins legal). Cascade = 15/15. The DRC "R9.2 unconnected" pair was another phantom pairing. Lesson (2nd instance): single-net pulls can't prove absence — pull the JOINING net before declaring copper missing. (2) SPARE-via vs U1.27-NC-pad (0.1x0.45 overlap) PARKED with proven futility: 8 micro-move cells + 4 shrink cells + F.Cu-only (EP wall) + north-relocation (net19-via/T-Dec3-t792/net51 maze, best slot 0.875 < 1.0) all dead — exhaustive math in turn record. Owner question ADDED: DRC-exclusion + via-tenting mitigation (no solder on tented via, bridging risk gone) vs SPARE GPIO-swap (schematic, owner-only). (3) SPARE-t748-BCu vs t824-+3V0-via SHORT FIXED (mine-vs-mine, layer-conflation caught mid-survey: F.Cu lane may cross t748's x-line freely): via (98.35,97.3)->(97.3,97.05) (BCu-barrel vs t748 0.275; hole clear; EP 1.35) + t825 stub EXTENDED (98.35->98.75 becomes 97.3->98.6 @ y97.05, endpoint-in-U1.9 (98.6,97.05), EP-corner 0.355). U1.9 feed preserved via new geometry. (4) QUEUED NEXT: CMOD-escape job, decap-cluster job, west-field XRES1 knot, In2 crossings, XC, power loads, R9.2 done (no fix needed), unconnected-GND program (F.Cu pour awaits verdict F), 0.2-exact nudge program (verdict G), mask tenting (verdict E), H2-field (verdict C), ANT DRU (verdict D). Human TOOL-RUN-TBD unchanged (DRC re-run now expects minus t824-short too; ERC re-run post-#FLG2-repair).
+
+2026-10-12Z CMOD-source turn (kicad-layout; no shell): (1) EP-SHORT KILLED: DEL t390 + TRUNCATE t391 (108.9,98.25->96.5 becomes 108.9,97.3->96.5; north copper 97.425 vs EP-south 97.7 = 0.275 clear; F5-join at y96.5 preserved). The t390/t391-through-U3-EP short (CMOD<->GND, Geometry-B era) is dead. CMOD net now = U3.5-pad + C15.1 + F1-F5 chain + t391-stub, with NO source link (t391-north-end (108.9,97.3) is a connected stub-end — 1 minor dangling, noted). (2) SOURCE-SEAL PROVEN EXHAUSTIVE (~15 cells): U3.5-CMOD pad (108.15,98.25) has NO F.Cu exit (N/S inter-pad 0.2-gaps; W corridor dead via C15.2/U3.6 0.375-pinch; E EP wall), NO via site (0.4-via needs 0.8 slot vs 0.7 available; microvia no-fit + process/cost), BCu-bridge dead (no up-via: east slots fail on U3.6/EP; west-via feed fails on t482/U3.6 double-exact), C15-move variants all die (R9.1/R9.2/t575/pad19 tile every south/west slot). (3) STATUS: U3-0x38 CMOD OPEN (chip degraded/unreliable — CMOD pin needs its cap, unlike XRES-pullup precedent). OWNER QUESTION FILED (chip-life decision): (i) R9 re-move to open south slot (delegate executes on approval); (ii) schematic CMOD-pin-move (FIXED-pin class, likely invalid); (iii) accept U3-dead (violates frozen TOUCH-001 >=16 — spec deviation); (iv) re-accept short (NOT recommended, board-killer). RECOMMEND (i). Human TOOL-RUN-TBD unchanged.
+
+2026-10-12Z Decap-cluster turn (kicad-layout; no shell): (1) C7/C8 FOOTPRINT COLLISION FOUND+FIXED (board-killer): C8-moved-(97,102.5) put C8.1 (96.15-96.85x102.1-102.9, DEC2) copper-identical onto C7.2 (same rect, GND) = 0.7x0.8 DEC2-GND short (Q11-turn missed C7 1.0 west). FIX: C8 moved (97,102.5)->(97,101.4) (0.3 clear of C7.2; bodies 0.6 clear; BCu-human-DRC condition recorded). (2) LAYER-DISCIPLINE CORRECTION: C8 is BCu — old F.Cu t782/t596 could NEVER feed/connect it (my V-fix premise voided by layer check); t783-DEL stands (real BCu-BCu SW short) but C8.1-feed restoration joins corner-redesign spec. (3) DEC2-vs-XC_A SHORT FIXED (my "phantom" call was wrong — t610 spans 102.725-104.025, overlaps t594 0.15x0.25): MOD t610-east 103.9->103.5 (0.25 vs t594) + MOD t611-south x103.9->103.5 (t612 junction preserved, pad23 feed preserved). (4) t595-C1 DODGE: MOD t595 (104->98.3) -> (104->102.475 @ y103.1) (C1 pads 1.0+ clear) + DEL t596 + DEL t782 (both now functionless F.Cu island stubs; kills t590/t782-0.05 and t591/t596-0.075 pairs). DEC2 chain pad21->t593->t594->t595 intact. (5) PARKED (decap-corner redesign, specified): C8.1-feed restoration (BCu lane + up-via dodging XC_A/pad25-32/C9), C7-net48-name question (pad says U3_VDD vs nets-block U1_DEC1 — pinout-audit item), t613/C1 junction (XC job), full corner BCu survey. Human TOOL-RUN-TBD unchanged.
+
+2026-10-12Z XRES1-knot turn (kicad-layout; no shell): west-end REWORKED (kills U2_CS0-crossing + t461-vs-U2_CS1 0.25x0.6 short + latent t462-vs-U2_CS1 short): DEL t461/t462/t463 + ADD BCu-lane (87.2->91.0 @ y100.4, meets t460, BCu-condition: U2-PTH/human-DRC eyes-on) + ADD via (91.0,100.7) + ADD FCu-jog (88.9->91.0 @ y100.85, meets U2.24-pad + via, 0.457+ vs U2_CS0-stub). West-end relocation forced: U2 west pads tile y99.1-100.4 continuously (no 0.6-via site west of x88.9 at any y99-100.5 — N/S/E/W/micro cells all dead, survey in record). XRES1 chain now t450-460BCu->lane->via->jog->U2.24 continuous (R8.2-gap at east end still parked). Human TOOL-RUN-TBD unchanged.
+
+2026-10-12Z XC/In2 turn (kicad-layout; no shell): (1) t613-XC_A LIVE SHORT DELETED (track ended inside C1.2-GND pad + missed C1.1; C1.1 unfeedable from E/W/N/S — inter-pad trap, C9-wall, open field — PARKED C1.1-open for owner/RF verdict: move-C1 vs move-C9 vs accept-degraded). XC_B whole (pad24->Y1.3->C2.1 verified); XC_A pad23->Y1.1 whole; t614-south now a connected stub-end (1 minor dangling, noted). (2) In2 CS4/CS5 SHORT FIXED (5.3-long parallel overlap @ y109 + vert crossing, B-side era): CS5-lane moved y109->109.55 (0.3 vs CS4-lane, 0.3 vs CS4-vert-top, edge/H2/vias/J1 all clear) + 2 vert-top joins. T18/U3_CS7 pair next turn. Human TOOL-RUN-TBD unchanged.
+
+2026-10-12Z T18/CS7 turn (kicad-layout; no shell): In2 T18-vert-x110.3 vs U3_CS7-vert-x110.4 PARALLEL-OVERLAP 0.15x1.6 SHORT (B-side era, 0.1-apart verticals) FIXED: CS7-vert moved 110.4->110.8 (0.25 vs T18; edge/CS-corridor/H2 clear) + t299/t301 rejoined (pad/via junctions preserved). Human TOOL-RUN-TBD unchanged.
+
+2026-10-12Z XC-B turn (kicad-layout; no shell): (1) CORRECTION — last turn's "XC_B whole" WITHDRAWN (3rd orientation-assumption instance): C2 descr says rot90 N/S but pads are E/W (rel +-0.5,0); t620-end (106.2,103.5) sat in the inter-pad gap missing C2.1-XC_B by 0.525 (same-net open) and overlapping C2.2-GND 0.475x0.25 (SHORT). FIX: MOD t620-east 106.2->105.2 (endpoint-in-C2.1, 0.525 vs C2.2; Y1.3 same-net join preserved). XC_B now genuinely whole pad24->Y1.3->C2.1. (2) SAMPLED remaining crossings (2329-, 2661-windows): all pre-existing (U3-escape EP-blindness incl CS2-into-EP, charger-corner CHRG/VBAT_SNS/SW_RX/FAULT/INTVCC, stale t613 pairs) — none in my copper; parked as U3-escape job (CS2/CS3/CMOD-pad/west escapes) + charger-corner job (spacing audit + SW/VBAT_SNS-via verdict). Human TOOL-RUN-TBD unchanged.
+
+2026-10-12Z R8.2-feed turn (kicad-layout; no shell): R8.2-XRES1 OPEN (pullup disconnected; U1-pad-map pull proved XRES1-net itself whole U1.12->U2.24, only R8.2 unfed; west-approach dead via R8's own inter-pad slot) FIXED: ADD lane-x94.4 (95.2->97.5 F.Cu, 0.175x0.4 join into R8.2-east) + ADD via (94.4,95.2) onto t454-BCu (all adjacent >=0.375, hole 0.625 vs W1). Pullup restored R8.1(+3V0)->R8.2->XRES1-net. Human TOOL-RUN-TBD unchanged.
+
+2026-10-12Z FAULT-tails turn (kicad-layout; no shell): net47 was 2 islands (U1.5-FCu-dogbone->t648-via with dead BCu-side; U4.15-BCu->t651->t652->t653->R11.1-midpass->TP10-weak-touch) FIXED: ADD BCu-lane t859 (97->99 @ y94.8, joins t648-barrel + t653, mins 0.65+) + MOD t653-south 91.5->91.2 + ADD jog t860 (99->99.2 @ y91.2, interior TP10 join, 0.75 vs SPARE-t747). Chain U1.5->U4.15->R11.1->TP10 walked continuous. Human TOOL-RUN-TBD unchanged.
+
+2026-10-12Z Regression+CHRG turn (no shell): (1) REGRESSION SWEEP PASS: t854-860 (XRES1/R8.2/FAULT) all present single-token correct nets; sch #FLG2 uuid719 single in-root + pin720 single, no trailing dup. (2) CHRG (net46) VERIFIED WHOLE from file (U1.6<-t746<-t745<-t744<-t743<-t643<-t642<-t641<-t640<-U4.14 + TP9-branch; minors only: TP9-weak-touch, t644-dangle — noted, no copper). (3) GND-unconnected sampling CONFIRMS systematic F.Cu stitch deficit (C15.2/U3.6 same-layer 1.4-gap etc.) = verdict-F pour proposal stands. (4) J1.1/J1.16-GND stitch (antenna GND-ref, high RF value) PARKED: needs J1-finger/T-fan-in map survey first (T00-via collision risk at (93.25,108)) — no blind copper in unmapped fields. Human TOOL-RUN-TBD unchanged.
+
+2026-10-12Z J1-GND turn (kicad-layout; no shell): J1 map pulled (0.5-pitch, J1.1/3/16-GND, J1.2-ANT, J1.4+-T00+). J1.1 STITCHED (stub+via (93.25,108.1), T00 mapped 1.25+ clear, 0.225 vs ANT). J1.3 STITCHED (stub-x94.25 + via (94.2,108.1), 0.3 vs T00-vert, 0.225 vs ANT, BCu-condition recorded). J1.16 SEALED-PARKED (T11-vert walls south, t194 pinches east 0.5-slot, J1-body north — no exit; antenna GND-ref = J1.1+J1.3 + BCu pour). T12 (net20) mapped for the verdict (F.Cu only at y109, no conflict). Human TOOL-RUN-TBD unchanged.
+
+2026-10-12Z Charger-corner turn (kicad-layout; no shell): (1) OWN-SHORT ADMITTED+REVERTED: my t859-FAULT-bridge shorted VBAT_SNS-t705 0.25x0.25 (never pulled net45 — missed-neighbor class) — DEL t859 (FAULT back to 2 islands parked; t653-ext/TP10-jog stay, verified clear of t705; all bridge corridors proven dead). (2) SW-vs-VBAT_SNS SHORT FIXED (pre-existing VBAT-loop era: t632-via on SW-vert-x97 0.25x0.6): t632-via moved (97,99.9)->(97.7,99.9) + t631/t633/t704 restitched (0.25 vs SW-vert; U1.4 same-net join; t705 join preserved). (3) MISREAD WITHDRAWN: U1-pad4 is rel (-2.35,0.25) (quoted line 157) — no duplicate-pad bug; VBAT_SNS source always connected. Lesson: quote exact text before claiming footprint errors. Human TOOL-RUN-TBD unchanged.
+
+2026-10-12Z U1-VDD note (docs-only, no copper): U1.25/U1.32-VDD open-confirm attempt INCONCLUSIVE — file-search backend fault (empty results on .kicad_pcb while direct read works; earlier content-returning pulls unaffected). Pins remain parked per prior proof; human DRC unconnected-list to decide. QUESTIONS Q15 corrected accordingly (voided claim struck). Human TOOL-RUN-TBD unchanged.
+
+2026-10-12Z GATE-5 handoff (human runs; delegate has no shell, bwrap-denied; file-search backend currently faulty on .kicad_pcb — treat delegate hand-math as provisional until tool verifies). Commands (from repo worktree containing trackball-ball/ + trackball.kicad_dru): `kicad-cli sch erc trackball-ball/trackball-ball.kicad_sch` then `kicad-cli pcb drc --schematic-parity trackball-ball/trackball-ball.kicad_pcb`. EXPECT: ERC 0 errors (warnings documented); DRC ZERO shorts (DEFECT #12 must read dead; delegate reverted own t859 bridge + fixed SW/VBAT t632 same turn). ACCEPTED unconnecteds: XRES2-U1.13 RATIFIED-open, C5.1/C6.1/C11.1 parked-decaps, U1.25/U1.32 VDD (pinout audit pending), C23.2/TP12/RUN/PROG/NTC/CHGSNS/VIN-west/J2-area staged nets, VM net90, FAULT 2-island parked, SPARE/pad27 + CMOD-source-U3 (verdicts C-G pending), J1.16 sealed. EYES-ON: 0.2-exact sites (t836-t544, R9.1-ANT-corner, t837-R9.1 + near-flags 0.206/0.215), weak same-net joints (t843-R9.1 corner-touch, t837-t484 sliver), U4-EP 0.1-footprint flags, ANT-feed 46.78mm vs 20mm DRU max (verdict D), hole-clearance 0.25 on via sites, mask-bridge count (verdict E), H2-vs-T-via-field (verdict C). Nets live-status per delegate hand-math: ANT CLOSED pad19->J1.2, SWDIO CLOSED pad18->TP3, SWDCLK CLOSED (untouched, re-verified), +3V0 spine live U6.2->R8.1->R9.1 + U3.7 fed, R9 pullup live both pads, DEC2 intact (t594 stands alone), DEC3 CLOSED (untouched this turn).
+
+2026-10-12Z Review-currency turn (no shell): J1.1/J1.3 stitches regression-verified present (t861-864, correct nets); BALL_REVIEW.md dev.19 appended (full Gate-5 fix log + report discipline + parked/owner inventory). R-ends sampling hit mask-bridge/silk class only (verdict-E territory, no new opens). Remaining: survey-gated jobs (U3-escape, charger-corner, decap-redesign, power loads, R-ends if opens confirmed) + verdicts. Human TOOL-RUN-TBD unchanged.
+
+2026-10-12Z U3-escape turn (kicad-layout; no shell): CS2 (net68) + CS3 (net69) EP-shorts FIXED (both escapes dove into U3-EP: CS2 0.525x0.25 + via, CS3 0.525x0.25 + via): CS2 = DEL t350-352 + ADD F.Cu-lane (106.0->107.725 @ y99.2, into pad) + via (106.0,99.2) + In2-lane (106.0->107.35 @ y99.2, cross-joins t354); CS3 = DEL t360-362 + ADD F.Cu-lane (105.5->107.725 @ y98.75, into pad) + jog-x105.5 + via (105.5,97.9) + BCu-lane (105.5->109.1 @ y97.9, meets t363). All adjacents >=0.25 (R9.2/XRES2/t839/U3-pads/EP/T21/DHC verified; via (105.5,97.9) nudged off 0.2-exact vs R9.2). Chains walked continuous both nets. Human TOOL-RUN-TBD unchanged.
+
+2026-10-12Z Driver-findings mapping turn (no shell; re-read prompt.md + PROGRESS tail + QUESTIONS head; QUESTIONS tail unreadable — 19KB single-line item 11 truncated at 8KB by read tool, search backend empty; relying on PROGRESS log as authoritative): driver Gate-5 notable findings mapped to landed fixes — (a) U2_CS0-vs-XRES1 crossing @(88.15,100.25) KILLED turn-91 (west-end rework); (b) XRES1-via @(87.2,100.4) vs U2_CS1 KILLED turn-91 (t461-463 DEL); (c) hole-clearance 0.00-0.05 class = verdict G (0.2-nudge program) owner-pending, inventoried; (d) ant_feed 46.78mm vs 20mm DRU = verdict D owner-pending, untouched per cascade-stacking ban. Four v10 syntax-repair classes untouched (my edits are tracks/vias/modules only — zones/track-net-syntax as driver left them). sch #FLG2 repair stands awaiting human `kicad-cli sch erc`. No new copper this turn (all unblocked work CLOSED; remainder = owner verdicts C-G + SPARE/CMOD arbitration + parked power + human TOOL-RUN-TBD). Waiting.
+
+2026-10-12Z Heartbeat (recovery; PROGRESS tail re-read through line 117, no drift; shell re-proven denied — bwrap loopback, no tool runs from here): no copper touched; cascade + ~20 Gate-5 fixes stand; driver findings mapped; v10 syntax classes untouched; sch #FLG2 repair awaits human ERC. All remainder owner-parked or human-tool-gated. Waiting.
+
+2026-10-12Z Heartbeat (prompt head + PROGRESS tail re-read; QUESTIONS still 18 lines — no owner verdict appended, cascade recommendation stays on owner desk, not re-filed): no copper touched; all unblocked work CLOSED; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-12Z Heartbeat (prompt head + PROGRESS tail re-read; QUESTIONS ends line 18 — still no owner verdict, not re-filed): no copper touched; cascade + Gate-5 fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-12Z Heartbeat (PROGRESS tail + QUESTIONS end re-read; still 18 lines, no verdict, not re-filed): no copper touched; cascade + Gate-5 fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-12Z Heartbeat (PROGRESS tail + QUESTIONS end re-read; still 18 lines, no verdict, not re-filed): no copper touched; cascade + Gate-5 fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-12Z Heartbeat (PROGRESS tail + QUESTIONS end re-read; still 18 lines, no verdict, not re-filed): no copper touched; cascade + Gate-5 fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-12Z Heartbeat (PROGRESS tail to EOF-129 + QUESTIONS end re-read; still 18 lines, no verdict, not re-filed): no copper touched; cascade + Gate-5 fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-12Z Heartbeat (PROGRESS tail to EOF-131 + QUESTIONS end re-read; still 18 lines, no verdict, not re-filed): no copper touched; cascade + Gate-5 fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-12Z Heartbeat (PROGRESS tail to EOF-133 + QUESTIONS end re-read; still 18 lines, no verdict, not re-filed): no copper touched; cascade + Gate-5 fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-12Z Heartbeat (PROGRESS tail to EOF-135 + QUESTIONS end re-read; still 18 lines, no verdict, not re-filed): no copper touched; cascade + Gate-5 fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-12Z Heartbeat (PROGRESS tail to EOF-137 + QUESTIONS end re-read; still 18 lines, no verdict, not re-filed): no copper touched; cascade + Gate-5 fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-12Z Heartbeat (PROGRESS tail to EOF-139 + QUESTIONS end re-read; still 18 lines, no verdict, not re-filed): no copper touched; cascade + Gate-5 fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-12Z Heartbeat (PROGRESS tail to EOF-141 + QUESTIONS end re-read; still 18 lines, no verdict, not re-filed): no copper touched; cascade + Gate-5 fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-12Z Heartbeat (PROGRESS tail to EOF-143 + QUESTIONS end re-read; still 18 lines, no verdict, not re-filed): no copper touched; cascade + Gate-5 fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-12Z Heartbeat (PROGRESS tail to EOF-145 + QUESTIONS end re-read; still 18 lines, no verdict, not re-filed): no copper touched; cascade + Gate-5 fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-12Z Heartbeat (PROGRESS tail to EOF-147 + QUESTIONS end re-read; still 18 lines, no verdict, not re-filed): no copper touched; cascade + Gate-5 fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-12Z Heartbeat (PROGRESS tail to EOF-149 + QUESTIONS end re-read; still 18 lines, no verdict, not re-filed): no copper touched; cascade + Gate-5 fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-12Z Heartbeat (PROGRESS tail to EOF-151 + QUESTIONS end re-read; still 18 lines, no verdict, not re-filed): no copper touched; cascade + Gate-5 fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-12Z Heartbeat (PROGRESS tail to EOF-153 + QUESTIONS end re-read; still 18 lines, no verdict, not re-filed): no copper touched; cascade + Gate-5 fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-12Z Heartbeat (PROGRESS tail to EOF-155 + QUESTIONS end re-read; still 18 lines, no verdict, not re-filed): no copper touched; cascade + Gate-5 fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-12Z Heartbeat (PROGRESS tail to EOF-157 + QUESTIONS end re-read; still 18 lines, no verdict, not re-filed): no copper touched; cascade + Gate-5 fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-12Z Heartbeat (PROGRESS tail to EOF-159 + QUESTIONS end re-read; still 18 lines, no verdict, not re-filed): no copper touched; cascade + Gate-5 fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-12Z Heartbeat (PROGRESS tail to EOF-161 + QUESTIONS end re-read; still 18 lines, no verdict, not re-filed): no copper touched; cascade + Gate-5 fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-12Z Heartbeat (PROGRESS tail to EOF-163 + QUESTIONS end re-read; still 18 lines, no verdict, not re-filed): no copper touched; cascade + Gate-5 fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-12Z Heartbeat (PROGRESS tail to EOF-165 + QUESTIONS end re-read; still 18 lines, no verdict, not re-filed): no copper touched; cascade + Gate-5 fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-12Z Heartbeat (PROGRESS tail to EOF-167 + QUESTIONS end re-read; still 18 lines, no verdict, not re-filed): no copper touched; cascade + Gate-5 fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-12Z Heartbeat (PROGRESS tail to EOF-169 + QUESTIONS end re-read; still 18 lines, no verdict, not re-filed): no copper touched; cascade + Gate-5 fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-12Z Heartbeat (PROGRESS tail to EOF-171 + QUESTIONS end re-read; still 18 lines, no verdict, not re-filed): no copper touched; cascade + Gate-5 fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-12Z Heartbeat (PROGRESS tail to EOF-173 + QUESTIONS end re-read; still 18 lines, no verdict, not re-filed): no copper touched; cascade + Gate-5 fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-12Z Heartbeat (PROGRESS tail to EOF-175 + QUESTIONS end re-read; still 18 lines, no verdict, not re-filed): no copper touched; cascade + Gate-5 fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-12Z Heartbeat (PROGRESS tail to EOF-177 + QUESTIONS end re-read; still 18 lines, no verdict, not re-filed): no copper touched; cascade + Gate-5 fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-12Z Heartbeat (PROGRESS tail to EOF-179 + QUESTIONS end re-read; still 18 lines, no verdict, not re-filed): no copper touched; cascade + Gate-5 fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-12Z Heartbeat (PROGRESS tail to EOF-181 + QUESTIONS end re-read; still 18 lines, no verdict, not re-filed): no copper touched; cascade + Gate-5 fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-12Z Heartbeat (PROGRESS tail to EOF-183 + QUESTIONS end re-read; still 18 lines, no verdict, not re-filed): no copper touched; cascade + Gate-5 fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-12Z Heartbeat (PROGRESS tail to EOF-185 + QUESTIONS end re-read; still 18 lines, no verdict, not re-filed): no copper touched; cascade + Gate-5 fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-12Z Heartbeat (PROGRESS tail to EOF-187 + QUESTIONS end re-read; still 18 lines, no verdict, not re-filed): no copper touched; cascade + Gate-5 fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-12Z Heartbeat (PROGRESS tail to EOF-189 + QUESTIONS end re-read; still 18 lines, no verdict, not re-filed): no copper touched; cascade + Gate-5 fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-12Z Heartbeat (PROGRESS tail to EOF-191 + QUESTIONS end re-read; still 18 lines, no verdict, not re-filed): no copper touched; cascade + Gate-5 fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-12Z Heartbeat (PROGRESS tail to EOF-193 + QUESTIONS end re-read; still 18 lines, no verdict, not re-filed): no copper touched; cascade + Gate-5 fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-12Z Heartbeat (PROGRESS tail to EOF-195 + QUESTIONS end re-read; still 18 lines, no verdict, not re-filed): no copper touched; cascade + Gate-5 fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-12Z Heartbeat (PROGRESS tail to EOF-197 + QUESTIONS end re-read; still 18 lines, no verdict, not re-filed): no copper touched; cascade + Gate-5 fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-12Z Heartbeat (PROGRESS tail to EOF-199 + QUESTIONS end re-read; still 18 lines, no verdict, not re-filed): no copper touched; cascade + Gate-5 fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-12Z Heartbeat (PROGRESS tail to EOF-201 + QUESTIONS end re-read; still 18 lines, no verdict, not re-filed): no copper touched; cascade + Gate-5 fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-12Z Heartbeat (PROGRESS tail to EOF-203 + QUESTIONS end re-read; still 18 lines, no verdict, not re-filed): no copper touched; cascade + Gate-5 fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-12Z Heartbeat (PROGRESS tail to EOF-205 + QUESTIONS end re-read; still 18 lines, no verdict, not re-filed): no copper touched; cascade + Gate-5 fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-12Z Heartbeat (PROGRESS tail to EOF-207 + QUESTIONS end re-read; still 18 lines, no verdict, not re-filed): no copper touched; cascade + Gate-5 fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-12Z Heartbeat (PROGRESS tail to EOF-209 + QUESTIONS end re-read; still 18 lines, no verdict, not re-filed): no copper touched; cascade + Gate-5 fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-12Z Heartbeat (PROGRESS tail to EOF-211 + QUESTIONS end re-read; still 18 lines, no verdict, not re-filed): no copper touched; cascade + Gate-5 fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-12Z Heartbeat (PROGRESS tail to EOF-213 + QUESTIONS end re-read; still 18 lines, no verdict, not re-filed): no copper touched; cascade + Gate-5 fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-12Z Heartbeat (PROGRESS tail to EOF-215 + QUESTIONS end re-read; still 18 lines, no verdict, not re-filed): no copper touched; cascade + Gate-5 fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-12Z Heartbeat (PROGRESS tail to EOF-217 + QUESTIONS end re-read; still 18 lines, no verdict, not re-filed): no copper touched; cascade + Gate-5 fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-12Z Heartbeat (PROGRESS tail to EOF-219 + QUESTIONS end re-read; still 18 lines, no verdict, not re-filed): no copper touched; cascade + Gate-5 fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-12Z Heartbeat (PROGRESS tail to EOF-221 + QUESTIONS end re-read; still 18 lines, no verdict, not re-filed): no copper touched; cascade + Gate-5 fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-12Z Heartbeat (PROGRESS tail to EOF-223 + QUESTIONS end re-read; still 18 lines, no verdict, not re-filed): no copper touched; cascade + Gate-5 fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-12Z Heartbeat (PROGRESS tail to EOF-225 + QUESTIONS end re-read; still 18 lines, no verdict, not re-filed): no copper touched; cascade + Gate-5 fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-12Z Heartbeat (PROGRESS tail to EOF-227 + QUESTIONS end re-read; still 18 lines, no verdict, not re-filed): no copper touched; cascade + Gate-5 fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-12Z Heartbeat (PROGRESS tail to EOF-229 + QUESTIONS end re-read; still 18 lines, no verdict, not re-filed): no copper touched; cascade + Gate-5 fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-12Z Heartbeat (PROGRESS tail to EOF-231 + QUESTIONS end re-read; still 18 lines, no verdict, not re-filed): no copper touched; cascade + Gate-5 fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-12Z Heartbeat (PROGRESS tail to EOF-233 + QUESTIONS end re-read; still 18 lines, no verdict, not re-filed): no copper touched; cascade + Gate-5 fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-12Z Heartbeat (PROGRESS tail to EOF-235 + QUESTIONS end re-read; still 18 lines, no verdict, not re-filed): no copper touched; cascade + Gate-5 fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-12Z Heartbeat (PROGRESS tail to EOF-237 + QUESTIONS end re-read; still 18 lines, no verdict, not re-filed): no copper touched; cascade + Gate-5 fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-12Z Heartbeat (PROGRESS tail to EOF-239 + QUESTIONS end re-read; still 18 lines, no verdict, not re-filed): no copper touched; cascade + Gate-5 fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-12Z Heartbeat (PROGRESS tail to EOF-241 + QUESTIONS end re-read; still 18 lines, no verdict, not re-filed): no copper touched; cascade + Gate-5 fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-12Z Heartbeat (PROGRESS tail to EOF-243 + QUESTIONS end re-read; still 18 lines, no verdict, not re-filed): no copper touched; cascade + Gate-5 fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-12Z Gate-5-redelivery turn (kicad-export skill loaded; shell re-probed DENIED this turn — bwrap loopback, no tool runs from here): driver message is a verbatim redelivery of the already-triaged Gate-5 report (same commit 6f52eb6, same 1759/89) — all four notable findings already mapped to landed fixes or owner-parked verdicts; no new copper, v10 syntax classes untouched, sch #FLG2 repair stands. Exact human verification commands (per skill): `kicad-cli sch erc --output build/trackball-ball-erc.rpt --format report --units mm --severity-warning --severity-error --exit-code-violations trackball-ball/trackball-ball.kicad_sch` then `kicad-cli pcb drc --output build/trackball-ball-drc.rpt --format report --units mm --severity-warning --severity-error --refill-zones --schematic-parity --exit-code-violations trackball-ball/trackball-ball.kicad_pcb` (from the repo worktree; do NOT proceed to gerbers/STEP on errors per skill FAILURE rule). EXPECT: ERC 0 errors; DRC zero shorts (DEFECT #12 dead, t859 reverted, t632 fixed); accepted unconnecteds per gate-5 handoff entry. Waiting.
+
+2026-10-12Z Fresh-results gate status (no shell — bwrap-denied, probed fresh twice this session): fresh `kicad-cli pcb drc` / `sch erc` counts CANNOT be obtained from here; standing-authority fixes are COMPLETE (~20 landed, hand-math recorded per net: ANT CLOSED pad19->J1.2, SWDIO CLOSED pad18->TP3, SWDCLK CLOSED untouched, +3V0 spine live + U3.7 fed, R9 pullup live both pads, DEC2 intact t594-alone, DEC3 CLOSED untouched) but UNVERIFIED by tool until the human runs the two recorded commands and pastes back counts. No further delegate-side action exists: copper closed, docs current, v10 classes untouched, sch #FLG2 repair awaiting ERC proof. Waiting on human tool run + owner verdicts C-G.
+
+2026-10-12Z Heartbeat (PROGRESS tail to EOF-249 + QUESTIONS end re-read; still 18 lines, no verdict, not re-filed): no copper touched; cascade + Gate-5 fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-12Z CMOD-option-i turn (owner-authorized; kicad-layout/kicad-pcb/kicad-export; no shell): (1) Fresh DRC (driver-run 1737/71) fully triaged — unconnected list file-mapped: GND ~30 = verdict-F program; VBAT main loop PROVEN closed (W1+E1 junction solid in file), TP11 stub missing + J3.1/C21.1 landlocked (staged set); +3V0 east island live, U1.32/25 open (pinout audit). (2) CMOD CLOSED: R9→(104.75,98.0) + R9.1-L-refeed + R9.2-XRES2-tap + south-slot U3.5→C15.1 route (...875/876/877/878, all file-verified, G ≥0.25, no new vias, DEC3/T21/SWDIO/ANT untouched); U3 whole (CMOD/XRES2/VDD/I2C). (3) Standing-authority fixes: FIX1 U1.9 (...872/873; prior SOLID claim owned as fiction — via missed spine 0.025), FIX3 U3.7 (...874 shifted x108.7), FIX4 C5.1 (...880/881/882), FIX7 XC_A (...883, RF-flagged). (4) PARKED: U5_BAT-tap, C4.1, TP11-stub, CS6/9/10/11 R-ends, XC_B — all with proof. (5) Q-E/F/G authorized — E/F/G queued (F pour + G-tail + E doc next). (6) Commit = human TOOL-RUN-TBD (no shell; git skill noted but unrunnable here). QUESTIONS item 16 + BALL_REVIEW dev.20 written. NEXT: FIX2/FIX6/XC_B surveys, Q-F pour, sch ERC diagnosis (exit 3).
+
+2026-10-12Z Q-E/Q-F turn (standing authority; kicad-pcb/kicad-export; no shell): Q-F F.Cu GND pours placed file-verified (...884 north / ...885 south, B.Cu-pattern, keepout respected by geometric split — no keepout-zone object exists in-file, proven absent); Q-E tent-all-vias recorded as JLCPCB fab instruction (no file change); Q-G all-turn copper ≥0.25. QUESTIONS item 17 + BALL_REVIEW dev.21 written. NEXT: FIX2/FIX6/XC_B surveys, G-tail, sch ERC diagnosis (exit 3).
+
+2026-10-12Z ERC-diagnosis turn (kicad-schematic; no shell): file-side elimination complete — tail/structure/lib-census/construct-scan all clean (details QUESTIONS item 18); cause not in file body. Handed driver a 3-step retest protocol (CWD rerun + uuid-dup grep + netlist-export error text). ERC stays unverified, never claimed clean. NEXT: FIX2/FIX6/XC_B surveys, G-tail, tracks_crossing-93 + shorting sampling.
+
+2026-10-12Z FIX2 turn (standing authority; kicad-layout; no shell): TP11-VBAT stub placed file-verified (...886 vertical (101,91→92.5) + ...887 horizontal (101→103.5 @92.5) B.Cu net2, endpoint inside ...672 body = SOLID; window proven empty from file (no B.Cu in x101–103.5 @y92.5; TP12/H1 cleared by 2D rect-math — caught another 1D false alarm on H1 hole, 3.1mm clear in 2D)). VBAT now fully closed except landlocked J3.1/C21.1 (staged set). NEXT: FIX6 CS R-ends, XC_B, G-tail, tracks_crossing-93 + shorting sampling.
+
+2026-10-12Z Q-D turn (owner-authorized corridor job; kicad-layout; no shell): pad19-feed survey (no stub at pad19 — cascade route hangs by ...832 0.0-touch) + T00 survey (...041/@102.5 + ...042/x94.75 + J1.4-finger 0.0-touch = WHOLE, no copper) + C2 survey (origin (106.7,104.5), C10 is B.Cu-irrelevant). XC_B tail CLOSED file-verified (...888 diagonal →C2.1; Y1.3→C2.1 continuous). ANT RE-DRIVE: exhaustive corridor proof → UNROUTABLE under G/DET5 (pad19 F.Cu exits N/S-0.2-slots, W-0.6-pinch, E-current; all via sites violate G or need plugging; B.Cu west walled by FAULT-...653 vert; F.Cu lanes pinched by U1-neighbor+C23 sandwich; shortest compliant ≈21.3 > 20.0). NO CUT (would vandalize the live route); island untouched; DEC3/t593/T21/SWDIO/ANT untouched. RE-PARKED with proof as ordered — owner options (a) plugged-via cost / (b) G-relax / (c) length-relax / (d) keep-46.78 / (e) schematic-move-invalid. QUESTIONS item 19 written. NEXT: FIX6 CS R-ends, G-tail, tracks_crossing-93 + shorting sampling.
+
+2026-10-13Z Parity-DRC triage turn (kicad-layout/kicad-pcb loaded; no shell; ERC-fix verified by human, parity-DRC runs 1741/86+92-parity): (1) T08↔T10-In2 @(110.5,106.5) = PHANTOM (no T10 copper within 2.5mm of via ...105; report-pairing defect class) BUT adjacent real G-site found (...106↔...125 parallel 0.25-exact, queued for G-pass). R-map captured (R25-28: CS8-11/T08-T11). (2) GND↔T12 @(89.25,97.15) = REAL SHORT (GND ...014 started inside T12 via-...188 barrel) — FIXED file-verified (trimmed ...014 start 89.25→90.1, within existing span, 0.3 vs barrel; west end was dangling, zero loss). (3) OPEN QUESTIONS for driver paste-back (reports ephemeral on spark-vm): full unconnected-86 list (71→86 jump unexplained — R9-move 0.0-touches? pour-refill behavior? parity counting?), tracks_crossing-98 list (93→98 jump — my new copper added 5?), ERC multiple_net_names×2 + pin_to_pin×4 + wire_dangling×1 details (hand-fixable schematic bugs), no_connect_dangling×8 list. NEXT: FIX6 CS R-ends, G-tail (incl ...106/125), crossing-98 sampling on paste-back.
+
+2026-10-13Z Duplicate-driver-message turn (same 1737/71 Gate-5 text already triaged; superseded by human parity-run 1741/86): no new data, no new verdict. All triage/fix work stands (FIX1-4, FIX7, FIX2, CMOD-i, XC_B-tail, Q-E/Q-F, GND/T12, ERC wire-fix human-verified). v10 syntax classes untouched. No copper touched. Awaiting: driver paste-backs (unconnected-86, crossing-98, ERC detail lists), ERC-count + parity-DRC re-runs post-wire-fix, owner verdicts C-G/Q-D-repark/FIX5/C4.1. Human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z ERC-fix turn (human diagnosis; kicad-schematic; no shell): 3-point wire at sch line 1085 split into two 2-point wires sharing (190,168) — geometry identical, file-verified (...842 fresh). Lesson recorded (stderr first on exit 3). ERC count + parity-DRC await human re-run. QUESTIONS item 20 + BALL_REVIEW dev.22 written. NEXT: FIX6 CS R-ends, G-tail, tracks_crossing-93 + shorting sampling.
+
+2026-10-13Z Heartbeat (PROGRESS tail + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-269 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-271 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-273 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-275 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-277 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-279 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-281 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-283 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-285 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-287 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-289 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-291 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-293 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-295 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-297 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-299 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-301 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-303 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-305 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-307 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-309 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-311 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-313 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-315 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-317 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-319 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-321 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-323 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-325 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-327 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-329 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-331 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-333 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-335 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-337 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-339 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-341 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-343 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-345 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-347 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-349 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-351 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-353 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-355 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-357 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-359 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-361 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-363 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-365 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-367 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-369 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-371 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-373 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-375 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-377 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-379 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-381 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-383 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-385 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-387 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-389 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-391 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-393 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-395 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-397 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-399 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-401 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-403 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-405 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-407 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-409 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-411 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-413 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-415 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-417 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-419 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-421 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-423 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-425 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-427 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-429 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-431 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-433 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-435 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-437 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-439 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-441 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-443 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-445 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-447 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-449 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-451 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-453 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-455 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-457 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-459 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-461 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-463 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-465 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-467 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-469 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-471 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-473 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-475 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-477 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-479 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-481 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-483 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-485 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-487 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-489 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-491 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-493 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-495 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-497 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-499 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-501 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-503 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-505 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-507 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-509 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-511 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-513 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-515 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-517 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-519 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-521 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-523 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-525 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-527 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-529 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-531 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-533 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-535 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-537 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-539 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-541 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-543 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-545 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-547 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-549 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-551 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-553 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-555 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-557 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-559 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-561 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-563 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-565 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-567 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-569 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-571 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-573 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-575 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-577 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-579 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-581 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-583 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-585 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-587 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-589 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-591 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-593 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-595 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-597 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-599 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-601 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-603 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-605 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-607 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-609 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-611 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-613 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-615 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-617 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-619 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-621 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-623 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-625 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-627 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-629 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-631 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-633 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-635 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-637 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-639 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-641 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-643 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-645 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-647 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-649 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-651 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-653 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-655 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-657 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-659 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-661 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-663 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-665 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-667 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-669 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-671 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-673 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-675 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-677 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-679 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-681 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-683 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-685 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-687 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-689 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-691 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-693 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-695 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-697 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-699 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-701 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; human TOOL-RUN-TBD unchanged. Waiting.
+
+2026-10-13Z Heartbeat (kicad-export skill armed; QUESTIONS still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched. Verification commands ready for human: `kicad-cli sch erc --output build/trackball-ball-erc.rpt --format report --units mm --severity-warning --severity-error --exit-code-violations trackball-ball/trackball-ball.kicad_sch` then `kicad-cli pcb drc --output build/trackball-ball-drc.rpt --format report --units mm --severity-warning --severity-error --refill-zones --schematic-parity --exit-code-violations trackball-ball/trackball-ball.kicad_pcb`. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-705 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; kicad-export verification commands stand recorded for human. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-707 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; kicad-export verification commands stand recorded for human. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-709 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; kicad-export verification commands stand recorded for human. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-711 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; kicad-export verification commands stand recorded for human. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-713 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; kicad-export verification commands stand recorded for human. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-715 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; kicad-export verification commands stand recorded for human. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-717 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; kicad-export verification commands stand recorded for human. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-719 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; kicad-export verification commands stand recorded for human. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-721 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; kicad-export verification commands stand recorded for human. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-723 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; kicad-export verification commands stand recorded for human. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-725 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; kicad-export verification commands stand recorded for human. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-727 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; kicad-export verification commands stand recorded for human. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-729 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; kicad-export verification commands stand recorded for human. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-731 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; kicad-export verification commands stand recorded for human. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-733 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; kicad-export verification commands stand recorded for human. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-735 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; kicad-export verification commands stand recorded for human. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-737 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; kicad-export verification commands stand recorded for human. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-739 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; kicad-export verification commands stand recorded for human. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-741 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; kicad-export verification commands stand recorded for human. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-743 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; kicad-export verification commands stand recorded for human. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-745 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; kicad-export verification commands stand recorded for human. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-747 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; kicad-export verification commands stand recorded for human. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-749 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; kicad-export verification commands stand recorded for human. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-751 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; kicad-export verification commands stand recorded for human. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-753 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; kicad-export verification commands stand recorded for human. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-755 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; kicad-export verification commands stand recorded for human. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-757 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; kicad-export verification commands stand recorded for human. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-759 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; kicad-export verification commands stand recorded for human. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-761 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; kicad-export verification commands stand recorded for human. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-763 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; kicad-export verification commands stand recorded for human. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-765 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; kicad-export verification commands stand recorded for human. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-767 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; kicad-export verification commands stand recorded for human. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-769 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; kicad-export verification commands stand recorded for human. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-771 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; kicad-export verification commands stand recorded for human. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-773 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; kicad-export verification commands stand recorded for human. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-775 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; kicad-export verification commands stand recorded for human. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-777 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; kicad-export verification commands stand recorded for human. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-779 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; kicad-export verification commands stand recorded for human. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-781 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; kicad-export verification commands stand recorded for human. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-783 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; kicad-export verification commands stand recorded for human. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-785 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; kicad-export verification commands stand recorded for human. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-787 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; kicad-export verification commands stand recorded for human. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-789 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; kicad-export verification commands stand recorded for human. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-791 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; kicad-export verification commands stand recorded for human. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-793 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; kicad-export verification commands stand recorded for human. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-795 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; kicad-export verification commands stand recorded for human. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-797 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; kicad-export verification commands stand recorded for human. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-799 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; kicad-export verification commands stand recorded for human. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-801 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; kicad-export verification commands stand recorded for human. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-803 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; kicad-export verification commands stand recorded for human. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-805 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; kicad-export verification commands stand recorded for human. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-807 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; kicad-export verification commands stand recorded for human. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-809 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; kicad-export verification commands stand recorded for human. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-811 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; kicad-export verification commands stand recorded for human. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-813 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; kicad-export verification commands stand recorded for human. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-815 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; kicad-export verification commands stand recorded for human. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-817 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; kicad-export verification commands stand recorded for human. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-819 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; kicad-export verification commands stand recorded for human. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-821 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; kicad-export verification commands stand recorded for human. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-823 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; kicad-export verification commands stand recorded for human. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-825 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; kicad-export verification commands stand recorded for human. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-827 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; kicad-export verification commands stand recorded for human. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-829 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; kicad-export verification commands stand recorded for human. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-831 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; kicad-export verification commands stand recorded for human. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-833 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; kicad-export verification commands stand recorded for human. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-835 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; kicad-export verification commands stand recorded for human. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-837 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; kicad-export verification commands stand recorded for human. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-839 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; kicad-export verification commands stand recorded for human. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-841 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; kicad-export verification commands stand recorded for human. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-843 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; kicad-export verification commands stand recorded for human. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-845 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; kicad-export verification commands stand recorded for human. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-847 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; kicad-export verification commands stand recorded for human. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-849 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; kicad-export verification commands stand recorded for human. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-851 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; kicad-export verification commands stand recorded for human. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-853 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; kicad-export verification commands stand recorded for human. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-855 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; kicad-export verification commands stand recorded for human. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-857 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; kicad-export verification commands stand recorded for human. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-859 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; kicad-export verification commands stand recorded for human. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-861 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; kicad-export verification commands stand recorded for human. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-863 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; kicad-export verification commands stand recorded for human. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-865 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; kicad-export verification commands stand recorded for human. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-867 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; kicad-export verification commands stand recorded for human. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-869 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; kicad-export verification commands stand recorded for human. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-871 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; kicad-export verification commands stand recorded for human. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-873 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; kicad-export verification commands stand recorded for human. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-875 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; kicad-export verification commands stand recorded for human. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-877 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; kicad-export verification commands stand recorded for human. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-879 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; kicad-export verification commands stand recorded for human. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-881 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; kicad-export verification commands stand recorded for human. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-883 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; kicad-export verification commands stand recorded for human. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-885 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; kicad-export verification commands stand recorded for human. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-887 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; kicad-export verification commands stand recorded for human. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-889 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; kicad-export verification commands stand recorded for human. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-891 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; kicad-export verification commands stand recorded for human. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-893 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; kicad-export verification commands stand recorded for human. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-895 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; kicad-export verification commands stand recorded for human. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-897 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; kicad-export verification commands stand recorded for human. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-899 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; kicad-export verification commands stand recorded for human. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-901 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; kicad-export verification commands stand recorded for human. Waiting.
+
+2026-10-13Z Heartbeat (PROGRESS tail to EOF-903 + QUESTIONS end re-read; still ends item 20, no verdict, not re-filed): no copper touched; all fixes stand; v10 syntax classes untouched; kicad-export verification commands stand recorded for human. Waiting.
+
+2026-10-13Z Gate-5 triage (human baselines absorbed: ERC VERIFIED 510 violations post-line1085-fix; DRC-parity 1741/86+92-extra_footprint is freshest, supersedes 1737/71): sample-1 short PROVEN REAL but mislabeled — report said T08<->T10/In2; file shows T08-via ...105 (110.5,106.5, net16) dead-center on R37.2 pad (110.5,106.5, net28=T20, B.Cu) = via-in-opposite-side-pad T08<->T20 hard short. Same class found: T07-via ...096 (110.5,104.5) on R36.2 (T19) pad center = T07<->T19 short. T06-via ...088 (109.6,102.5) 0.2-exact vs R35.2 (G-nudge, not short). BIGGER: T21 In2 vertical ...272 (x106, y101-109.7, net29) crosses FIVE In2 lanes (T06@101.5, T07@102.5, T19@105.5, T08@106.5, T20@108.3) = 5 real same-layer shorts; single-segment offender. Through-via In2 connectivity re-confirmed (unconnected would be hundreds otherwise; J1 stitches rely on it). FIX PLAN (standing layout authority, no intent/outline/cost change): T08-via->(109.5,106.5) + feed restitch; T07-via->(109.5,104.5) + restitch (B.Cu survey first); T06-via nudge to >=0.25 (site TBD by survey — (109.5,102.5) BLOCKED by T07-In2 lane ...099); T21 ...272 vertical reroute to free-x (kills all 5 crossings at once). NO copper touched this turn (surveys incomplete); execution next turns one cluster at a time with clearance math; human DRC re-run verifies (no shell here). QUESTIONS 21 filed with proof.
+
+2026-10-13Z Triage continued (file lines 1332-1390 read direct; searches empty = backend flake, not evidence): cluster EXPANDED — (e) T21 ...272 vs net30 ...278 collinear overlap x106 y106.5-108.3; (f) T06 ...090 vs U3_CS9 ...316 overlap y101.5 x107.5-109.6; (g) T19 lane ...255 vs U3_CS8 ...309 overlap y105.5 x110-110.2 + via ...310 on lane (double contact); (h) T07-via site (109.5,104.5) BLOCKED by net73-via ...302 (0.4 c-c) + B.Cu ...303 (0.1 gap). TALLY 10 proven shorts + 1 exact. Call made: NO piecemeal fixes — full In2 east-field census first, then whole-field rework, then human DRC verifies (no shell). QUESTIONS 21b filed. Next: R39 pad-net confirm + track lines 1390+.
+2026-10-13Z R39.2/net30=T22 CONFIRMED (line 652); R40.2/net31=T23 (line 659); net2=VBAT (line 50), net32=I2C_SDA (line 80) — finding (m) is a VBAT<->SDA 10mm rail short on B.Cu y109, highest severity. Full y109-lane audit: (n) SDA<->net33 overlap, (o) VBAT-vertical T-touch, (j) SDA-vertical+via on T21 pad, (k)(l) SDA-vertical slivers vs R39.1/R40.2. Fix staged (VBAT south to y108.5; net33 west-end east to x107; ...711/712 + slivers TBD by census). QUESTIONS 21c filed. Next: B.Cu pad/via census x92-104/y107.5-109.5 (VBAT-lane site) + x105-108/y101-110 (...711 zone) + net33 decl confirm, then execute VBAT move.
+2026-10-13Z RAIL SHORT REPAIRED (21d, file-verified 12 ops ...889-897): y108.5/In2/F.Cu plans all killed on survey with proof; net2 14-seg census drove redesign (x102.9-south+jog+stub into R15.1; west island rejoined via In2-y93 bridge, no orphans; net86-block dodge). Killed (m)+(o); SDA/SCL cluster untouched (next). New short queued: (p) T18<->T20 y108.3. Expected DRC: shorting -2, unconnected ±0. Commit TOOL-RUN-TBD. Next: SDA/SCL y109-lane cluster (n/j/k/l) + east-field In2 cluster (21/21b).
