@@ -1435,7 +1435,7 @@
   (segment (start 109 99.1) (end 109 98.6) (width 0.25) (layer "F.Cu") (net 37) (tstamp "ee44ee44-0000-4000-8000-200000000487"))
   (segment (start 109 98.6) (end 109 100) (width 0.25) (layer "F.Cu") (net 37) (tstamp "ee44ee44-0000-4000-8000-200000000488"))
   (segment (start 109 100) (end 108.75 100.425) (width 0.25) (layer "F.Cu") (net 37) (tstamp "ee44ee44-0000-4000-8000-200000000489"))
-  (segment (start 105.55 98.1) (end 105.55 98.8) (width 0.25) (layer "F.Cu") (net 37) (tstamp "ee44ee44-0000-4000-8000-200000000837"))
+  (segment (start 105.55 98.1) (end 105.55 98.6) (width 0.25) (layer "F.Cu") (net 37) (tstamp "ee44ee44-0000-4000-8000-200000000837"))
   (segment (start 105.55 98.3) (end 106.5 98.3) (width 0.25) (layer "F.Cu") (net 37) (tstamp "ee44ee44-0000-4000-8000-200000000838"))
   (segment (start 106.5 97.7) (end 106.5 98.3) (width 0.25) (layer "F.Cu") (net 37) (tstamp "ee44ee44-0000-4000-8000-200000000839"))
 
