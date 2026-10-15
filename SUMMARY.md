@@ -20,3 +20,9 @@ U1.25/U1.32-VDD (redundant pins; rail LIVE via pad9 — pinout audit to confirm)
 ## Human TOOL-RUN-TBD (branch job/trackball-ball-electronics, no shell for delegate)
 
 `kicad-cli sch erc` + `pcb drc` (expect: parked-net unconnecteds + RATIFIED XRES2-open + ONE live short #12 + 0.2-exact inventory + U4-EP 0.1-footprint flags; 0 clearance violations elsewhere), fab exports (Gerbers/STEP), KiKit, Blender/FreeCAD STEP, pinout + lib audits (incl U4-EP 1.7×1.7 oversize flag, C8 descr, nRF52 RESET pull-up confirm, U1-VDD redundancy), `git add/commit/push`, bench gates 2.1–2.6.
+
+## Driver status 2026-10-15Z
+
+- Q-G nudge program complete: OP1 executed (XRES2 ...837 shortened, tool-verified; clearance 0.1771->0.325, pair absent from DRC report) + 3 no-ops + t836-t544 corner parked for owner rework verdict. Committed c7df811 (driver).
+- Post-OP1 tool recount (kicad-cli, sparkvm): ERC 510 flat; DRC 1748/63/92 flat vs gate-9 baselines — no regression.
+- Everything remaining (ASK-1/2/3, t836-t544 corner, XRES2-U3_CS3 short, LED_DOT-544-VBAT-893 0.075) is parked for OWNER verdicts. Nothing closable under standing layout authority. Job stands down until verdicts arrive.
